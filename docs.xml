@@ -104,31 +104,31 @@
       <doc alias="using-zoo-events" name="Using ZOO events" file="15 Using ZOO events.html"/>
     </category>
     <category alias="elements" name="Elements" folder="05 Elements">
-      <doc alias="country-element" name="Country Element" file="Country Element.html"/>
-      <doc alias="gallery-element" name="Gallery Element" file="Gallery Element.html"/>
-      <doc alias="image-element" name="Image Element" file="Image Element.html"/>
-      <doc alias="intensedebate-element" name="Intensedebate Element" file="Intensedebate Element.html"/>
-      <doc alias="addthis-element" name="addthis element" file="addthis element.html"/>
-      <doc alias="checkbox-element" name="checkbox element" file="checkbox element.html"/>
-      <doc alias="date-element" name="date element" file="date element.html"/>
-      <doc alias="disqus-element" name="disqus element" file="disqus element.html"/>
-      <doc alias="download-element" name="download element" file="download element.html"/>
-      <doc alias="email-element" name="email element" file="email element.html"/>
-      <doc alias="flickr-element" name="flickr element" file="flickr element.html"/>
-      <doc alias="google-maps-element" name="google maps element" file="google maps element.html"/>
-      <doc alias="joomla-module-element" name="joomla module element" file="joomla module element.html"/>
-      <doc alias="link-element" name="link element" file="link element.html"/>
-      <doc alias="media-element" name="media element" file="media element.html"/>
-      <doc alias="radio-element" name="radio element" file="radio element.html"/>
-      <doc alias="rating-element" name="rating element" file="rating element.html"/>
-      <doc alias="related-categories-element" name="related categories element" file="related categories element.html"/>
-      <doc alias="related-items-element" name="related items element" file="related items element.html"/>
-      <doc alias="select-element" name="select element" file="select element.html"/>
-      <doc alias="social-bookmarks-element" name="social bookmarks element" file="social bookmarks element.html"/>
-      <doc alias="social-buttons-element" name="social buttons element" file="social buttons element.html"/>
-      <doc alias="text-element" name="text element" file="text element.html"/>
-      <doc alias="textarea-element" name="textarea element" file="textarea element.html"/>
-      <doc alias="widgetkit-element" name="widgetkit element" file="widgetkit element.html"/>
+      <doc alias="addthis" name="Addthis" file="Addthis.html"/>
+      <doc alias="checkbox" name="Checkbox" file="Checkbox.html"/>
+      <doc alias="country" name="Country" file="Country.html"/>
+      <doc alias="date" name="Date" file="Date.html"/>
+      <doc alias="disqus" name="Disqus" file="Disqus.html"/>
+      <doc alias="download" name="Download" file="Download.html"/>
+      <doc alias="email" name="Email" file="Email.html"/>
+      <doc alias="flickr" name="Flickr" file="Flickr.html"/>
+      <doc alias="gallery" name="Gallery" file="Gallery.html"/>
+      <doc alias="google-maps" name="Google Maps" file="Google Maps.html"/>
+      <doc alias="image" name="Image" file="Image.html"/>
+      <doc alias="intensedebate" name="Intensedebate" file="Intensedebate.html"/>
+      <doc alias="joomla-module" name="Joomla Module" file="Joomla Module.html"/>
+      <doc alias="link" name="Link" file="Link.html"/>
+      <doc alias="media" name="Media" file="Media.html"/>
+      <doc alias="radio" name="Radio" file="Radio.html"/>
+      <doc alias="rating" name="Rating" file="Rating.html"/>
+      <doc alias="related-categories" name="Related Categories" file="Related Categories.html"/>
+      <doc alias="related-items" name="Related Items" file="Related Items.html"/>
+      <doc alias="select" name="Select" file="Select.html"/>
+      <doc alias="social-bookmarks" name="Social Bookmarks" file="Social Bookmarks.html"/>
+      <doc alias="social-buttons" name="Social Buttons" file="Social Buttons.html"/>
+      <doc alias="text" name="Text" file="Text.html"/>
+      <doc alias="textarea" name="Textarea" file="Textarea.html"/>
+      <doc alias="widgetkit" name="Widgetkit" file="Widgetkit.html"/>
     </category>
   </section>
 </sections>
