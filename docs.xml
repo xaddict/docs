@@ -72,40 +72,19 @@
       <doc alias="set-up-twitter-connect" name="Set up Twitter connect" file="19 Set up Twitter connect.html"/>
       <doc alias="set-up-the-zoo-comment-module" name="Set up the ZOO comment module" file="20 Set up the ZOO comment module.html"/>
     </category>
-    <category alias="advanced" name="Advanced" folder="02 Advanced">
+    <category alias="troubleshooting" name="Troubleshooting" folder="02 Troubleshooting">
+      <doc alias="how-to-solve-zoo-issues" name="How To Solve Zoo Issues" file="01 How To Solve Zoo Issues.html"/>
+      <doc alias="js-conflicts-3" name="JS Conflicts" file="02 JS Conflicts.html"/>
+      <doc alias="permission-issues-3" name="Permission Issues" file="03 Permission Issues.html"/>
+      <doc alias="installation-issues-2" name="Installation Issues" file="04 Installation Issues.html"/>
+    </category>
+    <category alias="advanced" name="Advanced" folder="03 Advanced">
       <doc alias="extend-pre-build-types" name="Extend pre-build types" file="01 Extend pre-build types.html"/>
       <doc alias="assign-elements-to-layout-positions" name="Assign elements to layout positions" file="02 Assign elements to layout positions.html"/>
       <doc alias="create-new-types" name="Create new types" file="03 Create new types.html"/>
       <doc alias="set-up-frontend-submission" name="Set up Frontend Submission" file="04 Set up Frontend Submission.html"/>
       <doc alias="how-to-use-the-csv-importer" name="How to use the CSV importer" file="05 How to use the CSV importer.html"/>
       <doc alias="use-the-shortcode-plugin" name="Use the Shortcode Plugin" file="06 Use the Shortcode Plugin.html"/>
-    </category>
-    <category alias="elements" name="Elements" folder="03 Elements">
-      <doc alias="addthis-element" name="Addthis Element" file="Addthis Element.html"/>
-      <doc alias="checkbox-element" name="Checkbox Element" file="Checkbox Element.html"/>
-      <doc alias="country-element" name="Country Element" file="Country Element.html"/>
-      <doc alias="date-element" name="Date Element" file="Date Element.html"/>
-      <doc alias="disqus-element" name="Disqus Element" file="Disqus Element.html"/>
-      <doc alias="download-element" name="Download Element" file="Download Element.html"/>
-      <doc alias="email-element" name="Email Element" file="Email Element.html"/>
-      <doc alias="flickr-element" name="Flickr Element" file="Flickr Element.html"/>
-      <doc alias="gallery-element" name="Gallery Element" file="Gallery Element.html"/>
-      <doc alias="google-maps-element" name="Google Maps Element" file="Google Maps Element.html"/>
-      <doc alias="image-element" name="Image Element" file="Image Element.html"/>
-      <doc alias="intensedebate-element" name="Intensedebate Element" file="Intensedebate Element.html"/>
-      <doc alias="joomla-module-element" name="Joomla Module Element" file="Joomla Module Element.html"/>
-      <doc alias="link-element" name="Link Element" file="Link Element.html"/>
-      <doc alias="media-element" name="Media Element" file="Media Element.html"/>
-      <doc alias="radio-element" name="Radio Element" file="Radio Element.html"/>
-      <doc alias="rating-element" name="Rating Element" file="Rating Element.html"/>
-      <doc alias="related-categories-element" name="Related Categories Element" file="Related Categories Element.html"/>
-      <doc alias="related-items-element" name="Related Items Element" file="Related Items Element.html"/>
-      <doc alias="select-element" name="Select Element" file="Select Element.html"/>
-      <doc alias="social-bookmarks-element" name="Social Bookmarks Element" file="Social Bookmarks Element.html"/>
-      <doc alias="social-buttons-element" name="Social Buttons Element" file="Social Buttons Element.html"/>
-      <doc alias="text-element" name="Text Element" file="Text Element.html"/>
-      <doc alias="textarea-element" name="Textarea Element" file="Textarea Element.html"/>
-      <doc alias="widgetkit-element" name="Widgetkit Element" file="Widgetkit Element.html"/>
     </category>
     <category alias="developers" name="Developers" folder="04 Developers">
       <doc alias="create-a-new-app" name="Create a new app" file="01 Create a new app.html"/>
@@ -121,14 +100,35 @@
       <doc alias="how-to-change-the-app-icon" name="How to change the app icon" file="11 How to change the app icon.html"/>
       <doc alias="create-a-new-zoo-module-theme" name="Create a new ZOO module theme" file="12 Create a new ZOO module theme.html"/>
       <doc alias="accessing-element-data" name="Accessing element data" file="13 Accessing element data.html"/>
-      <doc alias="update-templates-zoo-2122" name="Update templates ZOO 2.1 » 2.2" file="14 Update templates ZOO 21_22.html"/>
+      <doc alias="update-templates-zoo-2122" name="Update templates ZOO 21_22" file="14 Update templates ZOO 21_22.html"/>
       <doc alias="using-zoo-events" name="Using ZOO events" file="15 Using ZOO events.html"/>
     </category>
-    <category alias="troubleshooting" name="Troubleshooting" folder="05 Troubleshooting">
-      <doc alias="how-to-solve-zoo-issues" name="How To Solve Zoo Issues" file="01 How To Solve Zoo Issues.html"/>
-      <doc alias="js-conflicts-3" name="JS Conflicts" file="02 JS Conflicts.html"/>
-      <doc alias="permission-issues-3" name="Permission Issues" file="03 Permission Issues.html"/>
-      <doc alias="installation-issues-2" name="Installation Issues" file="04 Installation Issues.html"/>
+    <category alias="elements" name="Elements" folder="05 Elements">
+      <doc alias="country-element" name="Country Element" file="Country Element.html"/>
+      <doc alias="gallery-element" name="Gallery Element" file="Gallery Element.html"/>
+      <doc alias="image-element" name="Image Element" file="Image Element.html"/>
+      <doc alias="intensedebate-element" name="Intensedebate Element" file="Intensedebate Element.html"/>
+      <doc alias="addthis-element" name="addthis element" file="addthis element.html"/>
+      <doc alias="checkbox-element" name="checkbox element" file="checkbox element.html"/>
+      <doc alias="date-element" name="date element" file="date element.html"/>
+      <doc alias="disqus-element" name="disqus element" file="disqus element.html"/>
+      <doc alias="download-element" name="download element" file="download element.html"/>
+      <doc alias="email-element" name="email element" file="email element.html"/>
+      <doc alias="flickr-element" name="flickr element" file="flickr element.html"/>
+      <doc alias="google-maps-element" name="google maps element" file="google maps element.html"/>
+      <doc alias="joomla-module-element" name="joomla module element" file="joomla module element.html"/>
+      <doc alias="link-element" name="link element" file="link element.html"/>
+      <doc alias="media-element" name="media element" file="media element.html"/>
+      <doc alias="radio-element" name="radio element" file="radio element.html"/>
+      <doc alias="rating-element" name="rating element" file="rating element.html"/>
+      <doc alias="related-categories-element" name="related categories element" file="related categories element.html"/>
+      <doc alias="related-items-element" name="related items element" file="related items element.html"/>
+      <doc alias="select-element" name="select element" file="select element.html"/>
+      <doc alias="social-bookmarks-element" name="social bookmarks element" file="social bookmarks element.html"/>
+      <doc alias="social-buttons-element" name="social buttons element" file="social buttons element.html"/>
+      <doc alias="text-element" name="text element" file="text element.html"/>
+      <doc alias="textarea-element" name="textarea element" file="textarea element.html"/>
+      <doc alias="widgetkit-element" name="widgetkit element" file="widgetkit element.html"/>
     </category>
   </section>
 </sections>
