@@ -16,7 +16,7 @@ if (isset($_REQUEST['doc']) && !empty($_REQUEST['doc'])) {
 		$output = preg_replace('#src="\.\.\/\.\.\/\.\.\/#', 'src="', $output);
 		echo $output;
 		echo '</div>';
-		echo '<script type="text/javascript">addEventListener("load", function (event) { prettyPrint() }, false);</script>';
+		echo '<script type="text/javascript">addEventListener("load", function (event) { prettyPrint(); }, false);</script>';
 
 	}
 
