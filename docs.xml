@@ -85,6 +85,7 @@
       <doc alias="set-up-frontend-submission" name="Set up Frontend Submission" file="04 Set up Frontend Submission.html"/>
       <doc alias="how-to-use-the-csv-importer" name="How to use the CSV importer" file="05 How to use the CSV importer.html"/>
       <doc alias="use-the-shortcode-plugin" name="Use the Shortcode Plugin" file="06 Use the Shortcode Plugin.html"/>
+      <doc alias="how-to-use-the-syntaxhighlighter" name="How to use the Syntaxhighlighter" file="07 How to use the Syntaxhighlighter.html"/>
     </category>
     <category alias="developers" name="Developers" folder="04 Developers">
       <doc alias="create-a-new-app" name="Create a new app" file="01 Create a new app.html"/>
@@ -100,8 +101,9 @@
       <doc alias="how-to-change-the-app-icon" name="How to change the app icon" file="11 How to change the app icon.html"/>
       <doc alias="create-a-new-zoo-module-theme" name="Create a new ZOO module theme" file="12 Create a new ZOO module theme.html"/>
       <doc alias="accessing-element-data" name="Accessing element data" file="13 Accessing element data.html"/>
-      <doc alias="update-templates-zoo-2122" name="Update templates ZOO 21_22" file="14 Update templates ZOO 21_22.html"/>
+      <doc alias="update-templates-zoo-2122" name="Update templates ZOO 21 » 22" file="14 Update templates ZOO 21_22.html"/>
       <doc alias="using-zoo-events" name="Using ZOO events" file="15 Using ZOO events.html"/>
+      <doc alias="update-custom-elements-zoo-2425" name="Update custom elements ZOO 24 » 25" file="16 Update custom elements ZOO 24_25.html"/>
     </category>
     <category alias="elements" name="Elements" folder="05 Elements">
       <doc alias="addthis" name="Addthis" file="Addthis.html"/>

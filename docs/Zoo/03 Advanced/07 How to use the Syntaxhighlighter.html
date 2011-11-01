@@ -1,0 +1,23 @@
+<h1 class="title">How to use the Syntaxhighlighter</h1>
+
+<p>The syntaxhighlighter included with the Documentation app can be found at <a href="http://code.google.com/p/google-code-prettify/">at Google Code</a>.</p>
+	
+<h2>Include the syntaxhighlighter in your template</h2>
+
+<p>To include the syntaxhighlighter in your app template you'll need to add the following code snippets.</p>
+
+<pre class="prettyprint"><code class="language-php">// include syntaxhighlighter
+$this-&gt;app-&gt;document-&gt;addScript($this-&gt;template-&gt;resource.'libraries/prettify/prettify.js');
+$this-&gt;app-&gt;document-&gt;addStylesheet($this-&gt;template-&gt;resource.'libraries/prettify/prettify.css');
+</code></pre>
+
+<pre class="prettyprint"><code class="language-php">&lt;script type=&quot;text/javascript&quot;&gt;
+	jQuery(function($) { prettyPrint(); });
+&lt;/script&gt;
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>To highlight your code, you'll need to put your code snippets in <code>&lt;pre class=&quot;prettyprint&quot;&gt;...&lt;/pre&gt; or &lt;code class=&quot;prettyprint&quot;&gt;...&lt;/code&gt;</code> and it will automatically be pretty printed.</p>
+
+<p>Further you can make the syntax HTML 5 compliant by wrapping your code in <code>&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-php&quot;&gt;...&lt;/code&gt;&lt;/pre&gt;</code></p>
