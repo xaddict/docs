@@ -101,9 +101,9 @@
       <doc alias="how-to-change-the-app-icon" name="How to change the app icon" file="11 How to change the app icon.html"/>
       <doc alias="create-a-new-zoo-module-theme" name="Create a new ZOO module theme" file="12 Create a new ZOO module theme.html"/>
       <doc alias="accessing-element-data" name="Accessing element data" file="13 Accessing element data.html"/>
-      <doc alias="update-templates-zoo-2122" name="Update templates ZOO 21_22" file="14 Update templates ZOO 21_22.html"/>
+      <doc alias="update-templates-zoo-2122" name="Update templates ZOO 21 » 22" file="14 Update templates ZOO 21_22.html"/>
       <doc alias="using-zoo-events" name="Using ZOO events" file="15 Using ZOO events.html"/>
-      <doc alias="update-custom-elements-zoo-2425" name="Update custom elements ZOO 24_25" file="16 Update custom elements ZOO 24_25.html"/>
+      <doc alias="update-custom-elements-zoo-2425" name="Update custom elements ZOO 24 » 25" file="16 Update custom elements ZOO 24_25.html"/>
     </category>
     <category alias="elements" name="Elements" folder="05 Elements">
       <doc alias="addthis" name="Addthis" file="Addthis.html"/>
