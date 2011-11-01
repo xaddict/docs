@@ -2,7 +2,7 @@
 <sections>
   <section alias="warp6-themes" name="Warp6 Themes" folder="Warp6 Themes">
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
-      <doc alias="install-a-joomla-theme" name="Install a Joomla theme" file="01 Install a Joomla theme.html"/>
+      <doc alias="install-a-joomla-template" name="Install a Joomla template" file="01 Install a Joomla template.html"/>
       <doc alias="install-a-wordpress-theme" name="Install a WordPress theme" file="01 Install a WordPress theme.html"/>
       <doc alias="install-theme-demo-package" name="Install theme demo package" file="02 Install theme demo package.html"/>
       <doc alias="theme-settings" name="Theme Settings" file="03 Theme Settings.html"/>
