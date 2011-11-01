@@ -3,14 +3,14 @@
   <section alias="warp6-themes" name="Warp6 Themes" folder="Warp6 Themes">
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
       <doc alias="install-a-joomla-theme" name="Install a Joomla theme" file="01 Install a Joomla theme.html"/>
-      <doc alias="install-a-wordpress-theme" name="Install a Wordpress theme" file="01 Install a Wordpress theme.html"/>
+      <doc alias="install-a-wordpress-theme" name="Install a WordPress theme" file="01 Install a WordPress theme.html"/>
       <doc alias="install-theme-demo-package" name="Install theme demo package" file="02 Install theme demo package.html"/>
       <doc alias="theme-settings" name="Theme Settings" file="03 Theme Settings.html"/>
       <doc alias="setup-the-logo" name="Setup the logo" file="04 Setup the logo.html"/>
       <doc alias="setup-the-joomla-menu" name="Setup the Joomla menu" file="05 Setup the Joomla menu.html"/>
-      <doc alias="setup-the-wordpress-menu" name="Setup the Wordpress menu" file="05 Setup the Wordpress menu.html"/>
+      <doc alias="setup-the-wordpress-menu" name="Setup the WordPress menu" file="05 Setup the WordPress menu.html"/>
       <doc alias="setup-the-joomla-modules" name="Setup the Joomla modules" file="06 Setup the Joomla modules.html"/>
-      <doc alias="setup-the-wordpress-widgets" name="Setup the Wordpress widgets" file="06 Setup the Wordpress widgets.html"/>
+      <doc alias="setup-the-wordpress-widgets" name="Setup the WordPress widgets" file="06 Setup the WordPress widgets.html"/>
       <doc alias="how-to-update" name="How to update" file="07 How to update.html"/>
     </category>
     <category alias="customizing" name="Customizing" folder="02 Customizing">
