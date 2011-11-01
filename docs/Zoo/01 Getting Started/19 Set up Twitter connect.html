@@ -1,51 +1,73 @@
-<h1 class="title">Set up Facebook connect</h1>
+<h1 class="title">Set up Twitter connect</h1>
 
-<p>Learn how to set up the Facebook connect for the ZOO comment system. It allows the visitors to sign in to their Facebook account and their data like the profile picture will be inserted into the comment as the avatar.</p>
+<p>Learn how to set up the Twitter connect for the ZOO comment system. It allows the visitors to sign in to their Twitter account and their profile picture will be inserted into the comment as the avatar.</p>
 
 
-<h2>Configure Facebook connect</h2>
+<h2>Configure Twitter connect</h2>
 
-<p>The easiest way is to open the ZOO config in one browser window and open the Facebook website in another browser window. This way you can simply copy&paste
+<p>The easiest way is to open the ZOO config in one browser window and open the Twitter website in another browser window, so you can simply copy&paste
 
-the needed data for this tutorial. We begin with the ZOO extension.</p>
+the needed data for this tutorial. We begin with the ZOO administration.</p>
 
 <p>Click on the app instance in the tab bar of the ZOO, then click on <em>Config</em> in the second tab bar.</p>
 
-<img src="../../../assets/images/zoo/manage_comments.png" alt="Setup Facebook Connect" title="Setup Facebook Connect" />
+<img src="../../../assets/images/zoo/manage_comments.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
 
-<p>Click on <em>Comments</em> on the right side. Here you can see the configuration with the Facebook settings.</p>
+<div class="bfc-o">
+	<img class="align-right" src="../../../assets/images/zoo/manage_comments_5.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
+	<p>Click on <em>Comments</em> on the right side, so you can see the configuration with the Twitter settings.</p>
+</div>
 
-<img src="../../../assets/images/zoo/manage_comments_4.png" alt="Setup Facebook Connect" title="Setup Facebook Connect" />
+<p>Leave this browser window open and go to <a href="http://twitter.com/apps" target="_blank">twitter.com/apps</a> and log in with your Twitter account data.</p>
 
-<p>Leave this browser window open and go to <a href="http://www.facebook.com/developers" target="_blank">www.facebook.com/developers</a> and log in with your Facebook account data.</p>
+<p>On the following screen, click on <em>Register a new application</em>.</p>
 
-<p>On the following screen, click on <em>Set Up New Application</em> in the top right corner</p>
+<img src="../../../assets/images/zoo/twitter_connect.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
 
-<img src="../../../assets/images/zoo/facebook_connect.png" alt="Setup Facebook Connect" title="Setup Facebook Connect" />
+<p>Now you have to fill out the form, we will only mention the fields, that are required to get  Twitter connect to work</p>
 
-<p>Give your new application a name, in my example name it is <em>ZOO comments</em>. Accept the Facebook terms and click on <em>Create Application</em>.</p>
+<p>Give your new application a name, in my example we name it <em>ZOO comments</em> and a description. You'll also have to type in the URL of your Joomla installation with the ZOO extension.</p>
 
-<img src="../../../assets/images/zoo/facebook_connect_2.png" alt="Setup Facebook Connect" title="Setup Facebook Connect" />
+<img class="border" src="../../../assets/images/zoo/twitter_connect_2.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
 
-<p>Now you see the essential information about the Facebook application.</p><p>Copy the Application ID and the Secret from this site, switch to your ZOO installation and paste it into the according fields in the comments configuration and enable Facebook connect with the radio button.</p>
+<p>Choose <em>Browser</em> for the application type.</p>
 
-<img src="../../../assets/images/zoo/facebook_connect_4.png" alt="Setup Facebook Connect" title="Setup Facebook Connect" />
+<img class="border" src="../../../assets/images/zoo/twitter_connect_3.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
 
-<p>Click on <em>Save</em> in the top right corner to save your settings in the ZOO extension.</p>
+<p>Type in your URL for the callback URL, set the default access type to <em>Read&amp;Write</em> and choose <em>Yes</em> to use Twitter for login.</p>
 
-<p>The last step to get Facebook connect to work is very simple. Switch back to the Facebook Site and click on <em>Website</em> on the left hand side. There you have to enter the URL of the site where you are using the ZOO extension. Type it in the field <em>Site URL</em>. <strong>It is important to put the <em>/</em> at the end of the URL</strong>. After this, click on <em>Save Changes</em> at the bottom.</p>
+<img class="border" src="../../../assets/images/zoo/twitter_connect_4.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
+
+<div class="bfc-o">
+	<img class="align-right" class="border" src="../../../assets/images/zoo/twitter_connect_5.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
+	<p>Enter the captcha and click on <em>Save</em> at the bottom. After this you will be redirected to a site with an overview of your application.</p>
+</div>
+
+<div class="bfc-o">
+	<img class="align-right" src="../../../assets/images/zoo/twitter_connect_6.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
+	<p>Copy the consumer key and the consumer secret from the following site, switch to your ZOO installation and paste it into the according fields in the comments configuration and enable the Twitter connect with the radio button.</p>
+</div>
+
+<p>Click on <em>Save</em> in the top right corner to save your settings in the ZOO extension</p>
 
 
-<h2>Using Facebook connect in your comments</h2>
+<h2>Using Twitter connect in your comments</h2>
 
-<p>After you have set up Facebook connect the visitors of your site will see a Facebook connect button underneath the comment field.</p>
+<div class="bfc-o">
+	<img class="align-right" class="border" src="../../../assets/images/zoo/twitter_connect_7.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
+	<p>After you have set up the Twitter connect the visitors of your site will see a Twitter connect button underneath the comment field.</p>
+</div>
 
-<img src="../../../assets/images/zoo/facebook_connect_6.png" alt="Setup Facebook Connect" title="Setup Facebook Connect" />
+<p>Pressing the button will redirect the visitor to a Twitter login site...</p>
 
-<p>Pressing the button will show a pop up window, where the visitors should enter their Facebook login details.</p>
+<img class="border" src="../../../assets/images/zoo/twitter_connect_8.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
 
-<img src="../../../assets/images/zoo/facebook_connect_7.png" alt="Setup Facebook Connect" title="Setup Facebook Connect" />
+<p>...and after typing in the login details, they have to allow the application to get data from their Twitter account.</p>
 
-<p>After this they will be able to post a comment as Facebook user. You are all set.</p>
+<img class="border" src="../../../assets/images/zoo/twitter_connect_9.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
 
-<img src="../../../assets/images/zoo/facebook_connect_8.png" alt="Setup Facebook Connect" title="Setup Facebook Connect" />
+
+<div class="bfc-o">
+	<img class="align-right" class="border" src="../../../assets/images/zoo/twitter_connect_10.png" alt="Setup Twitter Connect" title="Setup Twitter Connect" />
+	<p>After this they will be able to post a comment as a twitter user. You are all set.</p>
+</div>
