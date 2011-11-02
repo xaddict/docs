@@ -6,12 +6,12 @@
 
 <p>To include the syntaxhighlighter in your app template you'll need to add the following code snippets.</p>
 
-<pre class="prettyprint"><code class="language-php">// include syntaxhighlighter
+<pre><code>// include syntaxhighlighter
 $this-&gt;app-&gt;document-&gt;addScript($this-&gt;template-&gt;resource.'libraries/prettify/prettify.js');
 $this-&gt;app-&gt;document-&gt;addStylesheet($this-&gt;template-&gt;resource.'libraries/prettify/prettify.css');
 </code></pre>
 
-<pre class="prettyprint"><code class="language-php">&lt;script type=&quot;text/javascript&quot;&gt;
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
 	jQuery(function($) { prettyPrint(); });
 &lt;/script&gt;
 </code></pre>

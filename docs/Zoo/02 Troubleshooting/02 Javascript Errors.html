@@ -14,7 +14,7 @@
 
 <p>There is an ongoing discussion in the Joomla community on how to prevent those conflicts from happening. We have already taken steps and measures by implementing a widely accepted solution. We register through JApplication whether jQuery is loaded or not. In case the 3rd party extension loads the jQuery library you can use the following code snippet to prevent our ZOO extension, Widgetkit or Warp template from loading it twice:</p>
 
-<pre class="prettyprint"><code class="language-php">// load jQuery, if not loaded before
+<pre><code>// load jQuery, if not loaded before
 if (!JFactory::getApplication()->get('jquery')) {
 	JFactory::getApplication()->set('jquery', true);
 	// add jQuery

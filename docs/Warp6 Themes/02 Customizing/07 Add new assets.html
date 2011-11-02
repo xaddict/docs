@@ -17,14 +17,14 @@ The configuration file loads all CSS files needed for the template, with templat
 If you want to add custom css pre in the file /css/custom.css. The file is also loaded in the template.config.php:
 </p>
 
-<pre class="prettyprint"><code class="language-php">	$this->warp->stylesheets->add('css:custom.css');
+<pre><code>$this->warp->stylesheets->add('css:custom.css');
 </code></pre>
 
 <p>
 	If you want to add a complete new css file, create the css file in the folder /css e.g. /css/mycss.css and add the following line to the file /layouts/template.config.php:
 </p>
 
-<pre class="prettyprint"><code class="language-php">	$this->warp->stylesheets->add('css:mycss.css');
+<pre><code>$this->warp->stylesheets->add('css:mycss.css');
 </code></pre>
 
 <h2>How to load a custom JavaScript file</h2>
@@ -33,18 +33,18 @@ If you want to add custom css pre in the file /css/custom.css. The file is also 
 	The following lines of pre load the JavaScript used in the template.
 </p>
 
-<pre class="prettyprint"><code class="language-php">	// javascripts
-	$this->warp->javascripts->add('js:warp.js');
-	$this->warp->javascripts->add('js:accordionmenu.js');
-	$this->warp->javascripts->add('js:dropdownmenu.js');
-	$this->warp->javascripts->add('js:template.js');
+<pre><code>// javascripts
+$this->warp->javascripts->add('js:warp.js');
+$this->warp->javascripts->add('js:accordionmenu.js');
+$this->warp->javascripts->add('js:dropdownmenu.js');
+$this->warp->javascripts->add('js:template.js');
 </code></pre>
 
 <p>
 	If you want to add your own script (let's call it myscript.js), simply copy it to the folder /js of the template and add the following line before the closing curly bracket:
 </p>
 
-<pre class="prettyprint"><code class="language-php">	$this->warp->javascripts->add('js:myscript.js');
+<pre><code>$this->warp->javascripts->add('js:myscript.js');
 </code></pre>
 
 <h2>How to add custom fonts</h2>
@@ -65,16 +65,17 @@ If you want to add custom css pre in the file /css/custom.css. The file is also 
 
 Open <em>THEME_NAME/layouts/template.config.php</em> and add a new line after line ~77, this must should look like this:
 
-<pre class="prettyprint"><code class="language-php">	$fonts = array(
+<pre><code>$fonts = array(
 	'fontname => 'template:fonts/fontname.css',
 	'bebas' => 'template:fonts/bebas.css',
 	'droidsans' => 'template:fonts/droidsans.css',
-	'yanonekaffeesatz' => $http.'://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,light');
+	'yanonekaffeesatz' => $http.'://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,light'
+);
 </code></pre>
 
 <p>Open <em>THEME_NAME/config.xml</em>. Now you can add your font to be available in the Warp administration back-end. Actually 3 different types are available (Body, Header and Menu Font). Just add a new option after the lines ~53, ~63, ~73.</p>
 
-<pre class="prettyprint"><code class="language-xml">	<option value="fontname">Font Name</option>
+<pre><code><option value="fontname">Font Name</option>
 </code></pre>
 
 <p>Now go to <em>THEME_NAME/css/font1/</em> copy for example <em>droidsans.css</em> and edit the code to your choosen font file.
@@ -83,5 +84,5 @@ Repeat this for <em>THEME_NAME/css/font2/</em> and <em>THEME_NAME/css/font3/</em
 <div class="box-info">Use the same property for the font-family value from the CSS file given by <em>THEME_NAME/fonts/fontname.css</em></div>
 
 <p>Example:</p>
-<pre class="prettyprint"><code class="language-css">	font-family: 'DroidSansRegular';
+<pre><code>font-family: 'DroidSansRegular';
 </code></pre>

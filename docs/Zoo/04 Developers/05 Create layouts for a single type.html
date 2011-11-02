@@ -18,12 +18,12 @@
 
 <p>To create the demo layout, just follow the steps in the above tutorial. Basically the only difference is, that the layout will not go into the <em>/item/</em> folder, but into the <em>/item/TYPE/</em> folder and you'll have to create the two xml files.</p>
 
-<pre class="prettyprint"><code class="language-php">$this->renderer->render('item.demo_type.demo', array('view' => $this, 'item' => $this->item));
+<pre><code>$this->renderer->render('item.demo_type.demo', array('view' => $this, 'item' => $this->item));
 </code></pre>
 
 <p>To render the item with the new layout, the call to the render function will have to be modified too. Similar to the code above.</p>
 
-<pre class="prettyprint"><code class="language-php">if ($this->item->type == 'demo_type') :
+<pre><code>if ($this->item->type == 'demo_type') :
 
 else:
 

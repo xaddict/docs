@@ -21,7 +21,7 @@
 
 <p>Now, we need to create the <em>media/zoo/applications/APPLICATION/elements/address/address.xml</em> file.</p>
 
-<pre class="prettyprint"><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;element type=&quot;address&quot; group=&quot;MY_GROUP&quot;&gt;
 	&lt;name&gt;Address&lt;/name&gt;
 	&lt;author&gt;John Doe&lt;/author&gt;
@@ -53,7 +53,7 @@
 
 <p>We will need to create a class, that subclasses the Element class:</p>
 
-<pre class="prettyprint"><code class="language-php">class ElementAddress extends Element {
+<pre><code>class ElementAddress extends Element {
 	public function edit() {
 	}
 }
@@ -67,7 +67,7 @@
 
 <p>Let's give the user the possibility to input those values, by altering the <em>edit</em> function.</p>
 
-<pre class="prettyprint"><code class="language-php">public function edit() {
+<pre><code>public function edit() {
 	$html = array();
 	$html[] = $this->app->html->_('element.editrow', JText::_('Street'), 	$this->app->html->_('control.text', $this->getControlName('street'), $this-&gt;get('street'), 'size=&quot;60&quot; maxlength=&quot;255&quot;'));
 	$html[] = $this->app->html->_('element.editrow', JText::_('ZIP'), $this->app->html->_('control.text', $this->getControlName('zip'), $this-&gt;get('zip'), 'size=&quot;60&quot; maxlength=&quot;255&quot;'));
@@ -83,7 +83,7 @@
 
 <p>For an item to be actually rendered, we will have to overwrite the base classes <code>render</code> function.</p>
 
-<pre class="prettyprint"><code class="language-php">public function render(AppData $params) {
+<pre><code>public function render(AppData $params) {
 	return $this-&gt;get('street') . ', ' . $this-&gt;get('zip') . ', ' .$this-&gt;get('country');
 }
 </code></pre>
@@ -94,7 +94,7 @@
 
 </p>Leaving the function as it is wouldn't output any data in the frontend though. We need to overwrite the <em>hasValue</em> function, to tell the renderer, if the element has a value or not.</p>
 
-<pre class="prettyprint"><code class="language-php">public function hasValue(AppData $params = null) {
+<pre><code>public function hasValue(AppData $params = null) {
 	$street = $this-&gt;get('street');
 	$zip = $this-&gt;get('zip');
 	$country = $this-&gt;get('country');

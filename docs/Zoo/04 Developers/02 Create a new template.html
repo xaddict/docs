@@ -22,7 +22,7 @@
 
 <p>Next we will create a template.xml file:</p>
 
-<pre class="prettyprint"><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;template&gt;
 
 	&lt;name&gt;Demo&lt;/name&gt;
@@ -104,7 +104,7 @@
 
 <p>To render an item in item view, you may use the item renderer. The call would look something like this:</p>
 
-<pre class="prettyprint"><code class="language-php">$this-&gt;renderer-&gt;render('item.full', array('view' =&gt; $this, 'item' =&gt; $this-&gt;item);
+<pre><code>$this-&gt;renderer-&gt;render('item.full', array('view' =&gt; $this, 'item' =&gt; $this-&gt;item);
 </code></pre>
 
 <p>The first parameter for the <em>render</em> function is the layout. Click {doc: create-a-new-layout-with-positions text: here} to learn more about creating a new layout. The second parameter is an array containing arguments for the <em>render</em> function. We need to provide the view and the item.</p>

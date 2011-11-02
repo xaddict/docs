@@ -11,19 +11,19 @@
 
 <p>Basically the workflow would be like this. You include ZOOs <em>config.php</em> to load the ZOO. As a second step, you retrieve the ZOO app. Then you can connect to ZOOs event dispatcher with any <a href=”http://www.php.net/manual/en/language.pseudo-types.php#language.types.callback”>PHP callback</a>.</p>
 
-<pre class="prettyprint"><code class="language-php">// load ZOO config
+<pre><code>// load ZOO config
 require_once(JPATH_ADMINISTRATOR.'/components/com_zoo/config.php');
 
 // Get the ZOO App instance
 $zoo = App::getInstance('zoo');
 
 // register event
-$zoo-&amp;gt;event-&amp;gt;dispatcher-&amp;gt;connect('item:saved', array('MYCLASS', 'itemSaved'));
+$zoo-&gt;event-&gt;dispatcher-&gt;connect('item:saved', array('MYCLASS', 'itemSaved'));
 </code></pre>
 
 <p>In this example we register to the <em>item:saved</em> event. As a parameter we pass the callback <em>MYCLASS::itemSaved</em>. That callback is being triggered whenever an item is saved.</p>
 
-<pre class="prettyprint"><code class="language-php">class MYCLASS {
+<pre><code>class MYCLASS {
 	
 	public 	function itemSaved($event) {
 
