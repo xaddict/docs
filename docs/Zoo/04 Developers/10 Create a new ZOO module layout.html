@@ -16,7 +16,7 @@
 
 <p>If you want to customize the item module and add new positions go to <em>modules/mod_zooitem/renderer/item</em> and open positions.xml:</P>
 
-<pre class="prettyprint"><code class="language-xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;renderer&gt;
 	&lt;positions layout=&quot;default&quot;&gt;
 		&lt;position name=&quot;media&quot;&gt;Media&lt;/position&gt;
@@ -29,7 +29,7 @@
 
 <p>Here you can add a new position to the default layout, for example a position called &quot;content&quot;:</p>
 
-<pre class="prettyprint"><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;renderer&gt;
 		&lt;positions layout=&quot;default&quot;&gt;
 		&lt;position name=&quot;media&quot;&gt;Media&lt;/position&gt;
@@ -44,7 +44,7 @@
 
 <p>You also have to render the position in the default layout. To do so open default.php in the same folder and add the following code:</p>
 
-<pre class="prettyprint"><code class="language-php">&lt;?php if ($this-&gt;checkPosition('content')) : ?&gt;
+<pre><code>&lt;?php if ($this-&gt;checkPosition('content')) : ?&gt;
 	&lt;div class=&quot;content&quot;&gt;
 		&lt;?php echo $this-&gt;renderPosition('content'); ?&gt;
 
@@ -57,7 +57,7 @@
 
 <p>If you don't want to use the default layout you can create your own one. Open positions.xml in the folder <em>modules/mod_zooitem/renderer/item</em> to add your new layout with new positions. For example:</p>
 
-<pre class="prettyprint"><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 
 &lt;renderer&gt;
 	&lt;positions layout=&quot;default&quot;&gt;
@@ -76,7 +76,7 @@
 
 <p>In this example we added a new layout &quot;newlayout&quot; with the positions: header and left. Next thing to do is to create the layout file called &quot;newlayout.php&quot;. Here is a sample code to render the positions:</p>
 
-<pre class="prettyprint"><code class="language-php">&lt;?php
+<pre><code>&lt;?php
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 ?&gt;

@@ -16,7 +16,7 @@
 
 <p>In here you'll be rendering the positions. A typical call would look like this:</p>
 
-<pre class="prettyprint"><code class="language-php">&lt;?php if ($this-&gt;checkPosition('MY_POSITION')) : ?&gt;
+<pre><code>&lt;?php if ($this-&gt;checkPosition('MY_POSITION')) : ?&gt;
 &lt;div class=&quot;pos-my-position&quot;&gt;
 &lt;?php echo $this-&gt;renderPosition('MY_POSITION'); ?&gt;
 &lt;/div&gt;
@@ -28,7 +28,7 @@
 
 <p>In the above example we render the position <em>MY_POSITION</em>. To create that position, we will have to alter the <em>positions.xml</em> file, to include the following code.</p>
 
-<pre class="prettyprint"><code class="language-xml">&lt;positions layout=&quot;demo&quot;&gt;
+<pre><code>&lt;positions layout=&quot;demo&quot;&gt;
 
 &lt;position name=&quot;MY_POSITION&quot;&gt;This is my position&lt;/position&gt;
 &lt;/positions&gt;
@@ -38,7 +38,7 @@
 
 <p>Finally we will add the layout meta information. To do that, we modify the <em>metadata.xml</em> file, to include the following:</p>
 
-<pre class="prettyprint"><code class="language-xml">&lt;layout name=&quot;demo&quot;&gt;
+<pre><code>&lt;layout name=&quot;demo&quot;&gt;
 &lt;name&gt;Demo&lt;/name&gt;
 &lt;description&gt;This is my demo layout.&lt;/description&gt;
 &lt;/layout&gt;
@@ -51,7 +51,7 @@
 
 <p>If we want the layout to be a layout for the RelatedItems element, we will add the attribute <code>type="related"</code> to the layout tag.</p> 
 
-<pre class="prettyprint"><code class="language-xml">&lt;layout name=&quot;demo&quot; type=&quot;related&quot;&gt;
+<pre><code>&lt;layout name=&quot;demo&quot; type=&quot;related&quot;&gt;
 &lt;name&gt;Demo&lt;/name&gt;
 
 &lt;description&gt;This is my demo layout.&lt;/description&gt;
@@ -63,7 +63,7 @@
 
 <p>If we want the layout to be a layout for the GoogleMaps element, we will add the attribute <code>type="googlemaps"</code> to the layout tag.</p> 
 
-<pre class="prettyprint"><code class="language-xml">&lt;layout name=&quot;demo&quot; type=&quot;googlemaps&quot;&gt;
+<pre><code>&lt;layout name=&quot;demo&quot; type=&quot;googlemaps&quot;&gt;
 
 &lt;name&gt;Demo&lt;/name&gt;
 &lt;description&gt;This is my demo layout.&lt;/description&gt;

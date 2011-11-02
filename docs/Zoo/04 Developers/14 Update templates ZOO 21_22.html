@@ -45,10 +45,10 @@
 
 <p>Code that looked like this:</p>
 
-<pre class="prettyprint"><code class="language-php">$item_count = ($this-&gt;params-&gt;get('template.show_sub_categories_item_count')) ? ' &lt;span&gt;('.$child-&gt;countItems().')&lt;/span&gt;' : '';
+<pre><code>$item_count = ($this-&gt;params-&gt;get('template.show_sub_categories_item_count')) ? ' &lt;span&gt;('.$child-&gt;countItems().')&lt;/span&gt;' : '';
 </code></pre>
 
 <p>should now look like this:</p>
 
-<pre class="prettyprint"><code class="language-php">$item_count = ($this-&gt;params-&gt;get('template.show_sub_categories_item_count')) ? ' &lt;span&gt;('.$child-&gt;totalItemCount().')&lt;/span&gt;' : '';
+<pre><code>$item_count = ($this-&gt;params-&gt;get('template.show_sub_categories_item_count')) ? ' &lt;span&gt;('.$child-&gt;totalItemCount().')&lt;/span&gt;' : '';
 </code></pre>
