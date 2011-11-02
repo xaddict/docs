@@ -12,7 +12,7 @@
 
 <h2>How to prevent loading jQuery multiple times?</h2>
 
-<p>There is an ongoing discussion in the Joomla community on how to prevent loading jQuery multiple times across extensions. We have already taken steps and measures by implementing a widely accepted solution. We register through JApplication whether jQuery is loaded or not. In case a 3rd party extension loads the jQuery library you can use the following code snippet to prevent our ZOO extension, Widgetkit or Warp theme from loading it twice:</p>
+<p>There is an ongoing discussion in the Joomla community on how to prevent loading jQuery multiple times across extensions. We have already taken steps and measures by implementing a widely accepted solution. We register through <code>JApplication</code> whether jQuery is loaded or not. In case a 3rd party extension loads the jQuery library you can use the following code snippet to prevent our ZOO extension, Widgetkit or Warp theme from loading it twice:</p>
 
 <pre><code>// load jQuery, if not loaded before
 if (!JFactory::getApplication()->get('jquery')) {
