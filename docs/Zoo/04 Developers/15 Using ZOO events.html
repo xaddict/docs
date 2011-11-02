@@ -18,7 +18,7 @@ require_once(JPATH_ADMINISTRATOR.'/components/com_zoo/config.php');
 $zoo = App::getInstance('zoo');
 
 // register event
-$zoo-&amp;gt;event-&amp;gt;dispatcher-&amp;gt;connect('item:saved', array('MYCLASS', 'itemSaved'));
+$zoo-&gt;event-&gt;dispatcher-&gt;connect('item:saved', array('MYCLASS', 'itemSaved'));
 </code></pre>
 
 <p>In this example we register to the <em>item:saved</em> event. As a parameter we pass the callback <em>MYCLASS::itemSaved</em>. That callback is being triggered whenever an item is saved.</p>
