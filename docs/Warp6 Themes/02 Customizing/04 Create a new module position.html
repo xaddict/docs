@@ -59,7 +59,7 @@ The following files inside your themes folder need to be edited:</p>
 <p>You can set a default module style here, again, add the code for your new position. In my example I want to make the style "line" the default style for top-c:</p>
 
 <pre><code>// set default module types
-	if ($style == '') {
+if ($style == '') {
 	if ($module->position == 'top-a') $style = 'line';
 	if ($module->position == 'top-b') $style = 'line';
 	if ($module->position == 'top-c') $style = 'line';

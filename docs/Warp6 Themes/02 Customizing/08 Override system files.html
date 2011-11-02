@@ -27,7 +27,7 @@
 	<br /><br />
 	Examples:
 
-	<ul>
+	<ul class="bullet">
 		<li>page-<em>{id}</em>.php</li>
 		<li>page-<em>{slug}</em>.php</li>
 	</ul>
@@ -41,11 +41,11 @@
 	
 	Create a file in your theme folder and name it page-80.php with the following content.
 
-<pre><code>		// get warp
-		$warp = Warp::getInstance();
+	<pre><code>// get warp
+	$warp = Warp::getInstance();
 
-		// load main template file, located in /layouts/template-80.php
-		echo $warp['template']->render('template-80');
+	// load main template file, located in /layouts/template-80.php
+	echo $warp['template']->render('template-80');
 	</code></pre>
 </p>
 

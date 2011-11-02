@@ -19,32 +19,33 @@
 
 <p>Now let's see how modules.php file work. Open it and take a look at line ~50 to line ~75. Here is an example:</p>
 
-<pre><code>  // set module template using the style
-  switch ($style) {
+<pre><code>// set module template using the style
+switch ($style) {
 
-     case 'line':
-        $template      = 'default-1';
-        $style         = 'mod-'.$style;
-        $style         .= ($color) ? ' mod-line-'.$color : '';
-        $split_color   = 1;
-        $subtitle      = 1;
-        $title_template = '&lt;h3 class=&quot;title&quot;&gt;%s&lt;/h3&gt;';
-        break;
+	case 'line':
+		$template      = 'default-1';
+		$style         = 'mod-'.$style;
+		$style         .= ($color) ? ' mod-line-'.$color : '';
+		$split_color   = 1;
+		$subtitle      = 1;
+		$title_template = '&lt;h3 class=&quot;title&quot;&gt;%s&lt;/h3&gt;';
+		break;
 
-     case 'dropdown':
-        $template      = 'dropdown';
-        $subtitle      = 1;
-        break;
+	case 'dropdown':
+		$template      = 'dropdown';
+		$subtitle      = 1;
+		break;
 
-     case 'raw':
-        $template      = 'raw';
-        break;
+	case 'raw':
+		$template      = 'raw';
+		break;
 
-     default:
-        $template      = 'default-1';
-        $style         = $suffix;
-        $title_template = '&lt;h3 class=&quot;title&quot;&gt;%s&lt;/h3&gt;';
-  }
+	default:
+		$template      = 'default-1';
+		$style         = $suffix;
+		$title_template = '&lt;h3 class=&quot;title&quot;&gt;%s&lt;/h3&gt;';
+	
+}
 </code></pre>
 
 
@@ -82,10 +83,10 @@
 <h3>module.php</h3>
 
 <pre><code>case 'box':
-  $template      = 'default-2';
-  $style         = 'mod-'.$style;
-  $title_template = '&lt;h3 class=&quot;title&quot;&gt;%s&lt;/h3&gt;';
-  break;
+	$template      = 'default-2';
+	$style         = 'mod-'.$style;
+	$title_template = '&lt;h3 class=&quot;title&quot;&gt;%s&lt;/h3&gt;';
+	break;
 </code></pre>
 
 
@@ -94,9 +95,9 @@
 <h3>module.css</h3>
 
 <pre><code>.mod-box {
-  border: 1px solid red;
-  background: white;
-  padding: 15px;
+	border: 1px solid red;
+	background: white;
+	padding: 15px;
 }
 </code></pre>
 
@@ -106,8 +107,8 @@
 <p>For WordPress you need one more thing to do. Open THEMENAME/template.xml and add your new module style to the style parameters:</p>
 
 <pre><code>&lt;setting name=&quot;style&quot; type=&quot;style&quot; label=&quot;Style&quot; nav_menu=&quot;false&quot;&gt;
- &lt;option name=&quot;None&quot; value=&quot;&quot; /&gt;
- &lt;option name=&quot;Line&quot; value=&quot;line&quot; /&gt;
- &lt;option name=&quot;Box&quot; value=&quot;box&quot; /&gt;
+	&lt;option name=&quot;None&quot; value=&quot;&quot; /&gt;
+	&lt;option name=&quot;Line&quot; value=&quot;line&quot; /&gt;
+	&lt;option name=&quot;Box&quot; value=&quot;box&quot; /&gt;
 &lt;/setting&gt;
 </code></pre>
