@@ -1,18 +1,18 @@
 <h1 class="title">Javascript errors</h1>
 
-<h2>How to detect Javascript errors in general?</h2>
+<p>Nowadays almost every Joomla extension uses JavaScript to create a more responsive website for a better user exprience. Mostly all JavaScripts rely on a JavaScript library like <a href="http://jquery.com">jQuery</a>, <a href="http://mootools.net">Mootools</a> or others. Using different scripts on a webpage can cause conflicts between them. This tutorial helps you to detect and resolve these script errors.</p>
 
-<p>One way to detect Javascript errors on your page is to use the browser Firefox and an addon called <a href="http://getfirebug.com/errors" target="_blank">Firebug</a>. Firebug will give you quite a few details and hints at what is going wrong. This will really help with debugging the error. For more detailed instructions on how to use firebug see <a href="http://sixrevisions.com/tools/firebug-guide-web-designers/">this guide over at sixrevisions.com</a>.</p>
+<h2>How to detect errors?</h2>
 
-<h2>Javascript conflicts</h2>
+<p>If you website does not work a as you expected when you click something or an animation is not working anymore. This could be the result of a script error. If an error occurs the script execution will be stopped by the browser. While some pages might still work, others don't. Not every script is being loaded on every single page of your website. A way to investigate these errors is to use the browsers debug console on the page where the error occurs. In Firefox you can use the <a href="http://getfirebug.com/errors">Firebug</a> Addon and also other browsers like <a href="http://code.google.com/chrome/devtools/docs/console.html">Chrome</a>, <a href="http://developer.apple.com/library/safari/#documentation/appleapplications/Conceptual/Safari_Developer_Guide/DebuggingYourWebsite/DebuggingYourWebsite.html">Safari</a> or <a href="http://www.opera.com/developer/tools/">Opera</a> which already have built-in developer tools. All these tools will show you the script errors including information about what went wrong, the file and line number, and the line of source code that caused the error. This will really help you with debugging any script error.</p>
 
-<p>You need to make sure jQuery is only loaded once on your site. Otherwise you will get JavaScript conflicts and all effects may stop working like Accordion Menus, Google Maps, etc..</p>
+<h2>How to resolve errors?</h2>
 
-<p>Warp itself always loads the latest jQuery version. So what if you 3rd party extension also loads jQuery?</p>
+<p>If you detect a JavaScript error on a page you need to find out which extension or combination of multiple extensions cause this issue. The browsers debug console will help you to identify the scripts and it's related files on your webserver. Once you have identified the extension you can try to disable it to make sure your page works without any errors again. Now you can look for the extension configuration options which let you enable/disable loading a JavaScript library like jQuery to resolve the errors.</p>
 
-<h2>How to prevent multiple jQuery instances?</h2>
+<h2>How to prevent loading jQuery multiple times?</h2>
 
-<p>There is an ongoing discussion in the Joomla community on how to prevent those conflicts from happening. We have already taken steps and measures by implementing a widely accepted solution. We register through JApplication whether jQuery is loaded or not. In case the 3rd party extension loads the jQuery library you can use the following code snippet to prevent our ZOO extension, Widgetkit or Warp template from loading it twice:</p>
+<p>There is an ongoing discussion in the Joomla community on how to prevent loading jQuery multiple times across extensions. We have already taken steps and measures by implementing a widely accepted solution. We register through JApplication whether jQuery is loaded or not. In case a 3rd party extension loads the jQuery library you can use the following code snippet to prevent our ZOO extension, Widgetkit or Warp theme from loading it twice:</p>
 
 <pre><code>// load jQuery, if not loaded before
 if (!JFactory::getApplication()->get('jquery')) {
@@ -22,4 +22,4 @@ if (!JFactory::getApplication()->get('jquery')) {
 }
 </code></pre>
 
-<p>So get in contact with the 3rd party extension provider and kindly ask them to implement this.</p>
+<p>You can also get in touch with the 3rd party extension developer and kindly ask them to implement this.</p>
