@@ -21,7 +21,6 @@
 	&lt;positions layout=&quot;default&quot;&gt;
 		&lt;position name=&quot;media&quot;&gt;Media&lt;/position&gt;
 		&lt;position name=&quot;meta&quot;&gt;Meta&lt;/position&gt;
-
 		&lt;position name=&quot;description&quot;&gt;Description&lt;/position&gt;
 	&lt;/positions&gt;
 &lt;/renderer&gt;
@@ -31,13 +30,11 @@
 
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;renderer&gt;
-		&lt;positions layout=&quot;default&quot;&gt;
+	&lt;positions layout=&quot;default&quot;&gt;
 		&lt;position name=&quot;media&quot;&gt;Media&lt;/position&gt;
-
 		&lt;position name=&quot;meta&quot;&gt;Meta&lt;/position&gt;
 		&lt;position name=&quot;description&quot;&gt;Description&lt;/position&gt;
 		&lt;position name=&quot;content&quot;&gt;Content&lt;/position&gt;
-
 	&lt;/positions&gt;
 &lt;/renderer&gt;
 </code></pre>
@@ -47,7 +44,6 @@
 <pre><code>&lt;?php if ($this-&gt;checkPosition('content')) : ?&gt;
 	&lt;div class=&quot;content&quot;&gt;
 		&lt;?php echo $this-&gt;renderPosition('content'); ?&gt;
-
 	&lt;/div&gt;
 &lt;?php endif; ?&gt;
 </code></pre>
@@ -63,12 +59,10 @@
 	&lt;positions layout=&quot;default&quot;&gt;
 		&lt;position name=&quot;media&quot;&gt;Media&lt;/position&gt;
 		&lt;position name=&quot;meta&quot;&gt;Meta&lt;/position&gt;
-
 		&lt;position name=&quot;description&quot;&gt;Description&lt;/position&gt;
-		&lt;/positions&gt;
-		&lt;positions layout=&quot;newlayout&quot;&gt;
+	&lt;/positions&gt;
+	&lt;positions layout=&quot;newlayout&quot;&gt;
 		&lt;position name=&quot;header&quot;&gt;Header&lt;/position&gt;
-
 		&lt;position name=&quot;left&quot;&gt;Left&lt;/position&gt;
 	&lt;/positions&gt;
 &lt;/renderer&gt;
