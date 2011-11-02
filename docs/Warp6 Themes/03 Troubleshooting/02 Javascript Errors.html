@@ -2,7 +2,7 @@
 
 <h2>How to detect Javascript errors in general?</h2>
 
-<p>One way to detect Javascript errors on your page is to use the browser Firefox and an addon called <a href="http://getfirebug.com/errors" target="_blank">Firebug</a>. Firebug will give you quite a few details and hints at what is going wrong. This will really help with debugging the error. For more detailed instructions on how to use firebug.</p>
+<p>One way to detect Javascript errors on your page is to use the browser Firefox and an addon called <a href="http://getfirebug.com/errors" target="_blank">Firebug</a>. Firebug will give you quite a few details and hints at what is going wrong. This will really help with debugging the error. For more detailed instructions on how to use firebug see <a href="http://sixrevisions.com/tools/firebug-guide-web-designers/">this guide over at sixrevisions.com</a>.</p>
 
 <h2>Javascript conflicts</h2>
 
@@ -14,7 +14,12 @@
 
 <p>There is an ongoing discussion in the Joomla community on how to prevent those conflicts from happening. We have already taken steps and measures by implementing a widely accepted solution. We register through JApplication whether jQuery is loaded or not. In case the 3rd party extension loads the jQuery library you can use the following code snippet to prevent our ZOO extension, Widgetkit or Warp template from loading it twice:</p>
 
-<pre class="prettyprint"><code class="language-php">    JFactory::getApplication()->set('jquery', true);
+<pre class="prettyprint"><code class="language-php">// load jQuery, if not loaded before
+if (!JFactory::getApplication()->get('jquery')) {
+	JFactory::getApplication()->set('jquery', true);
+	// add jQuery
+	...
+}
 </code></pre>
 
-<p>So get in contact with the 3rd party extension provider to implement this.</p>
+<p>So get in contact with the 3rd party extension provider and kindly ask them to implement this.</p>
