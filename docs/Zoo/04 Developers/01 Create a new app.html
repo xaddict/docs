@@ -2,14 +2,13 @@
 
 <p>This tutorial will walk you through the process of creating a new application for the ZOO extension. We will create a <em>Hello world</em> application.</p>
 
-
 <h2>Getting started</h2>
 
 <p>All applications, existing and future, are located in <em>/media/zoo/applications/APPLICATION</em>. Have a look at existing applications to get a feeling for the folder structure of an application.</p>
 
 <p>The base directory will contain 3-4 files. Two of them are the image files of the app icon.</p>
 
-<span class="box-warning">If you create a new app you should create a new icon for it. You are not allowed to use the app icons of the pre-installed YOOtheme apps for your own, newly created app. See {doc: how-to-change-the-app-icon text: this tutorial} on how to change the app icon.</span>
+<div class="box-warning">If you create a new app you should create a new icon for it. You are not allowed to use the app icons of the pre-installed YOOtheme apps for your own, newly created app. See {doc: how-to-change-the-app-icon text: this tutorial} on how to change the app icon.</div>
 
 <p>Furthermore we have the <em>application.xml</em> that contains the applications metadata, configuration- and content parameters. And last but not least, there is the <em>application.php</em>. That file inherits from the </m>Application</em> class and controlls an applications custom workflow.</p>
 
@@ -32,7 +31,7 @@
 
 <p>We then add the application.xml file. It should contain an xml structure something like this:</p>
 
-<pre class="prettyprint"><code class="language-xml">	&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+<pre><code class="prettyprint">	&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 	&lt;application&gt;
 		&lt;name&gt;Hello World!&lt;/name&gt;
 
