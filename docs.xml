@@ -27,7 +27,7 @@
     <category alias="troubleshooting" name="Troubleshooting" folder="03 Troubleshooting">
       <doc alias="how-to-solve-theme-issues" name="How To Solve Theme Issues" file="01 How To Solve Theme Issues.html"/>
       <doc alias="installation-issues" name="Installation Issues" file="02 Installation Issues.html"/>
-      <doc alias="permission-issues" name="Permission Issues" file="03 Permission Issues.html"/>
+      <doc alias="file-permission-issues" name="File Permission Issues" file="03 File Permission Issues.html"/>
       <doc alias="javascript-errors" name="Javascript Errors" file="04 Javascript Errors.html"/>
     </category>
   </section>
@@ -45,7 +45,7 @@
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="03 Troubleshooting">
       <doc alias="how-to-solve-widgetkit-issues" name="How To Solve Widgetkit Issues" file="01 How To Solve Widgetkit Issues.html"/>
-      <doc alias="permission-issues-2" name="Permission Issues" file="02 Permission Issues.html"/>
+      <doc alias="file-permission-issues-2" name="File Permission Issues" file="02 File Permission Issues.html"/>
       <doc alias="javascript-errors-2" name="Javascript Errors" file="03 Javascript Errors.html"/>
     </category>
   </section>
@@ -75,7 +75,7 @@
     <category alias="troubleshooting" name="Troubleshooting" folder="02 Troubleshooting">
       <doc alias="how-to-solve-zoo-issues" name="How To Solve Zoo Issues" file="01 How To Solve Zoo Issues.html"/>
       <doc alias="installation-issues-2" name="Installation Issues" file="02 Installation Issues.html"/>
-      <doc alias="permission-issues-3" name="Permission Issues" file="03 Permission Issues.html"/>
+      <doc alias="file-permission-issues-3" name="File Permission Issues" file="03 File Permission Issues.html"/>
       <doc alias="javascript-errors-3" name="Javascript Errors" file="04 Javascript Errors.html"/>
     </category>
     <category alias="advanced" name="Advanced" folder="03 Advanced">
