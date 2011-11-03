@@ -2,12 +2,6 @@
 
 <p>This tutorial shows you how to handle permission issues with your Warp theme. The following symptoms could result from these problems:</p>
 
-<h2>Template staying blank or not displaying correctly</h2>
-	
-<p>After installing a template your website stays blank, just because your CSS Style sheets and JavaScripts aren't loaded? This might be caused by an <em>internal server error 403</em>, while the webserver tries to access these files.</p>
-
-<p>This is due to incorrect file/folder permissions for the installed template. To execute the <em>.js.php</em> and <em>.css.php</em> files the webserver needs the permission to do so. Thus the templates folder and the files and folders beneath it, need to be set to CHMOD 755.</p>
-	
 
 <h2>You can't save the template configuration</h2>
 
@@ -31,22 +25,23 @@
 
 <h3>Using your favorite FTP client such as FileZilla FTP Client.</h3>
 
+<ol class="bullet">
+	<li>Download <a href="http://filezilla-project.org/" target="_blank">FileZilla FTP Client</a> and install it.</li>
+	<li>Use FileZilla FTP Client to login to your ftp account.</li>	
+	<li>Right click on the ZOO folder and click <em>File Attributes</em>.</li>
+	<li>In the <em>Change File Attributes</em> dialog, check the options as shown below or type <em>755</em>. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>OK</em> button.</li>
+</ol>
+
 <div class="clearfix">
-	<ol class="bullet">
-		<li>Download <a href="http://filezilla-project.org/" target="_blank">FileZilla FTP Client</a> and install it.</li>
-		<li>Use FileZilla FTP Client to login to your ftp account.</li>	
-		<li>Right click on the template folder and click <em>File Attributes</em>.<img src="../../../assets/images/permissions_01.png" alt="Permission Issue"/></li>
-		<li>In the <em>Change File Attributes</em> dialog, check the options as shown below or type <em>755</em>. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>OK</em> button.<img src="../../../assets/images/permissions_02.png" alt="Permission Issue"/></li>
-	</ol>
+	<img class="align-left" src="../../../assets/images/permissions_01.png" alt="Permission Issue"/>
 </div>
 
 <div class="box-info">Tip to avoid some trouble: After applying new permissions some FTP clients require the file view to be refreshed. Otherwise the old permissions will continue to show...</div>
 
 <h3>For Joomla: Using eXtplorer component</h3>
-
 <ol>
 	<li>Download <a href="http://extensions.joomla.org/extensions/core-enhancements/file-management/2630?qh=YToxOntpOjA7czo5OiJleHRwbG9yZXIiO30%3D" target="_blank">eXtplorer</a> and install it. eXtplorer is a file manager. It allows you to edit, delete, copy, rename, archive and unpack files/directories directly on your server.</li>
-	<li>In the Joomla administration, go to the eXtplorer component and  navigate to the template folder. Check the templates folder.</li>
+	<li>In the Joomla administration, go to the eXtplorer component and  navigate to the ZOO folder. Check the ZOO folder.</li>
 	<li>Right click on the folder and choose <em>Change Permissions</em></li>
 	<li>Check the options as shown for the ftp client above. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>Save</em> button.</li>
 </ol>

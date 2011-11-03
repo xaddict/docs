@@ -22,3 +22,33 @@
 </p>
 
 <div class="box-warning">Always avoid 777 permissions. If your webserver has problems with the CHMOD 755, you can also try 775 and lastely 777 in this order.</div>
+
+
+<h2>Solve File Permission Issues</h2>
+
+<p>So how do you change the permissions for the files and folders? Here are two step-by-step guides.</p>
+
+<p>The first guide explains how to use your favorite FTP client such as the <em>FileZilla FTP Client</em>.  When using a FTP client, sometimes the ownership of the files/folders you changed the permissions for, changes to the user currently logged in via ftp. This can cause problems. Therefore there is a second solution, which uses eXtplorer, a Joomla component.</p>
+
+<h3>Using your favorite FTP client such as FileZilla FTP Client.</h3>
+
+<ol class="bullet">
+	<li>Download <a href="http://filezilla-project.org/" target="_blank">FileZilla FTP Client</a> and install it.</li>
+	<li>Use FileZilla FTP Client to login to your ftp account.</li>	
+	<li>Right click on the ZOO folder and click <em>File Attributes</em>.</li>
+	<li>In the <em>Change File Attributes</em> dialog, check the options as shown below or type <em>755</em>. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>OK</em> button.</li>
+</ol>
+
+<div class="clearfix">
+	<img class="align-left" src="../../../assets/images/permissions_01.png" alt="Permission Issue"/>
+</div>
+
+<div class="box-info">Tip to avoid some trouble: After applying new permissions some FTP clients require the file view to be refreshed. Otherwise the old permissions will continue to show...</div>
+
+<h3>For Joomla: Using eXtplorer component</h3>
+<ol>
+	<li>Download <a href="http://extensions.joomla.org/extensions/core-enhancements/file-management/2630?qh=YToxOntpOjA7czo5OiJleHRwbG9yZXIiO30%3D" target="_blank">eXtplorer</a> and install it. eXtplorer is a file manager. It allows you to edit, delete, copy, rename, archive and unpack files/directories directly on your server.</li>
+	<li>In the Joomla administration, go to the eXtplorer component and  navigate to the ZOO folder. Check the ZOO folder.</li>
+	<li>Right click on the folder and choose <em>Change Permissions</em></li>
+	<li>Check the options as shown for the ftp client above. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>Save</em> button.</li>
+</ol>
