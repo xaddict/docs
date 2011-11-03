@@ -2,14 +2,6 @@
 
 <p>This tutorial shows you how to handle permission issues with your Warp theme. The following symptoms could result from these problems:</p>
 
-
-<h2>Template staying blank or not displaying correctly</h2>
-	
-<p>After installing a template your website stays blank, just because your CSS Style sheets and JavaScripts aren't loaded? This might be caused by an <em>internal server error 403</em>, while the webserver tries to access these files.</p>
-
-<p>This is due to incorrect file/folder permissions for the installed template. To execute the <em>.js.php</em> and <em>.css.php</em> files the webserver needs the permission to do so. Thus the templates folder and the files and folders beneath it, need to be set to CHMOD 755.</p>
-	
-
 <h2>You can't save the template configuration</h2>
 
 <p>In Joomla we use an extra file to be able to save the template settings from the administration, therefore we place a file here: <em>/administrator/templates/system/warp-ajax.php</em></p>
