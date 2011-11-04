@@ -10,14 +10,17 @@
 
 	<ul class="bullet">
 		<li>theme folder</li>
-		<li class="odd">specific system folder, for example warp/systems/joomla.1.7</li>
+		<li class="odd">specific system folder, for example <em>/warp/systems/joomla.1.7</em></li>
 		<li>warp framework folder</li>
 	</ul>
 	
 <p>This gives you full flexibility to override any important theme related file. In the following we will give a short overview about the most important files if you want to customize a Warp theme.</p>
 
+<h2>Styles</h2>
 
-<h2>Template Files</h2>
+<p>Styles are variations of the default theme and are similar to the concept of child themes in WordPress or sub themes in Drupal. A style defines a layer after the default theme and can inherit or override resources from the parent default theme. Warp walks along the file cascade looking for the resource until it is found. This gives you full flexibility to override any file of the default theme. Each style is placed in its own directory in the themes <em>/styles</em> folder and can provide its own custom HTML layouts, CSS, JavaScript and images. Our {doc: create-a-new-style text: Create a new style} tutorial explains you how to create your own custom style.</p>
+
+<h2>Layouts</h2>
 
 <p>The main template file <em>/layouts/template.php</em> is the heart of every theme, it provides the complete HTML markup for the base theme layout. This is different from standard Joomla templates or WordPress themes where the index.php is the main template file. Second important file is the <em>/layouts/template.config.php</em> which includes some layout calculations and defines all the themes CSS and JavaScripts.</p>
 
@@ -26,8 +29,7 @@
 
 <p>Modules or widgets can be displayed in different styles with additional icons and badges. The <em>/layouts/module.php</em> takes care of displaying all these module variations. Depending on the selected style the module.php loads the right HTML markup from predefined module templates. Further the framework comes with three commonly used module layouts equal, double and stacked, which are used to position modules next or above each other. It's also possible to extend them with your own custom module templates and layouts.</p>
 
-
-<h2>CSS</h2>
+<h2>Stylesheets</h2>
 
 <p>The CSS files are divided in three different layers and are placed in their respective folders for theme specific <em>/css</em>, system depended <em>/warp/systems/joomla.1.7/css</em> and framework styles <em>/warp/css</em>. Including these files is really easy because Warp also uses its file helper to locate them across the different folders.</p>
 
@@ -39,4 +41,4 @@
 
 <h2>System Markup</h2>
 
-<p>Every system has a set of layouts which defines the HTML markup for the core CMS output. For Joomla these are typically the HTML overrides that are used by the theme to render the content component or modules like the login or search. The Joomla 1.7 files are located in <em>warp/systems/joomla.1.7/layouts</em>. In WordPress the layouts provide a HTML markup for the different pages like blog frontpage, the archive or a single post. The WordPress files are located in <em>warp/systems/wordpress.3.0/layouts</em>. To keep things simple, Warp basically uses the same HTML output for all supported systems. Regardless of what you are viewing, articles of a category in Joomla's content component or posts from a category in WordPress, Warp renders the HTML. This allows to create universal CSS rules which apply for both CMS platforms.</p>
+<p>Every system has a set of layouts which defines the HTML markup for the core CMS output. For Joomla these are typically the HTML overrides that are used by the theme to render the content component or modules like the login or search. The Joomla 1.7 files are located in <em>/warp/systems/joomla.1.7/layouts</em>. In WordPress the layouts provide a HTML markup for the different pages like blog frontpage, the archive or a single post. The WordPress files are located in <em>/warp/systems/wordpress.3.0/layouts</em>. To keep things simple, Warp basically uses the same HTML output for all supported systems. Regardless of what you are viewing, articles of a category in Joomla's content component or posts from a category in WordPress, Warp renders the HTML. This allows to create universal CSS rules which apply for both CMS platforms.</p>
