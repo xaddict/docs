@@ -3,52 +3,57 @@
 
 
 <p>
-	On your webserver, different files and directories have permissions that specify who and what can read, write, modify and access them. 
-	This is important because Widgetkit need access to write to files in to the cache directory to enable its caching functionality needed for galleries etc.
+	On your webserver, different files and directories have permissions that specify who and what can read, write, modify and access them. This is important because Widgetkit need access to write to files in to the cache directory to enable its caching functionality needed for assets and image galleries etc.
 </p>
 
-<p>
-	So please make sure after installing widgetkit, please make sure that the cache folder that Widgetkit uses is writable.
-</p>
+<p>After installing Widgetkit make sure that the cache directory is writable.</p>
 
-<p>
-	Joomla : <em>/cache/widgetkit</em><br />
-	WordPress : <em>/wp-content/plugins/widgetkit/cache/</em><br />
-</p>
+<ul class="bullet">
+	<li>Joomla: <em>/cache/widgetkit</em></li>
+	<li>WordPress: <em>/wp-content/plugins/widgetkit/cache</em></li>
+</ul>
 
-
-<p>
-	To change the permission on your remote host, use your favorite FTP client.
-</p>
+<p>Use your FTP client to change the permission on your webserver.</p>
 
 <div class="box-warning">Always avoid 777 permissions. If your webserver has problems with the CHMOD 755, you can also try 775 and lastely 777 in this order.</div>
 
+<h2>Changing File Permissions</h2>
 
-<h2>Solve File Permission Issues</h2>
+<p>So how do you change the permissions for files and directories? Here are two step-by-step guides.</p>
 
-<p>So how do you change the permissions for the files and folders? Here are two step-by-step guides.</p>
-
-<p>The first guide explains how to use your favorite FTP client such as the <em>FileZilla FTP Client</em>.  When using a FTP client, sometimes the ownership of the files/folders you changed the permissions for, changes to the user currently logged in via ftp. This can cause problems. Therefore there is a second solution, which uses eXtplorer, a Joomla component.</p>
-
-<h3>Using your favorite FTP client such as FileZilla FTP Client.</h3>
+<h3>Using your FTP client</h3>
 
 <ol class="bullet">
-	<li>Download <a href="http://filezilla-project.org/" target="_blank">FileZilla FTP Client</a> and install it.</li>
-	<li>Use FileZilla FTP Client to login to your ftp account.</li>	
-	<li>Right click on the ZOO folder and click <em>File Attributes</em>.</li>
-	<li>In the <em>Change File Attributes</em> dialog, check the options as shown below or type <em>755</em>. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>OK</em> button.</li>
+	<li>Open your FTP client or if you don't have any download <a href="http://filezilla-project.org">FileZilla</a> and install it.</li>
+	<li>Use your FTP client to login to your server and browse to your webroot directory.</li>	
+	<li>Right click on a directory which you want to change the permissions on and click <em>File Permissions...</em>.</li>
+	<li>The <em>Change File Attributes</em> dialog, let's you check the options as shown below or type a numeric value like <em>755</em>. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>OK</em> button.</li>
 </ol>
 
 <div class="clearfix">
 	<img class="align-left" src="../../../assets/images/permissions_01.png" alt="Permission Issue"/>
 </div>
 
-<div class="box-info">Tip to avoid some trouble: After applying new permissions some FTP clients require the file view to be refreshed. Otherwise the old permissions will continue to show...</div>
+<div class="box-info">Tip: After applying new permissions some FTP clients require the file view to be refreshed. Otherwise the old permissions will continue to show...</div>
 
-<h3>For Joomla: Using eXtplorer component</h3>
-<ol>
-	<li>Download <a href="http://extensions.joomla.org/extensions/core-enhancements/file-management/2630?qh=YToxOntpOjA7czo5OiJleHRwbG9yZXIiO30%3D" target="_blank">eXtplorer</a> and install it. eXtplorer is a file manager. It allows you to edit, delete, copy, rename, archive and unpack files/directories directly on your server.</li>
-	<li>In the Joomla administration, go to the eXtplorer component and  navigate to the ZOO folder. Check the ZOO folder.</li>
-	<li>Right click on the folder and choose <em>Change Permissions</em></li>
-	<li>Check the options as shown for the ftp client above. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>Save</em> button.</li>
-</ol>
+<div class="box-warning">Using a FTP client may also change file ownership to the FTP user of the files/directories you changed the permissions on. This can cause problems on some webservers. To avoid this you can use a Joomla component like eXtplorer to update the permission through the Joomla administration.</div>
+
+<h3>Using the eXtplorer Joomla component</h3>
+<p>
+	<ol>
+		<li>Download <a href="http://extensions.joomla.org/extensions/core-enhancements/file-management/2630">eXtplorer</a> file manager Joomla component and install it. It allows you to edit, delete, copy, rename, archive and unpack files/directories directly on your webserver.</li>
+		<li>Login to your Joomla administration, go to the eXtplorer component and browse to the directory which you want to change the permissions on.</li>
+		<li>Right click on the directory and choose <em>Change Rights</em></li>
+		<li>Check the options as shown below. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>Save</em> button.</li>
+	</ol>
+</p>
+
+<div class="clearfix">
+	<img class="align-left" src="../../../assets/images/permissions_02.png" alt="Permission Issue"/>
+</div>
+
+<h2>Useful Links</h2>
+
+<ul class="bullet">
+	<li><a href="http://codex.wordpress.org/Changing_File_Permissions">WordPress Codex: Changing File Permissions</a></li>
+</ul>
