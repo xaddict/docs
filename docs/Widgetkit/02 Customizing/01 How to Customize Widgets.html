@@ -1,16 +1,41 @@
-﻿<h1 class="title">How to customize a theme</h1>
+﻿<h1 class="title">How to customize Widgets</h1>
 
 <h2>Change the look and colors</h2>
 
-<p>In which files? Use Firebug or Developer Tools to find the CSS. See also file structure. {doc: directory-structure-explained text: directory structure} and links to firebug tutorials (s. Javascript errors)<br />http://www.rockettheme.com/blog/coding/255-tools-firebug</p>
+<p>Whenever you try customizing a widget we highly recommend using Web Developer Tools like the famous <a href="https://addons.mozilla.org/de/firefox/addon/firebug/">Firebug-Plugin</a> for Firefox. Other browsers like Chrome, Opera or Safari include very similar functionalities. Using these tools you have the possibility of easily trying out css-styles right in your browser and inspecting used styles. Let us have a look at these two possibilities now.</p>
 
-<h3>Where goes the CSS to style my custom content?</h3>
+<h3>Editing css-styles directly in your browser</h3>
 
-<p>custom.css</p>
+<img src="../../../assets/images/warp/customize_firebug.png" width="847" height="290" />
+<p>Bring up Firebug by right-clicking on an interesting element and choosing "Inspect Element". On the left side you see the html-structure of your document (make sure you have the HTML-Tab enabled). Here you have the possibility to add and edit attributes and their values. Just double-click parts of the code to edit them.</p> 
 
-<h2>Create your own theme style</h2>
+<p>Even more interesting is the right side of the plugin, here you see all css-styles for the selected element. If you want to edit something just double click on it, enter your new value and press enter when you are done. You will notice that Firebug opens a new empty line so can not just edit existing styles but also add new ones. Firebug even shows you the computed style-values for the selected element, make sure you have activated the style-tab for our example.</p>
 
-<p>What is a style (child theme), Why? (Easy updating) {doc: create-a-new-style text: Create a new style}
+<p>
+If you want to explore Firebugs possibilities some more just try playing around a little or have a look at the tutorial links at the end of this article
+</p>
+
+<h3>Where to put the CSS to style my custom widget?</h3>
+
+<p>
+	If you want to style your widget, please use the <em>extensions.css</em> file, located in your templates <em>css</em> directory if you use a warp based theme. 
+	Use this file to style custom content only. For a more general approach of styling, we recommend you create your own widget style.
+</p>
+
+<h2>Create your own widget style</h2>
+
+<p>
+	Styles are variations of the default theme and are similar to the concept of child themes in Wordpress or sub themes in Drupal. 
+	A style defines a layer after the default theme and can inherit or override resources from the parent default theme. 
+	Warp looks first in the specific style folder and loads the file if it's found. Otherwise it looks for the default template files. 
+	This gives you full flexibility to override any file of the default theme. Each style is placed in its own directory in the themes <em>/styles</em> folder and can provide its own custom HTML layouts, CSS, JavaScript and images.
+</p>
+
+<p>The styles feature introduces a new way of customizing a theme and makes it easy to create theme variations. All styles benefit from inheriting layouts and assets from the main theme, which allows to create minor customizations really fast.</p>
+
+<p>This is the new recommended way to customize themes. You can create your own style or just start off by copying an existing one. The style variations are modular and separated from the main theme so it's the perfect place for your theme customizations. This way a theme can be updated without merging all your customization to the updated template.</p>
+
+<p>{doc: create-a-new-style text: Read on how to create a new style}</p>
 
 <h2>Learn the basics</h2>
 
@@ -24,6 +49,13 @@
 	<li><a href="http://www.w3.org/Style/CSS/">W3C - Cascading Style Sheets</a></li>
 	<li><a href="https://developer.mozilla.org/en/JavaScript">Mozilla's JavaScript Documentation</a></li>
 	<li><a href="http://eloquentjavascript.net">Eloquent JavaScript - A Modern Introduction to Programming</a></li>
+    <li><a href="https://addons.mozilla.org/de/firefox/addon/firebug/">Firebug for Firefox</a></li>
+	<li><a href="http://sixrevisions.com/tools/firebug-guide-web-designers/">Firebug Guide for Web Designers</a></li>
+	<li><a href="http://code.google.com/chrome/devtools/">Chrome Developer Tools</a></li>
+	<li><a href="http://www.html5rocks.com/en/tutorials/developertools/part1/">HTML5 Rocks - Introduction to Chrome Developer Tools</a></li>
+	<li><a href="http://paulirish.com/2011/a-re-introduction-to-the-chrome-developer-tools/">Paul Irish - A Re-introduction to the Chrome Developer Tools</a></li>
+	<li><a href="http://developer.apple.com/library/safari/#documentation/appleapplications/Conceptual/Safari_Developer_Guide/DebuggingYourWebsite/DebuggingYourWebsite.html">Safari Developer Tools</a></li>
+	<li><a href="http://www.opera.com/developer/tools/">Opera Developer Tools</a></li>	
 </ul>
 
 <p>Make sure to ready through the tutorials of the customizing section which explain you how Warp themes work and also provide guidelines how to modify them.</p>
