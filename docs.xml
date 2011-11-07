@@ -41,7 +41,8 @@
       <doc alias="how-to-update-2" name="How to update" file="06 How to update.html"/>
     </category>
     <category alias="customizing" name="Customizing" folder="02 Customizing">
-      <doc alias="create-a-style" name="Create a style" file="01 Create a style.html"/>
+	  <doc alias="how-to-customize-widgets" name="How to customize Widgets" file="01 How to customize widgets.html"/>
+      <doc alias="create-a-style" name="Create a style" file="02 Create a style.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="03 Troubleshooting">
       <doc alias="how-to-solve-widgetkit-issues" name="How To Solve Widgetkit Issues" file="01 How To Solve Widgetkit Issues.html"/>
