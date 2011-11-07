@@ -1,17 +1,14 @@
 <h1 class="title">Add new assets</h1>
 
-<p>
-	In this tutorial we show you how you can add custom fonts, CSS and JavaScript files to your theme based on the Warp Framework.
-</p>
+<p>In this tutorial we show you how you can add custom fonts, CSS and JavaScript files to your theme based on the Warp Framework.</p>
 
-<p>
-	The single configuration file <em>/layouts/template.config.php</em> improves setting up the template environment by doing all initialization in one location. It initializes all PHP classes, loads all necessary CSS and JavaScript and also all IE specific files. If you need to load custom CSS and JavaScript files, this is where you do it.
-</p>
+<p>The single configuration file <em>/layouts/template.config.php</em> improves setting up the template environment by doing all initialization in one location. It initializes all PHP classes, loads all necessary CSS and JavaScript and also all IE specific files. If you need to load custom CSS and JavaScript files, this is where you do it.</p>
+
+<div class="box-info">If you create a theme style and want to add some new assets you can override the default template.config.php file. Just copy <em>/layouts/template.config.php</em> to <em>/styles/YOUR_STYLE/layouts/template.config.php</em>.</div>
 
 <h2>Add a CSS file</h2>
 
-<p>The <em>template.config.php</em> configuration file loads all the themes CSS files. If you want to add your own custom CSS file <em>/css/my.css</em> you can do so by using the following syntax:
-</p>
+<p>The <em>template.config.php</em> configuration file loads all the themes CSS files. If you want to add your own custom CSS file <em>/css/my.css</em> you can do so by using the following syntax:</p>
 
 <pre><code>// load css
 $this['asset']->addFile('css', 'css:my.css');
@@ -27,13 +24,7 @@ $this['asset']->addFile('js', 'js:my.js');
 
 <h2>Add a font</h2>
 
-<p>Sometimes you need to add a custom font to your Warp theme, this only takes a few steps.</p>
-
-<h3>Pick a font</h3>
-
-<p><a href="http://www.fontsquirrel.com">FontSquirrel</a> has a nice service where you can choose between many nice web fonts and you can even upload a custom font from your pc and transform it to a webfont.</p>
-
-<div class="box-warning">Respect the font copyrights, not every font is technically build and/or legally licensed for web usage.</div>
+<p>Sometimes you need to add a custom font to your Warp theme, this only takes a few steps. <a href="http://www.fontsquirrel.com">FontSquirrel</a> has a nice service where you can choose between many nice web fonts and you can even upload a custom font from your pc and transform it to a webfont. Respect the font copyrights, not every font is technically build and/or legally licensed for web usage.</p>
 
 <div class="box-info">Choose a font which supports Mac Roman subsetting/character encoding, if you want to use french, spanish or other latin languages.</div>
 
