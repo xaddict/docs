@@ -26,7 +26,18 @@ If you want to explore Firebugs possibilities some more just try playing around 
 
 <h2>Create your own theme style</h2>
 
-<p>What is a style (child theme), Why? (Easy updating) {doc: create-a-new-style text: Create a new style}
+<p>
+	Styles are variations of the default theme and are similar to the concept of child themes in Wordpress or sub themes in Drupal. 
+	A style defines a layer after the default theme and can inherit or override resources from the parent default theme. 
+	Warp looks first in the specific style folder and loads the file if it's found. Otherwise it looks for the default template files. 
+	This gives you full flexibility to override any file of the default theme. Each style is placed in its own directory in the themes <em>/styles</em> folder and can provide its own custom HTML layouts, CSS, JavaScript and images.
+</p>
+
+<p>The styles feature introduces a new way of customizing a theme and makes it easy to create theme variations. All styles benefit from inheriting layouts and assets from the main theme, which allows to create minor customizations really fast.</p>
+
+<p>This is the new recommended way to customize themes. You can create your own style or just start off by copying an existing one. The style variations are modular and separated from the main theme so it's the perfect place for your theme customizations. This way a theme can be updated without merging all your customization to the updated template.</p>
+
+<p>{doc: create-a-new-style text: Read on how to create a new style}</p>
 
 <h2>Learn the basics</h2>
 
