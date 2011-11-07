@@ -1,0 +1,62 @@
+﻿<h1 class="title">Create a new Style</h1>
+
+<div class="clearfix">
+	<img class="align-right margin-t-10" src="../../../assets/images/widgetkit/widgetkit_bonusstyles.png" alt="" width="390" height="502" />
+
+	<p>You're able to add your own individual styles for a widget, if you want to customize the appearance.</p>
+
+	<p>
+		Lets say you want to add a custom style to the slideshow widget. Just go to the folder <em>/widgets/slideshow/styles</em>, copy an existing style you want to customize and give it a unique name.
+	</p>
+
+	<p>
+		In the Widgetkit manager you should be able to select your new created style.
+	</p>
+
+	<p>
+		Take a closer look at <em>template.php</em>, <em>style.css</em>, <em>rtl.css</em> and <em>config.xml</em> in your new style folder.
+	</p>
+
+</div>
+
+<h2>config.xml</h2>
+	
+	This file extends the default configuration of the widget. So if you need custom settings or field for your style, add it to the <em>config.xml</em>.
+
+
+	<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;style name=&quot;showcase_box&quot; label=&quot;Showcase Box&quot;&gt;
+	&lt;fields&gt;
+		&lt;field type=&quot;title&quot; name=&quot;title&quot; label=&quot;Title&quot; description=&quot;&quot; /&gt;
+		&lt;field type=&quot;html&quot; name=&quot;content&quot; label=&quot;Content&quot; description=&quot;&quot; /&gt;
+		&lt;field type=&quot;textarea&quot; name=&quot;navigation&quot; label=&quot;Navigation&quot; description=&quot;&quot; class=&quot;small&quot; /&gt;
+	&lt;/fields&gt;
+	&lt;settings&gt;
+		&lt;setting name=&quot;buttons&quot; label=&quot;Buttons&quot; type=&quot;radio&quot; default=&quot;1&quot;&gt;
+			&lt;option value=&quot;1&quot;&gt;Show&lt;/option&gt;
+			&lt;option value=&quot;0&quot;&gt;Hide&lt;/option&gt;
+		&lt;/setting&gt;
+		&lt;setting name=&quot;slices&quot; label=&quot;Slices&quot; type=&quot;text&quot; default=&quot;20&quot; /&gt;
+		&lt;setting name=&quot;items_per_set&quot; label=&quot;Items Per Set&quot; type=&quot;text&quot; default=&quot;3&quot; /&gt;
+        &lt;setting name=&quot;slideset_effect_duration&quot; label=&quot;Slideset Effect Duration (ms)&quot; type=&quot;text&quot; default=&quot;300&quot; /&gt;
+	&lt;/settings&gt;
+&lt;/style&gt;
+	</code></pre>
+
+<p>
+
+</p>
+
+<h2>style.css / rtl.css</h2>
+	These two files will be loaded by Widgetkit if they exist in the style directory. In the <em>style.css</em> you can define your custom CSS style for the output of your style.
+	<em>rtl.css</em> should contain all fallbacks for right to left languages.
+<p>
+	
+</p>
+
+<h2>template.php</h2>
+
+<p>
+	This file contains all the logic and generates the output. Access all the field and settings information and generate the html markup for your style here.
+
+</p>

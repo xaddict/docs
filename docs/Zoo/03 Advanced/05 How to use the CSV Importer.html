@@ -1,0 +1,62 @@
+﻿<h1 class="title">How to use the CSV importer</h1>
+
+<p>This is a short instruction on how to import data in your ZOO 2.1 extension using a CSV file.</p>
+
+<div class="box-warning">Please note that you can only import data from elements of the type <em>text</em>, <em>textarea</em>, <em>email</em>, <em>link</em>, <em>date</em>, <em>image</em> and <em>download</em>.</div>
+	
+<h2>Prepare your CSV file</h2>
+
+<ul class="bullet">
+	<li>To avoid format mismatches be sure that your CSV file is UTF-8 encoded.</li>
+	<li>It is up to you whether you put column headers in the CSV file or not. This will be requested during import.</li>
+	<li>Make sure you know the field separator and the field enclosure of your CSV file.</li>
+</ul>
+
+<div class="box-info">Applications use different field separators and the field enclosures for exporting to CSV files. Simply open your CSV file in a text editor and check the chars there.</div>
+
+<h2>Import the CSV file</h2>
+
+<p>Go to the ZOO administration and click on the app you want to import data to.</p>
+
+<ul class="bullet">
+	<li>Click on <em>Config</em> in the menubar and click on the <em>Import/Export</em> button.</li>
+	<li>In the section <em>Import from CSV</em> click on Search and choose the CSV file on your computer.</li>
+	<li>Click on <em>Upload</em>.</li>
+</ul>
+
+<img src="../../../assets/images/zoo/csvimport_01.png" alt="How to use the CSV importer"width="662" height="525" />
+
+<p>Choose whether your CSV file contains column headers or not.</p>
+
+<div class="clearfix">
+	<img class="align-right margin-t-10" src="../../../assets/images/zoo/csvimport_02.png" alt="How to use the CSV importer"width="390" height="180" />
+	<p>Type in the field separator and the fiel enclosure of the CSV file. In this example we import a CSV file created by MS Excel, so the field separator is ";" and there is no field enclosure.</p>
+</div>
+
+<div class="clearfix">
+	<img class="align-right margin-t-10" src="../../../assets/images/zoo/csvimport_03.png" alt="How to use the CSV importer"width="390" height="254" />
+	<p>In the next screen you have to assign the data in your CSV file to an item type of the app.</p>
+
+	<ul class="bullet">
+		<li>Choose the correct item type in the dropdown at the top.</li>
+		<li>On the left you see the columns of your CSV file and on the right dropdown fields to assign them to elements of the item type.</li>
+		<li>Choose corresponding elements for each CSV column to import the data to.</li>
+		<li>Click on <em>Import</em></li>
+	</ul>
+</div>
+
+
+<div class="box-info">
+	<p>When you want to assign the imported items to more than one category, just create one column for each category in your CSV file and assign both columns to the same element (in this case &quot;Category&quot;).</p>
+
+	<p>The CSV Importer will look for existing categories in your application, that have the same name and if found, will assign items to these categories. If there is no existing category, a new category will be created.</p>
+</div>
+
+<div class="box-info">When you want to import images you have to upload them to a folder in your Joomla installation (e.g. images/stories) and put the path to the image in the CSV file, e.g. <em>images/stories/movie1.png</em></div>
+
+<div class="box-info">If you want to assign data to repeatable elements, you can simply assign multiple columns to the same element. (e.g. Textareas)</div>
+
+
+<p>The newly imported items should appear unpublished in the item manager.</p>
+
+<img src="../../../assets/images/zoo/csvimport_04.png"alt="How to use the CSV importer"width="692" height="225" />

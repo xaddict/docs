@@ -1,0 +1,51 @@
+﻿<h1 class="title">File Permission Issues</h1>
+
+<p>This tutorial shows you how to handle permission issues within ZOO.</p>
+
+<p>After installing the ZOO your website stays blank, just because your Stylesheets and JavaScripts aren't loaded? This might because the webserver is unable to access these files. Make sure that you have set the right file permission to the following directories used by the ZOO component.</p>
+
+<ul class="bullet">
+	<li><em>/cache</em></li>
+	<li><em>/media/zoo</em></li>
+	<li><em>/components/com_zoo</em></li>
+	<li><em>/administrator/components/com_zoo</em></li>
+</ul>
+
+<div class="box-info">Permissions are inherited from the parent folder. If you set the specific ZOO folder (e.g. /media/zoo) and all sub files/folders to the correct permission but the whole Joomla media folder has lower permissions it will not work. Best way is to alter the permissions of the top level folder. Sometimes Joomlas root directory has too low permissions and you wonder why it is not working...</div>
+
+<div class="box-warning">Always avoid 777 permissions. If your webserver has problems with the CHMOD 755, you can also try 775 and lastely 777 in this order.</div>
+
+<h2>Changing File Permissions</h2>
+
+<p>So how do you change the permissions for files and directories? Here are two step-by-step guides.</p>
+
+<h3>Using your FTP client</h3>
+
+<ol class="bullet">
+	<li>Open your FTP client or if you don't have any download <a href="http://filezilla-project.org">FileZilla</a> and install it.</li>
+	<li>Use your FTP client to login to your server and browse to your webroot directory.</li>	
+	<li>Right click on a directory which you want to change the permissions on and click <em>File Permissions...</em>.</li>
+	<li>The <em>Change File Attributes</em> dialog, let's you check the options as shown below or type a numeric value like <em>755</em>. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>OK</em> button.</li>
+</ol>
+
+<div class="clearfix">
+	<img class="align-left" src="../../../assets/images/permissions_01.png" alt="Permission Issue"width="966" height="495" />
+</div>
+
+<div class="box-info">Tip: After applying new permissions some FTP clients require the file view to be refreshed. Otherwise the old permissions will continue to show...</div>
+
+<div class="box-warning">Using a FTP client may also change file ownership to the FTP user of the files/directories you changed the permissions on. This can cause problems on some webservers. To avoid this you can use a Joomla component like eXtplorer to update the permission through the Joomla administration.</div>
+
+<h3>Using the eXtplorer Joomla component</h3>
+<p>
+	<ol>
+		<li>Download <a href="http://extensions.joomla.org/extensions/core-enhancements/file-management/2630">eXtplorer</a> file manager Joomla component and install it. It allows you to edit, delete, copy, rename, archive and unpack files/directories directly on your webserver.</li>
+		<li>Login to your Joomla administration, go to the eXtplorer component and browse to the directory which you want to change the permissions on.</li>
+		<li>Right click on the directory and choose <em>Change Rights</em></li>
+		<li>Check the options as shown below. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the <em>Save</em> button.</li>
+	</ol>
+</p>
+
+<div class="clearfix">
+	<img class="align-left" src="../../../assets/images/permissions_02.png" alt="Permission Issue"width="966" height="521" />
+</div>

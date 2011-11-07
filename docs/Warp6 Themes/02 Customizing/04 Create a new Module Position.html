@@ -1,0 +1,70 @@
+﻿<h1 class="title">Create a new module position</h1>
+
+<p>Adding a new position for modules or widgets to your theme is straight forward. We will call the position "top-c" below the already existing "top-a" and "top-b" positions.
+The following files inside your themes folder need to be edited:</p>
+
+<ul class="bullet">
+  <li><em>templateDetails.xml</em> (Joomla)</li>
+  <li><em>template.xml</em> (WordPress)</li>
+  <li><em>config.xml</em></li>
+  <li><em>/layouts/template.php</em></li>
+  <li><em>/layouts/module.php</em></li>
+</ul>
+
+<h2>Add a new position to the theme XML file</h2>
+
+<p>Open the <em>templateDetails.xml</em> file for Joomla or the <em>template.xml</em> for WordPress. Here you need to add your new position (top-c) to make your CMS know it exists. Simply copy an entry of a existing position and rename it, like in the following example:</p>
+
+<pre><code>&lt;positions&gt;
+	...
+	&lt;position&gt;top-a&lt;/position&gt;
+	&lt;position&gt;top-b&lt;/position&gt;
+	&lt;position&gt;top-c&lt;/position&gt;
+	&lt;position&gt;bottom-a&lt;/position&gt;
+	...
+&lt;/positions&gt;
+</code></pre>
+
+<h2>Define module layout options for the new position</h2>
+
+<p>Open <em>config.xml</em> and look for an entry of an already existing positon. Copy the code from "top-b" for example, paste it below it and rename it:</p>
+
+<pre><code>&lt;field name=&quot;top-c&quot; type=&quot;list&quot; default=&quot;equal&quot; label=&quot;Top C Layout&quot; description=&quot;Select a grid layout for this module position.&quot;&gt;
+	&lt;option value=&quot;equal&quot;&gt;Equal&lt;/option&gt;
+	&lt;option value=&quot;stack&quot;&gt;Stack&lt;/option&gt;
+	&lt;option value=&quot;double&quot;&gt;Double&lt;/option&gt;
+&lt;/field&gt;
+</code></pre>
+
+<p>This allows you to define a layout for your new position in the theme options of your administration.</p>
+
+<h2>Add the new position to the main template file</h2>
+
+<p>Open <em>layouts/template.php</em> and you see the basic markup of the theme. This is the file to define where modules, published on your new position should be rendered. As before, you should copy the code from an existing position and place it where you need it and rename it. In my example I took the "top-b" code, pasted it below and customized it:</p>
+
+<pre><code>&lt;?php if ($this['modules']-&gt;count('top-c')) : ?&gt;
+	&lt;section id=&quot;top-c&quot;&gt;
+		&lt;div class=&quot;grid-block&quot;&gt;
+			&lt;?php echo $this['modules']-&gt;render('top-c', array('layout'=&gt;$this['config']-&gt;get('top-c'))); ?&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+&lt;?php endif; ?&gt;
+</code></pre>
+
+<h2>Define a default module style for the new position</h2>
+
+<p>Open <em>layouts/module.php</em> and set a default module style here, add the code for your new position. In my example I want to make the style "line" the default style for top-c:</p>
+
+<pre><code>// set default module types
+if ($style == '') {
+	if ($module->position == 'top-a') $style = 'line';
+	if ($module->position == 'top-b') $style = 'line';
+	if ($module->position == 'top-c') $style = 'line';
+	...
+}
+</code></pre>
+
+
+<h2>Update your CSS</h2>
+
+<p>If you want to style your newly added module position or modules published on that position you need to update the <em>/css/layouts.css</em> file. In our example it would make sense to add all CSS that is applied to top-a and bottom-a also to our new position.</p>

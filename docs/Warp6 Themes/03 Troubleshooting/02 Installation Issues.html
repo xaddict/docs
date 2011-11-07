@@ -1,0 +1,40 @@
+﻿<h1 class="title">Installation Issues</h1>
+
+<p>This tutorial shows you how to handle issues with your Warp theme during the installation. Most of the times installation problems are due to limited resources, e.g. on shared hosting servers. Limited resources can be the PHP maximum upload/post size, the PHP maximum execution time or the overall memory limit.</p>
+
+<p>To solve these problems you can either allocate more resources for PHP by modifying the <em>php.ini</em> file directly. Sometimes this is not possible in this case you can try to set these PHP settings through a <em>.htaccess</em> file on your webserver. Even though this also depends on your hosting server if it allows the usage of <em>.htaccess</em> overrides. Here a overview of the <a href="http://www.php.net/manual/en/ini.core.php">PHP configuration settings</a> you should check and increase if needed:</p>
+
+<ul class="bullet">
+	<li><code>post_max_size</code></li>
+	<li><code>upload_max_filesize</code></li>
+	<li><code>max_execution_time</code></li>
+	<li><code>memory_limit</code></li>
+</ul>
+
+<p>To change the PHP configuration through the <em>php.ini</em> file use the following syntax.</p>
+
+<pre><code># example of recommended settings
+post_max_size = 8M
+upload_max_filesize = 8M
+max_execution_time = 60
+memory_limit = 128M
+</code></pre>
+
+<p>To <a href="http://php.net/manual/en/configuration.changes.php">change the PHP configuration</a> through a <em>.htaccess</em> file use the following syntax.</p>
+
+<pre><code># example of recommended settings
+php_value post_max_size 8M
+php_value upload_max_filesize 8M
+php_value max_execution_time 60
+php_value memory_limit 128M
+</code></pre>
+
+<p>As an alternative you can always use the manual installation explained in our {doc: install-a-joomla-template text: Joomla} or {doc: install-a-wordpress-theme text: WordPress} tutorial. This install generally uses less resources rather than installing from a .zip file and it resolves these common issues:</p>
+
+<ul class="bullet">
+	<li>PHP maximum upload/post size limits</li>
+	<li>Problems with PHP execution timeouts</li>
+	<li>Issues when unpacking the .zip file</li>
+</ul>
+
+<div class="box-info">The Joomla error messages during installation are sometimes misleading. e.g. Joomla claims that it is unable to find the installation package, when it actually wasn't uploaded completely due to the PHP Maximum Upload Size limit.</div>
