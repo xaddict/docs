@@ -31,7 +31,7 @@
 	&lt;authorUrl&gt;http://www.johndoe.com&lt;/authorUrl&gt;
 	&lt;version&gt;1.0.0&lt;/version&gt;
 	&lt;description&gt;HTML address fields&lt;/description&gt;
-	&lt;params&gt;		
+	&lt;params&gt;
 	&lt;/params&gt;
 	&lt;params group=&quot;render&quot;&gt;
 	&lt;/params&gt;
@@ -83,18 +83,18 @@
 
 <p>For an item to be actually rendered, we will have to overwrite the base classes <code>render</code> function.</p>
 
-<pre><code>public function render(AppData $params) {
+<pre><code>public function render($params = array()) {
 	return $this-&gt;get('street') . ', ' . $this-&gt;get('zip') . ', ' .$this-&gt;get('country');
 }
 </code></pre>
 
-<p>The <em>$params</em> AppData object contains the display options, we specified in the elements xml file. You can access its values by its <em>get</em> method.</p>
+<p>The <em>$params</em> parameter contains an array with the display options, we specified in the elements xml file.</p>
 
-</p>This will output the three elements values separated by commas. Notice we use the same method of retrieving the elements data, as in the above <em>edit</em> function.</p>
+<p>This will output the three elements values separated by commas. Notice we use the same method of retrieving the elements data, as in the above <em>edit</em> function.</p>
 
-</p>Leaving the function as it is wouldn't output any data in the frontend though. We need to overwrite the <em>hasValue</em> function, to tell the renderer, if the element has a value or not.</p>
+<p>Leaving the function as it is wouldn't output any data in the frontend though. We need to overwrite the <em>hasValue</em> function, to tell the renderer, if the element has a value or not.</p>
 
-<pre><code>public function hasValue(AppData $params = null) {
+<pre><code>public function hasValue($params = array()) {
 	$street = $this-&gt;get('street');
 	$zip = $this-&gt;get('zip');
 	$country = $this-&gt;get('country');
@@ -102,13 +102,13 @@
 }
 </code></pre>
 
-</p>If any of the three values is nonempty, the element is considered to have a value, and therefore will be rendered.</p>
+<p>If any of the three values is nonempty, the element is considered to have a value, and therefore will be rendered.</p>
 
-</p>That's it, we have constructed a very simple custom element.</p>
+<p>That's it, we have constructed a very simple custom element.</p>
 
 
 <h2>Conclusion</h2>
 
-</p>Please have in mind, that this tutorial is only an example of how to write the code. You would probably build the address fields by adding text elements to the type, but it demonstrates the element handling quite nicely.</p>
+<p>Please have in mind, that this tutorial is only an example of how to write the code. You would probably build the address fields by adding text elements to the type, but it demonstrates the element handling quite nicely.</p>
 
 <p>The best way to go about creating your custom elements, is to have a look at the existing elements and learn from them.</p>
