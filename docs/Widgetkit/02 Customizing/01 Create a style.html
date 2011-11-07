@@ -1,28 +1,27 @@
 ﻿<h1 class="title">Create a new Style</h1>
 
-<p>You're able to add your own individual styles for a widget, if you want to customize the appearance.</p>
-
-<p>
-	Lets say you want to add a custom style to the slideshow widget. Just go to the folder <em>/widgets/slideshow/styles</em>, copy an existing style you want to customize and give it a unique name.
-</p>
-
 <div class="clearfix">
-	<img class="align-right" src="../../../assets/images/widgetkit/widgetkit_bonusstyles.png" alt="" title="" />
+	<img class="align-right margin-t-10" src="../../../assets/images/widgetkit/widgetkit_bonusstyles.png" alt="" title="" />
+
+	<p>You're able to add your own individual styles for a widget, if you want to customize the appearance.</p>
+
 	<p>
-		In the admin area you should be able to select your new created style.
+		Lets say you want to add a custom style to the slideshow widget. Just go to the folder <em>/widgets/slideshow/styles</em>, copy an existing style you want to customize and give it a unique name.
 	</p>
+
+	<p>
+		In the Widgetkit manager you should be able to select your new created style.
+	</p>
+
+	<p>
+		Take a closer look at <em>template.php</em>, <em>style.css</em>, <em>rtl.css</em> and <em>config.xml</em> in your new style folder.
+	</p>
+
 </div>
-
-
-
-<p>
-	Take a closer look at <em>template.php</em>, <em>style.css</em>, <em>rtl.css</em> and <em>config.xml</em> in your new style folder.
-</p>
-
 
 <h2>config.xml</h2>
 	
-	This file extends the default configuration of the widget. So if you need custom settings or field for your style, add it to the config.xml.
+	This file extends the default configuration of the widget. So if you need custom settings or field for your style, add it to the <em>config.xml</em>.
 
 
 	<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
@@ -45,16 +44,14 @@
 	</code></pre>
 
 <p>
-	
 
 </p>
 
 <h2>style.css / rtl.css</h2>
-	These two files will be loaded by Widgetkit if they exist in the style directory. In the <em>style.css</em> yo can define your custom css styling for the output of your style.
-	<em>rtl.css</em> should contain all fallbacks for right to left languages...but only if you use one on your site.
+	These two files will be loaded by Widgetkit if they exist in the style directory. In the <em>style.css</em> you can define your custom CSS style for the output of your style.
+	<em>rtl.css</em> should contain all fallbacks for right to left languages.
 <p>
 	
-
 </p>
 
 <h2>template.php</h2>

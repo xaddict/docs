@@ -1,45 +1,23 @@
 ﻿<h1 class="title">Override system files</h1>
 
-<p>
-	This tutorial shows you how to override system files in Joomla and create custom pages in WordPress.
-</p>
-
+<p>This tutorial shows you how to override system files in Joomla and create custom pages in WordPress.</p>
 
 <h2>Override Joomla system files</h2>
 
 <p>
-	All Joomla system files are located in <em>/warp/systems/joomla1.x/layouts</em>.
+	Lets say you want to customize the layout of the content Joomla component. To do that, just copy the <em>com_content</em> directory from <em>/warp/systems/joomla.1.x/layouts</em> to the theme <em>/layouts</em> directory and change the files to your needs. Further this way you won't lose any of your changes after an update of your theme. Make sure to only copy the files you want to change, all other layout files will be automatically loaded from the system defaults.
 </p>
-
-<p>
-	Lets say that you want to customize the output of the content component. To do that, just copy the folder com_content from 
-	<em>/warp/systems/joomla1.x/layouts</em> to <em>{TEMPLATEFOLDER}/layouts</em> and assign your changes. This makes sure that you won't lose any of 
-	your changes after an update of your template.
-</p>
-
-
 
 <h2>WordPress custom pages</h2>
 
-<p>
-	
-	You can use different layouts for pages by creating files in your theme folder with a "page-" as prefix in the name.
-	<br /><br />
-	Examples:
+<p>You can use different layouts for pages by creating files in your theme folder with a "page-" as prefix in the name followed by the ID or page-slug.</p>
 
-	<ul class="bullet">
-		<li>page-<em>{id}</em>.php</li>
-		<li>page-<em>{slug}</em>.php</li>
-	</ul>
-</p>
+<ul class="bullet">
+	<li>page-<em>{id}</em>.php</li>
+	<li>page-<em>{slug}</em>.php</li>
+</ul>
 
-<p>
-	Lets say you want a custom layout for a page with the id 80:
-</p>
-
-<p>
-	
-	Create a file in your theme folder and name it page-80.php with the following content.
+<p>Lets say you want a custom layout for a page with ID 80. Create a file in your theme folder and name it page-80.php with the following content.</p>
 
 <pre><code>// get warp
 $warp = Warp::getInstance();
@@ -48,8 +26,4 @@ $warp = Warp::getInstance();
 echo $warp['template']->render('template-80');
 </code></pre>
 
-</p>
-
-<p>
-	Then go to {YOURTHEME}/layouts and copy and rename template.php to template-80.php. You can now customize template-80.php as you like.
-</p>
+<p>Then go to your themes <em>/layouts</em> directory and copy and rename template.php to template-80.php. Now you can start to customize template-80.php as you like to.</p>

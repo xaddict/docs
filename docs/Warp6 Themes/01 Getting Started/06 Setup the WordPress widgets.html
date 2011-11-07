@@ -2,63 +2,50 @@
 
 <p>This tutorial shows you how to set up widgets in your Warp based themes.</p>
 
-<div class="clearfix">
-	<img class="align-right" src="../../../assets/images/warp/widget_variations_wp_01.png" alt="Load widgets and their variations" title="Load widgets and their variations" />
-
-	<h2>Styles/Icons/Badges</h2>
-
-	<p>Widgets can be displayed in different styles with additional icons and badges. The <em>/layouts/module.php</em> takes care of displaying all these module variations.</p>
-
-	<p>In general you can say that all widgets can have a style, an icon and a badge.</p>
-
-	<p>To apply these variations to a widget, go to the <em>Widget Options</em> of your specific theme in the WordPress administration.</p>
-
-	<p>Then open the settings of a widget by clicking the little arrow on the right.</p>
-
-	<p>Simply select the style, the icon and the badge in the dropdown boxes and click on <em>Save</em>.</p>
-
-<h3>Common widget options</h3>
-<p>
-<ul>
-	<li><strong>title:</strong> Defines whether to show the widget title or not.</li>
-	<li><strong>style:</strong> Defines which widget template and which CSS gets loaded.</li>
-	<li><strong>icon:</strong> Adds an icon to the title of your widget.</li>
-	<li><strong>badge:</strong> Adds a badge to your widget, usually in the top right corner.</li>
-	<li><strong>display:</strong> Defines on which page the widget should be displayed or not.</li>
-</ul>
-</p>
-</p>
-<p>The available values for the module parameters vary depending on which theme you are using. Check out the <em>Module Variations</em> page of your theme to find out which values are available.</p>
-</div>
+<h2>Widget Options</h2>
 
 <div class="clearfix">
-	<img class="align-right" src="../../../assets/images/warp/add_widget_subtitles_wp_01.png" alt="Add sublines to widget headers" title="Add sublines to widget headers" />
-	
-	<h2>Add subtitles to widget headers</h2>
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/setup_widget.png" alt="Load widgets and their variations" title="Load widgets and their variations" />
 
-	<p>A subtitle can be added to a widget title by simply placing your subtitle text behind two &quot;|&quot; (pipe) characters.</p>
+	<p>Widgets can be displayed in different styles with additional icons and badges. The <em>/layouts/module.php</em> takes care of displaying all these module variations. In general you can say that all widgets can have a style, an icon and a badge.</p>
 
-	<p>Navigate to <em>Appearance » Widgets</em> and add the subtitle text behind two &quot;|&quot; characters in the title field of the widget of your choice on the right.</p>
+	<p>To apply these variations to a widget, go to the <em>Widget Options</em> of your theme in the WordPress administration. After choosing a widget simply select the style, the icon and the badge in the dropdown boxes and click on <em>Save</em>.</p>
+
+	<h3>Common Options</h3>
+
+	<ul class="bullet">
+		<li><strong>title:</strong> Defines whether to show the widget title or not.</li>
+		<li><strong>style:</strong> Defines the widget appearance.</li>
+		<li><strong>icon:</strong> Adds an icon to the title of your widget.</li>
+		<li><strong>badge:</strong> Adds a badge to your widget, usually in the top right corner.</li>
+		<li><strong>display:</strong> Defines on which page the widget should be displayed or not.</li>
+	</ul>
+
+	<p>The available values for the module parameters vary depending on which theme you are using. Check out the <em>Module Variations</em> page of your theme to find out which values are available.</p>
+
 </div>
+
+<h2>Add subtitles to widget headers</h2>
 
 <div class="clearfix">
-	<img class="align-right" src="../../../assets/images/warp/widget_menu_position_wp_01.png" alt="Publish a widget in the menu" title="Publish a widget in the menu" />
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/setup_widget_subtitles.png" alt="Add sublines to widget headers" title="Add sublines to widget headers" />
 
-	<h2>Publish a widget in the menu</h2>
-
-	<p>In the WordPress administration, go to <em>Appearance » Widgets</em>.</p>
-
-	<p>Create a widget and drag&drop it to the position menu on the right.</p>
+	<p>A subtitle can be added to a widget title by simply placing your subtitle text behind two &quot;|&quot; (pipe) characters. Navigate to <em>Appearance » Widgets</em> and add the subtitle text behind two &quot;|&quot; characters in the title field of the widget of your choice on the right.</p>
 </div>
 
-<h3>Set the width of the widget in the menu</h3>
+<h2>Publish a widget in the menu</h2>
 
-<p>You can set the width of the widget in the menu by changing the CSS slightly.</p>
+<div class="clearfix">
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/setup_widget_menu_position.png" alt="Publish a widget in the menu" title="Publish a widget in the menu" />
 
-<p>Open the file <em>css/modules.css</em> and have a look at this CSS style:<p>
+	<p>In the WordPress administration, go to <em>Appearance » Widgets</em>. Create a widget and drag &amp; drop it to the position menu on the right.</p>
 
-<pre class="brush:css">#menu .mod-dropdown .dropdown { width: 300px; }</code></pre>
+	<h3>Set the width of the widget in the menu</h3>
 
-<p>The default width is 300px, but you can change it to your needs.</p>
+	<p>You can set the width of the widget in the menu by changing the CSS slightly. Open the file <em>/css/modules.css</em> and have a look at this CSS style:</p>
 
-<div class="box-warning">We strongly recommend to copy this css style and paste it into the custom.css to make the change in width there and not in the modules.css. So you can be sure, that you make all customization in one file to make updates and changes easier.</div>
+	<code>#menu .mod-dropdown .dropdown { width: 300px; }</code>
+
+	<p>The default width is 300px, but you can change it to your needs. However it's recommended to {doc: create-a-new-style text: create your own style} because this way all your changes will be kept when updating your theme.</p>
+
+</div>

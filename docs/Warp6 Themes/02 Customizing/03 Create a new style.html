@@ -1,26 +1,29 @@
 ﻿<h1 class="title">Create a new style</h1>
 
-<p>In this tutorial we show you how to create a new style for your Warp theme.</p>
+<div class="clearfix">
 
-<h2>Creating a new style</h2>
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/create_new_style.png" alt="Style Structure" title="Style Structure" />
 
-<p>Let's create a new style we call <em>fresh</em>. To do so we have to create a new style folder <em>THEME_NAME/styles/fresh/</em>. That's it! We created a new style which looks the same like our default theme.</p>
+	<p>Let's create a new style we call <em>fresh</em>. To do so we have to create a new style directory <em>/styles/fresh</em>. That's it! We created a new style which looks the same like our default theme.</p>
 
-<p>Next you can add your own CSS /css/layout.css file, by copying it to <em>THEME_NAME/styles/fresh/css/layout.css</em>. The "fresh" style would now load its own layout style sheet. But what if you only have one small modification? For example you just want to change one color. Do you have to copy the whole layout CSS from the default theme? No, just import the /css/layout.css by using <em>@import url(../../../css/layout.css)</em>; and add your small modification. You have full control which CSS assets you want to include from the default theme, from the core framework or neither.</p>
+	<p>We can override the default layout <em>/layouts/template.php</em> file, by putting a new layout file right here <em>/styles/fresh/layouts/template.php</em>. Now you can start customizing it.</p>
 
-<p>We can override the default layout by adding <em>/layouts/template.php</em> file, or by putting a new layout file right here <em>THEME_NAME/styles/fresh/layouts/template.php</em>. Now you can start customizing it.</p>
+	<p>Next you can add your own CSS <em>/css/layout.css</em> file, by copying it to <em>/styles/fresh/css/layout.css</em>. The <em>fresh</em> style would now load its own layout style sheet. But what if you only have one small modification? For example you just want to change one color. Do you have to copy the whole layout CSS from the default theme? No, just import the <em>/css/layout.css</em> by using <em>@import url(../../../css/layout.css);</em> and add your small modification. You have full control which CSS assets you want to include from the default theme, from the core framework or neither.</p>
 
-<p>A style folder can contain:</p>
-<ul class="bullet">
-	<li><em>THEME_NAME/styles/fresh/css/</em> (CSS files)</li>
-	<li><em>THEME_NAME/styles/fresh/layouts/</em> (Template files, HTML, PHP)</li>
-	<li><em>THEME_NAME/styles/fresh/js/</em> (JavaScript files)</li>
-	<li><em>THEME_NAME/styles/fresh/images/</em> (Image files)</li>
-</ul>
+	<p>This way you can inherit or override any resource from the default theme like the StyleSheets, JavaScript module or system markup files. A style directory can contain:</p>
+
+	<ul class="bullet">
+		<li><em>/styles/fresh/layouts/</em> (Template files, HTML, PHP)</li>
+		<li><em>/styles/fresh/images/</em> (Image files)</li>
+		<li><em>/styles/fresh/css/</em> (CSS files)</li>
+		<li><em>/styles/fresh/js/</em> (JavaScript files)</li>
+	</ul>
+
+</div>
 
 <h2>Adding the new style to the config.xml</h2>
 
-<p>To make your new style available in the theme settings you need to edit the <em>THEME_NAME/config.xml</em> Go to line ~29 and add a new style option:</p>
+<p>To make your new style available in the theme settings you need to edit your themes <em>config.xml</em> and add a new style option:</p>
 
 <pre><code>&lt;field name=&quot;style&quot; type=&quot;list&quot; default=&quot;&quot; label=&quot;Style&quot; description=&quot;Select the style variation.&quot;&gt;
 	&lt;option value=&quot;&quot;&gt;Default&lt;/option&gt;
@@ -32,6 +35,4 @@
 &lt;/field&gt;
 </code></pre>
 
-<p>Important is that the value is the same like your styles folder name <em>fresh</em>. You can write whatever you want as description between the <em>&lt;option&gt;....&lt;/option&gt;</em> tag.</p>
-
-<p>If you want to learn more about the Styles, you can read our <a href="http://yootheme.com/blog/item/root/warp6-styles">Warp6 Styles Blog Post</a>.</p>
+<p>Important is that the value is the same like your styles directory name <em>fresh</em>. You can write whatever you want as description between the <em>&lt;option&gt;....&lt;/option&gt;</em> element.</p>

@@ -6,15 +6,16 @@
 The following files inside your themes folder need to be edited:</p>
 
 <ul class="bullet">
-  <li>templateDetails.xml (Joomla) / template.xml (WordPress)</li>
-  <li>config.xml</li>
-  <li>layouts/template.php</li>
-  <li>layouts/module.php</li>
+  <li><em>templateDetails.xml</em> (Joomla)</li>
+  <li><em>template.xml</em> (WordPress)</li>
+  <li><em>config.xml</em></li>
+  <li><em>/layouts/template.php</em></li>
+  <li><em>/layouts/module.php</em></li>
 </ul>
 
 <h2>templateDetails.xml / template.xml</h2>
 
-<p>Here you need to add your new position (top-c) to make your CMS know it exists. Simply copy an entry of a existing position and rename it, like in the following example (I do not show all existing entries here):</p>
+<p>Here you need to add your new position (top-c) to make your CMS know it exists. Simply copy an entry of a existing position and rename it, like in the following example:</p>
 
 <pre><code>&lt;positions&gt;
 	...
@@ -56,7 +57,7 @@ The following files inside your themes folder need to be edited:</p>
 
 <h2>layouts/module.php</h2>
 
-<p>You can set a default module style here, again, add the code for your new position. In my example I want to make the style "line" the default style for top-c:</p>
+<p>You can set a default module style here, add the code for your new position. In my example I want to make the style "line" the default style for top-c:</p>
 
 <pre><code>// set default module types
 if ($style == '') {
@@ -68,6 +69,6 @@ if ($style == '') {
 </code></pre>
 
 
-<h2>Check your CSS</h2>
+<h2>Update your CSS</h2>
 
-<p>check, if there must be any CSS applied to your module position or modules published on that position. Especially the CSS in css/layouts.css should be checked. In our example it would make sense to add all CSS that is applied to top-a and bottom-a also to our new position.</p>
+<p>If you want to style your newly added module position or modules published on that position you need to update the <em>/css/layouts.css</em> file. In our example it would make sense to add all CSS that is applied to top-a and bottom-a also to our new position.</p>

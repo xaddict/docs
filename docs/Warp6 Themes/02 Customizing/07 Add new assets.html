@@ -1,88 +1,59 @@
 ﻿<h1 class="title">Add new assets</h1>
 
 <p>
-	In this tutorial we show you how you can add custom font, css style and javascript files to your template based on the Warp Framework.
+	In this tutorial we show you how you can add custom fonts, CSS and JavaScript files to your theme based on the Warp Framework.
 </p>
 
 <p>
-	The single configuration file <em>/layouts/template.config.php</em> improves setting up the template environment by doing all initialization in one location. 
-	It is located in the folder. It initializes all PHP classes, loads all necessary CSS and JavaScript and also all IE specific files. 
-	If you need to load custom CSS and JS files, this is where you do it.
+	The single configuration file <em>/layouts/template.config.php</em> improves setting up the template environment by doing all initialization in one location. It initializes all PHP classes, loads all necessary CSS and JavaScript and also all IE specific files. If you need to load custom CSS and JavaScript files, this is where you do it.
 </p>
 
-<h2>How to load a custom CSS file</h2>
+<h2>Add a CSS file</h2>
 
-<p>
-The configuration file loads all CSS files needed for the template, with template.css being a CSS file that includes all other CSS files. 
-If you want to add custom css pre in the file /css/custom.css. The file is also loaded in the template.config.php:
+<p>The <em>template.config.php</em> configuration file loads all the themes CSS files. If you want to add your own custom CSS file <em>/css/my.css</em> you can do so by using the following syntax:
 </p>
 
-<pre><code>$this->warp->stylesheets->add('css:custom.css');
+<pre><code>// load css
+$this['asset']->addFile('css', 'css:my.css');
 </code></pre>
 
-<p>
-	If you want to add a complete new css file, create the css file in the folder /css e.g. /css/mycss.css and add the following line to the file /layouts/template.config.php:
-</p>
+<h2>Add a JavaScript file</h2>
 
-<pre><code>$this->warp->stylesheets->add('css:mycss.css');
+<p>If you want to add your own script <em>my.js</em> simply copy it to the <em>/js</em> directory of the theme and add the following to the <em>template.config.php</em> configuration file:</p>
+
+<pre><code>// add javascripts
+$this['asset']->addFile('js', 'js:my.js');
 </code></pre>
 
-<h2>How to load a custom JavaScript file</h2>
-
-<p>
-	The following lines of pre load the JavaScript used in the template.
-</p>
-
-<pre><code>// javascripts
-$this->warp->javascripts->add('js:warp.js');
-$this->warp->javascripts->add('js:accordionmenu.js');
-$this->warp->javascripts->add('js:dropdownmenu.js');
-$this->warp->javascripts->add('js:template.js');
-</code></pre>
-
-<p>
-	If you want to add your own script (let's call it myscript.js), simply copy it to the folder /js of the template and add the following line before the closing curly bracket:
-</p>
-
-<pre><code>$this->warp->javascripts->add('js:myscript.js');
-</code></pre>
-
-<h2>How to add custom fonts</h2>
+<h2>Add a font</h2>
 
 <p>Sometimes you need to add a custom font to your Warp theme, this only takes a few steps.</p>
 
-<h3>Choose your font</h3>
+<h3>Pick a font</h3>
 
-<p><a href="http://www.fontsquirrel.com/">FontSquirrel</a> has a nice service where you can choose between many nice web fonts and you can even upload a custom font from your pc and transform it to a webfont.</p>
+<p><a href="http://www.fontsquirrel.com">FontSquirrel</a> has a nice service where you can choose between many nice web fonts and you can even upload a custom font from your pc and transform it to a webfont.</p>
 
-<div class="box-warning">Do not break copyrights of custom fonts, not every font is technically build and/or legally licensed for this.</div>
+<div class="box-warning">Respect the font copyrights, not every font is technically build and/or legally licensed for web usage.</div>
 
 <div class="box-info">Choose a font which supports Mac Roman subsetting/character encoding, if you want to use french, spanish or other latin languages.</div>
 
-<h3>Adding the font to your Theme/Template</h3>
+<h3>Adding a font to your Theme</h3>
 
-<p>Unpack your files to <em>THEME_NAME/fonts/</em>. Please rename the CSS file to something simple like <em>fontname.css</em></p>
+<p>Put your font files to themes <em>/fonts</em> directory. Create a CSS file wich includes the font and give it a proper name like <em>fontname.css</em>. Edit the <em>/layouts/template.config.php</em> file and add a new line in the <em>load fonts</em> section:</p>
 
-Open <em>THEME_NAME/layouts/template.config.php</em> and add a new line after line ~77, this must should look like this:
-
-<pre><code>$fonts = array(
-	'fontname => 'template:fonts/fontname.css',
-	'bebas' => 'template:fonts/bebas.css',
-	'droidsans' => 'template:fonts/droidsans.css',
-	'yanonekaffeesatz' => $http.'://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:regular,light'
-);
+<pre><code>// load fonts
+$this['asset']->addFile('css', 'template:fonts/myfont.css');
 </code></pre>
 
-<p>Open <em>THEME_NAME/config.xml</em>. Now you can add your font to be available in the Warp administration back-end. Actually 3 different types are available (Body, Header and Menu Font). Just add a new option after the lines ~53, ~63, ~73.</p>
+<p>Update the themes <em>config.xml</em> file to make your font available in the theme settings. Actually 3 different types are available (Body, Header and Menu Font). Just add your new option in the desired font parameter (font1, font2 or font3). In the following example we a our new font to the <em>Body Font</em> parameter.</p>
 
-<pre><code><option value="fontname">Font Name</option>
+<pre><code>&lt;field name=&quot;font1&quot; type=&quot;list&quot; default=&quot;default&quot; label=&quot;Body Font&quot; description=&quot;Select the main body typeface.&quot;&gt;
+	&lt;option value=&quot;arial&quot;&gt;Arial&lt;/option&gt;
+	&lt;option value=&quot;lucida&quot;&gt;Lucida&lt;/option&gt;	
+	...
+	&lt;option value=&quot;myfont&quot;&gt;My Font&lt;/option&gt;
 </code></pre>
 
-<p>Now go to <em>THEME_NAME/css/font1/</em> copy for example <em>droidsans.css</em> and edit the code to your choosen font file.
-Repeat this for <em>THEME_NAME/css/font2/</em> and <em>THEME_NAME/css/font3/</em> , too.</p>
+<p>Next up create a <em>myfont.css</em> file for your font in the <em>/css/font1</em> directory. This file defines all the selectors you want to apply your new font on. Make sure to check out the existing files in this directory because you want to setup your <em>myfont.css</em> the same way. We continue our example and define the body font in our <em>myfont.css</em> like this:</p>
 
-<div class="box-info">Use the same property for the font-family value from the CSS file given by <em>THEME_NAME/fonts/fontname.css</em></div>
-
-<p>Example:</p>
-<pre><code>font-family: 'DroidSansRegular';
-</code></pre>
+<pre><code>body { font-family: "MyFontRegular"; }</code></pre>
