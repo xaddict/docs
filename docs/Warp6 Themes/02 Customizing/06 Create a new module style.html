@@ -1,9 +1,5 @@
 ﻿<h1 class="title">Create a new module style</h1>
 
-<p>This tutorial will take a closer look at the module styles, what they are and how to create a new one.</p>
-
-<h2>Module Styles</h2>
-
 <p>Module Styles define the design and appearance of a module. For example you can create different module styles like a red module, a blue module, one with a box shadow, one without, etc... The module styles are defined in the <em>/layouts/module.php</em> file.</p>
 
 <div class="box-info">If you create a theme style you want to add some new module styles you can override the default module.php file. Just copy <em>/layouts/module.php</em> to <em>/styles/YOUR_STYLE/layouts/module.php</em>.</div>
@@ -57,10 +53,10 @@ switch ($style) {
 <p>If you want to create color variations of your module style you need some additional CSS classes. For example <code>.mod-line-blue</code></p>
 
 <h3>$split_color = 1;</h3>
-<p>This is only for advanced users. If the first word of you module title should be automatically wrapped with a span element with a CSS class color set this parameter to 1.</p>
+<p>This is optional and only for advanced users. If the first word of you module title should be automatically wrapped with a span element with a CSS class color set this parameter to 1.</p>
 
 <h3>$subtitle = 1;</h3>
-<p>This is only for advanced users. If your module title should support subtitles using the || technique set this parameter to 1.</p>
+<p>This is optional and only for advanced users. If your module title should support subtitles using the || technique set this parameter to 1.</p>
 
 <h3>$title_template = '&lt;h3 class=&quot;title&quot;&gt;%s&lt;/h3&gt;';</h3>
 <p>Define the HTML markup for the module title.</p>

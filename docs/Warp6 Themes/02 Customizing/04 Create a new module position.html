@@ -1,7 +1,5 @@
 ﻿<h1 class="title">Create a new module position</h1>
 
-<p>In this tutorial we want to show you how to create a new module position for your Warp theme.</p>
-
 <p>Adding a new position for modules or widgets to your theme is straight forward. We will call the position "top-c" below the already existing "top-a" and "top-b" positions.
 The following files inside your themes folder need to be edited:</p>
 
@@ -13,9 +11,9 @@ The following files inside your themes folder need to be edited:</p>
   <li><em>/layouts/module.php</em></li>
 </ul>
 
-<h2>templateDetails.xml / template.xml</h2>
+<h2>Add a new position to the theme XML file</h2>
 
-<p>Here you need to add your new position (top-c) to make your CMS know it exists. Simply copy an entry of a existing position and rename it, like in the following example:</p>
+<p>Open the <em>templateDetails.xml</em> file for Joomla or the <em>template.xml</em> for WordPress. Here you need to add your new position (top-c) to make your CMS know it exists. Simply copy an entry of a existing position and rename it, like in the following example:</p>
 
 <pre><code>&lt;positions&gt;
 	...
@@ -27,10 +25,9 @@ The following files inside your themes folder need to be edited:</p>
 &lt;/positions&gt;
 </code></pre>
 
+<h2>Define module layout options for the new position</h2>
 
-<h2>config.xml</h2>
-
-<p>Again, look for an entry of an already existing positon. Copy the code from "top-b" for example, paste it below it and rename it:</p>
+<p>Open <em>config.xml</em> and look for an entry of an already existing positon. Copy the code from "top-b" for example, paste it below it and rename it:</p>
 
 <pre><code>&lt;field name=&quot;top-c&quot; type=&quot;list&quot; default=&quot;equal&quot; label=&quot;Top C Layout&quot; description=&quot;Select a grid layout for this module position.&quot;&gt;
 	&lt;option value=&quot;equal&quot;&gt;Equal&lt;/option&gt;
@@ -41,9 +38,9 @@ The following files inside your themes folder need to be edited:</p>
 
 <p>This allows you to define a layout for your new position in the theme options of your administration.</p>
 
-<h2>layouts/template.php</h2>
+<h2>Add the new position to the main template file</h2>
 
-<p>Here you see the basic markup of the theme. This is the file to define where modules, published on your new position should be rendered. As before, you should copy the code from an existing position and place it where you need it and rename it. In my example I took the "top-b" code, pasted it below and customized it:</p>
+<p>Open <em>layouts/template.php</em> and you see the basic markup of the theme. This is the file to define where modules, published on your new position should be rendered. As before, you should copy the code from an existing position and place it where you need it and rename it. In my example I took the "top-b" code, pasted it below and customized it:</p>
 
 <pre><code>&lt;?php if ($this['modules']-&gt;count('top-c')) : ?&gt;
 	&lt;section id=&quot;top-c&quot;&gt;
@@ -54,10 +51,9 @@ The following files inside your themes folder need to be edited:</p>
 &lt;?php endif; ?&gt;
 </code></pre>
 
+<h2>Define a default module style for the new position</h2>
 
-<h2>layouts/module.php</h2>
-
-<p>You can set a default module style here, add the code for your new position. In my example I want to make the style "line" the default style for top-c:</p>
+<p>Open <em>layouts/module.php</em> and set a default module style here, add the code for your new position. In my example I want to make the style "line" the default style for top-c:</p>
 
 <pre><code>// set default module types
 if ($style == '') {
