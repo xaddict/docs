@@ -2,7 +2,20 @@
 
 <h2>Change the look and colors</h2>
 
-<p>In which files? Use Firebug or Developer Tools to find the CSS. See also file structure. {doc: directory-structure-explained text: directory structure} and links to firebug tutorials (s. Javascript errors)<br />http://www.rockettheme.com/blog/coding/255-tools-firebug</p>
+<p>Whenever you try customizing our templates we highly recommend using Web Developer Tools like the famous <a href="https://addons.mozilla.org/de/firefox/addon/firebug/">Firebug-Plugin</a> for Firefox. Other browsers like Chrome, Opera or Safari include very similar functionalities. Using these tools you have the possibility of easily trying out css-styles right in your browser and inspecting existing styles to find their location in the theme's css-files. Let us have a look at these two possibilities now.</p>
+
+<h3>Editing css-styles directly in your browser</h3>
+<img src="../../../assets/images/warp/customize_firebug.png" />
+<p>Bring up firebug by right-clicking on an interesting element and choosing "Inspect Element". On the left side you see the html-structure of your document (make sure you have the HTML-Tab enabled). Here you have the possibility to add and edit attributes and their values. Just double-click parts of the code to edit them.</p> 
+
+<p>Even more interesting is the right part of the plugin, where you see all css-styles for the selected element. Although sometimes it is interesting to only see the computed style-values for the selected element make sure you have activated the style-tab for our example. If you want to edit something just double click on it, enter your new value and press enter when you are done. You will notice that firebug opens a new empty line so can not just edit existing styles but also add new ones.</p>
+<h3>Finding the right css-file in your theme</h3>
+<p>As you might already have noticed, next to each css-selector (in our case #headerbar) a filename and a line number are being displayed. Just hover over it and you will see the full path to the file. Please note: Consider creating a new css file with all your custom styles instead of directly editing the default ones. To understand more about the file-structure have a look at {doc: directory-structure-explained text: directory structure}.
+</p>
+
+<p>
+For more possibilities firebug offers you just try playing around a little or have a look at the tutorial-links at the end of this article
+</p>
 
 <h3>Where goes the CSS to style my custom content?</h3>
 
@@ -24,6 +37,7 @@
 	<li><a href="http://www.w3.org/Style/CSS/">W3C - Cascading Style Sheets</a></li>
 	<li><a href="https://developer.mozilla.org/en/JavaScript">Mozilla's JavaScript Documentation</a></li>
 	<li><a href="http://eloquentjavascript.net">Eloquent JavaScript - A Modern Introduction to Programming</a></li>
+    <li><a href="https://addons.mozilla.org/de/firefox/addon/firebug/">Firebug for Firefox</a></li>
 </ul>
 
 <p>Make sure to ready through the tutorials of the customizing section which explain you how Warp themes work and also provide guidelines how to modify them.</p>
