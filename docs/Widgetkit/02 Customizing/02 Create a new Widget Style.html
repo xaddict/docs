@@ -1,8 +1,8 @@
-﻿<h1 class="title">Create a new Widget Style</h1>
+<h1 class="title">Create a new Widget Style</h1>
 
 <div class="clearfix">
 
-	<img class="align-right margin-t-10" src="../../../assets/images/widgetkit/widgetkit_bonusstyles.png" alt="Create a new Style" width="390" height="318" />
+	<img class="align-right margin-t-10" src="../../../assets/images/widgetkit/create_widget_style.png" alt="Create a new Style" width="390" height="240" />
 
 	<p>You're able to add your own individual styles for a widget, if you want to customize the appearance.</p>
 
@@ -10,21 +10,18 @@
 
 	<p>In the Widgetkit manager you should be able to select your new created style.</p>
 
-	<p>Take a closer look at <em>template.php</em>, <em>style.css</em>, <em>rtl.css</em> and <em>config.xml</em> in your new style folder.</p>
+	<p>Now we take a closer look at the <em>template.php</em>, <em>style.css</em>, <em>rtl.css</em> and <em>config.xml</em> in your new style folder.</p>
 
 </div>
 
-<h2>An example</h2>
-
-<p>
-	Now lets go through some steps more detailed:
-</p>
-
-<h3>config.xml</h3>
+<h2>Style Configuration</h2>
 	
-<p>This file extends the default configuration of the widget. So if you need custom settings or content fields for your style, add it to the <em>config.xml</em>.</p>
+<p>This <em>config.xml</em> extends the default configuration of the widget. It defines the name of the style, the available content fields for the style and all your custom style settings.</p>
 
-<p>First give your new style a unique name, In this case we name it <em>my_style</em>.</p>
+<h3>Define a Name</h3>
+
+<p>First give your new style a unique name. In this case we name it <em>my_style</em>.</p>
+
 <pre><code>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;style name=&quot;my_style&quot; label=&quot;My Style&quot;&gt;
@@ -32,68 +29,102 @@
 &lt;/style&gt;
 </code></pre>
 
-<p>
-	<div class="box-info">Please make sure that the style folder itself is also named <strong>my_style</strong>.</div>
-</p>
+<div class="box-info">Please make sure that the style folder itself is also named the same like your style. In this case <strong>my_style</strong>.</div>
 
-<p>
-	Now we want an extra content field called <em>caption</em> that we want to display later and a setting <em>captions</em> to control whether the caption should be displayed or not.
-</p>
+<h3>Define Content Fields</h3>
+
+<p>You can define which content field should be available for each item of the widget style. In this case we have an item title, a description and a caption.</p>
 
 <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;style name=&quot;my_style&quot; label=&quot;My Style&quot;&gt;
 &lt;fields&gt;
-	&lt;field type=&quot;textarea&quot; name=&quot;caption&quot; label=&quot;Caption&quot; description=&quot;Caption text&quot; class=&quot;small&quot; /&gt;
+	&lt;field type=&quot;title&quot; name=&quot;title&quot; label=&quot;Title&quot; description=&quot;&quot; /&gt;
+	&lt;field type=&quot;html&quot; name=&quot;content&quot; label=&quot;Content&quot; description=&quot;&quot; /&gt;
+	&lt;field type=&quot;textarea&quot; name=&quot;caption&quot; label=&quot;Caption&quot; description=&quot;&quot; class=&quot;small&quot; /&gt;
+&lt;/fields&gt;
+&lt;/style&gt;
+</code></pre>
+
+
+<p>Each field is of a specific type like a text or textarea. Here is a list of the most useful types:</p>
+
+<ul class="bullet">
+	<li><em>Title</em> - This is a special input field which should always used for the item title.</li>
+	<li><em>HTML</em> - This is a textarea element which loads an WYSIWYG editor if available.</li>
+	<li><em>textarea</em> - A simple textarea.</li>
+	<li><em>text</em> - A simple input field.</li>
+	<li><em>location</em> - Allows you to pick coordinates with Google Maps.</li>
+</ul>
+
+<h3>Define new Settings</h3>
+
+<p>Last but not least you can define settings which will be available in the widget administration in the settings box when using this style. In this case we define a radio button which allows to enable or disable the captions.</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;style name=&quot;my_style&quot; label=&quot;My Style&quot;&gt;
+&lt;fields&gt;
+	&lt;field type=&quot;title&quot; name=&quot;title&quot; label=&quot;Title&quot; description=&quot;&quot; /&gt;
+	&lt;field type=&quot;html&quot; name=&quot;content&quot; label=&quot;Content&quot; description=&quot;&quot; /&gt;
+	&lt;field type=&quot;textarea&quot; name=&quot;caption&quot; label=&quot;Caption&quot; description=&quot;&quot; class=&quot;small&quot; /&gt;&lt;/fields&gt;
 &lt;/fields&gt;
 &lt;settings&gt;
-	&lt;setting name=&quot;captions&quot; label=&quot;Captions&quot; type=&quot;radio&quot; default=&quot;1&quot;&gt;
-		&lt;option value=&quot;1&quot;&gt;Show&lt;/option&gt;
-		&lt;option value=&quot;0&quot;&gt;Hide&lt;/option&gt;
-	&lt;/setting&gt;
+&lt;setting name=&quot;captions&quot; label=&quot;Captions&quot; type=&quot;radio&quot; default=&quot;1&quot;&gt;
+	&lt;option value=&quot;1&quot;&gt;Show&lt;/option&gt;
+	&lt;option value=&quot;0&quot;&gt;Hide&lt;/option&gt;
+&lt;/setting&gt;
 &lt;/settings&gt;
 &lt;/style&gt;
 </code></pre>
 
-<p>
-	If you change the style in the Widgetkit administration the new content field and setting should be available.
-</p>
+<p>Again, settings are of a specific type like a lists or radio buttons. Here is a list of the most useful types:</p>
 
-<h3>template.php</h3>
+<ul class="bullet">
+	<li><em>list</em> - A simple select box with options.</li>
+	<li><em>radio</em> - Radio buttons with options.</li>
+	<li><em>text</em> - A simple input field.</li>
+</ul>
 
-<p>This file contains all the logic and generates the output. Access all the field and settings information and generate the html markup for your style here.</p>
+<h2>Templating</h2>
+
+<p>The <em>template.php</em> contains all the logic and generates the markup for your style. You can access all the fields and settings you defined in the the <em>config.xml</em>.</p>
 
 <p>So how do we access our new content field and setting? Take a look at the following code example, this should make it clear.</p>
 
-<pre><code>&lt;?php 
+<pre><code>&lt;?php
+	$widget_id  = $widget-&gt;id.'-'.uniqid();
+	$settings   = $widget-&gt;settings;
+?&gt;
 
-	$settings = $widget->settings;
+&lt;div id=&quot;slideshow-&lt;?php echo $widget_id; ?&gt;&quot; class=&quot;mystyle&quot;&gt;
 
-	foreach ($widget-&gt;items as $key =&gt; $item) : 
-	?&gt;
-	&lt;li&gt;
-		&lt;article&gt;
-			&lt;?php echo $item['content']; ?&gt;
-			&lt;?php if($settings['captions']): ?&gt;
-				&lt;div class=&quot;caption&quot;&gt;&lt;?php echo $item[&quot;caption&quot;];?&gt;&lt;/div&gt;
-			&lt;?php endif;?&gt;
-		&lt;/article&gt;
-	&lt;/li&gt;
+	&lt;?php foreach ($widget-&gt;items as $key =&gt; $item) : ?&gt;
+	&lt;article&gt;
+
+		&lt;?php echo $item['content']; ?&gt;
+		
+		&lt;?php if($settings['captions']): ?&gt;
+			&lt;div class=&quot;caption&quot;&gt;&lt;?php echo $item[&quot;caption&quot;];?&gt;&lt;/div&gt;
+		&lt;?php endif;?&gt;
+
+	&lt;/article&gt;
 	&lt;?php endforeach; ?&gt;
-</code></pre>
+		
+&lt;/div&gt;
+
+&lt;script type=&quot;text/x-widgetkit&quot; data-widget=&quot;slideshow&quot; data-element=&quot;#slideshow-&lt;?php echo $widget_id; ?&gt;&quot;&gt;
+	&lt;?php echo json_encode($settings); ?&gt;
+&lt;/script&gt;</code></pre>
 
 <p>You'll get always access to the <em>$widget</em> object that contains all the needed information to generate your markup.</p>
 
-<h3>style.css / rtl.css</h3>
+<h2>Style CSS</h2>
 
-<p>These two files will be loaded by Widgetkit if they exist in the style directory. In the <em>style.css</em> you can define your custom CSS style for the output of your style. <em>rtl.css</em> should contain all fallbacks for right to left languages.</p>
+<p>The <em>style.css</em> and <em>rtl.css</em> will be loaded by Widgetkit if they exist in the style directory. In the <em>style.css</em> you can define your custom CSS style for the HTML markup of your style. The <em>rtl.css</em> should contain all fallbacks for right to left languages.</p>
 
-<p>
-	You should always give your custom styles a unique classname, e.g. wrap it in a div.
-</p>
+<p>You should always give your custom styles a unique class name, like in the example above.</p>
 
-<pre><code>&lt;div  name=&quot;my_style&quot;&gt;
+<pre><code>&lt;div class=&quot;mystyle&quot;&gt;
 	...
-&lt;div&gt;
-</code></pre>
+&lt;div&gt;</code></pre>
 
 <p>So you can redefine styles for widget elements exclusively for your custom widget style without getting a conflict with other styles of the same widget.</p>
