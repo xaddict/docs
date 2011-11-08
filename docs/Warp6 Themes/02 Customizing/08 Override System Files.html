@@ -4,24 +4,13 @@
 
 <h2>Override Joomla system files</h2>
 
-<p>
-	Lets say you want to customize the layout of the content Joomla component. To do that, just copy the <em>com_content</em> directory from <em>/warp/systems/joomla.1.x/layouts</em> 
-	to the theme <em>/layouts</em> directory or even better {doc: create-a-new-style text: create your own style} and change the files to your needs. 
-	If you are using your own style copy the directory to <em>/styles/YOUR_STYLE/layouts</em>. Further this way you won't lose any of your changes after an update of your theme. Make sure to only copy the files you want to change, all other layout files will be automatically loaded from the system defaults.
-</p>
+<p>Lets say you want to customize the layout of the content Joomla component. To do that, just copy the <em>com_content</em> directory from <em>/warp/systems/joomla.1.x/layouts</em> to the theme <em>/layouts</em> directory or even better {doc: create-a-new-style text: create your own style} and change the files to your needs. If you are using your own style copy the directory to <em>/styles/YOUR_STYLE/layouts</em>. Further this way you won't lose any of your changes after an update of your theme. Make sure to only copy the files you want to change, all other layout files will be automatically loaded from the system defaults.</p>
 
+<h2>Override Wordpress system files</h2>
 
-<h2>Wordpress</h2>
+<p>All warp system layout files for Wordpress are located in <em>/warp/systems/wordpress.3.0/layouts</em>. So if you want to add some modification to let's say the comments markup, just copy <em>/warp/systems/wordpress.3.0/layouts/comments.php</em> to the theme <em>/layouts</em> directory or create your own style and copy comments.php to <em>/styles/YOUR_STYLE/layouts</em>. This is the most warp proof and recommended method.</p>
 
-<p>
-	
-	All warp system layout files for Wordpress are located in <em>/warp/systems/wordpress.3.0/layouts</em>. 
-	So if you want to add some modification to let's say the comments markup, just copy <em>/warp/systems/wordpress.3.0/layouts/comments.php</em> to the theme <em>/layouts</em> 
-	directory or just like already described for Joomla, create your own style and copy comments.php to <em>/styles/YOUR_STYLE/layouts</em>. This is the most warp proof and recommended method.
-</p>
-
-
-<h2>WordPress custom pages</h2>
+<h3>Custom pages</h3>
 
 <p>You can use different layouts for pages by creating files in your theme folder with a "page-" as prefix in the name followed by the ID or page-slug.</p>
 
