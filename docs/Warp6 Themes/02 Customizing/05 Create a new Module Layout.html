@@ -41,20 +41,4 @@
 
 <p>To create a new module layout add a new file to <em>/layouts/modules/layouts</em> or if you are using a theme style to <em>/styles/YOUR_STYLE/layouts/modules/layouts</em>. The best way is to copy an existing module layout and modify it. For example copy <em>/warp/layouts/modules/layouts/double.php</em> to <em>/layouts/modules/layouts/double.php</em>. This new and modified module layout will override the default one.</p>
 
-<p>Last if you created a new module layout you have to add it to the theme parameters so it can be selected in the theme settings. To do so open <em>config.xml</em> and look for following code:</p>
-
-<pre><code>&lt;field name=&quot;top-a&quot; type=&quot;list&quot; default=&quot;equal&quot; label=&quot;Top A Layout&quot; description=&quot;Select a grid layout for this module position.&quot;&gt;
-	&lt;option value=&quot;equal&quot;&gt;Equal&lt;/option&gt;
-	&lt;option value=&quot;stack&quot;&gt;Stack&lt;/option&gt;
-	&lt;option value=&quot;double&quot;&gt;Double&lt;/option&gt;
-	&lt;option value=&quot;custom01&quot;&gt;Custom 01&lt;/option&gt;
-&lt;/field&gt;
-
-&lt;field name=&quot;top-b&quot; type=&quot;list&quot; default=&quot;equal&quot; label=&quot;Top B Layout&quot; description=&quot;Select a grid layout for this module position.&quot;&gt;
-	&lt;option value=&quot;equal&quot;&gt;Equal&lt;/option&gt;
-	&lt;option value=&quot;stack&quot;&gt;Stack&lt;/option&gt;
-	&lt;option value=&quot;double&quot;&gt;Double&lt;/option&gt;
-	&lt;option value=&quot;custom01&quot;&gt;Custom 01&lt;/option&gt;
-&lt;/field&gt;
-...
-</code></pre>
+<p>The new created layout should now be available in the theme settings.</p>
