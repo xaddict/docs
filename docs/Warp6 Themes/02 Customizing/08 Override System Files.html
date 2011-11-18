@@ -10,7 +10,7 @@
 
 <p>All warp system layout files for Wordpress are located in <em>/warp/systems/wordpress/layouts</em>. So if you want to add some modification to let's say the comments markup, just copy <em>/warp/systems/wordpress/layouts/comments.php</em> to the theme <em>/layouts</em> directory or create your own style and copy comments.php to <em>/styles/YOUR_STYLE/layouts</em>. This is the most warp proof and recommended method.</p>
 
-<h3>Custom pages</h3>
+<h3>Custom Pages</h3>
 
 <p>You can use different layouts for pages by creating files in your theme folder with a "page-" as prefix in the name followed by the ID or page-slug.</p>
 
@@ -21,11 +21,12 @@
 
 <p>Lets say you want a custom content for a page with ID 80. Create a file in your theme folder and name it page-80.php with the following content.</p>
 
-<pre><code><?php get_header(); ?>
+<pre><code>&lt;?php get_header(); ?&gt;
 
 Put your content here...
 
-<?php get_footer(); ?>
-</code></pre>
+&lt;?php get_footer(); ?&gt;</code></pre>
 
 <p>In the backend you can even assign a custom style for the page, so you'll get a complete different look.</p>
+
+<p>All the common template layout overrides work. Learn more about them in the <a href="http://codex.wordpress.org/Template_Hierarchy">WordPress documentation</a>.</p>
