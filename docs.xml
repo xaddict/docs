@@ -11,7 +11,8 @@
       <doc alias="setup-the-wordpress-menu" name="Setup the WordPress Menu" file="05 Setup the WordPress Menu.html"/>
       <doc alias="setup-the-joomla-modules" name="Setup the Joomla Modules" file="06 Setup the Joomla Modules.html"/>
       <doc alias="setup-the-wordpress-widgets" name="Setup the WordPress Widgets" file="06 Setup the WordPress Widgets.html"/>
-      <doc alias="how-to-update" name="How to Update" file="07 How to Update.html"/>
+	  <doc alias="how-to-use-a-profile" name="How to use a Profile" file="07 How to use a Profile.html"/>
+      <doc alias="how-to-update" name="How to Update" file="08 How to Update.html"/>
     </category>
     <category alias="customizing" name="Customizing" folder="02 Customizing">
       <doc alias="how-to-customize" name="How to Customize" file="01 How to Customize.html"/>

@@ -1,0 +1,39 @@
+<h1>How to use a Profile</h1>
+
+<p>In this tutorial, we want to describe the profile system in our Warp6 themes.</p>
+
+<h2>What is a profile</h2>
+
+<p>A profile can define different settings which are sorted into three main groups: Style, Content and Layout. You can create new profiles, edit already existing ones and assign them to any menu item. Yes, you read it right. Assign any profile to any menu item directly from your theme configuration with just a few clicks. That's not all, profiles have the ability to inherit defined settings from the default profile. This way you can easily make small changes or tweaks and apply them to a page or section of your website!</p>
+
+<h2>The Default Profile</h2>
+
+<div class="clearfix">
+	<img class="align-right margin-t-10" width="470" height="102" alt="Default Profile" src="../../../assets/images/warp/profile_default.png">
+	<p>The default profile can be found in <strong>Joomla</strong> <em>Extensions</em> -&gt; <em>Template Manager</em> -&gt; <em>YOO_TEMPLATE</em> -&gt; <em>General</em>, in <strong>WordPress</strong> <em>YOO_TEMPLATE</em> -&gt; <em>Theme Options</em> -&gt; <em>General</em>. There you select which profile should be loaded by default. The default profile settings are found in the <em>Profiles</em> tab. The default profile is the master profile which contains all default settings and serves as a fallback. Everything you enable / disable in this profile will effect your entire Warp6 theme. This means if you add a new profile and select just another body font, all other options will be loaded from the default profile.</p>
+</div>
+
+<h2>Create a new profile</h2>
+
+<div class="clearfix">
+<img class="align-right margin-t-10" width="470" height="242" alt="Create a new Profile" src="../../../assets/images/warp/profile_add.png">
+<p>
+To create a new profile, go to the <em>Profiles</em> tab and click on <em>Add</em>, let's call it <em>myprofile</em>. For this example we use the Nano theme. Select the Style "Page" and Link Color -> "Red", save it.<br />
+To test the new profile, you can either go to <em>General</em> and set the default profile to <em>myprofile</em> or you can load the profile by using a link. Just add &amp;profile=PROFILENAME to a link and it will load the profile. For example: &amp;profile=myprofile . Normally you don't need this functionality and we recommend to disable it. To do so just disable Dynamic Profiles under <em>General</em> in the theme administration.
+</p>
+</div>
+
+<h2>Assign a profile to a page</h2>
+
+<div class="clearfix">
+	<img class="align-right margin-t-10" width="470" height="290" alt="Assign a Profile" src="../../../assets/images/warp/profile_assign.png">
+	<p>You can assign profiles to single or multiple pages. To assign a profile to a page, go to the tab <em>Profiles</em>, select your profile and click on <em>Assign Pages</em>. By holding <em>Ctrl</em> and click left mouse you can select / deselect multiple pages.</p>
+</div>
+
+<h2>Create different layouts for different pages</h2>
+
+<div class="clearfix">
+	<img class="align-right margin-t-10" width="470" height="310" alt="Create different layouts for different pages" src="../../../assets/images/warp/profile_layouts.png">
+	<p>In some of our themes like Catalyst, Cloud or Quantum, we've decided to hide or customize several theme options like the <em>System Output</em> or <em>Module Layouts</em> on the frontpage.<br />
+	To do so, go to <em>Profiles</em> and add a new profile. Let's call it <em>frontpage</em>. Switch <em>System Output</em> to <em>No</em>, this will hide the article display. As second step, we want a different module layout for the module position <em>top-a</em>, so we select <em>Double</em> in the options, this will make the first module on this position double the size as the other modules. The last step would be to assign this profile to a page. Click on <em>Assign Pages</em> and select <em>Home</em>. Save your changes.</p>
+</div>
