@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sections>
-  <section alias="warp6-themes" name="Warp6 Themes" folder="Warp6 Themes">
+  <section alias="warp-themes" name="Warp Themes" folder="Warp Themes">
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
       <doc alias="install-a-joomla-template" name="Install a Joomla Template" file="01 Install a Joomla Template.html"/>
       <doc alias="install-a-wordpress-theme" name="Install a WordPress Theme" file="01 Install a WordPress Theme.html"/>
