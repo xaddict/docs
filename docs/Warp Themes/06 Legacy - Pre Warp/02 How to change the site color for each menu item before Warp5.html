@@ -1,0 +1,19 @@
+<h1 class="title">How to change the site color for each menu item before Warp5</h1>
+
+<p>This tutorial shows you, how to change the site color for each menu item in a YOOtheme template before we implemented the Warp framework in all templates since July 2009.
+</p>
+
+<h2>Template Settings</h2>
+
+<p>With the Active Item Detection it is possible to change the site color for each menu item. Go to the template configuration in the Joomla backend. Click on <em>Extensions - Template Manager - Edit template</em>.</p>
+<p>You can find out the number (after the term <em>item</em>) for a menu item in the Joomla administration in the Menu Manager. Take a look at the parameter <em>Order</em>.</p>
+
+<div class="box-hint">It depends on the template if the color changing feature is supported. Not all templates have this feature.</div>
+
+</div>
+
+<h2>Why is the Active Item Detection not working?</h2>
+
+<p>With the Active Item Detection the template knows which menu item you are currently browsing. For example, it sets any CSS class depending on the active/current menu item in the body tag. This makes it possible to give each page a different color styling.</p>
+
+<div class="box-hint">Make sure your menu item ordering begins with <em>Order</em> set to 1. To check this, goto the Joomla backend and open the Menu Manager for the mainmenu. Take a look at the <em>order</em>. The first menu item (for example, <em>Home</em>) in level1 must have the <em>order</em> set to 1. If not, re-order all your level1 items without numbers missing in between.</div>

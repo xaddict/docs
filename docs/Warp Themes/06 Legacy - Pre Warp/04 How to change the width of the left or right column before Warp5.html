@@ -1,0 +1,37 @@
+<h1 class="title">How to change the width of the left or right column before Warp5</h1>
+
+<p>This tutorial shows you, how to change the width of the left or right column in a YOOtheme template before we implemented the Warp framework in all templates since July 2009.</p>
+
+<p>Changing the width of the left or right column can be done in a few steps.</p>
+
+<h2>Left column</h2>
+
+<p>To change the width of the left column, open layout.css and modify the width of div#left and the margin of div#main. The difference of 10px is the space between the left column and the main column.</p>
+
+<p>For example:</p>
+
+<pre><code>div#left {
+	width: 200px;
+}
+
+.left div#main {
+	margin: 0px 0px 0px 210px;
+}
+
+.right div#main {
+	margin: 0px 210px 0px 0px;
+}</code></pre>
+
+<h2>Right column</h2>
+
+<p>For the right column, open layout.css and modify the width of div#right and the margin of div#content. The difference of 10px is the space between the right column and the main column.</p>
+
+<p>For example:</p>
+
+<pre><code>div#right {
+	width: 180px;
+}
+
+.showright div#content {
+	margin: 0px 190px 0px 0px;
+}</code></pre>

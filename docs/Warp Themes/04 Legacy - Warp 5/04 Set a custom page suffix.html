@@ -1,0 +1,39 @@
+<h1 class="title">Set a custom page suffix</h1>
+
+<p>This tutorial explains how to set a custom page suffix to add a custom css class to single pages in a template based on the Warp framework.</p>
+
+<h2>Preparing the template.php</h2>
+
+<p>Open the file <em>\layouts\template.php</em> and have a look at the body tag. It should look like:
+
+<pre><code>&lt;body id=&quot;page&quot; class=&quot;yoopage &lt;?php echo $this-&gt;warp-&gt;config-&gt;get('leftcolumn'); ?&gt; &lt;?php echo $this-&gt;warp-&gt;config-&gt;get('rightcolumn'); ?&gt;&quot;&gt;</code></pre>
+
+<p>Just put the following code into the <em>class=&quot;....&quot;</em>:</p>
+
+<pre><code>&lt;?php echo $this-&gt;warp-&gt;config-&gt;get('yourparameter'); ?&gt;</code></pre>
+
+<p>So in our example the body tag will look like:</p>
+
+<pre><code>&lt;body id=&quot;page&quot; class=&quot;yoopage &lt;?php echo $this-&gt;warp-&gt;config-&gt;get('leftcolumn'); ?&gt; &lt;?php echo $this-&gt;warp-&gt;config-&gt;get('rightcolumn'); ?&gt; &lt;?php echo $this-&gt;warp-&gt;config-&gt;get('yourparameter'); ?&gt;&quot;&gt;</code></pre>
+
+<h2>Adding the suffix to a menuitem</h2>
+
+<p>Go to your Joomla administration, go to menus and open the menu of your choice. Edit a menuitem which should get the new class.</p>
+
+<p>Open the Parameters(System) on the right and enter your parameter you defined in the template.php together with the class you want to have in the template.</p>
+
+<p>For example type in: <em>yourparameter-customcolor</em></p>
+
+<p>After clicking on Save and reloading the frontend of your site, the class <em>customcolor</em> will be added to the body tag of this page.</p>
+
+<h2>The body tag</h2>
+
+<p>The string behind the key-term <em>yourparameter</em> gets inserted as a class in the &lt;BODY&gt; tag. Note: The class is only inserted on the page of the menu item for which the page class suffix is set, as we only want to style the page our menu item links to.</p>
+
+<pre><code>&lt;body class=&quot;customcolor&quot;&gt;</code></pre>
+
+<p>This CSS class makes a total different styling for this specific page possible.</p>
+
+<p>For example to access the CSS style of the first menu-item you can add the following code to the css:</p>
+
+<pre><code>.customcolor #menu .item1 { your css changes; }</code></pre>

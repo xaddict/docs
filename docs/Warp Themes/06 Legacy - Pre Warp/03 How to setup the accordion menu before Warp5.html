@@ -1,0 +1,45 @@
+<h1 class="title">How to setup the accordion menu before Warp5</h1>
+
+<p>This tutorial shows you, how to setup the Accordion Menu in a YOOtheme template before we implemented the Warp framework in all templates since July 2009.</p>
+
+<h2>Set up the menu structure</h2>
+
+<p>For example, your menu structure could look like this:</p>
+
+<img src="../../../assets/images/legacy/before_warp5_accordionmenu_01.png" alt="Accordion Menu configuration">
+
+<p>The menu item with the label <em>Accordion Sample A</em> is the Accordion menu trigger which, when clicked, will show the sub level items.</p>
+
+<h2>Adding the effect to the newly created menu</h2>
+
+<p>To add the accordion menu effect to a new menu like <em>othermenu2</em> you need to do this:</p>
+
+<p>Edit lib/php/yootools.php (somewhere around line 35):</p>
+
+<pre><code>/* menu */
+"accordionMenu" =&gt; array("mainmenu" =&gt; 2, "othermenu" =&gt; 1, "usermenu" =&gt; 1)</code></pre>
+
+<p>And add your accordion level and menu name, example for "othermenu2":</p>
+
+<pre><code>/* menu */
+"accordionMenu" =&gt; array("mainmenu" =&gt; 2, "othermenu" =&gt; 1, "usermenu" =&gt; 1, "othermenu2" =&gt; 1)</code></pre>
+
+<p>You can find the name of the menu by clicking on menus --> menumanager, there in the column "Type" you find the name:</p>
+
+<img src="../../../assets/images/legacy/before_warp5_accordionmenu_02.png" alt="Accordion Menu configuration">
+
+<h2>Switching between different accordion modes</h2>
+
+<p>Open lib/js/yoo_tools.js and look for the YOOAccordionMenu code.</p>
+
+<p>Use the option <em>slide</em> to make it possible to open more than one sub menu item at the same time.</p>
+
+<pre><code>new YOOAccordionMenu('div#middle ul.menu li.toggler', 'ul.accordion', { accordion: 'slide' });
+</code></pre>
+
+<p>Use option <em>default</em> to close all expanded submenu items when another submenu item is clicked.</p>
+
+<pre><code>new YOOAccordionMenu('div#middle ul.menu li.toggler', 'ul.accordion', { accordion: 'default' });
+</code></pre>
+
+

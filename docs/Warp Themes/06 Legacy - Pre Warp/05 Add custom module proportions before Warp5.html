@@ -1,0 +1,84 @@
+<h1 class="title">Add custom module proportions before Warp5</h1>
+
+<p>This tutorial shows you how to add custom module proportions in a YOOtheme template before we implemented the Warp framework in all templates since July 2009.</p>
+
+<p>With the module proportion feature YOOtheme offers a new way to manage your module positions! This approach makes it even easier to create customized module proportions you need for your unique website template. This guide will show you how to create your own module proportions for a module position. In this example you will add a new module proportion called <em>main-top-custom</em> to the top module position. Currently the existing module proportions are <em>main-top-equal</em> and <em>main-top-goldenratio</em>.</p>
+
+<p>First you need to add a new module proportion definition in the template layout setup. To do this you open the templates /lib/php/yoolayout.php file with your favorite text editor. In this file you will find all module proportions defined for the template layout. The following one defines the 'main-top-equal' module position:</p>
+
+<pre><code>// set maintop module variations
+$yootools-&gt;setModulePosition('main-top-equal', array(
+		1 =&gt; array('width100'),
+		2 =&gt; array('width50', 'width50'),
+		3 =&gt; array('width33', 'width33', 'width33')
+	));</code></pre>
+
+<p>As you can see the method setModulePosition(&lt;MODULE_POSITION&gt;, &lt;MODULE_PROPORTION_DEFINITION&gt;) takes two parameters, the first is the name of the module position followed by an array which defines all possible module proportions which depend on how many modules are published inside this module position. So if one module is published inside the 'main-top-equal' position it the module will take the complete width of 100%. Further if you publish 2 modules inside the 'main-top-equal' position each module takes a width of 50%. And so on, since 'main-top-equal' divides the module position space equally for all modules.</p>
+
+<p>Now you create our own custom module proportion definition, which will offer the following proportions:</p>
+
+<div class="box-info">
+1 Module  = 100%<br />
+2 Modules = 80%, 20%<br />
+3 Modules = 40%, 40%, 20%<br />
+</div>
+
+<p>So next you need to add this custom definition to the yoolayout.php file, which will look like this:</p>
+
+<pre><code>// set maintop custom proportion
+$yootools-&gt;setModulePosition('main-top-custom', array(
+		1 =&gt; array('width100'),
+		2 =&gt; array('width80', 'width20'),
+		3 =&gt; array('width40', 'width40', 'width20')
+	));</code></pre>
+	
+<p>Since all module widths we defined above, are the CSS styles which will me add to each module html class tag to set the width. We need to make sure all these CSS styles exists in the template /css/layout.css file. To verify this open the layout.css file and scroll to the very bottom where you find all CSS styles to control the widths. Now we insert the ones we need for the 'main-top-custom' module proportion:</p>
+
+<pre><code>.width15 { width: 14.999%; }
+.width18 { width: 18.333%; }
+.width20 { width: 19.999%; }
+.width25 { width: 24.999%; }
+.width33 { width: 33.333%; }
+.width38 { width: 37.999%; }
+.width40 { width: 39.999%; } &lt;- add this style
+.width45 { width: 44.999%; }
+.width50 { width: 49.999%; }
+.width62 { width: 61.999%; }
+.width75 { width: 74.999%; }
+.width80 { width: 79.999%; } &lt;- add this style
+.width100 { width: 100%; }</code></pre>
+
+<p>After this little CSS excursion we continue to open the templates index.php to add the new <em>main-top-custom</em> module proportion. First we search for the module position we want to extend which is <em>main-top-equal</em>. Which will look like this:</p>
+
+<pre><code>&lt;?php if ($pos = $yootools-&gt;getModulePosition(array('main-top-equal', 'main-top-goldenratio'))) : ?&gt;
+ &lt;?php while ($param = $yootools-&gt;renderModulePosition($pos)) : ?&gt;
+  &lt;div class="maintopbox &lt;?php echo $param['width'].' '.$param['separator']; ?&gt; float-left"&gt;
+   &lt;jdoc:include type="modules" name="&lt;?php echo $param['name']; ?&gt;" style="yoo" order="&lt;?php echo
+   $param['order']; ?&gt;" /&gt;
+  &lt;/div&gt;
+ &lt;?php endwhile; ?&gt;
+&lt;?php endif; ?&gt;</code></pre>
+
+<p>As you can see the method getModulePosition(&lt;MODULE_POSITION&gt;) takes one parameter which sets the module position names which will be rendered within the template. Currently they are set to <em>main-top-equal'</em> and <em>main-top-goldenratio</em>. This means either the modules published in position <em>main-top-equal</em> or <em>main-top-goldenratio</em> will be rendered to this module position. Since it is not possible to render both at the same time, the method respects module position order. In this example <em>main-top-equal</em> comes first followed by <em>main-top-goldenratio</em>. So if a module is published in <em>ain-top-equal</em> position it will be shown within the template regardless if another module is published in the <em>main-top-goldenratio</em> position.</p>
+
+<p>Next you can add the new <em>main-top-custom</em> module proportion to the getModulePosition() parameter:</p>
+
+<pre><code>&lt;?php if ($pos = $yootools-&gt;getModulePosition(array('main-top-equal', 'main-top-goldenratio', 'main-top-
+custom'))) : ?&gt;
+ &lt;?php while ($param = $yootools-&gt;renderModulePosition($pos)) : ?&gt;
+  &lt;div class="maintopbox &lt;?php echo $param['width'].' '.$param['separator']; ?&gt; float-left"&gt;
+   &lt;jdoc:include type="modules" name="&lt;?php echo $param['name']; ?&gt;" style="yoo" order="&lt;?php echo
+   $param['order']; ?&gt;" /&gt;
+  &lt;/div&gt;
+ &lt;?php endwhile; ?&gt;
+&lt;?php endif; ?&gt;</code></pre>
+
+<p>Finally to make the custom module proportion <em>main-top-custom</em> available within the Joomla administration, you have to add the new module position name inside the templateDetails.xml file:</p>
+
+<pre><code>&lt;positions&gt;
+...
+&lt;position&gt;main-top-equal&lt;/position&gt;
+&lt;position&gt;main-top-goldenratio&lt;/position&gt;
+&lt;position&gt;main-top-custom&lt;/position&gt;
+....
+&lt;/positions&gt;</code></pre>

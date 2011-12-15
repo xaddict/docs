@@ -1,0 +1,31 @@
+<h1 class="title">How to set up the menu system before Warp5</h1>
+
+<p>This tutorial shows you how to setup the menu system in a YOOtheme template before we implemented the Warp framework in all templates since July 2009.</p>
+
+<p>Since Joomla 1.5 we extend the original Joomla menu modules with our YOOmenu features. You can publish and reorder your menus like any other module.</p>
+
+<h2>Main Menu</h2>
+
+<div class="clearfix">
+	<img class="align-right margin-t-10" src="../../../assets/images/legacy/before_warp5_menusystem_01.png" alt="How to set up the menu system" title="How to set up the menu system" />
+	<p>First, we want to set up the horizontal Main Menu at the top.</p>
+
+	<p>To split the Main Menu into two different areas we can use the <em>Start Level</em> and <em>End Level</em> parameters of the menu module. In this example, we only want to render level1 menu items. To do that, let's use <em>Start Level</em> 0 and <em>End Level</em> linke in the image to the right.</p>
+
+	<div class="box-info width50">Publish the menu module in the module position <em>menu</em>.</div>
+	<div class="box-hint width50">To enable the Drop Down Menu, set the <em>End Level</em> to 5 and <em>Always show sub-menu Items</em> to Yes.</div>
+</div>
+
+<h2>Sub Menu</h2>
+
+<div class="clearfix">
+	<img class="align-right margin-t-10" src="../../../assets/images/legacy/before_warp5_menusystem_02.png" alt="How to set up the menu system" title="How to set up the menu system" />
+	<p>Next, let's set up the sub menu in the left or right column. Copy the Main Menu module to get a second menu for the sub menu. Publish it in the left or right module position. To render the output for the sub menu items set the <em>Start Level</em> to 1 and the <em>End Level</em> to 5.</p>
+</div>
+
+<h2>OtherMenu</h2>
+
+<div class="clearfix">
+	<img class="align-right margin-t-10" src="../../../assets/images/legacy/before_warp5_menusystem_03.png" alt="How to set  up the menu system" title="How to setup the menu system" />
+	<p>If you want to set up an independent menu like <em>othermenu</em> or the <em>usermenu</em> in the left or right column please set the <em>Start Level</em> to 0 and <em>End Level</em> to 5.</p>
+</div>

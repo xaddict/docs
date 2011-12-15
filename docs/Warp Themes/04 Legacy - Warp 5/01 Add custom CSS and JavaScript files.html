@@ -1,0 +1,32 @@
+<h1 class="title">Add custom CSS and JavaScript files</h1>
+
+<p>In this tutorial we show you how you can add custom css styles and javascript files to your template based on the Warp Framework.</p>
+
+<p>The single configuration file <em>config.php</em> improves setting up the template environment by doing all initialization in one location. It is  located in the templates root folder. It initializes all PHP classes, loads all necessary CSS and JavaScript and also all IE6 and IE7 specific files. If you need to load custom CSS and JS files, this is where you do it.</p>
+
+<h2>How to load a custom CSS file</h2>
+
+<p>The configuration file  loads all CSS files needed for the template, with <em>template.css</em> being a CSS file that includes all other CSS files. 
+The following line is commented out, it is for user defined CSS. If you want to include your CSS in a template, you can remove the comments  here ...</p>
+
+<pre><code>// $this->addStyleSheet($template->url.'/css/custom.css');</code></pre>
+<p> ...and insert your CSS code into <em>templates/your_template/css/custom.css</em>.</p>
+
+<h2>How to load a custom JavaScript file</h2>
+
+<p>The following lines of code load the JavaScript used in the template.</p>
+
+<pre><code>// set template javascript
+if ($this->params->get('load_javascript')) {
+$this->addScriptDeclaration($template->getJavaScript());
+$this->addScript($template->url.'/lib/js/addons/base.js');
+$this->addScript($template->url.'/lib/js/addons/accordionmenu.js');
+$this->addScript($template->url.'/lib/js/addons/fancymenu.js');
+$this->addScript($template->url.'/lib/js/addons/dropdownmenu.js');
+$this->addScript($template->url.'/lib/js/template.js');
+}
+</code></pre>
+
+<p>If you want to add your own script (let's call it myscript.js), simply add the following line before the closing curly bracket:</p>
+
+<pre><code>$this->addScript($template->url.'/lib/js/myscript.js');</code></pre>

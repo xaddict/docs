@@ -1,0 +1,66 @@
+<h1 class="title">Customizing Template Presets</h1>
+
+<p>This tutorial explains, how you can customize and extend existing presets or create new ones in your Warp 5.5 YOOtheme template.</p>
+
+<p>With presets you can define and load a specific configuration of the template parameters. You can set nearly every parameter of the template via the presets.</p>
+
+<h2>Customize existing presets</h2>
+
+<p>To customize an existing preset, open the file <em>YOUR_TEMPLATE\presets.php</em>.</P>
+
+<p>All presets of the specific template are listed in this file, each preset should look like:</p>
+
+<pre><code>$warp-&gt;config-&gt;addPreset('brownlandscape', 'Brown Landscape', array_merge($default_preset,array(
+'color' =&gt; 'brown',
+'menubar' =&gt; 'destructed',
+'background' =&gt; 'landscape',
+'font' =&gt; 'georgia'
+)));</code></pre>
+
+<p>In this example, the preset defines the color, the menubar, the background and the font of the template, all of these parameters can also be set manually in the template settings.</p>
+
+<p>To have a look at all possible parameters of your template, open the file <em>YOUR_TEMPLATE\templateDetails.xml</em> (if you are customizng a YOOtheme Wordpress template, the file is <em>YOUR_TEMPLATE\template.xml</em>).</P>
+
+<p>Here you can see all parameters of the template, e.g. the param for the template background:</p>
+
+<pre><code>&lt;param name=&quot;background&quot; type=&quot;list&quot; default=&quot;default&quot; label=&quot;Template Background&quot; description=&quot;Background image and font colors&quot;&gt;
+&lt;option value=&quot;none&quot;&gt;Plain&lt;/option&gt;
+&lt;option value=&quot;aurora&quot;&gt;Aurora&lt;/option&gt;
+&lt;option value=&quot;glitter&quot;&gt;Glitter&lt;/option&gt;
+&lt;option value=&quot;bubbles&quot;&gt;Bubbles&lt;/option&gt;
+&lt;option value=&quot;landscape&quot;&gt;Landscape&lt;/option&gt;
+&lt;option value=&quot;space&quot;&gt;Space&lt;/option&gt;
+&lt;option value=&quot;mountains&quot;&gt;Mountains&lt;/option&gt;
+&lt;option value=&quot;photo&quot;&gt;Photo&lt;/option&gt;
+&lt;/param&gt;</code></pre>
+
+<p>So if you want to change the background setting in the preset we used in our example above, just put another value out of the templateDetails.xml in the preset in the presets.php. Let's say, we want to have the bubbles set as background in our preset <em>brownlandscape</em>. Change the code to this one:</p>
+
+<pre><code>$warp-&gt;config-&gt;addPreset('brownlandscape', 'Brown Landscape', array_merge($default_preset,array(
+'color' =&gt; 'brown',
+'menubar' =&gt; 'destructed',
+'background' =&gt; 'bubbles',
+'font' =&gt; 'georgia'
+)));</code></pre>
+
+<div class="box-hint">The same way you create a new preset. Just copy the whole block of an existing preset in the <em>presets.php</em> and change the values to suit your needs.</div>
+
+<h2>Add new parameters to a preset</h2>
+
+<p>To add a new parameter to a preset open the file <em>YOUR_TEMPLATE\templateDetails.xml</em> (if you are customizng a YOOtheme Wordpress template, the file is <em>YOUR_TEMPLATE\template.xml</em>) and have a look at the different parameters. In my example I want to add a specific template width to a preset. The code for the width is:</p>
+
+<pre><code>&lt;param name=&quot;template_width&quot; type=&quot;text&quot; size=&quot;10&quot; default=&quot;860&quot; label=&quot;Template Width&quot; description=&quot;Set the template width.&quot; /&gt;</code></pre>
+
+<p>Simply add this parameter to the preset.php. It should look like this:</p>
+
+<pre><code>$warp-&gt;config-&gt;addPreset('brownlandscape', 'Brown Landscape', array_merge($default_preset,array(
+'color' =&gt; 'brown',
+'menubar' =&gt; 'destructed',<
+'background' =&gt; 'landscape',
+'font' =&gt; 'georgia',
+'template_width' =&gt; '1000'
+)));</code></pre>
+
+<div class="box-hint">Do not forget to add the &quot;,&quot; after the last line, before you add another parameter in a new line.</div>
+
+<p>That's it, you are now able to customize presets or add new ones to your Warp 5.5 YOOtheme template.</p>
