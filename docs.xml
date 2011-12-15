@@ -11,25 +11,46 @@
       <doc alias="setup-the-wordpress-menu" name="Setup the WordPress Menu" file="05 Setup the WordPress Menu.html"/>
       <doc alias="setup-the-joomla-modules" name="Setup the Joomla Modules" file="06 Setup the Joomla Modules.html"/>
       <doc alias="setup-the-wordpress-widgets" name="Setup the WordPress Widgets" file="06 Setup the WordPress Widgets.html"/>
-	  <doc alias="how-to-use-a-profile" name="How to use a Profile" file="07 How to use a Profile.html"/>
+      <doc alias="how-to-use-profiles" name="How to use Profiles" file="07 How to use Profiles.html"/>
       <doc alias="how-to-update" name="How to Update" file="08 How to Update.html"/>
     </category>
-    <category alias="customizing" name="Customizing" folder="02 Customizing">
+    <category alias="legacy-warp-55" name="Legacy - Warp 5.5" folder="02 Legacy - Warp 5.5">
+      <doc alias="customizing-template-presets" name="Customizing Template Presets" file="01 Customizing Template Presets.html"/>
+      <doc alias="set-module-proportions" name="Set Module Proportions" file="02 Set Module Proportions.html"/>
+      <doc alias="add-custom-css-and-javascript-files" name="Add custom CSS and JavaScript files" file="03 Add custom CSS and JavaScript files.html"/>
+      <doc alias="dropdown-menu-accordion-menu" name="Dropdown menu - Accordion menu" file="04 Dropdown menu - Accordion menu.html"/>
+      <doc alias="change-the-layout-column-widths" name="Change the layout column widths" file="05 Change the layout column widths.html"/>
+      <doc alias="set-a-custom-page-suffix" name="Set a custom page suffix" file="06 Set a custom page suffix.html"/>
+    </category>
+    <category alias="customizing" name="Customizing" folder="03 Customizing">
       <doc alias="how-to-customize" name="How to Customize" file="01 How to Customize.html"/>
       <doc alias="directory-structure-explained" name="Directory Structure Explained" file="02 Directory Structure Explained.html"/>
       <doc alias="create-a-new-style" name="Create a new Style" file="03 Create a new Style.html"/>
       <doc alias="create-a-new-module-position" name="Create a new Module Position" file="04 Create a new Module Position.html"/>
       <doc alias="create-a-new-module-layout" name="Create a new Module Layout" file="05 Create a new Module Layout.html"/>
       <doc alias="create-a-new-module-style" name="Create a new Module Style" file="06 Create a new Module Style.html"/>
-      <doc alias="add-new-assets" name="Add new Assets" file="07 Add new Assets.html"/>
+      <doc alias="add-new-css-js-or-fonts" name="Add new CSS, JS or Fonts" file="07 Add new CSS, JS or Fonts.html"/>
       <doc alias="override-system-files" name="Override System Files" file="08 Override System Files.html"/>
       <doc alias="create-language-files" name="Create Language Files" file="09 Create Language Files.html"/>
     </category>
-    <category alias="troubleshooting" name="Troubleshooting" folder="03 Troubleshooting">
+    <category alias="legacy-warp-5" name="Legacy - Warp 5" folder="04 Legacy - Warp 5">
+      <doc alias="add-custom-css-and-javascript-files-2" name="Add custom CSS and JavaScript files" file="01 Add custom CSS and JavaScript files.html"/>
+      <doc alias="dropdown-menu-accordion-menu-2" name="Dropdown menu - Accordion menu" file="02 Dropdown menu - Accordion menu.html"/>
+      <doc alias="change-the-layout-column-widths-2" name="Change the layout column widths" file="03 Change the layout column widths.html"/>
+      <doc alias="set-a-custom-page-suffix-2" name="Set a custom page suffix" file="04 Set a custom page suffix.html"/>
+    </category>
+    <category alias="troubleshooting" name="Troubleshooting" folder="05 Troubleshooting">
       <doc alias="how-to-solve-theme-issues" name="How To Solve Theme Issues" file="01 How To Solve Theme Issues.html"/>
       <doc alias="installation-issues" name="Installation Issues" file="02 Installation Issues.html"/>
       <doc alias="file-permission-issues" name="File Permission Issues" file="03 File Permission Issues.html"/>
       <doc alias="javascript-errors" name="Javascript Errors" file="04 Javascript Errors.html"/>
+    </category>
+    <category alias="legacy-pre-warp" name="Legacy - Pre Warp" folder="06 Legacy - Pre Warp">
+      <doc alias="how-to-set-up-the-menu-system-before-warp5" name="How to set up the menu system before Warp5" file="01 How to set up the menu system before Warp5.html"/>
+      <doc alias="how-to-change-the-site-color-for-each-menu-item-before-warp5" name="How to change the site color for each menu item before Warp5" file="02 How to change the site color for each menu item before Warp5.html"/>
+      <doc alias="how-to-setup-the-accordion-menu-before-warp5" name="How to setup the accordion menu before Warp5" file="03 How to setup the accordion menu before Warp5.html"/>
+      <doc alias="how-to-change-the-width-of-the-left-or-right-column-before-warp5" name="How to change the width of the left or right column before Warp5" file="04 How to change the width of the left or right column before Warp5.html"/>
+      <doc alias="add-custom-module-proportions-before-warp5" name="Add custom module proportions before Warp5" file="05 Add custom module proportions before Warp5.html"/>
     </category>
   </section>
   <section alias="widgetkit" name="Widgetkit" folder="Widgetkit">
@@ -43,7 +64,7 @@
     </category>
     <category alias="customizing" name="Customizing" folder="02 Customizing">
       <doc alias="how-to-customize-widgets" name="How to Customize Widgets" file="01 How to Customize Widgets.html"/>
-      <doc alias="create-a-style" name="Create a new Widget Style" file="02 Create a new Widget Style.html"/>
+      <doc alias="create-a-new-widget-style" name="Create a new Widget Style" file="02 Create a new Widget Style.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="03 Troubleshooting">
       <doc alias="how-to-solve-widgetkit-issues" name="How To Solve Widgetkit Issues" file="01 How To Solve Widgetkit Issues.html"/>
