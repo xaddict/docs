@@ -1,25 +1,17 @@
-<h1>How to use Profiles</h1>
+<h1 class="title">How to use Profiles</h1>
 
-<p>A profile is a collection of {doc: theme-settings text:theme settings} controling the style, content and layout of your site, like colors, backgrounds, fonts and module-
-behavior. Every theme comes with at least a default profile, new ones can be created. You can apply them to a menu item, thus adding 
-individual settings to pages of your choice. </p>
+<p>A profile is a custom set of {doc: theme-settings text: theme settings} which can define the style, content and layout of your site. The default profile defines the default settings for the entire website. You can create new profiles and assign them to any menu item. This allows you to load different theme settings on different pages.</p>
 
-<p>Newly created profiles do automatically inherit all settings from the default profile, you just need to apply the necessary settings. The color 
-variations we deliver with each theme or special module behavior for certain pages are done with profiles, for example.</p>
+<p>New profiles inherit all settings from the default profile, so you just need to apply the settings you want to change. One example where we use the profiles are the different theme variations we deliver with each theme. Also special module layout behavior is done using profiles.</p>
 
 <h2>The Default Profile</h2>
 
 <div class="clearfix">
 	<img class="align-right margin-t-10" width="470" height="102" alt="Default Profile" src="../../../assets/images/warp/profile_default.png">
-	
-	<p>You can set your default profile here:<br/>
-	<strong>Joomla</strong> <em>Extensions</em> &gt; <em>Template Manager</em> &gt; <em>YOO_TEMPLATE</em> &gt; <em>General</em><br/>
-	<strong>WordPress</strong> <em>YOO_TEMPLATE</em> &gt; <em>Theme Options</em> &gt; <em>General</em></p>
-	
-	<p>All themes usually come with a profile called "default" set as the default profile. The default profile controls many theme settings for the whole installation. If you have created additonal profiles or want to set one of our color variations as the default profile, you can apply them here.</p>
 
-	<p>The profile called "default" does always pass all its settings on to all other profiles as long as they are not overriden by them. It can't be deleted.</p>
-	<p>One option to activate a profile, is to add a string containing the profiles name to an URL, for example <em>index.php&amp;profile=myprofile</em>. This option can be disabled by setting <strong>dynamic profiles</strong> to <em>No</em>, right below the default profiles setting.</p>
+	<p>In the general theme settings you find a parameter called <em>Default Profile</em>. Here you chose the profile which should be loaded on all your pages. By default it is set to profile called <em>default</em>. Each theme has a <em>default</em> profile and it can not be deleted. If you want to load another newly created profile as default for all your pages you can select it here.</p>
+
+	<p>Profiles can also be loaded in the frontend of your website by adding a parameter to an URL. For example <em>index.php?profile=myprofile</em>. We use this feature for exmample to load the different theme variations by clicking on a link on the website. But if you don't need this it should be disabled. This can be done by setting <strong>Dynamic Profiles</strong> to <em>No</em>, right below the <strong>Default Profile</strong> parameter.</p>
 
 </div>
 
@@ -28,15 +20,15 @@ variations we deliver with each theme or special module behavior for certain pag
 <div class="clearfix">
 	<img class="align-right margin-t-10" width="470" height="242" alt="Create a new Profile" src="../../../assets/images/warp/profile_add.png">
 	
-	<p>New profiles can be created if you click on <em>Add</em> at the <em>profiles tab</em> and enter a name.</p>
+	<p>New profiles can be created in the profile theme settings by clicking on <em>Add</em> and entering a name for your new profile.</p>
 	
-	<p>Below you can see all settings you can control and override with your new profile. By default all values are inherited by the default profile.</p>
+	<p>Below you can see all settings you can control and override with your new profile. By default all values are inherited by the <em>default</em> profile.</p>
 	
 	<p>To add new values or to select different options than the default ones, you first need to activate the override with the checkbox on the left.</p>
 	
-	<p>If you later decide, that you don't want to override one of the default values any longer, simply uncheck the box and the profile will load them again.</p>
+	<p>If you later decide, that you don't want to override one of the default values any longer, simply uncheck the box.</p>
 
-	<p>Manually created profiles can be renamed, deleted and assigned to pages.</p>
+	<p>Manually created profiles can be renamed, deleted and assigned to different pages.</p>
 
 </div>
 
@@ -45,9 +37,9 @@ variations we deliver with each theme or special module behavior for certain pag
 <div class="clearfix">
 	<img class="align-right margin-t-10" width="470" height="290" alt="Assign a Profile" src="../../../assets/images/warp/profile_assign.png">
 	
-	<p>One of the major features is the ability to assign profiles to pages. This gives you the ability to change the themes layout only on certain pages and to keep the default setting for the rest of the site, for example.</p>
+	<p>One of the major features is the ability to assign different profiles to different pages. This allows you to change the themes style and layout only on certain pages.</p>
 	
-	<p>To assign a profile to a single or multiple sites, click on <em>Assign Pages</em> and select the pages you want your profile to be assigned to. You can select multiple items by holding <em>Ctrl-Key</em> while clicking</p>
+	<p>To assign a profile to a single or multiple pages, click on <em>Assign Pages</em> and select the pages you want to load your new profile. You can select multiple items by holding <em>Ctrl-Key</em> while clicking.</p>
 	
 	<p>Please note that you can only assign one profile per page. If you have already assigned a profile to a page, it will be displayed in grey color and can't be selected.</p>
 	
@@ -58,9 +50,9 @@ variations we deliver with each theme or special module behavior for certain pag
 <div class="clearfix">
 	<img class="align-right margin-t-10" width="470" height="310" alt="Create different layouts for different pages" src="../../../assets/images/warp/profile_layouts.png">
 	
-	<p>One of the most common application ranges of profiles assigned to a page is the ability to define <strong>different module/widget layouts for certain pages</strong>.</p>
-	<p>Lets say your default setting for modules published on <em>top-a</em> position is set to <strong>equal</strong> (horizontal layout), but on your frontpage you need your modules on that position to be displayed with the <strong>stacked</strong> (vertical) layout:</p>
-	<p>You could create a new profile called <strong>frontpage</strong>, activate the checkbox for <em>Top-A Layout</em> and select <strong>stack</strong>. Now you just need to click on <em>Assign Pages</em>, to select your Frontpage and to save your changes. Now only the layout setting for <em>top-A</em> will be overriden on the frontpage, all other settings will keep their default values as long as you don't change them.</p>
-	<p>Another common option would be to hide the <em>system output</em> on certain pages, if you want your page to just contain modules or widgets and no article or page output.</p>
+	<p>One of the most common uses of profiles is to load different page and module layouts for certain pages.</p>
+	<p>For example lets say your module layout for position <em>Top-A</em> is set to <em>Equal</em>, which means the modules will float horizontal next to each other. But on your frontpage you need your modules on that position to be displayed with the <em>Stack</em> layout, so your modules appear vertical above each other.</p>
+	<p>To do so you create a new profile called <em>Frontpage</em>, activate the checkbox for <em>Top-A Layout</em> and select <em>Stack</em>. Next click on <em>Assign Pages</em>, to select your frontpage and to save your changes. Now the layout setting for <em>Top-A</em> will be overriden on the frontpage.</p>
+	<p>Another common use is to hide the <em>System Output</em> on certain pages, if you want your page to just contain modules or widgets and no article.</p>
 
 </div>
