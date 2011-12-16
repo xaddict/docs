@@ -18,7 +18,7 @@
       <doc alias="change-the-layout-column-widths" name="Change the Layout Column Widths" file="01 Change the Layout Column Widths.html"/>
       <doc alias="add-custom-css-and-javascript-files" name="Add Custom CSS and JavaScript Files" file="02 Add Custom CSS and JavaScript Files.html"/>
       <doc alias="customizing-template-presets" name="Customizing Template Presets" file="03 Customizing Template Presets.html"/>
-      <doc alias="dropdown-menu-accordion-menu" name="Dropdown Menu - Accordion Menu" file="04 Dropdown Menu - Accordion Menu.html"/>
+      <doc alias="dropdown-menu-accordion-menu" name="Setup the Menus" file="04 Setup the Menus.html"/>
       <doc alias="set-a-custom-page-suffix" name="Set a Custom Page Suffix" file="05 Set a Custom Page Suffix.html"/>
       <doc alias="set-module-proportions" name="Set Module Proportions" file="06 Set Module Proportions.html"/>
     </category>
@@ -36,7 +36,7 @@
     <category alias="legacy-warp-5" name="Legacy - Warp 5" folder="04 Legacy - Warp 5">
       <doc alias="add-custom-css-and-javascript-files-2" name="Add Custom CSS and JavaScript Files" file="01 Add Custom CSS and JavaScript Files.html"/>
       <doc alias="change-the-layout-column-widths-2" name="Change the Layout Column Widths" file="02 Change the Layout Column Widths.html"/>
-      <doc alias="dropdown-menu-accordion-menu-2" name="Dropdown Menu - Accordion Menu" file="03 Dropdown Menu - Accordion Menu.html"/>
+      <doc alias="dropdown-menu-accordion-menu-2" name="Setup the Menus" file="03 Setup the Menus.html"/>
       <doc alias="set-a-custom-page-suffix-2" name="Set a custom page suffix" file="04 Set a custom page suffix.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="05 Troubleshooting">
@@ -46,9 +46,9 @@
       <doc alias="javascript-errors" name="Javascript Errors" file="04 Javascript Errors.html"/>
     </category>
     <category alias="legacy-pre-warp" name="Legacy - Pre Warp" folder="06 Legacy - Pre Warp">
-      <doc alias="set-up-the-menu-system" name="Set up the Menu System" file="01 Set up the Menu System.html"/>
+      <doc alias="set-up-the-menu-system" name="Setup the Menu System" file="01 Setup the Menu System.html"/>
       <doc alias="change-site-colors-for-menu-items" name="Change Site Colors for Menu Items" file="02 Change Site Colors for Menu Items.html"/>
-      <doc alias="set-up-the-accordion-menu" name="Set up the Accordion Menu" file="03 Set up the Accordion Menu.html"/>
+      <doc alias="set-up-the-accordion-menu" name="Setup the Accordion Menu" file="03 Setup the Accordion Menu.html"/>
       <doc alias="change-the-column-widths" name="Change the Column Widths" file="04 Change the Column Widths.html"/>
       <doc alias="add-custom-module-proportions" name="Add Custom Module Proportions" file="05 Add Custom Module Proportions.html"/>
     </category>
