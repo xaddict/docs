@@ -9,6 +9,7 @@ The following files inside your themes folder need to be edited:</p>
   <li><em>config.xml</em></li>
   <li><em>/layouts/template.php</em></li>
   <li><em>/layouts/module.php</em></li>
+  <li><em>/js/template.js</em></li>
 </ul>
 
 <h2>Add a new position to the theme XML file</h2>
@@ -29,11 +30,7 @@ The following files inside your themes folder need to be edited:</p>
 
 <p>Open <em>config.xml</em> and look for an entry of an already existing positon. Copy the code from "top-b" for example, paste it below it and rename it:</p>
 
-<pre><code>&lt;field name=&quot;top-c&quot; type=&quot;list&quot; default=&quot;equal&quot; label=&quot;Top C Layout&quot; description=&quot;Select a grid layout for this module position.&quot;&gt;
-	&lt;option value=&quot;equal&quot;&gt;Equal&lt;/option&gt;
-	&lt;option value=&quot;stack&quot;&gt;Stack&lt;/option&gt;
-	&lt;option value=&quot;double&quot;&gt;Double&lt;/option&gt;
-&lt;/field&gt;
+<pre><code>&lt;field name=&quot;top-c&quot; type=&quot;layout&quot; default=&quot;equal&quot; label=&quot;Top C Layout&quot; description=&quot;Select a grid layout for this module position.&quot; /&gt;
 </code></pre>
 
 <p>This allows you to define a layout for your new position in the theme options of your administration.</p>
@@ -67,6 +64,13 @@ if ($style == '') {
 </code></pre>
 
 <p><strong>Note:</strong> If you create a theme style and want to add some new module styles you can override the default module.php file. Just copy <em>/layouts/module.php</em> to <em>/styles/YOUR_STYLE/layouts/module.php</em>.</p>
+
+<h2>Enable matching of module-height</h2>
+<p>If modules are displayed in a grid, we would like to have width and height of the module matched with modules in the same row or column. To ensure that, open <em>js/template.js</em>. Look for an already existing entry in the <em>matchHeight()</em> function. In my example I copied the entry for <em>#top-b</em> and renamed it to <em>#top-c</em>.</p>
+
+<pre><code>$('#top-c .grid-h').matchHeight('.deepest');</code></pre>
+
+<p>Matching of the module's width is done without any further changes.</p>
 
 <h2>Update your CSS</h2>
 
