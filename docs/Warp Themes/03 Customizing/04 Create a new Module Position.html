@@ -65,12 +65,10 @@ if ($style == '') {
 
 <p><strong>Note:</strong> If you create a theme style and want to add some new module styles you can override the default module.php file. Just copy <em>/layouts/module.php</em> to <em>/styles/YOUR_STYLE/layouts/module.php</em>.</p>
 
-<h2>Enable matching of module-height</h2>
-<p>If modules are displayed in a grid, we would like to have width and height of the module matched with modules in the same row or column. To ensure that, open <em>js/template.js</em>. Look for an already existing entry in the <em>matchHeight()</em> function. In my example I copied the entry for <em>#top-b</em> and renamed it to <em>#top-c</em>.</p>
+<h2>Match module heights</h2>
+<p>To match the height of modules in the same row, open <em>js/template.js</em>. Look for an already existing entry in the <em>matchHeight()</em> function. In my example I copied the entry for <em>#top-b</em> and renamed it to <em>#top-c</em>.</p>
 
 <pre><code>$('#top-c .grid-h').matchHeight('.deepest');</code></pre>
-
-<p>Matching of the module's width is done without any further changes.</p>
 
 <h2>Update your CSS</h2>
 
