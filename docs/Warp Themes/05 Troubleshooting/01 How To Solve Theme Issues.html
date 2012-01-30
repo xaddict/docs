@@ -14,27 +14,20 @@
 
 <p>This might be due to file permission issues. Please read {doc: file-permission-issues text: this tutorial} on how to detect and resolve the problem.</p>
 
-<p>On Joomla, if you have renamed your theme and get a message similar to the following:</p>
+<h2>You renamed our Joomla theme and can't save template configuration</h2>
 
-<pre>Parameters:
-The parameter file /templates/YOO_TEMPLATE/params.ini is unwritable!
-config Element not defined for type = config
-</pre>
+<p>In Joomla, if you have renamed your theme and get a message similar to the following:</p>
+
+<pre>The parameter file /templates/YOO_TEMPLATE/params.ini is unwritable!
+config Element not defined for type = config</pre>
 
 <p>The template directory <em>YOO_TEMPLATE</em> does not match the path set in the <em>templateDetails.xml</em> file, therefore the config element cannot be loaded. Make sure the <em>addpath</em> attribute matches your templates directory:</p>
 
-<pre><code class="language-xml">Joomla 1.5
-&lt;params addpath=&quot;/templates/YOO_TEMPLATE/warp/systems/joomla.1.5/config/elements&quot;&gt;
-	&lt;param name=&quot;config&quot; type=&quot;config&quot; label=&quot;Config&quot; description=&quot;&quot; default=&quot;&quot; /&gt;
-&lt;/params&gt;
+<p>Joomla 1.5</p>
+<pre><code class="language-xml">&lt;params addpath=&quot;/templates/YOO_TEMPLATE/warp/systems/joomla.1.5/config/elements&quot;&gt;</code></pre>
 
-Joomla 2.5 and above
-&lt;fields name=&quot;params&quot; addpath=&quot;/templates/YOO_TEMPLATE/warp/systems/joomla/config/elements&quot;&gt;
-	&lt;fieldset name=&quot;basic&quot;&gt;
-		&lt;field name=&quot;config&quot; type=&quot;config&quot; label=&quot;Config&quot; description=&quot;&quot; default=&quot;&quot; /&gt;
-	&lt;/fieldset&gt;
-&lt;/fields&gt;
-</code></pre>
+<p>Joomla 2.5 and above</p>
+<pre><code class="language-xml">&lt;fields name=&quot;params&quot; addpath=&quot;/templates/YOO_TEMPLATE/warp/systems/joomla/config/elements&quot;&gt;</code></pre>
 
 <h2>Warp theme administration is unstyled</h2>
 
