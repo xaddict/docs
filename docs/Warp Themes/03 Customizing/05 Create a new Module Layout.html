@@ -39,6 +39,71 @@
 
 <h2>How to add a new module layout?</h2>
 
-<p>To create a new module layout add a new file to <em>/layouts/modules/layouts</em> or if you are using a theme style to <em>/styles/YOUR_STYLE/layouts/modules/layouts</em>. The best way is to copy an existing module layout and modify it. For example copy <em>/warp/layouts/modules/layouts/double.php</em> to <em>/layouts/modules/layouts/double.php</em>. This new and modified module layout will override the default one.</p>
+<p>To create a new module layout add a new file to <em>/layouts/modules/layouts</em>. The best way is to copy an existing module layout and modify it. For example copy <em>/warp/layouts/modules/layouts/double.php</em> to <em>/layouts/modules/layouts/double.php</em>. This new and modified module layout will override the default one.</p> 
 
 <p>The new created layout should now be available in the theme settings.</p>
+
+<h2>Example: How to add more columns</h2>
+
+<p>A common usecase is to add a layout for more than the already supported 6 columns. Let's say you want to have 7 modules next to each other with equal sized dimensions. In that case you copy <em>warp/layouts/modules/layouts/equal.php</em> to <em>layouts/modules/layouts</em>. In your copy of <em>equal.php</em>, locate the <em>case 6</em> which should look as follows.</p>
+
+<pre><code>
+case 6:
+    printf('&lt;div class=&quot;grid-box width16 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[0]);
+    printf('&lt;div class=&quot;grid-box width16 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[1]);
+    printf('&lt;div class=&quot;grid-box width16 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[2]);
+    printf('&lt;div class=&quot;grid-box width16 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[3]);
+    printf('&lt;div class=&quot;grid-box width16 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[4]);
+    printf('&lt;div class=&quot;grid-box width16 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[5]);
+    break;
+</code></pre>
+
+<p>Copy that complete block and paste it directly below the copied block but before the <em>default</em> block. Duplicate the last <em>printf</em> statement and change <em>$modules[5]</em> to <em>$modules[5]</em>. Since we now have seven columns instead of six, the width of each single module has to be adjusted. As 100% divided by 7 (modules) is about 14% we change the CSS class from <em>width16</em> to <em>width14</em>. With these changes, the new block should look like this:</p>
+
+<pre><code>
+case 7:
+    printf('&lt;div class=&quot;grid-box width14 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[0]);
+    printf('&lt;div class=&quot;grid-box width14 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[1]);
+    printf('&lt;div class=&quot;grid-box width14 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[2]);
+    printf('&lt;div class=&quot;grid-box width14 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[3]);
+    printf('&lt;div class=&quot;grid-box width14 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[4]);
+    printf('&lt;div class=&quot;grid-box width14 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[5]);
+    printf('&lt;div class=&quot;grid-box width14 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[6]);
+    break;
+</code></pre>
+
+<p>The CSS class <em>width14</em> does not exist yet (all existing width-classes are located in the <em>/* Grid Units */</em> section of <em>warp/css/layout.css</em>) so we will have to add the following snippet to the existing stylesheet. You can either add that to the existing <em>warp/css/layout.css</em> or you can put it in {doc: create-a-new-style text: your own style} - which will keep your changes safe for updates.
+</p>
+
+<pre><code>
+.width14 { width: 14.2%; } 
+</code></pre>
+
+<h2>Example: Create your own size distribution for modules</h2>
+<p>By default, you can choose between the three options <em>equal</em>, <em>double</em> and <em>stack</em> which are described above. If you want a custom size distribution - let's say 35% / 30% / 35% for three modules in a row, you will have to create your own module layout. To do so, create a new file in <em>layouts/modules/layouts/</em> - we call it <em>custom.php</em> in this example. As we only want the layout to work for three modules in this example, the content of <em>custom.php</em> will look like this:</p>  
+
+<pre><code>
+&lt;?php
+
+switch (count($modules)) {
+
+    case 3:
+        printf('&lt;div class=&quot;grid-box width35 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[0]);
+        printf('&lt;div class=&quot;grid-box width30 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[1]);
+        printf('&lt;div class=&quot;grid-box width35 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[2]);
+        break;
+        
+    default:
+        echo '&lt;div class=&quot;grid-box width100 grid-h&quot;&gt;Error: The current number of 
+        modules is not supported in this layout. If you need more you need to change this custom 
+        layout.&lt;/div&gt;';
+
+}
+</code></pre> 
+
+<p>As you can see we have used the CSS classes <em>width35</em> and <em>width30</em>. These do not exist yet (all existing width-classes are located in the <em>/* Grid Units */</em> section of <em>warp/css/layout.css</em>) so we will have to add the following snippet to the existing stylesheet. You can either add that to the existing <em>warp/css/layout.css</em> or you can put it in {doc: create-a-new-style text: your own style} - which will keep your changes safe for updates.
+</p>
+<pre><code>
+.width30 { width: 30%; }
+.width35 { width: 35%; }
+</code></pre> 
