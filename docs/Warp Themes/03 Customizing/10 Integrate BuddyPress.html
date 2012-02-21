@@ -1,0 +1,83 @@
+<h1 class="title">Integrate BuddyPress</h1>
+
+<p>
+    Our themes can easily be used with the popular Wordpress Plugin 
+    <a href="http://buddypress.org/">BuddyPress</a>. To combine these two in
+     a beautiful manner and adjust the default look to your own needs you just
+     have to follow these easy steps.
+ </p>
+
+<h2>Install BuddyPress</h2>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/integrate_buddypress_01.png" name="Install BuddyPress" width="470" height="119" />
+<p class="clearfix">
+    In your WordPress backend, go to your plugin section, search for <em>BuddyPress</em> 
+    and install it. After activation of the plugin you have to go through some setup steps.
+</p>
+<img class="align-right margin-t-10" src="../../../assets/images/warp/integrate_buddypress_02.png" name="Install template pack" width="470" height="76" />
+<p class="clearfix">
+    In the last setup step you are asked to install the <em>BuddyPress template pack</em>. This is 
+    essential, so please install it as well. 
+</p>
+
+<h2>BuddyPress Compatibility Setup</h2>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/integrate_buddypress_03.png" name="Install BuddyPress" width="470" height="64" />
+
+<p class="clearfix">
+    After finishing the installation a notification will pop up in the administration
+    area. A click on the <em>BP compatibility</em> link leads you to a simple process that copies 
+    some BuddyPress files in your theme directory.
+</p>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/integrate_buddypress_04.png" name="Install BuddyPress" width="470" height="90" />
+
+<p class="clearfix"> 
+    All steps should work by simply clicking the according <em>Continue</em> button. For
+    detailed information on this process please have a look at the official <a href="http://codex.buddypress.org/theme-development/wordpress-to-buddypress-theme/">BuddyPress guide</a>.
+</p>
+
+<h2>Make your own adjustments</h2>
+
+<p>
+    BuddyPress is now installed and ready to be used in your theme. Depending on the installed BuddyPress version 
+    and your chosen theme you might still have some visual adjustment work to do.
+    Since you would like your social community to be unique you may want to change a lot of the default 
+    styling anyway. Experience shows that the default BuddyPress style works best with  
+    bright variations of one of our themes.
+</p>
+
+<p>
+    As a start we have prepared some <em>CSS</em> for you that applies some <em>margin</em>, <em>padding</em> 
+    and <em>float</em> corrections to the default BuddyPress styles. This can be put in your theme's <em>css/extensions.css</em>.
+    However, for update safety we always recommend {doc: create-a-new-style text: creating your own style}.
+</p>
+
+<pre class="bfc-o"><code>
+#sidebar {
+    display: none;
+}
+
+ul#activity-stream, .item-list-tabs ul, .padder ul {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-inner p, .activity-header p {
+    margin: 0;
+    padding: 0;
+}
+
+.padder .clear {
+    clear: left;
+}
+
+.padder table tr td, .padder table tr th {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.padder div.item-list-tabs#subnav {
+    margin-top:-20px;
+}
+</code></pre>
