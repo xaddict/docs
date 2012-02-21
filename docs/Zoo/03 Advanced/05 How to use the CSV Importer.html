@@ -50,11 +50,18 @@
 	<p>When you want to assign the imported items to more than one category, just create one column for each category in your CSV file and assign both columns to the same element (in this case &quot;Category&quot;).</p>
 
 	<p>The CSV Importer will look for existing categories in your application, that have the same name and if found, will assign items to these categories. If there is no existing category, a new category will be created.</p>
+
+	<p>If you want to assign the item to a specific existing category, you can provide a category alias. Use three pipes to separate name and alias: <em>CATEGORY_NAME|||CATEGORY_ALIAS</em></p>
+
+	<p>If you want to assign the item to a subcatgory, you can separate a category tree through three slashes in the form: <em>CATEGORY_PARENT///CATEGORY_CHILD</em></p>
 </div>
+
 
 <div class="box-info">When you want to import images you have to upload them to a folder in your Joomla installation (e.g. images/stories) and put the path to the image in the CSV file, e.g. <em>images/stories/movie1.png</em></div>
 
 <div class="box-info">If you want to assign data to repeatable elements, you can simply assign multiple columns to the same element. (e.g. Textareas)</div>
+
+<div class="box-info">If you want to see an example, use the ZOO CSV Export feature and check the resulting CSV file.</div>
 
 
 <p>The newly imported items should appear unpublished in the item manager.</p>
