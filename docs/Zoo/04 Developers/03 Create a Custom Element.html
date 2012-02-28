@@ -69,9 +69,9 @@
 
 <pre><code>public function edit() {
 	$html = array();
-	$html[] = $this->app->html->_('element.editrow', JText::_('Street'), 	$this->app->html->_('control.text', $this->getControlName('street'), $this-&gt;get('street'), 'size=&quot;60&quot; maxlength=&quot;255&quot;'));
-	$html[] = $this->app->html->_('element.editrow', JText::_('ZIP'), $this->app->html->_('control.text', $this->getControlName('zip'), $this-&gt;get('zip'), 'size=&quot;60&quot; maxlength=&quot;255&quot;'));
-	$html[] = $this->app->html->_('element.editrow', JText::_('Country'), $this->app->html->_('control.text', $this->getControlName('country'), $this-&gt;get('country'), 'size=&quot;60&quot; maxlength=&quot;255&quot;'));
+	$html[] = $this->app->html->_('control.editrow', JText::_('Street'), 	$this->app->html->_('control.text', $this->getControlName('street'), $this-&gt;get('street'), 'size=&quot;60&quot; maxlength=&quot;255&quot;'));
+	$html[] = $this->app->html->_('control.editrow', JText::_('ZIP'), $this->app->html->_('control.text', $this->getControlName('zip'), $this-&gt;get('zip'), 'size=&quot;60&quot; maxlength=&quot;255&quot;'));
+	$html[] = $this->app->html->_('control.editrow', JText::_('Country'), $this->app->html->_('control.text', $this->getControlName('country'), $this-&gt;get('country'), 'size=&quot;60&quot; maxlength=&quot;255&quot;'));
 
 	return implode(&quot;\n&quot;, $html);
 }
