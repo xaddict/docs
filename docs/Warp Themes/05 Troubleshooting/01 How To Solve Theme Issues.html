@@ -24,10 +24,10 @@ config Element not defined for type = config</pre>
 <p>The template directory <em>YOO_TEMPLATE</em> does not match the path set in the <em>templateDetails.xml</em> file, therefore the config element cannot be loaded. Make sure the <em>addpath</em> attribute matches your templates directory:</p>
 
 <p>Joomla 1.5</p>
-<pre><code class="language-xml">&lt;params addpath=&quot;/templates/YOO_TEMPLATE/warp/systems/joomla.1.5/config/elements&quot;&gt;</code></pre>
+<pre><code>&lt;params addpath=&quot;/templates/YOO_TEMPLATE/warp/systems/joomla.1.5/config/elements&quot;&gt;</code></pre>
 
 <p>Joomla 2.5</p>
-<pre><code class="language-xml">&lt;fields name=&quot;params&quot; addpath=&quot;/templates/YOO_TEMPLATE/warp/systems/joomla/config/elements&quot;&gt;</code></pre>
+<pre><code>&lt;fields name=&quot;params&quot; addpath=&quot;/templates/YOO_TEMPLATE/warp/systems/joomla/config/elements&quot;&gt;</code></pre>
 
 <h2>Warp theme administration is unstyled</h2>
 
@@ -48,3 +48,25 @@ config Element not defined for type = config</pre>
 <p>Another way to check for PHP errors, is to have a look at your PHP error log. The PHP log shows information on errors and warnings thrown by PHP. Your host should have configured PHP to write that information to a log rather than output them on screen.</p>
 
 <p>Please check this guide to <a href="http://coding.smashingmagazine.com/2011/11/30/a-guide-to-php-error-messages-for-designers/">PHP error messages for webdesigners</a> for a more thourough view on the subject.</p>
+
+<h2>Webfonts are not loading in Internet Explorer</h2>
+
+<p>If your webfonts on your theme installation are not being rendered on IE7 and IE8, your server might not supporting the required Mime-Types. To solve the issue, you need to open your <em>.htaccess</em> file in your installation root folder and add the following code to it:</p>
+
+<pre><code>
+AddType font/ttf .ttf  
+AddType font/eot .eot  
+AddType font/otf .otf  
+AddType font/woff .woff
+AddType application/octet-stream .otf .ttf
+</code></pre>
+
+<p>We also recommend to not use IE9 browser modes for IE7 and IE8 to check your website, you should use a native IE7 / IE8 on a virtual machine like Oracle's <a href="https://www.virtualbox.org/">VirtualBox</a>.</p>
+
+<h2>CSS3Pie is not working</h2>
+
+<p>This can be caused by not serving the correct HTC behavior. To solve the issue, you need to open your <em>.htaccess</em> file in your installation root folder and place this code into it:</p>
+
+<pre><code>AddType text/x-component .htc</code></pre>
+
+<p>Another issue could be an incorrect permission setup for the cache folder, please read {doc: file-permission-issues text: this tutorial} for more information.</p>
