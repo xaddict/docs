@@ -51,7 +51,7 @@ config Element not defined for type = config</pre>
 
 <h2>Webfonts are not loading in Internet Explorer</h2>
 
-<p>If your webfonts on your theme installation are not being rendered on IE7 and IE8, your server might not supporting the required Mime-Types. To solve the issue, you need to open your <em>.htaccess</em> file in your installation root folder and add the following code to it:</p>
+<p>If webfonts are not being rendered in IE7 and IE8, your server might not supporting the required Mime-Types. To solve the issue, you need to open the <em>.htaccess</em> file in your installation root folder and add the following code:</p>
 
 <pre><code>
 AddType font/ttf .ttf  
@@ -65,7 +65,7 @@ AddType application/octet-stream .otf .ttf
 
 <h2>CSS3Pie is not working</h2>
 
-<p>This can be caused by not serving the correct HTC behavior. To solve the issue, you need to open your <em>.htaccess</em> file in your installation root folder and place this code into it:</p>
+<p>This can be caused by not serving the correct HTC behavior. To solve the issue, you need to open the <em>.htaccess</em> file in your installation root folder and add the following code:</p>
 
 <pre><code>AddType text/x-component .htc</code></pre>
 
