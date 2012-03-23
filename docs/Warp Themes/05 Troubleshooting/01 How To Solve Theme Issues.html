@@ -53,13 +53,11 @@ config Element not defined for type = config</pre>
 
 <p>If webfonts are not being rendered in IE7 and IE8, your server might not supporting the required Mime-Types. To solve the issue, you need to open the <em>.htaccess</em> file in your installation root folder and add the following code:</p>
 
-<pre><code>
-AddType font/ttf .ttf  
+<pre><code>AddType font/ttf .ttf  
 AddType font/eot .eot  
 AddType font/otf .otf  
 AddType font/woff .woff
-AddType application/octet-stream .otf .ttf
-</code></pre>
+AddType application/octet-stream .otf .ttf</code></pre>
 
 <p>We also recommend to not use IE9 browser modes for IE7 and IE8 to check your website, you should use a native IE7 / IE8 on a virtual machine like Oracle's <a href="https://www.virtualbox.org/">VirtualBox</a>.</p>
 
