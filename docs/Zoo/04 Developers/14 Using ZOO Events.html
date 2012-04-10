@@ -9,7 +9,7 @@
 
 <p>Events are a neat concept to listen for actions in the ZOO and react to those actions. An action would be the rendering of an item e.g. You could listen to that event and eventually modify the output. This is much like Joomlas plugin system. There are quite a few events predefined in ZOO, have a look at ZOOs <em>config.php</em> to checkout all the events that are already defined. Also checkout the <em>events</em> folder in ZOOs administration folder. There are examples of every event and its parameters.</p>
 
-<p>Basically the workflow would be like this. You include ZOOs <em>config.php</em> to load the ZOO. As a second step, you retrieve the ZOO app. Then you can connect to ZOOs event dispatcher with any <a href=”http://www.php.net/manual/en/language.pseudo-types.php#language.types.callback”>PHP callback</a>.</p>
+<p>Basically the workflow would be like this. You include ZOOs <em>config.php</em> to load the ZOO. As a second step, you retrieve the ZOO app. Then you can connect to ZOOs event dispatcher with any <a href="http://www.php.net/manual/en/language.pseudo-types.php#language.types.callback">PHP callback</a>.</p>
 
 <pre><code>// load ZOO config
 require_once(JPATH_ADMINISTRATOR.'/components/com_zoo/config.php');
