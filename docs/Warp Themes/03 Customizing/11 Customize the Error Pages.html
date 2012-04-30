@@ -22,16 +22,23 @@
 
 </div>
 
-<p>The HTML output of the <em>Error &amp; Browser Upgrade Pages</em> is located in <em>/warp/layouts/error.php</em> within your theme. To override the HTML output, you can copy this file to either the layout folder of your theme or the layout folder of a style (please reference {doc: override-system-files text: this tutorial} for more information on overriding system files). If you would like to edit the language output, simply edit the Warp language file. Learn more about the language file in {doc: create-language-files text: this tutorial}.</p>
-
 <h2>Offline Mode Page</h2>
 
 <div class="clearfix">
 
 	<img class="align-right margin-t-10" src="../../../assets/images/warp/error_pages_offline.jpg" name="Offline Mode Page" width="320" height="181" />
 
-	<p>In the event you need to perform maintenance on your website, activating the offline mode page will notify your users that your site is currently unavailable. This is extremely useful when upgrading or testing out new features on your website.</p>
-
-	<p>The HTML output of the error page is located in <em>/warp/layouts/offline.php</em> within your theme. To override the HTML output, you can copy this file to either your layout folder of the theme or the layout folder of a style (please reference {doc: override-system-files text: this tutorial} for more information on overriding system files). If you would like to edit the language output, simply edit the Warp language file. Learn more about the language file in {doc: create-language-files text: this tutorial}.</p>
+	<p>In the event you need to perform maintenance on your website, activating the offline mode page will notify your users that your site is currently unavailable. This is extremely useful when upgrading or testing out new features on your website. The Offline mode page is only available for Joomla and not for WordPress.</p>
 
 </div>
+
+<h2>Override and customize the Error Pages</h2>
+
+<p>The HTML output of the error and offline pages are located in <em>/warp/layouts</em> within your theme.
+
+<ul>
+	<li>Error Pages: <em>/warp/layouts/error.php</em></li>
+	<li>Offline Pages: <em>/warp/layouts/offline.php</em></li>
+</ul>
+
+<p>To override the HTML output, you can copy these files to the theme <em>/layouts</em> directory or even better {doc: create-a-new-style text: create your own style} and change the files to your needs. If you are using your own style copy the files to <em>/styles/YOUR_STYLE/layouts</em>. Further this way you won't lose any of your changes after an update of your theme. If you would like to edit the language output, simply {doc: create-language-files text: edit the Warp language file}.</p>
