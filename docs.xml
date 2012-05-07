@@ -4,7 +4,7 @@
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
       <doc alias="install-a-joomla-template" name="Install a Joomla Template" file="01 Install a Joomla Template.html"/>
       <doc alias="install-a-wordpress-theme" name="Install a WordPress Theme" file="01 Install a WordPress Theme.html"/>
-      <doc alias="install-theme-demo-package" name="Install Theme Demo Package" file="02 Install Theme Demo Package.html"/>
+      <doc alias="setup-a-theme-demo-package" name="Setup a Theme Demo Package" file="02 Setup a Theme Demo Package.html"/>
       <doc alias="theme-settings" name="Theme Settings" file="03 Theme Settings.html"/>
       <doc alias="setup-the-logo" name="Setup the Logo" file="04 Setup the Logo.html"/>
       <doc alias="setup-the-joomla-menu" name="Setup the Joomla Menu" file="05 Setup the Joomla Menu.html"/>
