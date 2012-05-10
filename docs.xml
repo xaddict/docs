@@ -46,6 +46,7 @@
       <doc alias="installation-issues" name="Installation Issues" file="02 Installation Issues.html"/>
       <doc alias="file-permission-issues" name="File Permission Issues" file="03 File Permission Issues.html"/>
       <doc alias="javascript-errors" name="Javascript Errors" file="04 Javascript Errors.html"/>
+      <doc alias="why-does-the-validation-fail" name="Why does the validation fail" file="05 Why Does The Validation Fail.html"/>
     </category>
     <category alias="legacy-pre-warp" name="Legacy - Pre Warp" folder="06 Legacy - Pre Warp">
       <doc alias="set-up-the-menu-system" name="Setup the Menu System" file="01 Setup the Menu System.html"/>
