@@ -1,14 +1,14 @@
-<h1 class="title">Javascript errors</h1>
+<h1 class="title">Javascript Errors</h1>
 
 <p>Nowadays almost every Joomla extension uses JavaScript to create a more responsive website for a better user exprience. Mostly all JavaScripts rely on a JavaScript library like <a href="http://jquery.com">jQuery</a>, <a href="http://mootools.net">Mootools</a> or others. Using different scripts on a webpage can cause conflicts between them. This tutorial helps you to detect and resolve these script errors.</p>
 
 <h2>How to detect errors?</h2>
 
-<p>If your website does not work a as you expected when you click something or an animation is not working anymore. This could be the result of a script error. If an error occurs the script execution will be stopped by the browser. While some pages might still work, others don't. Not every script is being loaded on every single page of your website. A way to investigate these errors is to use the browsers debug console on the page where the error occurs. In Firefox you can use the <a href="http://getfirebug.com/errors">Firebug</a> Addon and also other browsers like Chrome, Safari or Opera which already have built-in developer tools. All these tools will show you the script errors including information about what went wrong, the file and line number, and the line of source code that caused the error. This will really help you with debugging any script error.</p>
+<p>If your website does not work as you expect when you click something or an animation stopped working, this could be the result of a script error. In case of an error the script-execution will be stopped by the browser. While some pages might still work, others don't. Not every script is being loaded on every single page of your website. A way to investigate these errors is to use the browser's debug console on the page where the error occurs. In Firefox you can use the <a href="http://getfirebug.com/errors">Firebug</a> Addon, other browsers like Chrome, Safari or Opera already have similar tools built-in. These developer tools will show you the script-errors including information about what went wrong, the file and line number, and the line of source code that caused the error. This will really help you with debugging any script errors.</p>
 
 <h2>How to resolve errors?</h2>
 
-<p>If you've detected a JavaScript error on a page you need to find the origin of the error. Usually the errors are caused by an extension or combination of multiple extensions. The browsers debug console will help you to identify the scripts and its related files on your webserver. Once you have identified the extension you can try to disable it to make sure your page works without any errors again. If the error is gone, you've found the extension causing the conflict. Now you can look for the extensions configuration option and see if it lets you enable/disable loading a JavaScript library like jQuery to resolve the errors.</p>
+<p>If you've detected a JavaScript error on a page you need to find its origin. Usually the errors are caused by an extension or combination of multiple extensions. The browser's debug console will help you to identify the scripts and their related files on your webserver. Once you have identified the extension you can try disabling it to make sure your page works without any errors again. If the error is gone, you've found the extension causing the conflict. Now you can look for the extensions configuration option and see if it lets you enable/disable loading a JavaScript library like jQuery to resolve the errors.</p>
 
 <h2>How to prevent loading jQuery multiple times?</h2>
 
@@ -34,4 +34,3 @@ if (!JFactory::getApplication()->get('jquery')) {
 	<li><a href="http://developer.apple.com/library/safari/#documentation/appleapplications/Conceptual/Safari_Developer_Guide/DebuggingYourWebsite/DebuggingYourWebsite.html">Safari Developer Tools</a></li>
 	<li><a href="http://www.opera.com/developer/tools/">Opera Developer Tools</a></li>
 </ul>
-
