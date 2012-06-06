@@ -2,9 +2,9 @@
 
 <p>Module Styles define the design and appearance of a module. For example you can create different module styles like a red module, a blue module, one with a box shadow, one without, etc... The module styles are defined in the <em>/layouts/module.php</em> file.</p>
 
-<div class="box-info">If you create a theme style you want to add some new module styles you can override the default module.php file. Just copy <em>/layouts/module.php</em> to <em>/styles/YOUR_STYLE/layouts/module.php</em>.</div>
+<div class="box-info">If you create a theme style you want to add some new module styles to you can override the default module.php file. Just copy <em>/layouts/module.php</em> to <em>/styles/YOUR_STYLE/layouts/module.php</em>.</div>
 
-<p>Now let's see how modules.php file work. Open it and take a look at line ~50 to line ~75. Here is an example:</p>
+<p>Now let's see how the modules.php file works. Open it and take a look at line ~50 to line ~75. Here is an example:</p>
 
 <pre><code>// set module template using the style
 switch ($style) {
@@ -53,17 +53,17 @@ switch ($style) {
 <p>If you want to create color variations of your module style you need some additional CSS classes. For example <code>.mod-line-blue</code></p>
 
 <h3>$split_color = 1;</h3>
-<p>This is optional and only for advanced users. If the first word of you module title should be automatically wrapped with a span element with a CSS class color set this parameter to 1.</p>
+<p>This is optional and only for advanced users. If the first word of your module title should be automatically wrapped with a span element with a CSS class color, set this parameter to 1.</p>
 
 <h3>$subtitle = 1;</h3>
-<p>This is optional and only for advanced users. If your module title should support subtitles using the || technique set this parameter to 1.</p>
+<p>This is optional and only for advanced users. If your module title should support subtitles using the || technique, set this parameter to 1.</p>
 
 <h3>$title_template = '&lt;h3 class=&quot;title&quot;&gt;%s&lt;/h3&gt;';</h3>
 <p>Define the HTML markup for the module title.</p>
 
 <h2>Add a custom module style</h2>
 
-<p>You have two things to do. Define your new module style in the module.php and create some CSS styles for in in the modules.css. So let's start and add a new case to the module.php. For example we want the a module style to be called box with a module template which contains two div elements:</p>
+<p>You have two things to do. Define your new module style in the module.php and create some CSS styles in the modules.css. So let's start and add a new case to the module.php. For example we want the module style to be called box with a module template which contains two div elements:</p>
   
 <h3>module.php</h3>
 
@@ -99,4 +99,4 @@ switch ($style) {
 
 <h2>How to add another module template?</h2>
 
-<p>If you want to add your own module template, you can add a template file to <em>/layouts/modules/templates</em>. Or if you are using your own style copy the file to <em>/styles/YOUR_STYLE/layouts/modules/templates</em>. You may want to use the default templates located at <em>/warp/layouts/modules/templates</em> as a blueprint.</p>
+<p>If you want to add your own module template, you can add a template file to <em>/layouts/modules/templates</em>. Or if you are using your own style, copy the file to <em>/styles/YOUR_STYLE/layouts/modules/templates</em>. You may want to use the default templates located at <em>/warp/layouts/modules/templates</em> as a blueprint.</p>

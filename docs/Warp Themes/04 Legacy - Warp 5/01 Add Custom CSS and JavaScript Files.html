@@ -2,11 +2,11 @@
 
 <p>In this tutorial we show you how you can add custom css styles and javascript files to your template based on the Warp Framework.</p>
 
-<p>The single configuration file <em>config.php</em> improves setting up the template environment by doing all initialization in one location. It is  located in the templates root folder. It initializes all PHP classes, loads all necessary CSS and JavaScript and also all IE6 and IE7 specific files. If you need to load custom CSS and JS files, this is where you do it.</p>
+<p>The single configuration file <em>config.php</em> improves setting up the template environment by doing all initialization in one location. It is  located in the template's root folder. It initializes all PHP classes, loads all necessary CSS and JavaScript and also all IE6 and IE7 specific files. If you need to load custom CSS and JS files, this is where you do it.</p>
 
 <h2>How to load a custom CSS file</h2>
 
-<p>The configuration file  loads all CSS files needed for the template, with <em>template.css</em> being a CSS file that includes all other CSS files. 
+<p>The configuration file loads all CSS files needed for the template, with <em>template.css</em> being a CSS file that includes all other CSS files. 
 The following line is commented out, it is for user defined CSS. If you want to include your CSS in a template, you can remove the comments  here ...</p>
 
 <pre><code>// $this->addStyleSheet($template->url.'/css/custom.css');</code></pre>

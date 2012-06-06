@@ -1,12 +1,12 @@
 <h1 class="title">Create a new module layout</h1>
 
-<p>Module Layouts define the alignment and proportions of a set of modules in a specific position. For example they can be vertical or horizontal aligned. By default the Warp framework offers 3 different module layouts. You can find these module layout files here <em>/warp/layouts/modules/layouts/</em>.</p>
+<p>Module Layouts define the alignment and proportions of a set of modules in a specific position. For example they can be vertically or horizontally aligned. By default the Warp framework offers 3 different module layouts. You can find these module layout files here <em>/warp/layouts/modules/layouts/</em>.</p>
  
 <h2>Provided Module Layouts</h2>
 
 <h3>equal.php</h3>
 
-<p>Every module has the same dimension and they are displayed horizontal, next to each other. We have added support for up to 6 modules. You can add more of course. Code example, 4 modules with the same size (100 divided by 4 equals 25)</p>
+<p>Every module has the same dimension and they are displayed horizontally, next to each other. We have added support for up to 6 modules. You can add more of course. Code example, 4 modules with the same size (100 divided by 4 equals 25)</p>
 
 <pre><code>case 4:
 	printf('&lt;div class=&quot;grid-box width25 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[0]);
@@ -18,13 +18,13 @@
 
 <h3>stack.php</h3>
 
-<p>All modules have a full width and will displayed vertical, one below the other. Code example:</p>
+<p>All modules have a full width and will be displayed vertically, one below the other. Code example:</p>
 
 <pre><code>printf('&lt;div class=&quot;grid-box width100 grid-v&quot;&gt;%s&lt;/div&gt;', $module);</code></pre>
 
 <h3>double.php</h3>
 
-<p>The double layout has different module proportions. For example when you have 3 modules, the first one has double the size than the other two. Code example: 3 modules, first one has double size</p>
+<p>The double layout has different module proportions. For example if you have 3 modules, the first one has twice the size of the other two. Code example: 3 modules, first one has double size</p>
 
 <pre><code>case 3:
 	printf('&lt;div class=&quot;grid-box width50 grid-h&quot;&gt;%s&lt;/div&gt;', $modules[0]);
@@ -39,7 +39,7 @@
 
 <h2>How to add a new module layout?</h2>
 
-<p>To create a new module layout add a new file to <em>/layouts/modules/layouts</em>. The best way is to copy an existing module layout and modify it. For example copy <em>/warp/layouts/modules/layouts/double.php</em> to <em>/layouts/modules/layouts/double.php</em>. This new and modified module layout will override the default one. Or just rename it to create a new one. The new created layout should now be available in the theme settings.</p>
+<p>To create a new module layout add a new file to <em>/layouts/modules/layouts</em>. The best way is to copy an existing module layout and modify it. For example copy <em>/warp/layouts/modules/layouts/double.php</em> to <em>/layouts/modules/layouts/double.php</em>. This new and modified module layout will override the default one. Or just rename it to create a new one. The newly created layout should now be available in the theme settings.</p>
 
 <h2>Example: How to add more columns</h2>
 
@@ -99,7 +99,7 @@ switch (count($modules)) {
 }
 </code></pre> 
 
-<p>As you can see we have used the CSS classes <em>width35</em> and <em>width30</em>. These do not exist yet (all existing width-classes are located in <em>/warp/css/layout.css</em>) so we will have to add the following snippet to the existing stylesheet. You can either add that to the existing <em>css/layout.css</em> or you can put it in {doc: create-a-new-style text: your own style} - which will keep your changes safe for updates.
+<p>As you can see we have used the CSS classes <em>width35</em> and <em>width30</em>. These do not exist yet (all existing width-classes are located in <em>/warp/css/layout.css</em>) so we will have to add the following snippet to the existing stylesheet. You can either add it to the existing <em>css/layout.css</em> or you can put it in {doc: create-a-new-style text: your own style} - which will keep your changes safe for updates.
 </p>
 <pre><code>
 .width30 { width: 30%; }

@@ -4,7 +4,7 @@
 
 <p>With the module proportion feature YOOtheme offers a new way to manage your module positions! This approach makes it even easier to create customized module proportions you need for your unique website template. This guide will show you how to create your own module proportions for a module position. In this example you will add a new module proportion called <em>main-top-custom</em> to the top module position. Currently the existing module proportions are <em>main-top-equal</em> and <em>main-top-goldenratio</em>.</p>
 
-<p>First you need to add a new module proportion definition in the template layout setup. To do this you open the templates /lib/php/yoolayout.php file with your favorite text editor. In this file you will find all module proportions defined for the template layout. The following one defines the 'main-top-equal' module position:</p>
+<p>First you need to add a new module proportion definition in the template layout setup. To do this you open the template's /lib/php/yoolayout.php file with your favorite text editor. In this file you will find all module proportions defined for the template layout. The following one defines the 'main-top-equal' module position:</p>
 
 <pre><code>// set maintop module variations
 $yootools-&gt;setModulePosition('main-top-equal', array(
@@ -13,7 +13,7 @@ $yootools-&gt;setModulePosition('main-top-equal', array(
 		3 =&gt; array('width33', 'width33', 'width33')
 	));</code></pre>
 
-<p>As you can see the method setModulePosition(&lt;MODULE_POSITION&gt;, &lt;MODULE_PROPORTION_DEFINITION&gt;) takes two parameters, the first is the name of the module position followed by an array which defines all possible module proportions which depend on how many modules are published inside this module position. So if one module is published inside the 'main-top-equal' position it the module will take the complete width of 100%. Further if you publish 2 modules inside the 'main-top-equal' position each module takes a width of 50%. And so on, since 'main-top-equal' divides the module position space equally for all modules.</p>
+<p>As you can see the method setModulePosition(&lt;MODULE_POSITION&gt;, &lt;MODULE_PROPORTION_DEFINITION&gt;) takes two parameters, the first is the name of the module position followed by an array which defines all possible module proportions which depend on how many modules are published inside this module position. So if one module is published inside the 'main-top-equal' position the module will take the complete width of 100%. Further, if you publish 2 modules inside the 'main-top-equal' position, each module takes a width of 50% and so on, since 'main-top-equal' divides the module position space equally for all modules.</p>
 
 <p>Now you create our own custom module proportion definition, which will offer the following proportions:</p>
 
@@ -32,7 +32,7 @@ $yootools-&gt;setModulePosition('main-top-custom', array(
 		3 =&gt; array('width40', 'width40', 'width20')
 	));</code></pre>
 	
-<p>Since all module widths we defined above, are the CSS styles which will me add to each module html class tag to set the width. We need to make sure all these CSS styles exists in the template /css/layout.css file. To verify this open the layout.css file and scroll to the very bottom where you find all CSS styles to control the widths. Now we insert the ones we need for the 'main-top-custom' module proportion:</p>
+<p>Since all module widths we defined above, are the CSS styles which will be added to each module html class tag to set the width. We need to make sure all these CSS styles exist in the template /css/layout.css file. To verify this open the layout.css file and scroll to the very bottom where you'll find all CSS styles to control the widths. Now we insert the ones we need for the 'main-top-custom' module proportion:</p>
 
 <pre><code>.width15 { width: 14.999%; }
 .width18 { width: 18.333%; }

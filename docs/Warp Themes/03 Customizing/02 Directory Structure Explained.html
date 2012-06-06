@@ -2,7 +2,7 @@
 
 <p>The Warp framework has HTML, CSS, JavaScript and PHP helper classes to cover all aspects in theme development. It's really portable since all framework related files are kept in a single place, a folder called <em>warp</em>. This folder resides directly in every theme. There are no dependencies on other components or plugins. Nothing needs to be installed or maintained separately.</p>
 
-<p>Warp separates into three layers. The first layer is the core framework which provides the base CSS, a JavaScript effects library and a collection of PHP helpers. Each part of the core framework is universal and designed to work on every supported system. The second layer is the system depended layer, which provides the individual system implementation needed to integrate with a particular CMS. This layer makes Warp adapt to a certain system to form a consistent API for theme development. The third layer is the theme specific layer, this is where all the individual theme files go. It's the working place where all the themes custom HTML, CSS, JavaScript and images are being stored.</p>
+<p>Warp is separated into three layers. The first layer is the core framework which provides the base CSS, a JavaScript effects library and a collection of PHP helpers. Each part of the core framework is universal and designed to work on every supported system. The second layer is the system dependent layer, which provides the individual system implementation needed to integrate with a particular CMS. This layer makes Warp adapt to a certain system to form a consistent API for theme development. The third layer is the theme specific layer, this is where all the individual theme files go. It's the working place where all the theme's custom HTML, CSS, JavaScript and images are being stored.</p>
 
 <p>To provide as much flexibility as possible we implemented a special file cascade into Warp. If you include any file like CSS, JS or template PHP files Warp looks successively in specific folders for the files and the first file found will be loaded. Here is the cascade:</p>
 
@@ -12,15 +12,15 @@
 		<li>warp framework folder</li>
 	</ul>
 	
-<p>This gives you full flexibility to override any important theme related file. In the following we will give a short overview about the most important files if you want to customize a Warp theme.</p>
+<p>This gives you full flexibility to override any important theme related file. In the following we will give a short overview of the most important files if you want to customize a Warp theme.</p>
 
 <h2>Styles</h2>
 
-<p>Styles are variations of the default theme and are similar to the concept of child themes in WordPress or sub themes in Drupal. A style defines a layer after the default theme and can inherit or override resources from the parent default theme. Warp walks along the file cascade looking for the resource until it is found. This gives you full flexibility to override any file of the default theme. Each style is placed in its own directory in the themes <em>/styles</em> folder and can provide its own custom HTML layouts, CSS, JavaScript and images. Our {doc: create-a-new-style text: Create a new style} tutorial explains you how to create your own custom style.</p>
+<p>Styles are variations of the default theme and are similar to the concept of child themes in WordPress or sub themes in Drupal. A style defines a layer after the default theme and can inherit or override resources from the parent default theme. Warp walks along the file cascade looking for the resource until it is found. This gives you full flexibility to override any file of the default theme. Each style is placed in its own directory in the theme's <em>/styles</em> folder and can provide its own custom HTML layouts, CSS, JavaScript and images. Our {doc: create-a-new-style text: Create a new style} tutorial explains how to create your own custom style.</p>
 
 <h2>Layouts</h2>
 
-<p>The main template file <em>/layouts/template.php</em> is the heart of every theme, it provides the complete HTML markup for the base theme layout. This is different from standard Joomla templates or WordPress themes where the index.php is the main template file. Second important file is the <em>/layouts/template.config.php</em> which includes some layout calculations and defines all the themes CSS and JavaScripts.</p>
+<p>The main template file <em>/layouts/template.php</em> is the heart of every theme, it provides the complete HTML markup for the base theme layout. This is different from standard Joomla templates or WordPress themes where the index.php is the main template file. The second important file is the <em>/layouts/template.config.php</em> which includes some layout calculations and defines all the theme's CSS and JavaScripts.</p>
 
 <ul class="bullet">
 	<li>Template File: <em>/layouts/template.php</em></li>
@@ -29,7 +29,7 @@
 
 <h2>Modules</h2>
 
-<p>Modules or widgets can be displayed in different styles with additional icons and badges. The <em>/layouts/module.php</em> takes care of displaying all these module variations. Depending on the selected style the module.php loads the right HTML markup from predefined module templates. Further the framework comes with three commonly used module layouts equal, double and stacked, which are used to position modules next or above each other. It's also possible to extend them with your own custom module templates and layouts.</p>
+<p>Modules or widgets can be displayed in different styles with additional icons and badges. The <em>/layouts/module.php</em> takes care of displaying all these module variations. Depending on the selected style the module.php loads the right HTML markup from predefined module templates. Further the framework comes with three commonly used module layouts: equal, double and stacked, which are used to position modules next or above each other. It's also possible to extend them with your own custom module templates and layouts.</p>
 
 <ul class="bullet">
 	<li>Module Styles: <em>/layouts/module.php</em></li>
@@ -39,10 +39,10 @@
 
 <h2>Stylesheets</h2>
 
-<p>The CSS files are divided in three different layers and are placed in their respective folders for theme specific <em>/css</em>, system depended <em>/warp/systems/joomla/css</em> and framework styles <em>/warp/css</em>. Including these files is really easy because Warp also uses its file helper to locate them across the different folders. Here is on overview on the different files:</p>
+<p>The CSS files are divided into three different layers and are placed in their respective folders for theme specific <em>/css</em>, system dependent <em>/warp/systems/joomla/css</em> and framework styles <em>/warp/css</em>. Including these files is really easy because Warp also uses its file helper to locate them across the different folders. Here is an overview on the different files:</p>
 
 <ul class="bullet">
-	<li><em>base.css</em> - Sets baseline defaults to reduces inconsistencies across all browsers.</li>
+	<li><em>base.css</em> - Sets baseline defaults to reduce inconsistencies across all browsers.</li>
 	<li><em>layout.css</em> - Provides a fluid grid and helper classes to create any layout.</li>
 	<li><em>menus.css</em> - Defines base styles for our mega drop down menu, line menu and accordion menu.</li>
 	<li><em>modules.css</em> - Defines general module styles, headings, badges and icons.</li>
@@ -58,7 +58,7 @@
 
 <h2>JavaScript</h2>
 
-<p>Warp also provides a library of JavaScript effects used in dropdown and accordion menus, the AJAX search or the mobile theme. The JavaScript files are also structured and stored in their own folders for theme specific <em>/js</em>, system depended <em>/warp/systems/joomla/js</em> and framework scripts <em>/warp/js</em>. All scripts are configured in a single file <em>/js/template.js</em>. This file is used to enable or disable effects which will be loaded with the theme.</p>
+<p>Warp also provides a library of JavaScript effects used in dropdown and accordion menus, the AJAX search or the mobile theme. The JavaScript files are also structured and stored in their own folders for theme specific <em>/js</em>, system dependent <em>/warp/systems/joomla/js</em> and framework scripts <em>/warp/js</em>. All scripts are configured in a single file <em>/js/template.js</em>. This file is used to enable or disable effects which will be loaded with the theme.</p>
 
 <ul class="bullet">
 	<li>Theme JavaScript: <em>/js/template.js</em></li>

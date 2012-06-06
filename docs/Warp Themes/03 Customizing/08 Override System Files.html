@@ -4,7 +4,7 @@
 
 <h2>Override Joomla system files</h2>
 
-<p>Lets say you want to customize the layout of the content Joomla component. To do that, just copy the <em>com_content</em> directory from <em>/warp/systems/joomla.1.x/layouts</em> to the theme <em>/layouts</em> directory or even better {doc: create-a-new-style text: create your own style} and change the files to your needs. If you are using your own style copy the directory to <em>/styles/YOUR_STYLE/layouts</em>. Further this way you won't lose any of your changes after an update of your theme. Make sure to only copy the files you want to change, all other layout files will be automatically loaded from the system defaults.</p>
+<p>Let's say you want to customize the layout of the content Joomla component. To do so, just copy the <em>com_content</em> directory from <em>/warp/systems/joomla.1.x/layouts</em> to the theme <em>/layouts</em> directory or even better {doc: create-a-new-style text: create your own style} and change the files to your needs. If you are using your own style, copy the directory to <em>/styles/YOUR_STYLE/layouts</em>. Further this way you won't lose any of your changes after an update of your theme. Make sure to only copy the files you want to change, all other layout files will be loaded automatically from the system defaults.</p>
 
 <h2>Override Wordpress system files</h2>
 
@@ -19,7 +19,7 @@
 	<li>page-<em>{slug}</em>.php</li>
 </ul>
 
-<p>Lets say you want a custom content for a page with ID 80. Create a file in your theme folder and name it page-80.php with the following content.</p>
+<p>Let's say you want a custom content for a page with ID 80. Create a file in your theme folder and name it page-80.php with the following content.</p>
 
 <pre><code>&lt;?php get_header(); ?&gt;
 
@@ -27,6 +27,6 @@ Put your content here...
 
 &lt;?php get_footer(); ?&gt;</code></pre>
 
-<p>In the backend you can even assign a custom style for the page, so you'll get a complete different look.</p>
+<p>In the backend you can even assign a custom style to the page, so you'll get a completely different look.</p>
 
 <p>All the common template layout overrides work. Learn more about them in the <a href="http://codex.wordpress.org/Template_Hierarchy">WordPress documentation</a>.</p>
