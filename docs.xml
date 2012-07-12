@@ -47,6 +47,7 @@
       <doc alias="file-permission-issues" name="File Permission Issues" file="03 File Permission Issues.html"/>
       <doc alias="javascript-errors" name="Javascript Errors" file="04 Javascript Errors.html"/>
       <doc alias="validation-errors" name="Validation Errors" file="05 Validation Errors.html"/>
+      <doc alias="feature-and-compatibility-overview" name="Feature &amp; Compatibility Overview" file="06 Feature and Compatibility Overview.html"/>
     </category>
     <category alias="legacy-pre-warp" name="Legacy - Pre Warp" folder="06 Legacy - Pre Warp">
       <doc alias="set-up-the-menu-system" name="Setup the Menu System" file="01 Setup the Menu System.html"/>
