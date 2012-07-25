@@ -186,7 +186,7 @@ Wir haben die <em>base.css</em>, in welcher das <em>BODY</em>-Element beschriebe
 
 <p>Dadurch enthält die Datei nur das <em>BODY</em>-Element, welches wir anpassen wollen. Den Rest haben wir entfernt. Durch das Einfügen der Zeile <code>@import url(../../../css/base.css)</code>; wird nun, anders als zuvor, zusätzlich die <em>base.css</em> der Theme Ebene geladen. Also nochmal: Zunächst wird die <em>base.css</em> der ersten Ebene geladen (Warp Framework), dann der zweiten Ebene (Theme) und dann der Style Ebene.</p>
 
-<p>Wenn Sie diesen Vererbungsmechanismus verstanden haben, können Sie sehr leicht CSS-Anpassungen vornehmen, ohne das eigenliche Template (Ebene 2) oder Warp (Ebene 1) zu verädern. Einfach die jeweiligen CSS-Dateien aus dem <em> /css</em>  Ordner in Ihren Styles Ordner kopieren. Wie Sie sehen können, liegen dort einige Dateien, welche sich um ganz bestimmte Fragen kümmern. Die <em>modules.css</em> um Module, die <em>menus.css</em> um das Menü, die <em>system.css</em> um Ausgaben des CMS usw. Sie sollten unbedingt lernen, die verschiedenen CSS Dateien nur für die Zwecke zu nutzen, für welche sie gedacht sind. Dadurch bleibt alles organisiert und Sie wissen immer, wo Sie bestimmte Anweisungen finden, wenn Sie diese anpassen wollen.</p>
+<p>Wenn Sie diesen Vererbungsmechanismus verstanden haben, können Sie sehr leicht CSS-Anpassungen vornehmen, ohne das eigenliche Template (Ebene 2) oder Warp (Ebene 1) zu verändern. Einfach die jeweiligen CSS-Dateien aus dem <em> /css</em>  Ordner in Ihren Styles Ordner kopieren. Wie Sie sehen können, liegen dort einige Dateien, welche sich um ganz bestimmte Fragen kümmern. Die <em>modules.css</em> um Module, die <em>menus.css</em> um das Menü, die <em>system.css</em> um Ausgaben des CMS usw. Sie sollten unbedingt lernen, die verschiedenen CSS Dateien nur für die Zwecke zu nutzen, für welche sie gedacht sind. Dadurch bleibt alles organisiert und Sie wissen immer, wo Sie bestimmte Anweisungen finden, wenn Sie diese anpassen wollen.</p>
 
 <h2 id="modulpositionen">Modulpositionen</h2>
 
@@ -271,7 +271,7 @@ Wir haben die <em>base.css</em>, in welcher das <em>BODY</em>-Element beschriebe
 
 <p>Falls Sie schon einmal ein Template von YOOtheme eingesetzt haben, werden Sie die Möglichkeiten dieses Ansatzes bereits kennen, da die YOOtheme Templates eine ganze Palette an Styles, Farben und Hintergrundgrafiken anbieten, welche verschiedenen Profilen zugeordnet werden können.</p>
 
-<p>Im späteren Verlauf des Tutorials werde ich beschreiben, wie Sie eigene Template Parameter definieren können.Schauen wir uns mal an, was man mit den so genannten Modul <em>Layouts</em> anstellen kann. Ich gehe davon aus, dass Sie im <em>Profiles</em> Bereich sind und das <em>Default Profile</em> mit dem <em>Nice</em> Style ausgewählt ist.</p>
+<p>Im späteren Verlauf des Tutorials werde ich beschreiben, wie Sie eigene Template Parameter definieren können. Schauen wir uns mal an, was man mit den so genannten Modul <em>Layouts</em> anstellen kann. Ich gehe davon aus, dass Sie im <em>Profiles</em> Bereich sind und das <em>Default Profile</em> mit dem <em>Nice</em> Style ausgewählt ist.</p>
 
 <div class="clearfix">
 
@@ -297,7 +297,7 @@ Wir haben die <em>base.css</em>, in welcher das <em>BODY</em>-Element beschriebe
 
 <p>Also gleich einmal das <em>Stack</em>-Modullayout ausprobieren.</p>
 
-<p>Die Module werden übereinander gestapelt, auch nicht schlecht. Das <em>Modul Layout Feature</em> zählt für mich zu einem der Beispiele für den wunderbaren Pragmatismus des Warp Frameworks. Etliche Frameworks bieten dem Template Hersteller unzühlige Möglichkeiten Module zu formatieren und zu positionieren. Dabei werden nicht selten über 60 Modulpositionen angeboten. Mit dem <em>Modul Layout Feature</em> ist dies überflüssig. Jeder kann über diese Einstellungen das Layout erreichen, welches er sucht. Für diejenigen, welche in Sachen Modulpositionierung und Formatierung mehr wollen, bietet das Framework vollkommen individuelle Anpassungsmöglichkeiten, zu denen wir noch kommen.</p>
+<p>Die Module werden übereinander gestapelt, auch nicht schlecht. Das <em>Modul Layout Feature</em> zählt für mich zu einem der Beispiele für den wunderbaren Pragmatismus des Warp Frameworks. Etliche Frameworks bieten dem Template Hersteller unzählige Möglichkeiten Module zu formatieren und zu positionieren. Dabei werden nicht selten über 60 Modulpositionen angeboten. Mit dem <em>Modul Layout Feature</em> ist dies überflüssig. Jeder kann über diese Einstellungen das Layout erreichen, welches er sucht. Für diejenigen, welche in Sachen Modulpositionierung und Formatierung mehr wollen, bietet das Framework vollkommen individuelle Anpassungsmöglichkeiten, zu denen wir noch kommen.</p>
 
 <p>Ich merke schon wie Sie sich fragen, wie zum Teufel diese kleinen Grafiken im <em>Weblinks</em> Modul zustande kommen - das kleine Twitter Icon neben dem Titel und das <em>New</em> Icon oben rechts. Dazu, und damit zu einem völlig neuem Thema, kommen wir jetzt.</p>
 
@@ -391,10 +391,8 @@ Das Positionieren und Formatieren der Module wird zum großen Teil in der oben e
 <pre><code>&lt;?php if ($this['config']-&gt;get('system_output')) : ?&gt;
 &lt;section id=&quot;content&quot; class=&quot;grid-block&quot;&gt;
 &lt;?php if ($this['modules']-&gt;count('contentabs')) : ?&gt;
-&lt;div id=&quot;contentabs&quot;&gt;
-			&lt;?php echo $this['modules']-&gt;render('contentabs'); ?&gt;
-		&lt;/div&gt;
-	&lt;?php endif; ?&gt;
+&lt;div id=&quot;contentabs&quot;&gt;&lt;?php echo $this['modules']-&gt;render('contentabs'); ?&gt;&lt;/div&gt;
+&lt;?php endif; ?&gt;
 &lt;?php echo $this['template']-&gt;render('content'); ?&gt;
 &lt;/section&gt;
 &lt;?php endif; ?&gt;</code></pre>
@@ -446,18 +444,18 @@ Ich beschränke mich dabei auf minimale Anforderungen, denn es geht hauptsächli
 
 <p>Wenn Sie das <em>template.js</em> dorthin kopiert haben, sind Sie sich hoffentlich bewusst, dass wir nun ein Template Javascript haben, welches nur bei dem <em>nice</em> Style (3. Ebene) geladen wird. Wenn Sie in der Template Konfiguration wieder das Style <em>Default</em> aktivieren, wird das <em>template.js</em> aus dem <em>/js Ordner</em> geladen (2. Ebene).</p>
 
-<p>Also gut, in der JS-Datei sehen Sie ein paar jQuery Anweisungen, welche Sie stehen lassen können und momentan nicht von Interesse sind. Hier werden wir das JS einbauen, welches wir für unseren Modul-Toggler brauchen.Wenn wir uns zunächst einmal die HTML-Struktur unseres Moduls ansehen, so sehen wir Folgendes:</p>
+<p>Also gut, in der JS-Datei sehen Sie ein paar jQuery Anweisungen, welche Sie stehen lassen können und momentan nicht von Interesse sind. Hier werden wir das JS einbauen, welches wir für unseren Modul-Toggler brauchen. Wenn wir uns zunächst einmal die HTML-Struktur unseres Moduls ansehen, so sehen wir Folgendes:</p>
 
 
 <pre><code>&lt;div id=&quot;contentabs&quot;&gt;
-&lt;div class=&quot;module deepest&quot;&gt;
-&lt;h3 class=&quot;module-title&quot;&gt;Articles Most Read&lt;/h3&gt;	
-&lt;ul class=&quot;line line-icon&quot;&gt;
-	&lt;li&gt;...&lt;/li&gt;
-	&lt;li&gt;...&lt;/li&gt;
-	...
-&lt;/ul&gt;		
-&lt;/div&gt;					
+	&lt;div class=&quot;module deepest&quot;&gt;
+		&lt;h3 class=&quot;module-title&quot;&gt;Articles Most Read&lt;/h3&gt;	
+		&lt;ul class=&quot;line line-icon&quot;&gt;
+			&lt;li&gt;...&lt;/li&gt;
+			&lt;li&gt;...&lt;/li&gt;
+			...
+		&lt;/ul&gt;
+	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
 <p>Sie erinnern sich noch, dass die Art, wie ein Modul gerendert wird (d.h. in welche HTML-Struktur es gegossen wird), in der <em>modules.php</em> bestimmt wird. Für diese haben wir ja bereits ein Override erstellt. Wenn Sie sich die Datei anschauen, finden Sie folgende Zeile:</p>
@@ -578,9 +576,10 @@ $cview = JRequest::getCmd('view', null);</code></pre>
 	background: url(../images/logo.png) 0 0 no-repeat;
 	width: 195px;
 	height: 44px;
-	margin-left: 10px;</code></pre>
+	margin-left: 10px;
+}</code></pre>
 
-<p>Des Weiteren wurde in der Template Konfiguration -> <em>Profiles</em> der Date Parameter auf <em>No</em> gestellt.  Das Top-Menü in der Modulposition <em>toolbar-r</em> brauchen wir für dieses Template nicht, also deaktivieren wir es und wir tauschen die Hintergrundfarbe durch etwas Sandigeres aus:</p>
+<p>Des Weiteren wurde in der Template Konfiguration -> <em>Profiles</em> der Date Parameter auf <em>No</em> gestellt. Das Top-Menü in der Modulposition <em>toolbar-r</em> brauchen wir für dieses Template nicht, also deaktivieren wir es und wir tauschen die Hintergrundfarbe durch etwas Sandigeres aus:</p>
 
 <img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/logo_position.png" alt="Logo Platzierung in Warp" title="Logo Platzierung in Warp" height="95" width="470" />
 
@@ -911,7 +910,7 @@ Wir bauen also an einer geeigneten Stelle folgenden XML-Code ein:</p>
 
 <h2 id="nachwort">Nachwort</h2>
 
-<p>Wie üblich bei so vielschichtigen Lösungen wie dem Warp Framework, kann ein Tutorial nur einen ersten Einblick in die Materie geben. Einige wichtige Themen habe ich nicht angesprochen. Dazu zählt zum Beispiel das integrierte Mega-Menü (<a href="http://www.yootheme.com/themes/documentation/getting-started/setup-the-joomla-menu">Setup the Joomla Menu Tutorial</a>),welches hauptsächlich eine Konfigurationsfrage ist. Ebenso die Möglichkeit, eigene Modul-Layouts erzeugen zu können (<a href="http://www.yootheme.com/themes/documentation/customizing/create-a-new-module-layout">Create a new module layout Tutorial</a>) oder wie Content Overrides bei einem Warp Template angelegt werden (<a href="http://www.yootheme.com/themes/documentation/customizing/override-system-files">Override System Files Tutorial</a>). Ebenso die Möglichkeiten, innerhalb der responsive.css Layout-Abwandlungen für verschiedene Endgeräte zu definieren.</p>
+<p>Wie üblich bei so vielschichtigen Lösungen wie dem Warp Framework, kann ein Tutorial nur einen ersten Einblick in die Materie geben. Einige wichtige Themen habe ich nicht angesprochen. Dazu zählt zum Beispiel das integrierte Mega-Menü (<a href="http://www.yootheme.com/themes/documentation/getting-started/setup-the-joomla-menu">Setup the Joomla Menu Tutorial</a>), welches hauptsächlich eine Konfigurationsfrage ist. Ebenso die Möglichkeit, eigene Modul-Layouts erzeugen zu können (<a href="http://www.yootheme.com/themes/documentation/customizing/create-a-new-module-layout">Create a new module layout Tutorial</a>) oder wie Content Overrides bei einem Warp Template angelegt werden (<a href="http://www.yootheme.com/themes/documentation/customizing/override-system-files">Override System Files Tutorial</a>). Ebenso die Möglichkeiten, innerhalb der responsive.css Layout-Abwandlungen für verschiedene Endgeräte zu definieren.</p>
 
 <p>All das sind jedoch Themen, welche man sich an dieser Stelle ohne große Schwierigkeiten selbst erarbeiten kann. Einer der wichtigsten Aspekte bei der Erstellung eines Warp Templates ist die Organisation. </p>
 
