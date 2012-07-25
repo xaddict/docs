@@ -13,13 +13,13 @@
       <doc alias="setup-the-wordpress-widgets" name="Setup the WordPress Widgets" file="06 Setup the WordPress Widgets.html"/>
       <doc alias="how-to-use-profiles" name="How to use Profiles" file="07 How to use Profiles.html"/>
       <doc alias="how-to-update" name="How to Update" file="08 How to Update.html"/>
-      <doc alias="the-changelog" name="Where is the Changelog" file="09 Where is the Changelog.html"/>
+      <doc alias="where-is-the-changelog" name="Where is the Changelog" file="09 Where is the Changelog.html"/>
     </category>
     <category alias="legacy-warp-55" name="Legacy - Warp 5.5" folder="02 Legacy - Warp 5.5">
       <doc alias="change-the-layout-column-widths" name="Change the Layout Column Widths" file="01 Change the Layout Column Widths.html"/>
       <doc alias="add-custom-css-and-javascript-files" name="Add Custom CSS and JavaScript Files" file="02 Add Custom CSS and JavaScript Files.html"/>
       <doc alias="customizing-template-presets" name="Customizing Template Presets" file="03 Customizing Template Presets.html"/>
-      <doc alias="dropdown-menu-accordion-menu" name="Setup the Menus" file="04 Setup the Menus.html"/>
+      <doc alias="setup-the-menus" name="Setup the Menus" file="04 Setup the Menus.html"/>
       <doc alias="set-a-custom-page-suffix" name="Set a Custom Page Suffix" file="05 Set a Custom Page Suffix.html"/>
       <doc alias="set-module-proportions" name="Set Module Proportions" file="06 Set Module Proportions.html"/>
     </category>
@@ -33,12 +33,13 @@
       <doc alias="add-new-css-js-or-fonts" name="Add new CSS, JS or Fonts" file="07 Add new CSS, JS or Fonts.html"/>
       <doc alias="override-system-files" name="Override System Files" file="08 Override System Files.html"/>
       <doc alias="create-language-files" name="Create Language Files" file="09 Create Language Files.html"/>
-      <doc alias="customize-error-pages" name="Customize the Error Pages" file="11 Customize the Error Pages.html"/>
+      <doc alias="customize-the-error-pages" name="Customize the Error Pages" file="11 Customize the Error Pages.html"/>
+      <doc alias="getting-started-with-warp-german" name="Getting Started with Warp (German)" file="12 Getting Started with Warp (German).html"/>
     </category>
     <category alias="legacy-warp-5" name="Legacy - Warp 5" folder="04 Legacy - Warp 5">
       <doc alias="add-custom-css-and-javascript-files-2" name="Add Custom CSS and JavaScript Files" file="01 Add Custom CSS and JavaScript Files.html"/>
       <doc alias="change-the-layout-column-widths-2" name="Change the Layout Column Widths" file="02 Change the Layout Column Widths.html"/>
-      <doc alias="dropdown-menu-accordion-menu-2" name="Setup the Menus" file="03 Setup the Menus.html"/>
+      <doc alias="setup-the-menus-2" name="Setup the Menus" file="03 Setup the Menus.html"/>
       <doc alias="set-a-custom-page-suffix-2" name="Set a custom page suffix" file="04 Set a custom page suffix.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="05 Troubleshooting">
@@ -47,12 +48,12 @@
       <doc alias="file-permission-issues" name="File Permission Issues" file="03 File Permission Issues.html"/>
       <doc alias="javascript-errors" name="Javascript Errors" file="04 Javascript Errors.html"/>
       <doc alias="validation-errors" name="Validation Errors" file="05 Validation Errors.html"/>
-      <doc alias="feature-and-compatibility-overview" name="Feature &amp; Compatibility Overview" file="06 Feature and Compatibility Overview.html"/>
+      <doc alias="feature-and-compatibility-overview" name="Feature and Compatibility Overview" file="06 Feature and Compatibility Overview.html"/>
     </category>
     <category alias="legacy-pre-warp" name="Legacy - Pre Warp" folder="06 Legacy - Pre Warp">
-      <doc alias="set-up-the-menu-system" name="Setup the Menu System" file="01 Setup the Menu System.html"/>
+      <doc alias="setup-the-menu-system" name="Setup the Menu System" file="01 Setup the Menu System.html"/>
       <doc alias="change-site-colors-for-menu-items" name="Change Site Colors for Menu Items" file="02 Change Site Colors for Menu Items.html"/>
-      <doc alias="set-up-the-accordion-menu" name="Setup the Accordion Menu" file="03 Setup the Accordion Menu.html"/>
+      <doc alias="setup-the-accordion-menu" name="Setup the Accordion Menu" file="03 Setup the Accordion Menu.html"/>
       <doc alias="change-the-column-widths" name="Change the Column Widths" file="04 Change the Column Widths.html"/>
       <doc alias="add-custom-module-proportions" name="Add Custom Module Proportions" file="05 Add Custom Module Proportions.html"/>
     </category>
@@ -65,7 +66,7 @@
       <doc alias="display-widgets" name="Display Widgets" file="04 Display Widgets.html"/>
       <doc alias="install-bonus-styles" name="Install Bonus Styles" file="05 Install Bonus Styles.html"/>
       <doc alias="how-to-update-2" name="How to Update" file="06 How to Update.html"/>
-      <doc alias="the-changelog-2" name="Where is the Changelog" file="07 Where is the Changelog.html"/>
+      <doc alias="where-is-the-changelog-2" name="Where is the Changelog" file="07 Where is the Changelog.html"/>
     </category>
     <category alias="customizing" name="Customizing" folder="02 Customizing">
       <doc alias="how-to-customize-widgets" name="How to Customize Widgets" file="01 How to Customize Widgets.html"/>
@@ -99,7 +100,7 @@
       <doc alias="set-up-facebook-connect" name="Set Up Facebook Connect" file="18 Set Up Facebook Connect.html"/>
       <doc alias="set-up-twitter-connect" name="Set Up Twitter Connect" file="19 Set Up Twitter Connect.html"/>
       <doc alias="set-up-the-zoo-comment-module" name="Set Up the ZOO Comment Module" file="20 Set Up the ZOO Comment Module.html"/>
-      <doc alias="the-changelog-3" name="Where is the Changelog" file="21 Where is the Changelog.html"/>
+      <doc alias="where-is-the-changelog-3" name="Where is the Changelog" file="21 Where is the Changelog.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="02 Troubleshooting">
       <doc alias="how-to-solve-zoo-issues" name="How To Solve Zoo Issues" file="01 How To Solve Zoo Issues.html"/>

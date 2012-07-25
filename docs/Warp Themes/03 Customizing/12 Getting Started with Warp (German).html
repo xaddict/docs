@@ -1,0 +1,920 @@
+<div class="index">
+	<h3>Index</h3>
+	<ul class="bullet">
+		<li><a href="#vorwort">Vorwort</a></li>
+		<li><a href="#voraussetzungen">Voraussetzungen</a></li>
+		<li><a href="#template-installation">Template Installation</a></li>
+		<li><a href="#warp-overrides">Warp Overrides</a></li>
+		<li><a href="#template-styles">Template Styles</a></li>
+		<li><a href="#modulpositionen">Modulpositionen</a></li>
+		<li><a href="#template-konfiguration">Template Konfiguration</a></li>
+		<li><a href="#modul-styles">Modul Styles</a></li>
+		<li><a href="#modul-templates">Modul Templates</a></li>
+		<li><a href="#custom-design1">Custom Design (Teil 1)</a></li>
+		<li><a href="#menu-anpassen">Menu anpassen</a></li>
+		<li><a href="#sidebars-erklaert">Sidebars erklärt</a></li>
+		<li><a href="#custom-design2">Custom Design (Teil 2)</a></li>
+		<li><a href="#template-parameter">Eigene Template Parameter</a></li>
+		<li><a href="#schriftarten">Schriftarten</a></li>
+		<li><a href="#nachwort">Nachwort</a></li>
+	</ul>
+</div>
+
+<h1 class="title">Warp Templates leicht gemacht</h1>
+
+<p>Das nachfolgende Tutorial stammt von unserem Gastautor <a href="http://twitter.com/B01">Tom Bohaček</a>. Als Webdesigner und Gründer der <a href="http://www.bohacek.de">Berliner Onlineagentur B01</a> verfügt er über langjährige Erfahrung in der Entwicklung frameworkbasierter Themes und nutzt Warp als Basis für seine eigenen Templates.</p>
+
+<p>Der Inhalt des Tutorials wurde im Juni 2012 verfasst und basiert auf der zu diesem Zeitpunkt aktuellen Warp-Version 6.2. Grundsätzlich werden daher die meisten Beschreibungen ihre Gültigkeit behalten, allerdings können Details in späteren Versionen des Frameworks abweichen.</p>
+
+<h2 id="vorwort">Vorwort</h2>
+ 
+<p>Schon lange entwickelt kaum jemand mehr Web-Anwendungen auf Basis von reinem PHP-Code. PHP-Anwendungen werden heutzutage mit Hilfe von Frameworks entwickelt. Der Druck, obsolet zu sein, hat schlussendlich auch den letzten Skeptiker hiervon überzeugt. Ich persönlich entwickle Web-Anwendungen seit 2006 auf Basis von Frameworks. </p>
+
+<p>Die Idee, Frameworks für Webdesign zu nutzen, schien lange Zeit absurd. Zu zersplittert waren die Interpretationen der Webstandards verschiedener Browserhersteller, zu individuell die Lösungsansätze bestimmter Designvorstellungen oder Funktionalitäten. Erschwerend kommt die Tatsache hinzu, dass ein CSS-Framework etwas völlig anderes darstellt als ein Entwicklungs-Framework. Hier geht es in erster Linie um Gestaltungsfragen, den Aufbau der Seite mit Hilfe von Layout-Komponenten (meistens Grids), flexiblen Typographien, Unterstützung bei Formularen usw. Jüngst sind Fragen wie Responsive Design, welches das jeweilige Grid-System auf den Kopf stellen kann, hinzugekommen.</p>
+
+<p>CSS-Frameworks sollen also den Webdesigner bei der Erstellung immer komplexer werdender Webseiten unterstützen. Ich werde an dieser Stelle weder pro noch kontra CSS-Frameworks reden. Es gibt unzählige intelligente Artikel im Netz, welche das Für und Wider beleuchten. Im Gegensatz zu den Programmier-Frameworks ist das letzte Wort hier wohl noch nicht gesprochen.</p>
+
+<p>Im Rahmen der Template-Entwicklung für Joomla haben wir bei B01 so ziemlich alle CSS-Frameworks durchgetestet, welche momentan angesagt sind. Leider hat mich keines davon wirklich überzeugt. Dass man sich darauf einlassen und auch gewisse Gewohnheiten ablegen muss, war mir natürlich klar. Auch dass ein CSS-Framework einen bestimmten Ballast mit sich bringt, über den man sich hin und wieder ärgert, hätte ich verkraftet. All das hätte ich in Kauf genommen, wenn die Resultate qualitativ besser und die Produktion effektiver sein würde. Leider hat mich in diesen beiden Punkten kein CSS-Framework überzeugt. Beim Versuch, ein individuelles Design zu realisieren, fand ich mich häufig in der Situation, die Organisation des Frameworks umgehen zu müssen und hässliche Umwege zu gehen. Dabei spreche ich von CSS-Frameworks wie Blueprint, YAML, 960 usw., welche erst einmal nichts mit Joomla zu tun haben und losgelöst davon entstanden sind.</p>	
+
+<p>Joomla Template Clubs hingegen haben, wie seinerzeit Anwendungsentwickler, eigene Frameworks entwickelt um bei der Produktion Ihrer Templates möglichst effektiv und zuverlässig gute Qualität zu liefern. Manche setzen nicht eigene, sondern eines der bekannten CSS-Frameworks ein oder lassen sich davon inspirieren. Man muss bedenken, dass bei einem Template eines Clubs wie YOOtheme, Rockettheme oder JoomlArt das CSS nur einen Bruchteil der Arbeit darstellt. Hier geht es auch um eine ganze Menge PHP-Code für die Generierung aller möglichen Menüstrukturen, Modulvarianten, Javascript Widgets, Layout Variationen, Kompressionstechniken usw. Die so entstandenen Template Frameworks der Clubs sind also in erster Linie ein Werkzeug für Template-Entwickler.</p>
+
+<p>Jedes Template-Framework beinhaltet auch entweder ein eigenes oder, wie gesagt, ein bereits bekanntes CSS-Framework. Das Rockettheme Template Framework namens <em>Gantry</em> setzt z.B. das CSS-Framework 960 ein. Inzwischen hat fast jeder Template-Club sein Template-Framework öffentlich verfügbar gemacht. Nachdem wir die wichtigsten davon durchgetestet hatten, entschied ich mich bei der Entwicklung von Joomla Templates tatsächlich für das Warp Framework von YOOtheme. Sie können sich vorstellen, dass dies nach meinen Erfahrungen mit reinen CSS-Frameworks eine ziemliche Wendung war.</p>
+
+<p>Warp bietet als Layout-Komponente zwar auch ein Grid-System, jedoch ist dieses meiner Meinung nach so sensibel und leichtfüßig integriert, dass man es nicht als Ballast oder Hindernis empfindet und auch keine Einschänkungen in Sachen Flexibilität erfährt. Gewinnen tut man hingegen ein unwahrscheinlich mächtiges Fundament, dessen vielfältigen Features kaum Wünsche offen lassen. Zum Zeitpunkt der Entstehung dieses Tutorials ist die Warp Version 6.2 erschienen und beinhaltet neue Möglichkeiten im Bereich des Responsive Designs. </p>
+
+<p>Ich kann sagen, dass wir bei der Erstellung neuer Joomla Templates durch den Einsatz des Warp Frameworks eine deutliche Effizienz- und Qualitätssteigerung erfahren haben. Ich bin überzeugt, dass jeder, der schon einmal ein Joomla Template von der Pike auf entwickelt hat und dieses Tutorial durcharbeitet, dies ebenso erfahren wird.</p>
+
+<h2 id="voraussetzungen">Voraussetzungen</h2>
+
+<p>Um von diesem Tutorial zu profitieren sollten gute bis sehr gute CSS-Kentnisse vorhanden sein. Ist dies nicht der Fall, werden Sie z.B. die Basis CSS-Klassen für Module irritieren und Sie werden beginnen, diese anzupassen, was zu Verwirrung führen kann. PHP- und Javascript-Kentnisse sind nicht zwingend nötig, schaden jedoch auch nicht. In jedem Fall sollten Sie schon ein einfaches Joomla Template zumindest im Ansatz entwickelt haben. Wer bis jetzt nur Artisteer Templates zusammengeklickt hat, steht auf verlorenem Posten und sollte sich zunächst eines der vielen Joomla Template Tutorials zu Gemüte führen, bevor er sich mit einem Template Framework beschäftigt.</p>
+
+<p>Bei der Erstellung der CSS-Dateien wird zwar Sass als CSS-Präprozessor eingesetzt, im Rahmen dieses Tutorials kommt jedoch nur reine CSS-Syntax vor. Das Resultat dieses Tutorials können Sie sich als komplette Joomla Installation in Form eines Akeeba Backup Archivs herunterladen.</p>
+
+<h2>Zielsetzung</h2>
+
+<p>Das Ziel dieses Tutorials ist nicht ein fertiges Template. Vielmehr sollten Sie am Ende dieses Tutorials verstanden haben, wie die Joomla Template Erstellung mit Hilfe des Warp Frameworks vonstattengeht. Das Template, welches im Rahmen dieses Tutorials entsteht, sollten Sie vollenden können. Besonders bei der Flexibilität und den verschiedenen zur Verfügung stehenden Lösungsansätzen sollte Ihnen während des Tutorials mehrmals ein Licht aufgehen.</p>
+
+<p>Scheuen Sie sich nicht, andere Wege zu gehen. Gerade unterschiedliche Herangehensweisen garantieren trotz Template-Frameworks eine heterogene Template-Landschaft.</p>
+
+<h2 id="template-installation">Go Go Go!</h2>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/joomla_installation.png" alt="Joomla Installation" title="Joomla Installation" height="380" width="470" />
+
+
+	<p>Dieses Tutorial setzt eine jungfräuliche Joomla 2.5.x Installation voraus. Damit wir auch gleich sehen, wie sich das Template im Einsatz verhält, wurde der Standard Demo Content während der Joomla Installation mitinstalliert.</p>
+
+	<p>Hier sehen Sie, wie die Joomla Seite frisch nach der Installation aussieht. Eingesetzt wurde ein englischsprachiges Joomla, aber natürlich können Sie auch das deutschsprachige Joomla samt deutschen Demo Content installieren.</p>
+
+
+	<p>Das Template, welches standardmäßig nach einer Installation aktiv ist, ist das Beez2 Default Template. Dieses werden wir erst einmal durch das Warp Master Template ersetzen. Dafür laden wir eben jenes von der YOOtheme Seite herunter:</p>
+
+	<p>Das Master Template ist zu finden unter: <a href="http://www.yootheme.com/themes/downloads">http://www.yootheme.com/themes/downloads</a></p>
+
+	<p>Das heruntergeladene Template mit dem Namen <em>yoo_master_j25.zip</em> installieren wir über den Extension Manager im Joomla Backend. Nach erfolgreicher Installation aktivieren wir das yoo_master - Default Template über den Template Manager als Standard Template.</p>
+
+</div>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/warp_plain.png" alt="Joomla mit Master Theme" title="Joomla mit Master Theme" height="260" width="470" />
+
+	<p>Wenn Sie die Seite nun neu laden, sollten Sie in etwa Folgendes sehen wie auf dem rechten Bild sehen. Ein recht trauriger Anblick, nicht wahr? Nicht einmal ein Navigationsmodul ist zu sehen. Hinter dieser kargen Ansicht verbirgt sich jedoch ein gewaltiges Potential an Möglichkeiten! Genau hier setzt die Arbeit an, um aus dieser seelenlosen Hülle ein Template Ihrer Wahl zu machen. Dazu werden wir uns (fast) aller Möglichkeiten bedienen, welche das Warp Framework bietet und mit wenigen Handgriffen den Ansatz eines vorzeigbaren Templates bauen. </p>
+
+	<p>Bevor es ans Eingemachte geht, wollen wir einige Dinge klären. Sie haben bereits vom Master Template und vom Warp Framework gelesen. Aber was bedeutet das genau und wie hängen diese beiden zusammen? Nun, es ist recht einfach. YOOtheme hat im Laufe der Jahre, wie jeder andere Template-Hersteller, ein Basisgerüst für die Erstellung von Templates kreiert. Dieses Basisgerüst wird auch Framework genannt und im Falle von YOOtheme nennt sich das Framework Warp. Das nackte Framework residiert im Verzeichnis <em>/warp</em> des von Ihnen heruntergeladenen Master Templates.</p>
+
+</div>
+
+<p>Das Master Template ist sozusagen ein rudimentäres Template auf Basis des Frameworks. Wie Sie oben sehen konnten, kann man mit dem nackten Master Template nicht wirklich glücklich werden. Das Master Template bildet mehr eine Grundlage, von der aus Sie Ihr eigenes Template erstellen bzw. abwandeln können.</p>
+
+<p>Das Wort &quot;abwandeln&quot; spielt dabei eine große Rolle. Dank des Warp Frameworks müssen wir uns keine grundlegenden Gedanken über Dinge wie Browserkompatibilität, Flexibilität oder das Raster machen. All das vererben tieferliegende Warp CSS Dateien an unser Template, so dass wir uns ganz auf die schönen Dinge des Webdesigns konzentrieren können.</p>
+
+<h2 id="warp-overrides">Warp Overrides</h2>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/overrides_warp_framework.png" alt="Overrides mit dem Warp Framework" title="Overrides mit dem Warp Framework" height="260" width="470" />
+
+<p>Wie und weshalb wir gleich Anpassungen durchführen werden, können Sie nur verstehen, wenn Sie den Override Ansatz des Warp Frameworks nachvollziehen können. Was Overrides sind, sollten Sie als Joomla Template Entwickler eigentlich wissen. Falls nicht, verweise ich gerne auf mein, inzwischen zwar etwas veraltetes, aber immer noch gültiges <a href="http://www.bohacek.de/b01-joomla-blog/joomla-template-tutorial-teil-5-content-overrides.html">Tutorial zu Content Overrides</a>.</p>
+
+<p>Wie funktioniert das also mit den Overrides beim Warp Framework? Sehen wir uns dazu die Grafik zur Rechten an.</p>
+
+<p>1. Die Warp Framework Ebene stellt als tiefste Ebene alle grundlegenden Ressourcen 
+(CSS, JS, usw.) bereit. Diese Ressourcen kümmern sich um all die unangenehmen Dinge wie Browserkompatibilität, flexible Menüs und Module, das Raster und viele andere Dinge, welche Sie nie oder selten anpassen müssen.</p>
+
+<p>2. Die Theme-Ebene steht für das aktuelle Template. YOOtheme benutzt das Wort Theme anstatt Template. In unserem Fall ist das aktuelle Template das Master Template. Diese Ebene beinhaltet Ressourcen, welche speziell das Template betreffen. </p>
+
+<p>3. Meiner Meinung nach die spannendste Ebene ist die Styles Ebene. Diese baut auf der Theme Ebene auf und ermöglicht Variationen (Styles) des aktuellen Templates/Themes. Diese Styles können so tiefgreifend sein, dass sie nicht nur das gesamte Erscheinungsbild verändern, sondern auch funktionelle Variationen ermöglichen.</p>
+
+<p>Als Beispiel für Warp Styles führe ich gerne unser PRIME Joomla Template an, welches folgende drei Variationen (Styles) hat:
+<a href="http://demo.prime-real.de/component/prime/objects/?layout=objects&amp;Itemid=137&amp;profile=mhukilau">Mellow</a>,
+<a href="http://demo.prime-real.de/component/prime/objects/?layout=objects&amp;Itemid=145&amp;profile=ocleanjob">Monolith</a>,
+<a href="http://demo.prime-real.de/component/prime/objects/?layout=objects&amp;Itemid=147&amp;profile=qbeige">Quad</a>
+Sie sehen, dass sich das gesamte Layout der Styles verändert. Zusätzlich können auf der Styles-Ebene auch Variationen in Sachen Farben, Schriften usw. durchgeführt werden.</p>
+
+<p>Wie stellen sich also die erst einmal etwas abstrakt wirkenden Warp Ebenen in Realität dar? Sehen wir uns dazu die Verzeichnisstruktur des Master Templates an:</p>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/warp_directories.png" alt="Verzeichnisstruktur in Warp" title="Verzeichnisstruktur in Warp" height="405" width="445" />
+
+<p>Es ist wichtig zu verstehen, was hinter dieser Struktur steckt. Gehen wir es Stück für Stück an. Die für uns wichtigen Verzeichnisse sind fett gedruckt:</p>
+
+<ul>
+	<li><strong>/css:</strong> Hier liegen CSS-Dateien der Themes-Ebene.</li>
+	<li><strong>/fonts:</strong> Hier liegen Schriften der Themes-Ebene.</li>
+	<li><strong>/html:</strong> Hier liegen Content Overrides der Themes-Ebene (nun, das stimmt nicht ganz, aber belassen wir es erst einmal dabei).</li>
+	<li><strong>/images:</strong> Hier liegen Bilddaten der Themes-Ebene.</li>
+	<li><strong>/js:</strong> Hier liegen Javascript-Dateien der Themes-Ebene. In der Regel liegt hier nur eine Datei. Ignorieren Sie das Verzeichnis am besten.</li>
+	<li><strong>/layouts:</strong> Eines der wichtigsten Verzeichnisse. Hier liegen PHP-Dateien der Themes Ebene. Unter anderem liegt hier die index.php Ihres Templates (nur dass sie template.php heisst).</li>
+	<li><strong>/styles:</strong> Wie der Name schon sagt, liegen hier die Styles Ihres Templates, also die dritte Ebene. Innerhalb des Styles-Verzeichnisses können weitere Verzeichnisse liegen, die Variationen Ihres Themes ermöglichen und den einzelnen Styles entsprechen.</li>
+	<li><strong>/warp:</strong> Hier liegt das Warp Framework. Sie sollten sich davon inspirieren lassen, aber verändern Sie nie Dateien in diesem Verzeichnis.</li>
+</ul>
+
+<p>Innerhalb dieser Verzeichnisstruktur wird vererbt und &quot;overridden&quot;, was das Zeug hält. Natürlich haben Sie jetzt noch keinen Schimmer, wie genau das vonstattengeht, aber das werden Sie bald anhand praktischer Beispiele sehen.</p>
+
+<p>Es gibt nun zwei Wege, wie wir an die Erstellung eines eigenen Templates herangehen können. Ein Weg wäre, das aktuelle Theme (Master Template) abzuändern. Das heißt, wir würden z.B. die CSS Dateien im Verzeichnis <em>/css</em> einfach nach unseren Wünschen anpassen. Dieser Weg bedeutet eine Anpassung auf der zweiten Ebene, der Theme-Ebene.</p>
+
+<p>Ich lasse lieber alles unangetastet und erstelle ein Template auf der dritten Ebene, der Styles-Ebene. Nun, das ist nicht ganz korrekt formuliert. Eigentlich erstellen wir &quot;nur&quot; einen Style, aber da Styles sehr mächtig sein können, nutzen wir sie um ein eigenes Template damit zu bauen. So werden wir nicht von bereits vorhandenen HTML Strukturen oder CSS-Selektoren abgelenkt. Zusätzlich ist dieser Weg lernintensiver, da Sie gleich alle drei Ebenen richtig kennenlernen. Wenn Sie sicher im Warp Sattel sitzen, können Sie ein Template auch direkt auf der zweiten Ebene erstellen. Die Schritte, welche ich beschreibe, können leicht dahingehend übertragen werden. </p>
+
+<h2 id="template-styles">Ein neuer Style &quot;nice&quot;</h2>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/style_switch.png" alt="Neuen Style in Warp erstellen" title="Neuen Style in Warp erstellen" height="330" width="470" />
+
+<p>Ich gehe davon aus, dass Sie beim Webdesign Tools wie Firebug oder die Entwicklertools vom Chrome einsetzen. OK, womit fangen wir an? Am besten mit etwas völlig Einfachem - ändern wir die Hintergrundfarbe! Dafür verpassen wir dem <em>BODY</em>-Element eine entsprechende CSS-Anweisung. Aber wo machen wir das jetzt genau?</p>
+
+<p>Da wir einen eigenen Style erstellen wollen, müssen wir dies dem Warp Framework mitteilen. Dafür erstellen wir im <em>/styles</em> Verzeichnis ein Ordner namens <em>/nice</em>. Hier wird sich unser Style Stück für Stück entwickeln. Sobald der Ordner angelegt ist, sollten Sie in das Joomla Backend gehen und dort in den Template Manager. Hier klicken Sie auf das <em>yoo_master</em> - Default Template um es zu konfigurieren.</p>
+
+<p>Wie Sie sehen, gibt es hier eine ganze Menge an Einstellungen. Was uns momentan interessiert, ist der Tab <em>Profiles</em>. Dort wechseln wir den Style von <em>Default</em> auf <em>Nice</em> und speichern das Ganze ab.</p>
+
+<p>Zurück im Frontend bemerken wir beim Neuladen der Seite&#46;&#46;&#46;nichts. Warum auch, wir haben ja nur einen Ordner angelegt. Wenn wir wollen, dass unser Style irgendwie greift, müssen wir auch etwas CSS dort platzieren.</p>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/joomla_body_css.png" alt="Entwicklertools für Joomla Templates" title="Entwicklertools für Joomla Templates" height="330" width="470" />
+
+<p>Um herauszufinden welche CSS-Datei wir anpassen müssen, nutzen wir die Entwicklertools. Wenn wir das <em>BODY</em>-Element markieren, sehen wir rechts, in welchen CSS-Dateien es definiert wurde. Da wäre einmal die <code>base.css:</code> Zeile 9, welche auf die <em>/css/base.css</em> Datei verweist. Dann sind noch die <code>base.css:</code> Zeile 60 und <code>base.css:</code> Zeile 21 zu sehen, welche beide auf die <em>/warp/css/base.css</em> Datei verweisen.</p>
+
+<p>Da wir die Warp Dateien (1. Ebene) nur ansehen, aber nicht anfassen, bleibt nur die <em>base.css</em> aus dem <em>/css</em> Ordner. Wie ich oben beschrieben habe, ist dies ein Ordner, welcher sich auf die zweite Ebene, das Theme, bezieht. Wir wollen jedoch nicht direkt auf der zweiten Ebene Anpassungen vornehmen, sondern auf der dritten, der Styles Ebene. Hierfür kopieren wir die <em>/css/base.css</em> Datei in einen CSS-Ordner unseres Style Ordners. Das sieht dann so aus: <em>styles/nice/css/base.css.</em></p>
+
+<p>Wenn Sie die Seite nun neu laden, bemerken Sie, dass etwas nicht stimmt. Die H1 überschrift &quot;Joomla&quot; ist plötzlich zu klein und auch sonst ist etwas anders. Was ist geschehen? Sehen Sie sich die <em>base.css</em> aus Ihrem <em>/nice/css</em> Ordner an. Dort finden Sie ganz oben die Zeile:</p>
+
+<pre><code>@import url(../warp/css/base.css);</code></pre>
+
+<p>Diese kümmert sich darum, dass die <em>base.css</em> aus der ersten Ebene, also dem Warp Framework geladen wird. Das hat funktioniert, solange dieser Aufruf aus der zweiten Ebene kam, also dem <em>/css</em> Verzeichnis. Jetzt ist es jedoch ein Style geworden und deswegen müssen wir die Zeile wie folgt anpassen:</p>
+
+<pre><code>@import url(../../../warp/css/base.css);</code></pre>
+
+<p>So wird die <em>base.css</em> auf dem Warp Framework wieder korrekt geladen. Wenn wir schon dabei sind, erweitern wir das <em>BODY</em>- Element um eine Hintergrundfarbe:</p>
+
+<pre><code>body {
+	font: normal 14px/20px Arial, Helvetica, sans-serif;
+	color: #444;
+	background-color: #F2F0DF; /* neue Hintergrundfarbe */
+}</code></pre>
+
+<p>Wenn Sie nun die Seite neu laden, sehen Sie eine neue Hintergrundfarbe. Glückwunsch! Sie haben gerade Ihr erstes Warp Override erstellt. </p>
+
+<h3>Noch einmal zusammengefasst:</h3>	
+Wir haben die <em>base.css</em>, in welcher das <em>BODY</em>-Element beschrieben wird aus der zweiten Ebene <em>(/css)</em> in die dritte Ebene <em>(/css/nice/css)</em> kopiert und angepasst. Dadurch haben wir ein Override für die Datei <em>base.css</em> erstellt. Das Warp Framework nutzt nun nicht mehr die <em>base.css</em> der zweiten Ebene, sondern die der dritten (und natürlich der ersten). Wenn Sie das verstanden haben, will ich noch zwei alternative Wege für diese Anpassung beschreiben.</p>
+
+<p>Die <em>base.css</em> Datei, welche wir kopiert haben, beinhaltet noch einige andere CSS-Anweisungen. Möglicherweise wollen wir diese gar nicht anpassen. Wir könnten die Datei also wie folgt anpassen:</p>
+
+<pre><code>@import url(../../../warp/css/base.css);
+@import url(../../../css/base.css);</code></pre>
+
+<pre><code>body {
+	font: normal 14px/20px Arial, Helvetica, sans-serif;
+	color: #444;
+	background-color:#F2F0DF;
+}</code></pre>
+
+<p>Dadurch enthält die Datei nur das <em>BODY</em>-Element, welches wir anpassen wollen. Den Rest haben wir entfernt. Durch das Einfügen der Zeile <code>@import url(../../../css/base.css)</code>; wird nun, anders als zuvor, zusätzlich die <em>base.css</em> der Theme Ebene geladen. Also nochmal: Zunächst wird die <em>base.css</em> der ersten Ebene geladen (Warp Framework), dann der zweiten Ebene (Theme) und dann der Style Ebene.</p>
+
+<p>Wenn Sie diesen Vererbungsmechanismus verstanden haben, können Sie sehr leicht CSS-Anpassungen vornehmen, ohne das eigenliche Template (Ebene 2) oder Warp (Ebene 1) zu verädern. Einfach die jeweiligen CSS-Dateien aus dem <em> /css</em>  Ordner in Ihren Styles Ordner kopieren. Wie Sie sehen können, liegen dort einige Dateien, welche sich um ganz bestimmte Fragen kümmern. Die <em>modules.css</em> um Module, die <em>menus.css</em> um das Menü, die <em>system.css</em> um Ausgaben des CMS usw. Sie sollten unbedingt lernen, die verschiedenen CSS Dateien nur für die Zwecke zu nutzen, für welche sie gedacht sind. Dadurch bleibt alles organisiert und Sie wissen immer, wo Sie bestimmte Anweisungen finden, wenn Sie diese anpassen wollen.</p>
+
+<h2 id="modulpositionen">Modulpositionen</h2>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/warp_layout_positions.png" alt="Modulpositionen in Warp" title="Modulpositionen in Warp" height="400" width="290" />
+
+	<p>Machen wir weiter. Unser &quot;Template&quot; hat nun eine Hintergrundfarbe bekommen, ansonsten ist nicht viel passiert. Platzieren wir erst einmal ein paar Module so, dass die ganze Sache auch ein wenig Fleisch an die Knochen bekommt. Verschaffen wir uns einen überblick zu den möglichen Modulpositionen, welche das Master Template bietet.</p>
+
+	<p>Wie Sie sehen, gibt es reichlich Möglichkeiten, Module zu platzieren. Natürlich können Sie bei entsprechenden Anpassungen beliebig eigene Modulpositionen einföhren. Mit Hilfe der Warp eigenen Modul Layout Features lassen sich die blauen Positionen noch weiter flexibilisieren. Dazu kommen wir jedoch später.</p>
+
+	<p>Wir kennen nun also die möglichen Modulpositionen. Wenn Sie, so wie ich, ein frisches Joomla nutzen, dann werden auch die Beez Templates mit so vielsagenden Modulpositionen wie <em>position-7</em> mitinstalliert. Damit wir in Sachen vorhandener Modulpositionen nicht zu sehr suchen müssen, empfiehlt es sich, alle Beez Templates, das Atomic Template und das Backend Hathor Template im Extensions Manager zu deinstallieren.</p>
+
+</div>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/joomla_modules_1.png" alt="Modulplatzierung in Warp" title="Modulplatzierung in Warp" height="360" width="470" />
+
+	<p>Ist das erledigt, springen wir im Backend in den Module Manager und platzieren ein paar wichtige Module. Achten Sie darauf, dass die Module <strong>auf allen Seiten sichtbar</strong> und <strong>öffentlich</strong> sind, falls das nicht bereits der Fall ist.</p>
+
+	<ul>
+		<li>Das Hauptmenü/<em>Main Menu</em> auf Position <em>menu</em></li>
+		<li>Das <em>Top Menu</em> auf Position <em>toolbar-r</em></li>
+		<li>Das Beispiel Menü/<em>Menu Example</em> auf Position <em>sidebar-b</em></li>
+		<li>Das <em>Footer</em> Modul auf Position <em>footer</em></li>
+		<li>Das <em>Smart Search</em> Module auf Position <em>search</em></li>
+		<li>Das <em>Breadcrumbs</em> Modul auf Position <em>breadcrumbs</em></li>
+	</ul>
+
+	<p>So, das waren erst einmal die Wichtigsten. Wenn Sie alles richtig gemacht haben, sollte Ihre Seite nun wie zur Rechten aussehen.</p>
+
+</div>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/joomla_modules2.png" alt="Modulplatzierung in Joomla 2" title="Modulplatzierung in Joomla 2" height="730" width="470" />
+
+	<p>Schon besser. Damit es noch etwas lebendiger wird, erstellen bzw. platzieren wir noch folgende Module:</p>
+
+	<ul>
+		<li>Ein <em>Custom HTML</em> Modul mit einem hübschen Bild auf Position <em>top-a</em></li>
+		<li>Das <em>Who's Online</em> Modul auf Position <em>innerbottom</em></li>
+		<li>Das <em>Users Latest</em> Modul auf Position <em>innerbottom</em></li>
+		<li>Das <em>News Flash</em> Modul auf Position <em>innerbottom</em></li>
+		<li>Das <em>Login</em> Modul auf Position <em>menu</em></li>
+		<li>Das <em>Articles Most Read</em> Modul auf Position <em>innertop</em></li>
+		<li>Das <em>Weblinks</em> Modul auf Position <em>innertop</em></li>
+	</ul>
+
+	<p>Die Seite sollte nun wie zur Rechten aussehen.</p>
+
+	<p>Zugegeben, die Module haben so angeordnet kaum Sinn, aber wir wollen ja auch keine Webseite erstellen, sondern genug Material haben um am Template zu arbeiten.</p>
+
+</div>
+
+<h2 id="template-konfiguration">Template Konfiguration</h2>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/template_parameter_general.png" alt="Warp General Settings" title="Warp General Settings" height="430" width="470" />
+
+	<p>Jetzt, wo wir so etwas wie eine Webseite haben, wollen wir uns die vorhandenen Template Parameter ansehen. Mit Hilfe der Template Parameter können das Aussehen und gewisse Funktionalitäten des Templates über das Backend konfiguriert werden. Wechseln wir also in den Template Manager und klicken dort auf das Master Template.</p>
+
+	<p>Nun sehen wir die selben Einstellungen wie im rechten Bild.</p>
+
+	<p>Die Einstellungen von Warp basierten Templates unterteilen sich in die drei Bereiche: </p>
+
+	<p><em>General</em>, <em>Profiles</em> und <em>Mobile</em>. Der <em>Mobile</em> Bereich ist ab Warp Framework Version 6.2 weggefallen, sodass die neuen, responsiven Fähigkeiten die Möglichkeit bieten, sämtliche Endgeräte zu unterstützen. Wir hätten uns damit sowieso nicht beschäftigt. Im <em>General</em> Bereich werden Einstellungen getroffen, welche das Template unabhängig vom aktiven Profile betreffen. Die wichtigste ist wohl die Wahl des <em>standard</em> Profils. Was Profiles sind, erkläre ich Ihnen gleich. Lassen Sie diese Einstellung auf <em>Default</em>.</p>
+
+	<p>Falls Sie sich erinnern, waren wir bereits im Profiles-Bereich, klicken Sie ihn also an.</p>
+
+</div>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/template_parameter_profiles.png" alt="Warp Profiles Settings" title="Warp Profiles Settings" height="425" width="470" />
+
+<p>Im <em>Profiles</em> Bereich werden Einstellungen getroffen, welche nur das aktuelle Profile betreffen. Hier hatten wir unter dem Punkt Styles bereits unser neu angelegtes Style <em>Nice</em> ausgewählt. Was sind also Profiles? Unter dem Begriff können Sie sich eine individuelle Auswahl der angebotenen Einstellungen vorstellen. In der Regel hat ein selbst erstelltes Template nur das Default Profile. Wollen Sie jedoch ein Template erstellen, welches Ihren Kunden bzw. Nutzern etwas mehr Freiheit gibt, so können Sie mehrere Styles erstellen, welche hier verschiedenen Profilen zugewiesen werden können.</p>
+
+<p>Stellen Sie sich vor, Ihre Webseite hat einen Menüpunkt, der auf eine Seite führt, die eine große Google Maps Karte enthält. Anders als auf dem Rest der Seite sollen beide Modulpositionen <em>sidebar-a</em> und <em>sidebar-b</em> rechts angeordnet sein. Zusätzlich sollen diese Module mehr Platz erhalten. All das können Sie mit einem hierfür erstelltem Profil ermöglichen.</p>
+
+<p>Sie erstellen also über den Link <em>Add</em> ein Profil namens <em>Map</em>, konfigurieren es den Anforderungen entsprechend und speichern es. Unter <em>Assign pages</em> können Sie nun dieses Profil dem Menüpunkt Ihrer Wahl zuweisen. Schon haben Sie eine Seite, welche anders strukturiert ist als der Rest Ihrer Webseite.</p>
+
+<p>Falls Sie schon einmal ein Template von YOOtheme eingesetzt haben, werden Sie die Möglichkeiten dieses Ansatzes bereits kennen, da die YOOtheme Templates eine ganze Palette an Styles, Farben und Hintergrundgrafiken anbieten, welche verschiedenen Profilen zugeordnet werden können.</p>
+
+<p>Im späteren Verlauf des Tutorials werde ich beschreiben, wie Sie eigene Template Parameter definieren können.Schauen wir uns mal an, was man mit den so genannten Modul <em>Layouts</em> anstellen kann. Ich gehe davon aus, dass Sie im <em>Profiles</em> Bereich sind und das <em>Default Profile</em> mit dem <em>Nice</em> Style ausgewählt ist.</p>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/module_layouts_1.png" alt="Modul Layouts in Warp 1" title="Modul Layouts in Warp 1" height="200" width="470" />
+
+	<p>Im Layout-Bereich der Einstellungen finden Sie Parameter wie <em>Top A Layout</em>, <em>Top B Layout</em>, <em>Inner Top Layout</em> usw. Diese kann man auf <em>Double</em>, <em>Equal</em> oder <em>Stack</em> einstellen. Probieren wir es direkt aus. Stellen Sie den Parameter <em>Inner Top Layout</em> auf <em>Double</em> und speichern.</p>
+
+	<p>Zuvor sah dieser Modulbereich wie zur Rechten aus.</p>
+
+</div>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/module_layouts_2.png" alt="Modul Layouts in Warp 2" title="Modul Layouts in Warp 2" height="200" width="470" />
+
+	<p>Nun ist Folgendes passiert:</p>
+
+	<p><em>Double</em> bedeutet also, dass die Breite des ersten Moduls in der Position verdoppelt wird. Praktisch, oder? Was aber, wenn Sie lieber das <em>Weblinks</em> Modul mit doppelter Breite hätten anstatt dem <em>Articles Most Read</em> Modul? Ganz einfach - Sie ändern in der Joomla Modulverwaltung einfach die Reihenfolge der beiden Module. Darauf sind Sie sicher selbst gekommen. </p>
+
+</div>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/module_layouts_3.png" alt="Stack Modul Layout in Warp" title="Stack Modul Layout in Warp" height="270" width="470" />
+
+<p>Also gleich einmal das <em>Stack</em>-Modullayout ausprobieren.</p>
+
+<p>Die Module werden übereinander gestapelt, auch nicht schlecht. Das <em>Modul Layout Feature</em> zählt für mich zu einem der Beispiele für den wunderbaren Pragmatismus des Warp Frameworks. Etliche Frameworks bieten dem Template Hersteller unzühlige Möglichkeiten Module zu formatieren und zu positionieren. Dabei werden nicht selten über 60 Modulpositionen angeboten. Mit dem <em>Modul Layout Feature</em> ist dies überflüssig. Jeder kann über diese Einstellungen das Layout erreichen, welches er sucht. Für diejenigen, welche in Sachen Modulpositionierung und Formatierung mehr wollen, bietet das Framework vollkommen individuelle Anpassungsmöglichkeiten, zu denen wir noch kommen.</p>
+
+<p>Ich merke schon wie Sie sich fragen, wie zum Teufel diese kleinen Grafiken im <em>Weblinks</em> Modul zustande kommen - das kleine Twitter Icon neben dem Titel und das <em>New</em> Icon oben rechts. Dazu, und damit zu einem völlig neuem Thema, kommen wir jetzt.</p>
+
+<h2 id="modul-styles">Modul Styles</h2>
+
+<p>Das Warp Framework nutzt Modul Klassen Suffixe für die individuelle Formatierung von Modulen. Welche Suffixe angeboten werden, können Entwickler in der <em>/layouts/modules.php</em> herausfinden.</p>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/module_suffix.png" alt="Modul Suffixe in Joomla" title="Modul Suffixe in Joomla" height="215" width="470" />
+
+<p>Grundsätzlich muss man sich den Ansatz wie eine Definition von Variablen vorstellen. Das erste Wort ist der Variablenname und das zweite der Wert. Wenn wir also das Twitter Icon haben wollen, definieren wir <em>icon-twitter</em> als Klassen Suffix. Für das <em>New</em> Icon (auch <em>badge</em> genannt) reicht ein <em>badge-new</em>. Die Modul Suffixe definieren Sie in den Erweiterten Optionen des jeweiligen Moduls. Im Bild zur Rechten als Beispiel im <em>Weblinks</em> Modul zu sehen.</p>
+
+<p>Bevor wir einen eigenen Parameter einführen, muss ich zunächst etwas ausholen.
+Das Positionieren und Formatieren der Module wird zum großen Teil in der oben erwähnten /layouts/modules.php Datei definiert. Das Wunderbare ist, dass wir diese Datei per Override abwandeln können. Kopieren Sie also diese Datei in Ihren <em>/styles/nice/layouts/</em> Ordner. Nun wird bei Nutzung des <em>nice</em> Styles nicht mehr die <em>modules.php</em> der zweiten Ebene genutzt, sondern die der dritten, nämlich unseres Styles. Diese Override Techniken sind ein sehr wichtiger Aspekt bei der Arbeit mit dem Warp Framework und Sie sollten die Mechanismen dahinter verstehen, um das Maximum der gegebenen Möglichkeiten zu nutzen.</p>
+
+<p>Für alle, die sich mit PHP auskennen, wird der Inhalt der <em>modules.php</em> ausreichen, um die Funktionsweisen dahinter zu verstehen. Für alle anderen will ich anhand zwei kleiner Beispiele eine Einführung geben.</p>
+
+<p>In der <em>modules.php</em> sehen Sie folgende Zeilen:</p>
+
+<pre><code>	foreach (array('suffix', 'style', 'color', 'badge', 'icon', 'dropdownwidth') as $var) {
+	$$var = isset($params[$var]) ? $params[$var] : null;
+}</code></pre>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/module_suffix_color.png" alt="Modul Suffix Farbe in Warp" title="Modul Suffix Farbe in Warp" height="180" width="350" />
+
+	<p>Hier sehen Sie welche Suffixe in dieser Datei behandelt werden. Unter anderem sehen wir das Suffix <code>color</code>. Erweitern wir also das Klassensuffix unseres Moduls um <code>color-color1</code>.</p>
+
+</div>
+
+<p>Sah der Quelltext unseres Moduls zuvor wie folgt aus:</p>
+
+<pre><code>&lt;div class=&quot;grid-box width50 grid-h&quot; style=&quot;width: 390px; &quot;&gt;
+	&lt;div class=&quot;module mod-box  deepest&quot; style=&quot;min-height: 177px; &quot;&gt;
+		&lt;div class=&quot;badge badge-new&quot;&gt;&lt;/div&gt;
+		&lt;h3 class=&quot;module-title&quot;&gt;&lt;span class=&quot;icon icon-twitter&quot;&gt;&lt;/span&gt;Weblinks&lt;/h3&gt;
+		&lt;ul class=&quot;weblinks icon-twitter badge-new&quot;&gt;
+		...
+		&lt;/ul&gt;		
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>so ist nun dies daraus geworden:</p>
+
+<pre><code>&lt;div class=&quot;grid-box width50 grid-h&quot; style=&quot;width: 390px; &quot;&gt;
+	&lt;div class=&quot;module mod-box mod-box-color1 deepest&quot; style=&quot;min-height: 177px; &quot;&gt;
+		&lt;div class=&quot;badge badge-new&quot;&gt;&lt;/div&gt;
+		&lt;h3 class=&quot;module-title&quot;&gt;&lt;span class=&quot;icon icon-twitter&quot;&gt;&lt;/span&gt;Weblinks&lt;/h3&gt;
+		&lt;ul class=&quot;weblinks color-color1 weblinksicon-twitter badge-new&quot;&gt;
+		...
+		&lt;/ul&gt;		
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>Der Modulrenderer des Warp Frameworks bindet die neue Variable so in das ausgebende HTML, dass es von einem Webdesigner sinnvoll eingesetzt werden kann. Dann setzen wir es einmal sinnvoll ein.</p>
+
+<p>Kopieren Sie die <em>modules.css</em> aus dem <em>/css Ordner</em> in den <em>/styles/nice/css/</em> Ordner. Schon wieder haben wir ein Override erstellt! Vergessen Sie allerdings nicht die relativen Pfade innerhalb dieser CSS-Datei anzupassen. Da wären:</p>
+
+<pre><code>1. @import url(../../../warp/css/modules.css);
+2. background: url(../../../images/module_badges.png) 0 0 no-repeat;
+3. background: url(../../../images/module_icons.png) 0 0 no-repeat;</code></pre>
+
+
+<p>Jetzt sollte alles wie zuvor ausschauen. Ob Sie es glauben oder nicht, aber das ist manchmal schon ein Erfolg.</p>
+
+<p>Erweitern wir die eben kopierte <em>modules.css</em> (in unserem <em>nice</em> Style!) um folgende Zeilen:</p>
+
+<pre><code>/* Module Colors
+----------------------------------------------------------------------------------------------------*/
+.mod-box-color1 {background-color: #CF8B3F;}
+.mod-box-color2 {background-color: #6B9EDF;}</code></pre>
+
+<p>Nun können Sie über das Modulsuffix jedes Moduls, welches als Box-Template gerendert wird, eine individuelle Hintergrundfarbe bestimmen. Damit nicht blaue Schrift auf blauem Hintergrund steht, sollte man natürlich noch CSS-Anweisungen für den Inhalt dieser Module definieren. Aber da dies trivial ist, überlasse ich das Ihnen. Was es mit dem Box-Template eines Moduls auf sich hat, wird gleich beschrieben.</p>
+
+<h2 id="modul-templates">Ein eigenes Modul Template</h2>
+
+<p>So, das war recht einfach. Werden wir etwas anspruchsvoller. Stellen Sie sich vor, wir wollen ein absolut positioniertes Modul im Content-Bereich unserer Webseite haben, welches uns die meist gelesenen Artikel darstellt. Im Prinzip also das <em>Most Read</em> Modul, nur absolut positioniert. Da dieses Modul viel Platz benötigt, werden wir mit etwas CSS und Javascript dafür sorgen, dass es nicht permanent den aktuellen Content überlagert. Technisch ist das trivial, aber für uns ist es interessant zu sehen, wie das unter Warp zu realisieren ist. </p>
+
+<p>Wenn wir uns die vorhandenen Modulpositionen ansehen, stellen wir schnell fest, dass es hier nichts passendes für uns gibt. Man könnte zwar die <em>innertop</em> Position benutzen, aber das wäre nicht nett. Wir müssen also eine neue Modulposition einfügen. Kopieren Sie hierfür aus dem /layouts Ordner die <em>template.php</em> nach <em>/styles/nice/layouts/</em>. Schon wieder haben wir ein Override erstellt und diesmal sogar eines, welches den Aufbau des gesamten Templates bestimmt.</p>
+
+<p>Noch einmal zur Erinnerung: die <em>template.php</em> ist das, was die <em>index.php</em> eines &quot;normalen&quot; Joomla Templates ist.</p>
+
+<p>Hier können wir um die Zeile 100 herum aus folgendem Code:</p>
+
+<pre><code>&lt;?php if ($this['config']-&gt;get('system_output')) : ?&gt;
+&lt;section id=&quot;content&quot; class=&quot;grid-block&quot;&gt;&lt;?php echo $this['template']-&gt;render('content'); ?&gt;&lt;/section&gt;
+&lt;?php endif; ?&gt;</code></pre>
+
+<p>dieses hier machen:</p>
+
+<pre><code>&lt;?php if ($this['config']-&gt;get('system_output')) : ?&gt;
+&lt;section id=&quot;content&quot; class=&quot;grid-block&quot;&gt;
+&lt;?php if ($this['modules']-&gt;count('contentabs')) : ?&gt;
+&lt;div id=&quot;contentabs&quot;&gt;
+			&lt;?php echo $this['modules']-&gt;render('contentabs'); ?&gt;
+		&lt;/div&gt;
+	&lt;?php endif; ?&gt;
+&lt;?php echo $this['template']-&gt;render('content'); ?&gt;
+&lt;/section&gt;
+&lt;?php endif; ?&gt;</code></pre>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/new_module_1.png" alt="Neue Modulposition in Warp 1" title="Neue Modulposition in Warp 1" height="270" width="470" />
+
+	<p>Wir haben also eine neue Modulposition namens <em>contentabs</em> (was für content absolute stehen soll) direkt in den Content-Bereich der Seite eingefügt. Lassen Sie uns das gleich testen! ändern Sie die Position des <em>Articles Most Read</em> Moduls von <em>innertop</em> auf <em>contentabs</em>. Nun sieht die Seite wie im Bild zur Rechten aus.</p>
+
+	<p>Grauenhaft, aber richtig! Auch wenn es nicht so aussieht, liegt das Modul an der richtigen Stelle. Was jetzt fehlt, ist etwas CSS um der Sache Sinn zu geben.</p>
+
+</div>
+
+<p>In der <em>modules.css</em> fügen wir Folgendes ein:</p>
+
+<pre><code>#contentabs {
+	position: absolute;
+	right: 0;
+	background-color: #FCFBF2;
+}</code></pre>
+
+<p>In der <em>layout.css</em>, für die Sie auch gleich ein Override erstellen (doch, Sie können das!) fügen wir Folgendes ein:</p>
+
+<pre><code>#content { position:relative; }</code></pre>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/new_module_2.png" alt="Neue Modulposition in Warp 2" title="Neue Modulposition in Warp 1" height="145" width="470" />
+
+	<p>Das Ganze sieht nun so aus:</p>
+
+	<p>Wir könnten die neue Modulposition nun noch in die <em>templateDetails.xml</em> integrieren.</p>
+
+</div>
+
+<p>Fügen Sie folgenden Code in die <em>templateDetails.xml</em> ein:</p>
+
+<pre><code>&lt;position&gt;contentabs&lt;/position&gt;</code></pre>
+
+<p>Dadurch weiß auch das CMS bescheid, dass es diese Modulposition gibt und bietet sie, wenn nötig, an. </p>
+
+<p>Nun möchte ich Ihnen zeigen, wie einfach es ist, ein wenig Funktionalität in ein Warp Template einzubauen. Das Modul sieht so ja ganz nett aus, besser wäre es aber, wenn wir es ein- und ausklappen könnten, damit nicht der halbe Inhalt davon verdeckt wird.
+Ich beschränke mich dabei auf minimale Anforderungen, denn es geht hauptsächlich darum, zu verstehen, wo und nicht wie man die Anpassungen durchführt. </p>
+
+<p>Bevor Sie weiterlesen, sollte ich noch erwähnen, dass Sie natürlich beliebige andere Modulpositionen erzeugen können. Ich empfehle die Warp Dokumentation zu neuen Modulpositionen hier: <a href="http://yootheme.com/themes/documentation/customizing/create-a-new-module-position">Create a new module position</a></p>
+
+<p>Also, um das Einklappen (Toggle) einzubauen, brauchen wir etwas Javascript (JS). Für etwas Javascript, welches sich um Funktionen des Templates kümmert, eignet sich am besten das <em>template.js</em>, welches im <em>/js</em> Order liegt. Wir wollen es aber nicht direkt dort bearbeiten, sondern erstellen dafür ein Override in unseren <em>nice</em> Style (Ordner: <em>/styles/nice/js/</em>).</p>
+
+<p>Wenn Sie das <em>template.js</em> dorthin kopiert haben, sind Sie sich hoffentlich bewusst, dass wir nun ein Template Javascript haben, welches nur bei dem <em>nice</em> Style (3. Ebene) geladen wird. Wenn Sie in der Template Konfiguration wieder das Style <em>Default</em> aktivieren, wird das <em>template.js</em> aus dem <em>/js Ordner</em> geladen (2. Ebene).</p>
+
+<p>Also gut, in der JS-Datei sehen Sie ein paar jQuery Anweisungen, welche Sie stehen lassen können und momentan nicht von Interesse sind. Hier werden wir das JS einbauen, welches wir für unseren Modul-Toggler brauchen.Wenn wir uns zunächst einmal die HTML-Struktur unseres Moduls ansehen, so sehen wir Folgendes:</p>
+
+
+<pre><code>&lt;div id=&quot;contentabs&quot;&gt;
+&lt;div class=&quot;module deepest&quot;&gt;
+&lt;h3 class=&quot;module-title&quot;&gt;Articles Most Read&lt;/h3&gt;	
+&lt;ul class=&quot;line line-icon&quot;&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	&lt;li&gt;...&lt;/li&gt;
+	...
+&lt;/ul&gt;		
+&lt;/div&gt;					
+&lt;/div&gt;</code></pre>
+
+<p>Sie erinnern sich noch, dass die Art, wie ein Modul gerendert wird (d.h. in welche HTML-Struktur es gegossen wird), in der <em>modules.php</em> bestimmt wird. Für diese haben wir ja bereits ein Override erstellt. Wenn Sie sich die Datei anschauen, finden Sie folgende Zeile:</p>
+
+<pre><code>switch ($style) { ...</code></pre>
+
+<p>Die folgenden <em>case</em> Anweisungen definieren, welcher Style und welches entsprechende Modul Templates (ja, es gibt Modul Templates!) genommen wird. Wenn kein Modul Style explizit übergeben wurde, wird das Modul Templates <em>default-1 geladen</em>. Dieses liegt im Warp Framework im Ordner <em>/warp/layouts/modules/templates/</em>. Wenn wir im Joomla Backend <em>style-box</em> als Modul Klassen Suffix bei einem beliebigem Modul angeben, können wir also den Modul Style <em>box</em> erzwingen. Nur ist dessen HTML-Struktur für unseren Toggler nicht geeignet.</p>
+
+<p>Warum erstellen wir nicht einfach einen neuen, für den Toggler zugeschnittenen Modul Style samt Modul Templates? Gesagt, getan. Erstellen Sie ein Override (ja, auch Modul Templates können Overrides haben) für das Modul  <em>Modul Templates default-1 </em>. Kopieren Sie dazu die Datei  <em>default-1.php</em> in den Ordner  <em>/styles/nice/layouts/modules/templates/ </em>. Schon haben Sie ein Override erzeugt. </p>
+
+<p>Wenn ich so recht überlege, wollen wir eigentlich keinen Override des default Templates, denn dieses wird ja evtl. von anderen Modul Styles genutzt. Benennen wir die gerade kopierte Datei um in cabs.php. Das wird unser Name: <em>cabs</em>. Die in unserem neuen Toggler Modul Template cabs.php noch enthaltenen HTML Anweisungen ändern wir wie in folgt ab:</p>
+
+<pre><code>&lt;div class=&quot;module &lt;?php echo $style; ?&gt; deepest&quot;&gt;
+&lt;?php echo $badge; ?&gt;
+	&lt;?php if ($showtitle) echo $title; ?&gt;
+	&lt;div id=&quot;cabs-wrap&quot;&gt;
+	&lt;?php echo $content; ?&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>Dadurch haben wir um den Content des Moduls das DIV Element cabs-wrap gelegt, welches unser Toggler ansprechen kann. Damit dieses Modul Template auch geladen wird, müssen wir in der modules.php (innerhalb des <em>nice</em>-Style Ordners!)  folgende case-Anweisung hinzufügen:</p>
+
+<pre><code>case 'cabs':
+	$template		= 'cabs';
+	$title_template = '&lt;h3 class=&quot;module-title closed&quot;&gt;%s&lt;/h3&gt;';
+	break;</code></pre>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/cabs_suffix.png" alt="Modulklassen Suffix style-cabs" title="Modulklassen Suffix style-cabs" height="210" width="310" />
+
+<p>über die Variable <code>$template</code> wird nun das von uns erstellte <em>cabs.php</em> Template dem Modul Style <em>cabs</em> zugeordnet. </p>
+
+<p>Wenn Sie mehr über Modul Styles und ihre Templates erfahren möchten, lesen sie das <a href="http://yootheme.com/themes/documentation/customizing/create-a-new-module-style">Create a new module style</a> Tutorial.</p>
+
+<p>So, um den Style nun auch aktiv einzusetzen, sagen wir unserem <em>Most Read Modul</em> per Klassen Suffix, dass es diesen nutzen soll. Sie sollten nun eigentlich wissen, was nötig ist. Denken Sie kurz (oder lange) nach und lesen Sie dann weiter.</p>
+
+<p>OK, wir geben als Modulklassen-Suffix also <em>style-cabs</em> ein.</p>
+
+<p>Damit haben wir unserem Template gesagt, dass es dieses Modul mit dem neuen Modul Style <em>cabs</em> rendern soll. Als Ausgabe erscheint dann auch:</p>
+
+<pre><code>&lt;div id=&quot;contentabs&quot;&gt;
+&lt;div class=&quot;module cabs  deepest&quot;&gt;
+&lt;h3 class=&quot;module-title closed&quot;&gt;Articles Most Read&lt;/h3&gt;		
+&lt;div id=&quot;cabs-wrap&quot;&gt;	
+&lt;ul class=&quot;line line-icon&quot;&gt;
+		&lt;li&gt;...&lt;/li&gt;
+		&lt;li&gt;...&lt;/li&gt;
+		...
+	&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>Genau so soll es sein! Beim alternativen Weg das Modul mit dem cabs-Style zu rendern, wäre in der <em>modules.php</em> so um die Zeile 30 herum Folgendes einzufügen:</p>
+
+<pre><code>if ($module->position == 'contentabs') $style = 'cabs';</code></pre>
+
+<p>Egal wie Sie es machen, unser Toggler kann jetzt auf das DIV Element cabs-wrap zugreifen. Welcher Toggler, werden Sie sagen? Nun, in die bereits in unser Style kopierte <em>template.js</em> schreiben wir folgende Zeilen:</p>
+
+<pre><code>window.addEvent('_domready', function(){
+	var cabs_slide = new Fx.Slide('cabs-wrap');
+	cabs_slide.hide();
+	$$('#contentabs .module-title').addEvent('click', function(event){
+		event.stop();
+		this.toggleClass(&quot;closed&quot;);
+		cabs_slide.toggle();
+	  });
+});</code></pre> 
+
+<p>Obwohl die Datei jQuery Anweisungen enthält, habe ich den Toggler mit ein paar Mootools Zeilen realisiert. Wenn wir nun die Seite neu laden, sollte der Toggler funktionieren, und siehe da - nichts! Wo liegt der Fehler? </p>
+
+<p>Das finden wir schnell heraus, wenn wir in die JS-Console des Browsers sehen. Dort werden wir durch eine Fehlermeldung darauf aufmerksam gemacht, dass die vom Toggler genutzte Mootools Klasse <em>Fx</em> unbekannt ist - logisch! Joomla lädt in der Regel nur die Core-Dateien von Mootools. Effekte etc. sind Bestandteil des Mootools Paketes <em>more</em>, welches aus Performancegründen nur bei Bedarf geladen wir. Wir haben Bedarf, also her damit!</p>
+
+<p>Für unsere Template index-Datei haben wir ja bereits ein Override erstellt. Wir öffnen also die Datei <em>template.php</em> und fügen ganz zu Beginn folgende Zeile ein:</p>
+
+<pre><code>JHtml::_('behavior.framework', true);	</code></pre>	
+
+<p>Das <code>true</code> sorgt dafür, dass auch Mootools-More geladen wird. Der JS-Fehler ist verschwunden und das Modul lässt sich nun über den Titel ein- und ausklappen. Die Funktionalität ist wohlgemerkt trivial, wichtig ist nur, dass Sie das Potential an Aus- bzw. Umbaufähigkeiten eines Warp Templates verstehen.</p>
+
+<p>Mit ein wenig CSS in der <em>modules.css</em> wird unser Toogler auch ansehnlich:</p>
+
+<pre><code>#contentabs {
+	position: absolute;
+	right: 0;	
+	box-shadow: 0 0 -3px 8px rgba(0, 0, 0, 0.15);
+	background-color: #FCFBF2;
+}
+#cabs-wrap {padding-top:10px;	}
+.cabs  {margin:8px;}
+.cabs .module-title {padding-right: 40px;cursor:pointer;margin: 0;}
+.cabs .module-title {background: url(../images/bullet_toggle_minus.png) right center no-repeat}
+.cabs .closed {background: url(../images/bullet_toggle_plus.png) right center no-repeat;}</code></pre>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/most_read.png" alt="Modulansicht Articels Most Read" title="Modulansicht Articels Most Read" height="170" width="470" />
+
+<p>Die Bilder legen Sie in den Ordner <em>/styles/nice/images</em>.</p>
+
+<p>Das Dumme ist nur, dass das <em>Most Read</em> Modul überall auftaucht. Auch dort, wo es eigentlich nichts zu suchen hat, wie z.B. bei einer Login-Maske. Klar, wir könnten das Modul im Joomla Backend nur bestimmten Menüpunkten zuordnen usw., aber das würde uns nicht glücklich machen. Wir wollen, dass dieses Modul nur in der Detailansicht eines Artikels erscheint. Das kann man im Joomla Backend nicht konfigurieren, also lösen wir es ganz auf die gute alte Art.
+Im <em>template.php</em> fügen wir oben folgende zwei Zeilen ein:</p>
+
+<pre><code>$coption = JRequest::getCmd('option', null);
+$cview = JRequest::getCmd('view', null);</code></pre>
+
+<p>In der gleichen Datei haben wir eine neue Modulposition für unser absolut positioniertes Modul eingefügt. Das ändern wir nun wie folgt ab:</p>
+
+<pre><code>&lt;?php if ($cview == 'article' &amp;&amp; $coption == 'com_content' &amp;&amp; $this['modules']-&gt;count('contentabs')) : ?&gt;
+&lt;div id=&quot;contentabs&quot;&gt;
+&lt;?php echo $this['modules']-&gt;render('contentabs'); ?&gt;
+&lt;/div&gt;
+&lt;?php endif; ?&gt;</code></pre>
+
+<p>Damit wird unser Modul nur in Detailansichten von Joomla Artikeln dargestellt.</p>
+
+<h2 id="custom-design1">Custom Design (Teil 1)</h2>
+
+<p>Damit das Template etwas Charakter bekommt, platzieren wir ein Logo oben links. Dazu können Sie ein Custom HTML Modul in die position <em>logo</em> legen. Ob Sie das Logo als Bild in das Modul legen oder als CSS-Hintergrund definieren, liegt bei Ihnen. Ich habe es als CSS Hintergrund in die <em>layout.css</em> eingefügt.</p>
+
+<pre><code>#logo {
+	background: url(../images/logo.png) 0 0 no-repeat;
+	width: 195px;
+	height: 44px;
+	margin-left: 10px;</code></pre>
+
+<p>Des Weiteren wurde in der Template Konfiguration -> <em>Profiles</em> der Date Parameter auf <em>No</em> gestellt.  Das Top-Menü in der Modulposition <em>toolbar-r</em> brauchen wir für dieses Template nicht, also deaktivieren wir es und wir tauschen die Hintergrundfarbe durch etwas Sandigeres aus:</p>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/logo_position.png" alt="Logo Platzierung in Warp" title="Logo Platzierung in Warp" height="95" width="470" />
+
+<p>Die Navigation würde ich gerne in der gleichen Höhe wie das Logo platzieren. Um zu sehen, wie das gehen kann, schauen wir uns die HTML-Struktur an. Sie sollten immer die <em>template.php</em> vor Augen haben. Dort wird definiert, wo welches Modul liegt und welche wichtigen HTML-Strukturen das Template zusammenhalten.</p>
+
+<p>Sie sehen in der <em>template.php</em>, dass das Logo von einem DIV mit id <em>headerbar</em> umgeben wird. Zusätzlich wird noch ein Modul mit der Position <em>headerbar</em> geladen. Das Modul in der Position <em>headerbar</em> können Sie entweder ignorieren oder aus der <em>template.php</em> entfernen, es kommt ganz darauf an, ob Sie hier einmal ein Modul laden wollen. Ich entferne es aus dem Template:</p>
+
+<pre><code>&lt;?php if($this['modules']-&gt;count('headerbar')) : ?&gt;
+&lt;div class=&quot;left&quot;&gt;&lt;?php echo $this['modules']-&gt;render('headerbar'); ?&gt;&lt;/div&gt;
+&lt;?php endif; ?&gt;</code></pre>
+
+<p>Nachdem wir diesen Abschnitt gelöscht haben, legen wir die Navigation mit folgendem CSS in der <em>layout.css</em> neben das Logo:</p>
+
+<pre><code>#headerbar { margin: 10px 0; float:left; }
+#menubar { margin: 26px 0 0 0px; }
+#menu { float: right; }</code></pre>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/logo_position_2.png" alt="Logo Platzierung in Warp 2" title="Logo Platzierung in Warp 2" height="65" width="470" />
+
+<p>Das Ganze sieht jetzt wie zur Rechten aus.</p>
+
+<p>Das Suchmodul nervt etwas, weswegen wir es erst einmal deaktivieren. Nun benötige ich ein weiteres DIV-Element, um das Menü und das Logo vom Rest der Seite abzusetzen. Das erreiche ich, indem ich folgendes DIV in der <em>template.php</em> direkt unter das <em>menubar</em> DIV lege:</p>
+
+<pre><code>&lt;div class=&quot;menu-shadow&quot;&gt;&lt;/div&gt;</code></pre>
+
+<p>Jetzt noch folgenden CSS-Code in die <em>layout.css</em> legen und wir haben einen netten Verlauf:</p>
+
+<pre><code>.menu-shadow { 
+	opacity: 0.6;	
+	height: 12px;	
+	border-top: 1px solid rgba(233, 82, 26, .5);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .2)), to(transparent));
+	-webkit-mask-box-image: -webkit-gradient(linear, left top, right top, color-stop(0.0, rgba(0,0,0,.2)), color-stop(0.5,rgba(0,0,0,.8)), color-stop(1.0, rgba(0,0,0,.2)));
+}</code></pre>
+
+<img src="../../../assets/images/warp/getting_started_german/logo_shadow.png" alt="Logo Verlauf in Warp" title="Logo Verlauf in Warp" height="85" width="940" />
+
+<p>Hier liegen ein paar CSS3 Anweisungen, welche nur im Chrome Browser funktionieren, aber Sie können das auch gerne mit transparenten PNGs bzw. Browser-Alternativen CSS Anweisungen machen.<p>
+
+<h2 id="menu-anpassen">Menu</h2>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/sub_parameters.png" alt="Menü Subparameter in Warp" title="Menü Subparameter in Warp" height="220" width="380" />
+
+<p>Das Menü selbst wird in der Datei <em>menus.css</em> gestyled. Diese haben wir bis jetzt noch nicht angefasst. Erstellen wir also ein Override, indem wir die Datei <em>/css/menus.css</em> in unseren CSS-Override Ordner <em>/styles/nice/css</em> kopieren (nicht vergessen, die <em>import</em> Zeile anzupassen!).</p>
+
+<p>Hier können wir uns nun austoben um das Menü nach unseren Wünschen zu gestalten. Bevor wir das machen, ein paar Informationen zum Hauptmenü.</p>
+
+<p>Das Menü, welches bei einem Warp Template in der Position <em>menu</em> liegt, kann von vielen Fähigkeiten des Warp Frameworks profitieren. Sie kennen vielleicht Menüs, welche Sublines, Icons, mehrere Hierarchien, beliebige Breiten und Spaltenanzahlen usw. enthalten. All das können Sie mit dem Menüsystem des Warp Frameworks umsetzen. Ein paar Informationen dazu finden Sie hier:</br>
+<a href="http://yootheme.com/themes/documentation/getting-started/setup-the-joomla-menu">Setup the Joomla menu</a>.</p>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/menu_dropdown.png" alt="Ansicht Dropdown Menü" title="Ansicht Dropdown Menü" height="175" width="380" />
+
+	<p>Ich habe auch gleich ein paar Menüpunkte deaktiviert, um etwas Luft zu bekommen. Nun sieht das Menü wie folgt aus:</p>
+
+	<p>Jetzt aber hinein in die <em>menus.css</em> und das Hauptmenü angepasst. Die <em>menus.css</em> kann etwas schwierig sein, da dort sehr viele CSS-Anweisungen vererbt werden. Wenn Sie acht auf die verschiedenen level-Klassen geben, sollten Sie sich schnell zurecht finden.</p>
+
+</div>
+
+<p>Ich habe folgende Anpassungen durchgeführt:</p>
+
+<pre><code>.menu-dropdown li.level1 {
+	margin: 0; 
+	padding-bottom: 4px;
+}
+
+.menu-dropdown a.level1,
+.menu-dropdown span.level1 {
+	border: none; 
+	color: #555;
+	font-weight: bold;
+}
+
+.menu-dropdown a.level1 > span,
+.menu-dropdown span.level1 > span {
+	height: 30px;
+	line-height: 30px;
+	padding: 0 20px; 
+	text-shadow: 1px 1px 0 white;
+}
+
+/* Set Active */
+.menu-dropdown li.active .level1 { color: #D07711; }
+.menu-dropdown li.active  { border-bottom: 5px solid #D07711;} 
+
+/* Set Hover */
+.menu-dropdown li.level1:hover ,
+.menu-dropdown li.remain {border-bottom: 5px solid #D07711; }
+
+.menu-dropdown li.level1:hover .level1,
+.menu-dropdown li.remain .level1 { color: #D07711; }
+
+/* Drop-Down */
+.menu-dropdown .dropdown {
+	top: 39px;
+	margin-left: 0px; 
+	border-top: none;
+}
+
+.menu-dropdown .dropdown-bg > div {
+	padding: 5px;
+	border-top: none;
+	border: 1px solid #ddd; 
+	border: 1px solid rgb(208, 119, 17);
+	background: rgba(255, 255, 255, 0.85);
+}
+
+.menu-dropdown li.level2 { 
+	margin: 0 5px;
+	border-top: 1px solid #ddd;
+}
+.menu-dropdown a.level2 > span, .menu-dropdown span.level2 > span {
+	padding: 3px 0;
+}</code></pre>
+
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/menu_dropdown_width.png" alt="Menu Dropdown Width" title="Menu Dropdown Width" height="100" width="450" />
+
+	<p>Damit unser Dropdown nicht zu breit ist, stellen wir die Breite auf 200 Pixel ein. Dies tun wir ganz unten bei den Template Parametern im aktuellen Profil:</p>
+
+</div>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/menu_dropdown_open.png" alt="Menu Dropdown Open" title="Menu Dropdown Open" height="175" width="380" />
+
+
+	<p>Haben Sie das getan, sieht Ihr Dropdown nun in etwa so aus:</p>
+
+</div>
+
+<h2 id="sidebars-erklaert">Sidebars</h2>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/warp_layout_positions.png" alt="Modulpositionen in Warp" title="Modulpositionen in Warp" height="400" width="290" />
+
+
+	<p>Bevor wir uns an den Rest der Seite machen, will ich erst einmal sämtliche momentan unnötigen Module deaktivieren. Dies wären alle Module über und unter dem Content. Das Submenü Modul wechseln wir von Position <em>sidebar-b</em> auf sidebar-a. Eigentlich sollte das Submenü Modul dadurch von der rechten Seite (<em>sidebar-b</em>) auf die linke Seite (<em>sidebar-a</em>) wechseln. Möglicherweise ist das bei Ihnen nicht geschehen, warum?</p>
+
+	<p>Sehen wir uns nochmals die Modulpositionen an:</p>
+
+</div>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/sidebar_position.png" alt="Sidebar Modulposition in Warp" title="Sidebar Modulposition in Warp" height="170" width="518" />
+
+	<p>Sie sehen, dass die roten Modulpositionen <em>sidebar-a</em> und <em>sidebar-b</em> zweimal vorkommen. Wo also legen wir fest, ob die Modulposition <em>sidebar-a</em> links oder rechts vom Content erscheinen soll? Das tut man natürlich in der Template Konfiguration. Hier gibt es folgende Einstellungen:</p>
+
+</div>
+
+<p><em>Sidebar A</em> Position wechseln wir auf <em>Left</em>. So, nun erscheinen alle Module, welche in dieser Position geladen werden, links vom Content. Sie können sich sicher vorstellen, wie flexibel allein durch diese Einstellung ein möglicher Layoutaufbau werden kann. Das beste ist aber, dass diese Funktionalität (wie auch vieles andere) komplett durch einen eigenen Style umgebaut werden kann. </p>
+
+<h2 id="custom-design2">Custom Design (Teil 2)</h2>
+
+<p>Durch Erweiterung der CSS-Anweisungen in den CSS-Dateien <em>/styles/nice/css/</em> habe ich das Design nun wie folgt angepasst:</p>
+
+<img src="../../../assets/images/warp/getting_started_german/design.jpg" alt="Designanpassung in Warp" title="Designanpassung in Warp" height="630" width="940" />
+
+<h2 id="template-parameter">Eigene Template Parameter</h2>
+
+<p>Um zu demonstrieren wie man eigene Template Parameter integrieren kann, wollen wir die Option schaffen, in unserem Template zwischen runden und eckigen Ecken zu wechseln.
+Einen solchen Parameter können wir in der Datei config.xml im Hauptverzeichnis unseres Templates (nicht Styles) einbauen. Die <em>config.xml</em> läßt sich übrigens nicht per Override im Style-Verzeichnis individualisieren. Es gibt nur eine <em>config.xml</em> und diese gilt für alle Styles.
+Wir bauen also an einer geeigneten Stelle folgenden XML-Code ein:</p>
+
+<pre><code>&lt;field name=&quot;rounded&quot; type=&quot;radio&quot; default=&quot;0&quot; label=&quot;Rounded Corners&quot; description=&quot;Use rounded corners&quot;&gt;
+	&lt;option value=&quot;0&quot;&gt;No&lt;/option&gt;
+	&lt;option value=&quot;1&quot;&gt;Yes&lt;/option&gt;
+&lt;/field&gt;</code></pre>
+
+<p>Was ist eine geeignete Stelle? Wenn Sie dieses neue Feld innerhalb des <em>Profiles</em>-Tags einbauen, dann können sie den Parameter <em>runde Ecken</em> profilbasiert ein- und ausschalten. Am besten also direkt wie folgt:</p>
+
+<pre><code>&lt;fields name=&quot;Profiles&quot;&gt;
+	&lt;field name=&quot;Style&quot; type=&quot;separator&quot; /&gt;
+	&lt;field name=&quot;rounded&quot; type=&quot;radio&quot; default=&quot;0&quot; label=&quot;Rounded Corners&quot; description=&quot;Use rounded corners&quot;&gt;
+		&lt;option value=&quot;0&quot;&gt;No&lt;/option&gt;
+		&lt;option value=&quot;1&quot;&gt;Yes&lt;/option&gt;
+	&lt;/field&gt;
+	...</code></pre>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/rounded_corners.png" alt="Rounded Corners Parameter" title="Rounded Corners Parameter" height="165" width="470" />
+
+<p>So, nun können Sie den Parameter, d.h. <em>runde Ecken</em>, schon einmal aktivieren:</p>
+
+<p>Um die nötige Funktionalität einzubringen müssen wir ein Override für eine Datei erzeugen, welche wir bis jetzt noch nicht benutzt haben. Kopieren Sie die Datei <em>\yoo_master\layouts\template.config.php</em> nach <em>\yoo_master\styles\nice\layouts\</em>. Sie haben also ein Override für die Datei <em>template.config.php</em> erstellt.</p>
+
+<p>Diese Datei ist ein Wunderwerk an Möglichkeiten, welche unmöglich alle in diesem Tutorial besprochen werden können. Wenn Sie jedoch etwas PHP verstehen und die folgenden Anweisungen nachvollziehen können, sollten Sie keine Schwierigkeiten haben das Potential dieser Datei zu erkennen.</p>
+
+<p>Um Zeile 85 herum fügen wir folgenden Code ein:</p>
+
+<pre><code>if ($this['config']->get('rounded') == 1) $this['asset']->addFile('css', 'css:rounded.css');</code></pre>
+
+<p>Danach platzieren wir eine leere CSS-Datei namens <em>rounded.css</em> in unseren Style Ordner <em>\yoo_master\styles\nice\css\</em>. Was nun passiert, ist Folgendes:</p>
+
+<ol>
+	<li>Das Warp Framework entdeckt unsere <em>template.config.php</em> auf der 3. Ebene und nutzt diese.</li>
+	<li>Die von uns eingefügte Zeile veranlasst das Framework auf allen drei Ebenen nach der <em>rounded.css</em> zu suchen.</li>
+	<li>Die <em>rounded.css </em> wird auf der 3. Ebene gefunden und geladen.</li>
+</ol>
+
+<p>Sie könnten die <em>rounded.css</em> also auch einmalig auf der zweiten Ebene platzieren (<em>/css</em>) und für alle Styles verfügbar machen ohne Sie in allen Styles Ordnern ablegen zu müssen.</p>
+
+<p>In die <em>rounded.css</em> platzieren wir etwas CSS um hier und da runde Ecken zu erzeugen:</p>
+
+<pre><code>.menu-sidebar a, .menu-sidebar li > span,
+ #sidebar-a .grid-box {
+	border-bottom-left-radius: 6px;
+	border-top-left-radius: 6px;
+ }
+ 
+#maininner {
+ 	border-radius: 6px;
+}
+
+#innertop {
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+#breadcrumbs {
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+.menu-dropdown .dropdown-bg > div {
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	border-top-right-radius: 6px;
+}</code></pre>
+
+<p>Da wir die <em>rounded.css</em> innerhalb der <em>template.config.php</em> erst relativ weit unten laden, werden alle sich darüber befindenden CSS-Anweisungen überlagert. Nur die Font-CSS-Dateien folgen danach. Sie können die Reihenfolge der zu ladenden CSS-Dateien so selbst bestimmen.</p>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/compression_parameters.png" alt="Parameter Kompression in Warp" title="Parameter Kompression in Warp" height="120" width="470" />
+
+<p>Binden Sie CSS-Dateien auf diese Weise, also durch das Warp Framework, ein, so werden diese in mögliche CSS und JS Kompressions- und Minimierungsvorgänge eingeschlossen, welche ein Warp Template bietet.</p>
+
+<p>Zurück zu unserem Template. Wenn nun der Template Parameter “Rounded Corners” aktiv ist, sieht unser Template wie folgt aus:</p>
+
+<img src="../../../assets/images/warp/getting_started_german/design_rounded_corners.jpg" alt="Design mit aktivierten Rounded Corners" title="Design mit aktivierten Rounded Corners" height="635" width="940" />
+
+<p>Schalten wir den Parameter aus, wird die <em>rounded.css</em> nicht geladen und unser Template sieht aus wie zuvor.</p>
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/prime_styles.png" alt="Styles im PRIME-Template" title="Styles im PRIME-Template" height="130" width="470" />
+
+<p>Auf gleiche Art können Sie bei Templates Farbvariationen oder grafische Hintergründe realisieren. Natürlich können Sie verschiedene Styles erzeugen, welche die nötigen Farben innehaben. Bei den drei Styles des PRIME-Templates unter <a href="http://demo.prime-real.de">http://demo.prime-real.de/</a> haben wir für die sechs Farbpaletten eigene CSS-Dateien erstellt, welche im Backend jedem der drei Styles zugeordnet werden können.</p>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/color_parameters.png" alt="Farbparameter in Warp" title="Farbparameter in Warp" height="75" width="470" />
+
+	<p>Hätten wir die Farben direkt in die Styles integriert, könnte der Kunde nur zwischen drei Styles wählen. So erhalten unsere Kunden 3*6 Kombinationsmöglichkeiten, die Schriftartenvariationen nicht mitgerechnet. Das Master Template bietet zwei Parameter in Sachen Farbe: Link Color und Hover Color</p>
+
+</div>
+
+<p>Damit können Sie eine Farbe für Links und deren Hover-States Ihrer gesamten Seite wählen. Die dazugehörigen CSS-Dateien befinden sich in <em>\css\color1\</em> und <em>\css\color2\</em>. Ich konnte damit nicht viel anfangen. Wozu Farben nur für Links definieren, wenn man früher oder später sowieso Farbpaletten für die gesamte Webseite festlegen muss. Lassen Sie sich von diesen zwei Einstellungen also nicht verwirren. Vielleicht werden Sie sie nutzen und die zur Verfügung stehenden Farben erweitern oder Sie lassen es einfach und löschen die beiden Parameter aus der <em>config.xml</em> des Templates.</p>
+
+<h2 id="schriftarten">Schriftarten</h2>
+
+<div class="clearfix">
+
+	<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/fonts_parameters.png" alt="Schriftparameter in Warp" title="Schriftparameter in Warp" height="120" width="470" />
+
+	<p>Schriftarten werden bei Warp-Templates ebenfalls nur in einzelnen CSS-Dateien definiert und dann bei Bedarf geladen. Im Ordner <em>/css</em> finden Sie drei font Ordner. Jeder davon bezieht sich auf eine vom Master Template vorgegebene Gestaltungsebene.Ich habe bei unserem Template mal folgende Typo-Konfiguration ausgewählt:</p>
+
+</div>
+
+<ul>
+	<li>Body Font (font1) - Die Schrift für den Seiteninhalt</li>
+	<li>Header Font (font2) - Die Schrift für Modultitel oder überschriften (H1 usw.)</li>
+	<li>Menu Font (font3) - Die Schrift für das Hauptmenü</li>
+</ul>
+
+<p>Mit den ausgewählten Parametern erhalten wir folgenden Look:</p>
+
+<img src="../../../assets/images/warp/getting_started_german/design_typo.jpg" alt="Beispiel Schriftdesign in Warp" title="Beispiel Schriftdesign in Warp" height="660" width="940" />
+
+<img class="align-right margin-t-10" src="../../../assets/images/warp/getting_started_german/paper_parameter_options.png" alt="Parameteroptionen in Warp" title="Parameteroptionen in Warp" height="70" width="470" />
+
+<p>Denken Sie daran: Diese drei Schrifteinteilungen sind nur eine Vorgabe des Master Themes. Sie können diese Parameter komplett umbauen, weglassen, zusammenfassen, was auch immer. Bei einem Warp Template ist so gut wie nichts in Stein gemeißelt. Um das zu demonstrieren habe ich einen Parameter namens <em>Paper</em> eingeführt.</p>
+
+<p>Folgende Datei namens <em>paper.css</em> wurde in den CSS-Style Ordner gelegt:</p>
+
+<pre><code>#breadcrumbs {	
+	background: transparent url(../images/bc-bgr.png) 0 0px repeat-x;
+	margin-top: -21px;
+	padding-top: 100px;
+	box-shadow: 0 6px 7px -3px rgba(0, 0, 0, .4);
+}
+
+#innertop {	
+	background: #fff url(../images/top-bgr.jpg) 0 0 no-repeat;	
+}
+#maininner {	
+	background: #fff url(../images/paper-bg.jpg) 40px 0 repeat;
+	
+}
+
+#sidebar-a .paper {
+	margin:0;
+	padding: 12px 15px 30px 15px;
+	background: #fff url(../images/karton.jpg) 0 -70px no-repeat;	
+	box-shadow: 0 6px 7px -3px rgba(0, 0, 0, .4);
+}
+#sidebar-a .paper .module-title{
+	color:#fff;
+	margin-bottom:40px;
+}
+.menu-sidebar a, .menu-sidebar li > span {
+	background: #fff url(../images/navi-bgr.jpg) 0 0 repeat;
+	box-shadow: 0 4px 4px -2px rgba(0, 0, 0, .3);
+	color:#82531D;
+} </code></pre>
+
+<p>Aktiviert man den <em>Paper</em>-Parameter, passiert folgendes:</p>
+
+<img src="../../../assets/images/warp/getting_started_german/design_paper.jpg" alt="Beispiel Hintergrunddesign in Warp" title="Beispiel Hintergrunddesign in Warp" height="715" width="940" />
+
+<p>Diese (etwas experimentelle) Anpassung hat gerade einmal 60 Minuten gedauert. Das meiste davon ging für das Freistellen der Bitmaps drauf. Dafür habe ich nur die obige <em>paper.css</em> hinzugefügt, in der alle Abwandlungen stattfinden. Mit alle meine ich wirklich alle, egal ob Layout, Modul, Farben usw. Sie sehen also, dass es manchmal sinnvoll ist, flexibel auf verschiedene Anforderungen zu reagieren.</p>
+
+<h2>Nächste Schritte</h2>
+
+<p>Warum nicht das Template fertigstellen? Wechseln Sie doch die Module von der linken auf die rechte Seite (Modulposition <em>sidebar-b</em>). Sie werden sehen, dass das angefangene Template Module in dieser Position noch nicht richtig schön darstellt, besonders nicht im <em>Paper</em>-Look. Aktivieren Sie alle zu Beginn des Tutorials genannten Module und schauen Sie, was passiert. Dank des Warp Frameworks wird das Template immer korrekt strukturiert bleiben. Sie müssen nur ein wenig CSS hier und da einfügen.</p>
+
+<p>Wenn Sie etwas fortgeschrittene Themes angehen möchten, so empfehle ich, sich mit der <em>template.config.php</em> zu beschäftigen. Hier können Sie unter anderem die Berechnungen der Breiten bestimmter Elemente beeinflussen, falls Ihr Template das benötigt. Grundsätzlich können Sie hier natürlich alles mögliche einprogrammieren. Auch die <em>module.php</em> ist eine Datei, in der man das Verhalten und Aussehen der Module auf unterschiedlichste Weise beeinflussen kann.</p>
+
+<h2 id="nachwort">Nachwort</h2>
+
+<p>Wie üblich bei so vielschichtigen Lösungen wie dem Warp Framework, kann ein Tutorial nur einen ersten Einblick in die Materie geben. Einige wichtige Themen habe ich nicht angesprochen. Dazu zählt zum Beispiel das integrierte Mega-Menü (<a href="http://www.yootheme.com/themes/documentation/getting-started/setup-the-joomla-menu">Setup the Joomla Menu Tutorial</a>),welches hauptsächlich eine Konfigurationsfrage ist. Ebenso die Möglichkeit, eigene Modul-Layouts erzeugen zu können (<a href="http://www.yootheme.com/themes/documentation/customizing/create-a-new-module-layout">Create a new module layout Tutorial</a>) oder wie Content Overrides bei einem Warp Template angelegt werden (<a href="http://www.yootheme.com/themes/documentation/customizing/override-system-files">Override System Files Tutorial</a>). Ebenso die Möglichkeiten, innerhalb der responsive.css Layout-Abwandlungen für verschiedene Endgeräte zu definieren.</p>
+
+<p>All das sind jedoch Themen, welche man sich an dieser Stelle ohne große Schwierigkeiten selbst erarbeiten kann. Einer der wichtigsten Aspekte bei der Erstellung eines Warp Templates ist die Organisation. </p>
+
+<p>Sie werden sich häufig bei einer Frage erwischen, die ungefähr so lautet: &quot;Soll ich die Schriftgröße des Modultitels nun in der <em>arial.css</em>, der <em>layout.css</em> oder der <em>modules.css</em> definieren?&quot; Ebenso werden Sie sich dabei ertappen, wie sie in der <em>layout.css</em> anfangen, CSS-Anweisungen für Module unterzubringen. Halten Sie Ordnung! Mit der Zeit werden Sie den Dreh heraus haben und instinktiv in den nun sehr handlichen CSS-Dateien die passenden CSS-Anweisungen unterbringen.</p>
+
+<p>Sollten Sie das Tutorial nachvollzogen haben, bin ich mir sicher, dass Sie das Potential für Ihre tägliche Arbeit entdecken konnten und bereits beginnen, eines Ihrer zuletzt entwickelten Joomla Templates auf Warp umzustellen oder ein neues zu entwickeln. Da Sie sich nun voll und ganz dem Gestaltungsprozess hingeben können, wünsche ich Ihnen viel Spaß dabei!</p>
