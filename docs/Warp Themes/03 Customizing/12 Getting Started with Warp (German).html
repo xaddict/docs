@@ -514,7 +514,7 @@ Ich beschränke mich dabei auf minimale Anforderungen, denn es geht hauptsächli
 
 <p>Egal wie Sie es machen, unser Toggler kann jetzt auf das DIV Element cabs-wrap zugreifen. Welcher Toggler, werden Sie sagen? Nun, in die bereits in unser Style kopierte <em>template.js</em> schreiben wir folgende Zeilen:</p>
 
-<pre><code>window.addEvent('_domready', function(){
+<pre><code>window.addEvent('domready', function(){
 	var cabs_slide = new Fx.Slide('cabs-wrap');
 	cabs_slide.hide();
 	$$('#contentabs .module-title').addEvent('click', function(event){
