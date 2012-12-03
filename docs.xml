@@ -49,6 +49,7 @@
       <doc alias="javascript-errors" name="Javascript Errors" file="04 Javascript Errors.html"/>
       <doc alias="validation-errors" name="Validation Errors" file="05 Validation Errors.html"/>
       <doc alias="feature-and-compatibility-overview" name="Feature and Compatibility Overview" file="06 Feature and Compatibility Overview.html"/>
+      <doc alias="upgrading-to-joomla-3.0" name="Upgrading to Joomla 3.0" file="07 Upgrading to Joomla 3.0.html"/>
     </category>
     <category alias="legacy-pre-warp" name="Legacy - Pre Warp" folder="06 Legacy - Pre Warp">
       <doc alias="setup-the-menu-system" name="Setup the Menu System" file="01 Setup the Menu System.html"/>
