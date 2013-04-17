@@ -1,0 +1,28 @@
+<h1 class="title">Using Warp Themes with WPML</h1>
+<p>Here is a brief instruction how to deal with Warp Themes together with WPML and translate widgets.</p>
+
+<div class="clearfix">
+
+	<h2>General</h2>
+	<p>All Warp themes are fully compatible with WPML. You are able to controll your widgets as explained at {doc: setup-the-wordpress-widgets text: Set up the WordPress widgets}.  
+	All created widgets will be automatically displayed on all translations of the concerned page.</p>
+	
+</div>
+
+<div class="clearfix">
+
+	<h2>Howto translate widgets</h2>
+	<p>In the following we'll show you, how to setup different widgets per language.</p>
+
+	<ul>
+		<li>First you have to install and activate <a href="http://wordpress.org/extend/plugins/widget-logic/" target="blank">Widget Logic</a>. With Widget Logic you are able to controll Widgets with the help of PHP. </li>
+		<li>Add copies of the widgets you want to translate. You need one copy per widget for every language in wich you want to translate your widget. In the following we will configure the widgets so they will be only displayed in one language.</li>
+		<li>Go to <em>Appearance » Widgets</em> and select successively every translated widget.
+			For the english translation add the following code to <em>Widget logic</em>: 
+			<pre><code>ICL_LANGUAGE_CODE == 'en'</code></pre>
+			 You can find the language code of your disired language at <em>WPML » Languages » Edit Languages</em>
+			</li>
+	</ul>
+<img class="margin-t-10" src="../../../assets/images/warp/widget_logic_configuration.png" alt="Widget Logic configuration" width="885" height="408" />
+	
+</div>
