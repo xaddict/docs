@@ -1,10 +1,10 @@
 <h1 class="title">JS, CSS and LESS</h1>
 
-<p class="uk-article-lead">Add JavaScript, CSS or LESS files to your Warp based theme.</p>
+<p class="article-lead">Add JavaScript, CSS or LESS files to your Warp based theme.</p>
 
 <p>The configuration file <code>layouts/theme.config.php</code> initializes all PHP classes and loads the necessary CSS and JavaScript. If you need to load custom CSS and JavaScript files, this is the place to do it. Enabled compression and Data URI will automatically be applied to all files you add here. Find out more about overriding theme files with your custom CSS or JavaScript in the <a href="index.php/customization">Customization</a> doc.</p>
 
-<hr class="uk-article-divider">
+<hr>
 
 <h2>Add a JavaScript file</h2>
 
@@ -13,7 +13,7 @@
 <pre><code>// add javascripts
 $this['asset']->addFile('js', 'js:my.js');</code></pre>
 
-<hr class="uk-article-divider">
+<hr>
 
 <h2>Add a CSS file</h2>
 
@@ -22,7 +22,7 @@ $this['asset']->addFile('js', 'js:my.js');</code></pre>
 <pre><code>// load css
 $this['asset']->addFile('css', 'css:my.css');</code></pre>
 
-<hr class="uk-article-divider">
+<hr>
 
 <h2>Add a LESS file</h2>
 
@@ -35,7 +35,7 @@ $this['asset']->addFile('css', 'css:my.css');</code></pre>
     '/css/bootstrap-rtl.css' => 'less:bootstrap-rtl.less'
 )</code></pre>
 
-<hr class="uk-article-divider">
+<hr>
 
 <h2>Add a custom font</h2>
 
