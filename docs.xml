@@ -70,7 +70,7 @@
       <doc alias="upgrading-to-joomla-3" name="Upgrading to Joomla 3" file="07 Upgrading to Joomla 3.html"/>
     </category>
     <separator label="Legacy" />
-    <category alias="legacy-warp-55" name="Legacy - Warp 5.5" folder="02 Legacy - Warp 5.5">
+    <category alias="legacy-warp-55" name="Warp 5.5" folder="02 Legacy - Warp 5.5">
       <doc alias="change-the-layout-column-widths" name="Change the Layout Column Widths" file="01 Change the Layout Column Widths.html"/>
       <doc alias="add-custom-css-and-javascript-files" name="Add Custom CSS and JavaScript Files" file="02 Add Custom CSS and JavaScript Files.html"/>
       <doc alias="customizing-template-presets" name="Customizing Template Presets" file="03 Customizing Template Presets.html"/>
@@ -78,13 +78,13 @@
       <doc alias="set-a-custom-page-suffix" name="Set a Custom Page Suffix" file="05 Set a Custom Page Suffix.html"/>
       <doc alias="set-module-proportions" name="Set Module Proportions" file="06 Set Module Proportions.html"/>
     </category>
-    <category alias="legacy-warp-5" name="Legacy - Warp 5" folder="04 Legacy - Warp 5">
+    <category alias="legacy-warp-5" name="Warp 5" folder="04 Legacy - Warp 5">
       <doc alias="add-custom-css-and-javascript-files-2" name="Add Custom CSS and JavaScript Files" file="01 Add Custom CSS and JavaScript Files.html"/>
       <doc alias="change-the-layout-column-widths-2" name="Change the Layout Column Widths" file="02 Change the Layout Column Widths.html"/>
       <doc alias="setup-the-menus-2" name="Setup the Menus" file="03 Setup the Menus.html"/>
       <doc alias="set-a-custom-page-suffix-2" name="Set a custom page suffix" file="04 Set a custom page suffix.html"/>
     </category>
-    <category alias="legacy-pre-warp" name="Legacy - Pre Warp" folder="06 Legacy - Pre Warp">
+    <category alias="legacy-pre-warp" name="Pre Warp" folder="06 Legacy - Pre Warp">
       <doc alias="setup-the-menu-system" name="Setup the Menu System" file="01 Setup the Menu System.html"/>
       <doc alias="change-site-colors-for-menu-items" name="Change Site Colors for Menu Items" file="02 Change Site Colors for Menu Items.html"/>
       <doc alias="setup-the-accordion-menu" name="Setup the Accordion Menu" file="03 Setup the Accordion Menu.html"/>
