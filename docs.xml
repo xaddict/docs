@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sections>
   <section alias="warp-themes" name="Warp Themes" folder="Warp Themes">
+    <separator label="Warp 7" />
+    <category alias="get-started" name="Get Started" folder="07 Get Started">
+      <doc alias="joomla" name="Joomla" file="01 Joomla.html"/>
+      <doc alias="wordpress" name="WordPress" file="02 WordPress.html"/>
+      <doc alias="update" name="Update" file="03 Update.html"/>
+      <doc alias="settings" name="Settings" file="04 Settings.html"/>
+      <doc alias="customizer" name="Customizer" file="05 Customizer.html"/>
+      <doc alias="layouts" name="Layouts" file="06 Layouts.html"/>
+      <doc alias="widgets" name="Widgets/Modules" file="07 Widgets.html"/>
+      <doc alias="menus" name="Menus" file="08 Menus.html"/>
+      <doc alias="information" name="Information" file="09 Information.html"/>
+    </category>
+    <category alias="developers" name="Developers" folder="08 Developers">
+      <doc alias="file-structure" name="File structure" file="01 File structure.html"/>
+      <doc alias="theme-layout" name="Theme layout" file="02 Theme layout.html"/>
+      <doc alias="widgets" name="Widgets/Modules" file="03 Widgets.html"/>
+      <doc alias="customization" name="Customization" file="04 Customization.html"/>
+      <doc alias="assets" name="JS, CSS and LESS" file="05 Assets.html"/>
+      <doc alias="config" name="Config.xml" file="06 Config.html"/>
+      <doc alias="system-overrides" name="System overrides" file="07 System overrides.html"/>
+      <doc alias="languages" name="Languages" file="08 Languages.html"/>
+      <doc alias="error-pages" name="Error pages" file="09 Error pages.html"/>
+    </category>
+    <category alias="troubleshooting-warp7" name="Troubleshooting" folder="09 Troubleshooting">
+      <doc alias="installation-issues" name="Installation issues" file="01 Installation issues.html"/>
+      <doc alias="file-permission-issues" name="File permission issues" file="02 File permission issues.html"/>
+      <doc alias="javascript-errors" name="JavaScript errors" file="03 JavaScript errors.html"/>
+      <doc alias="faq" name="FAQ" file="04 FAQ.html"/>
+    </category>
+    <separator label="Warp 6" />
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
       <doc alias="install-a-joomla-template" name="Install a Joomla Template" file="01 Install a Joomla Template.html"/>
       <doc alias="install-a-wordpress-theme" name="Install a WordPress Theme" file="01 Install a WordPress Theme.html"/>
@@ -16,14 +46,6 @@
       <doc alias="where-is-the-changelog" name="Where is the Changelog" file="09 Where is the Changelog.html"/>
       <doc alias="using-warp-themes-with-wpml" name="Using Warp Themes with WPML" file="10 Using Warp Themes with WPML.html"/>
     </category>
-    <category alias="legacy-warp-55" name="Legacy - Warp 5.5" folder="02 Legacy - Warp 5.5">
-      <doc alias="change-the-layout-column-widths" name="Change the Layout Column Widths" file="01 Change the Layout Column Widths.html"/>
-      <doc alias="add-custom-css-and-javascript-files" name="Add Custom CSS and JavaScript Files" file="02 Add Custom CSS and JavaScript Files.html"/>
-      <doc alias="customizing-template-presets" name="Customizing Template Presets" file="03 Customizing Template Presets.html"/>
-      <doc alias="setup-the-menus" name="Setup the Menus" file="04 Setup the Menus.html"/>
-      <doc alias="set-a-custom-page-suffix" name="Set a Custom Page Suffix" file="05 Set a Custom Page Suffix.html"/>
-      <doc alias="set-module-proportions" name="Set Module Proportions" file="06 Set Module Proportions.html"/>
-    </category>
     <category alias="customizing" name="Customizing" folder="03 Customizing">
       <doc alias="how-to-customize" name="How to Customize" file="01 How to Customize.html"/>
       <doc alias="directory-structure-explained" name="Directory Structure Explained" file="02 Directory Structure Explained.html"/>
@@ -38,12 +60,6 @@
       <doc alias="customize-the-error-pages" name="Customize the Error Pages" file="11 Customize the Error Pages.html"/>
       <doc alias="getting-started-with-warp-german" name="Getting Started with Warp (German)" file="12 Getting Started with Warp (German).html"/>
     </category>
-    <category alias="legacy-warp-5" name="Legacy - Warp 5" folder="04 Legacy - Warp 5">
-      <doc alias="add-custom-css-and-javascript-files-2" name="Add Custom CSS and JavaScript Files" file="01 Add Custom CSS and JavaScript Files.html"/>
-      <doc alias="change-the-layout-column-widths-2" name="Change the Layout Column Widths" file="02 Change the Layout Column Widths.html"/>
-      <doc alias="setup-the-menus-2" name="Setup the Menus" file="03 Setup the Menus.html"/>
-      <doc alias="set-a-custom-page-suffix-2" name="Set a custom page suffix" file="04 Set a custom page suffix.html"/>
-    </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="05 Troubleshooting">
       <doc alias="how-to-solve-theme-issues" name="How To Solve Theme Issues" file="01 How To Solve Theme Issues.html"/>
       <doc alias="installation-issues" name="Installation Issues" file="02 Installation Issues.html"/>
@@ -52,6 +68,21 @@
       <doc alias="validation-errors" name="Validation Errors" file="05 Validation Errors.html"/>
       <doc alias="feature-and-compatibility-overview" name="Feature and Compatibility Overview" file="06 Feature and Compatibility Overview.html"/>
       <doc alias="upgrading-to-joomla-3" name="Upgrading to Joomla 3" file="07 Upgrading to Joomla 3.html"/>
+    </category>
+    <separator label="Legacy" />
+    <category alias="legacy-warp-55" name="Legacy - Warp 5.5" folder="02 Legacy - Warp 5.5">
+      <doc alias="change-the-layout-column-widths" name="Change the Layout Column Widths" file="01 Change the Layout Column Widths.html"/>
+      <doc alias="add-custom-css-and-javascript-files" name="Add Custom CSS and JavaScript Files" file="02 Add Custom CSS and JavaScript Files.html"/>
+      <doc alias="customizing-template-presets" name="Customizing Template Presets" file="03 Customizing Template Presets.html"/>
+      <doc alias="setup-the-menus" name="Setup the Menus" file="04 Setup the Menus.html"/>
+      <doc alias="set-a-custom-page-suffix" name="Set a Custom Page Suffix" file="05 Set a Custom Page Suffix.html"/>
+      <doc alias="set-module-proportions" name="Set Module Proportions" file="06 Set Module Proportions.html"/>
+    </category>
+    <category alias="legacy-warp-5" name="Legacy - Warp 5" folder="04 Legacy - Warp 5">
+      <doc alias="add-custom-css-and-javascript-files-2" name="Add Custom CSS and JavaScript Files" file="01 Add Custom CSS and JavaScript Files.html"/>
+      <doc alias="change-the-layout-column-widths-2" name="Change the Layout Column Widths" file="02 Change the Layout Column Widths.html"/>
+      <doc alias="setup-the-menus-2" name="Setup the Menus" file="03 Setup the Menus.html"/>
+      <doc alias="set-a-custom-page-suffix-2" name="Set a custom page suffix" file="04 Set a custom page suffix.html"/>
     </category>
     <category alias="legacy-pre-warp" name="Legacy - Pre Warp" folder="06 Legacy - Pre Warp">
       <doc alias="setup-the-menu-system" name="Setup the Menu System" file="01 Setup the Menu System.html"/>
