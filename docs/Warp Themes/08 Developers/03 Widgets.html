@@ -4,7 +4,7 @@
 
 <h2>Create a new widget position</h2>
 
-<p>Adding a new position for modules or widgets to your theme is fairly straightforward. You have to name a position and define where the position gets rendered within the theme layout.</p>
+<p>Adding a new position for modules or widgets to your theme is fairly straightforward. You have to name a position and define where the position gets rendered within the {doc: theme-layout text: theme layout}.</p>
 
 
 <p><span class="badge">NOTE</span> You can override all files in your custom directory. Just copy whichever file you wish to modify to the <code>custom/</code> directory. This will keep your changes update proof.</p>
@@ -35,19 +35,19 @@
 
 <p>To make the theme options of the <em>Settings</em> and <em>Layouts</em> panels for your position available, you have to add your new position to the <code>config.xml</code>.</p>
 
-<h4>Settings options</h4>  
-  
+<h4>Settings options</h4>
+
 <p>By adding a new <code>&lt;row&gt;</code> element to the <em>Settings</em> section of the <code>config.xml</code>, the option to choose a default style for your position in the <em>Settings</em> panel of your administration will be displayed.</p>
-  
+
 <pre><code>&lt;fields name="Settings"&gt;
     ...
     &lt;field type="table" name="panel_default"&gt;
         &lt;rows label="Position"&gt;
             &lt;row&gt;MY-POSITION&lt;/row&gt;
             ...</code></pre>
-  
+
 <h4>Layouts options</h4>
-  
+
 <p>By adding a new <code>&lt;row&gt;</code> element to the <em>Layouts</em> section of the <code>config.xml</code>, the options to set a default layout, dividers, the preserve function or width and alignment of your position will be displayed in the <em>Layouts</em> panel.</p>
 
 <pre><code>&lt;fields name="Layouts"&gt;

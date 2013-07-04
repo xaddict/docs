@@ -6,7 +6,7 @@
 
 <p>The heart of every theme is the <code>theme.php</code>, which provides the entire HTML for the base theme markup. This is different from standard Joomla templates or WordPress themes, where the <code>index.php</code> is the main template file.</p>
 
-<p>This is the skeletal structure of the <code>theme.php</code>. The file needs to import the <code>theme.config.php</code> and render widget positions and retrieve config variables and the system output.</p>
+<p>This is the skeletal structure of the <code>theme.php</code>. The file needs to import the <code>theme.config.php</code>, render widget positions, retrieve config variables and render the system output.</p>
 
 <pre><code>&lt;?php
 
@@ -54,7 +54,7 @@ include($this['path']->path('layouts:theme.config.php'));
 
 <h3>Widget object</h3>
 
-<p>The widgets of the page are stored in the <code>widget</code> object. To render all widgets in a position, use the <em>render</em> method. You can check, whether any widgets are published in a position, by using the <em>count</em> method.</p>
+<p>The widgets of the page are stored in the <code>widgets</code> object. To render all widgets in a position, use the <em>render</em> method. You can check, whether any widgets are published in a position, by using the <em>count</em> method.</p>
 
 <pre><code>&lt;// render all widgets in Top A position
 &lt;?php echo $this['widgets']->render('top-a')); ?&gt;
