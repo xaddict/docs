@@ -1,0 +1,94 @@
+<h1 class="title">Config.xml</h1>
+
+<p class="uk-article-lead">The config.xml defines the widget positions to choose from and the Warp7 administration settings.</p>
+
+<h2>Administration options</h2>
+
+<p>In the administration options, you can control basic preferences for the theme layouts, widgets and menus. These options are defined by <code>&lt;fields&gt;</code> and <code>&lt;field&gt;</code> elements. The <code>&lt;fields&gt;</code> element define menu tabs and the <code>&lt;field&gt;</code> element define the option. A <code>&lt;field&gt;</code> element is always inside a <code>&lt;fields&gt;</code> element. Here you can see the basic markup for options in the <code>config.xml</code>.</p> 
+
+<pre><code>&lt;fields&gt;
+    &lt;field&gt;&lt;/field&gt;
+    ...
+&lt;/fields&gt;</code></pre>
+
+<hr class="uk-article-divider">
+
+<h3>Add a new menu item with &lt;fields&gt;</h3>
+
+<p>The <code>&lt;fields&gt;</code> element will add a new tab to the Warp7 administration, for example <em>Information</em>.</p>
+
+<pre><code>&lt;fields name="Information" icon="uk-icon-info-sign"&gt;
+    ...
+&lt;/fields&gt;</code></pre>
+
+<hr class="uk-article-divider">
+
+<h3>Add new settings with &lt;field&gt;</h3>
+
+<p>A <code>&lt;field&gt;</code> element will add settings to the Warp7 administration. For example <em>dynamic_style</em>.</p>
+
+<pre><code>&lt;field type="checkbox" name="dynamic_style" value="1" label="Allow styles to be loaded by URL." /&gt;</code></pre>
+
+<h4>Basic XML types</h4>
+
+<p>You can use basic XML types to create new settings for your Warp7 backend. This could be for example a radio button, a check box or an input field.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>section</code></td>
+      <td>Defines the section for a description text.</td>
+    </tr>
+    <tr>
+      <td><code>select</code></td>
+      <td>Defines a dropdown list.</td>
+    </tr>
+    <tr>
+      <td><code>radio</code></td>
+      <td>Defines a radio button.</td>
+    </tr>
+    <tr>
+      <td><code>checkbox</code></td>
+      <td>Defines a checkbox.</td>
+    </tr>
+    <tr>
+      <td><code>textarea</code></td>
+      <td>Defines a multiline text input.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h4>Special XML types</h4>
+
+<p>There are also some Warp7 specific types available: <code>layouts</code>, <code>verify</code>, <code>styles</code>, <code>compile</code> and <code>info</code>.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Add functionality to an option</h2>
+
+<p>To give your new option a functionality, you need to respond to the <code>name</code> attribute of the <code>&lt;field&gt;</code> element with the <code>$this['config']->get('MY-OPTION')</code> syntax. For example the <em>Settings &gt; Responsive</em> setting:</p>
+
+<pre><code>&lt;?php if($this['config']-&lt;get('responsive', true)): ?&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;?php endif; ?&gt;;</code></pre>
+
+<p>The config.xml:</p>
+
+<pre><code>&lt;field type="checkbox" name="responsive" value="0" label="Disable the viewport meta tag." /&gt;</code></pre>
+
+<hr class="uk-article-divider">
+
+<h2>config.json</h2>
+
+<p>You can find all your saved backend parameters in the minified <code>config.json</code> file. With every new saving process, the file will be overriden.</p>
+
+<p><span class="uk-badge">NOTE</span> For a better look, use the <a href="http://jsonformatter.curiousconcept.com/">JSON Formatter</a> - this will bring your minified file into a easily readable markup.</p>
+
+<p>Warp themes provide a seperate <code>config.default.json</code> file, where the default backend settings are stored. This gives you the opportunity to restore your backend to the default settings and backup your own <code>config.json</code> file, making your backend settings update proof.</p>

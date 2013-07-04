@@ -1,0 +1,218 @@
+<h1 class="title">File structure</h1>
+
+<p class="uk-article-lead">Get an overview of how all source files Warp 7 based themes are organized.</p>
+
+<pre><code><strong>css/</strong>
+  styles/
+<strong>custom/</strong>
+<strong>images/</strong>
+<strong>js/</strong>
+<strong>layouts/</strong>
+  theme.config.php/
+  theme.php/
+  widget.php/
+<strong>less/</strong>
+  styles/
+  uikit/
+  bootstrap.less
+  customizer.json
+  theme-layout.less
+  theme-rtl.less
+  theme.less
+<strong>warp/</strong>
+apple_touch_icon.png
+changelog.php
+config.default.json
+config.json
+config.php
+config.xml
+favicon.ico
+templateDetails.xml/theme.xml</code></pre>
+
+<h3>css/</h3>
+
+<p>Here you can find all compiled CSS files. You don't actually work in this folder. Changes made in one of the LESS files will automatically be compiled into CSS and saved in this folder.</p>
+
+<hr class="uk-article-divider">
+
+<h3>custom/</h3>
+
+<p>This is the place, where you can store all your custom markup and additional files.</p>
+
+<hr class="uk-article-divider">
+
+<h3>images/</h3>
+
+<p>The <code>images/</code> folder contains all images used in the theme.</p>
+
+<hr class="uk-article-divider">
+
+<h3>js/</h3>
+
+<p>All JavaScript in your theme can be found in this folder.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>theme.js</code></td>
+      <td>Responsible for all JavaScript effects and all JavaScript based functions.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="uk-article-divider">
+
+<h3>layouts/</h3>
+
+<p>This folder contains the core files responsible for the theme's layout.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>theme.config.php</code></td>
+      <td>Includes layout calcuations and assembles the theme's CSS and JS files. For more information take a look at <a href="index.php/js-css-and-less">JS, CSS and LESS</a>.</td>
+    </tr>
+    <tr>
+      <td><code>theme.php</code></td>
+      <td>Provides the complete HTML markup for the base theme layout. For more information take a look at <a href="index.php/template-layout">Template layout</a>.</td>
+    </tr>
+    <tr>
+      <td><code>widget.php</code></td>
+      <td>Responsible for displaying all widget variations. For more information take a look at <a href="index.php/widgets-modules">Widgets &#38; Modules</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="uk-article-divider">
+
+<h3>less/</h3>
+
+<p>All LESS files of your theme are stored in this folder. Changes to these files will be compiled into CSS and saved in the <code>css/</code> folder.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <td>Folder</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>styles</code></td>
+      <td>Contains the LESS files of every style. Files saved through the customizer will also be stored here.</td>
+    </tr>
+    <tr>
+      <td><code>uikit</code></td>
+      <td>Contains all components of UIkit, the frontend framework on which Warp is built. For more information, take a look at the <a href="http://getuikit.com/">UIkit website</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>bootstrap.less</code></td>
+      <td>Imports all Bootstrap components and related files. For more information, take a look at the <a href="http://twitter.github.io/bootstrap/">Bootstrap website</a>.</td>
+    </tr>
+    <tr>
+      <td><code>customizer.json</code></td>
+      <td>Defines which customizer parameters will be displayed in default or advanced mode. It groups UIkit variables, sets what can be defined through the color picker, direct input or a select box and adds fonts.</td>
+    </tr>
+    <tr>
+      <td><code>theme-layout.less</code></td>
+      <td>Provides the theme's markup and defines its styles.</td>
+    </tr>
+    <tr>
+      <td><code>theme-rtl.less</code></td>
+      <td>By default, Warp automatically converts the theme into RTL mode. If you wish to add your own CSS, for example to load images, you can do so in this file.</td>
+    </tr>
+    <tr>
+      <td><code>theme.less</code></td>
+      <td>Bundles the <code>bootstrap-layer.less</code>, <code>bootstrap-fix.less</code>, <code>uikit/uikit.less</code> and <code>theme-layout.less</code> files, so they will be compiled into one single <code>theme.css</code> file. You can also add your own LESS here.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="uk-article-divider">
+
+<h3>warp/</h3>
+
+<p>This folder contains the actual Warp 7 core framework.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Root files</h2>
+
+<p>This is a little overview of some files you should keep in mind.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>changelog.php</code></td>
+      <td>Gives you information on the version number of your Warp theme and all changes that have so far been made.</td>
+    </tr>
+    <tr>
+      <td><code>config.default</code></td>
+      <td>Stores all theme related default backend parameters.</td>
+    </tr>
+    <tr>
+      <td><code>config.json</code></td>
+      <td>Stores all your saved theme related backend parameters. This file will be generated automatically as soon as you save a new setting.</td>
+    </tr>
+    <tr>
+      <td><code>config.php</code></td>
+      <td>Registers all LESS files for compilation. For more information, take a look at <a href="index.php/js-css-and-less">JS, CSS and LESS </a>.</td>
+    </tr>
+    <tr>
+      <td><code>config.xml</code></td>
+      <td>This file contains the backend parameters of your theme. For more information, take a look at <a href="index.php/config-xml">Config.xml</a>.</td>
+    </tr>
+    <tr>
+      <td><code>templateDetails.xml</code> (Joomla)/ <code>theme.xml</code> (WordPress)</td>
+      <td>This file contains general information on your theme, like the name, release date, directories and module settings.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>favicon.ico</code></td>
+      <td>Will be displayed in your browser bar. To change the favicon, simply replace that file.</td>
+    </tr>
+    <tr>
+      <td><code>apple_touch_icon.png</code></td>
+      <td>Will link to your website, if you save it to the home screen of your mobile device. To change the icon, simply replace that file.</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,120 @@
+<h1 class="title">Settings</h1>
+
+<p class="uk-article-lead">The general theme section allows you to control the behaviour and the overall appearance of your theme.</p>
+
+<h2>Style</h2>
+<p>The style manager provides you with two options, either you use the default theme style or you hit the <em>Customize</em> button to add your own style. This will load the customizer. There you can easily customize colors, fonts, margins and even more settings of the theme. The customizer saves only the modified variables and automatically compiles them into CSS.</p>
+
+<p>For further information, please take a look at our <a href="index.php/customizer">Customizer tutorial</a>.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Development</h2>
+
+<p>
+<strong>1. LESS Developer Mode</strong><br />
+Check the first option and the <em>browser automatically compiles your LESS files</em> via Javascript every time you save a change. This provides an appropriate testing environment. It's not recommended to maintain developer mode on the live site as the constant process of compiling is highly unperformant.</p>
+
+<p>
+<strong>2. Dynamics Styles</strong><br />
+  The second option enables the browser to <em>load styles by URL</em>. This is useful, if you want to test different styles in your website. Disable this option, when your website goes live. 
+</p>
+
+<p>
+<strong>3. RTL Mode</strong><br />
+To enable <em>right-to-left language localization (RTL)</em> check the third option and hit the <em>Compile LESS</em> button. This will generates your LESS files into CSS files.    
+</p>
+
+<p>
+<strong>4. Compile LESS to CSS</strong><br />
+To finish your LESS modifications, hit the <em>Compile LESS</em> button and all your changes will be compiled into the final CSS. 
+</p>
+
+<p><span class="uk-badge uk-badge-danger">IMPORTANT</span> Make sure, you aren't developing in the <code>css/</code> folder, because this folder will be overriden as soon as you hit the <em>Compile LESS</em> button.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Compression</h2>
+<p>To optimize page load time, choose one of the following compression options.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>None</em></td>  
+      <td>All files will be loaded seperately and fully sized. </td>
+    </tr>
+    <tr>
+      <td><em>Combination + Minify</em></td>  
+      <td>This kind of compression minifies and combines CSS and JavaScript files into one single file.</td>
+    </tr>
+    <tr>
+      <td><em> Combination + Minify + Data URIs</em></td>  
+      <td>Data URI embeds image data directly into the document, thus reducing the HTTP requests for your image files. This applies only to images that have a maximum size of up to 10kB.</td>
+    </tr>
+    <tr>
+      <td><em>Combination + Minify + Data URIs + Gzip</em></td>  
+      <td>Gzip allows a faster data transfer through compressed data packages, instead of dealing with large data volumes by sending them seperatly.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<hr class="uk-article-divider">
+
+<h2>Responsive</h2>
+<p>Check this option to enable the responsive behaviour for the whole theme. The responsive layout adapts perfectly to all viewports.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Specific Joomla &amp; WordPress Setting</h2>
+<p>Warp provides the following specific Joomla and WordPress theme settings:</p>
+
+<p>
+<strong>Bootstrap Settings (Joomla)</strong><br />
+By checking this option, you disable bootstrap. This reduces the page loading time, when you only use the Joomla blog.</p>
+
+<p>
+<strong>Post Settings (WordPress)</strong><br />
+Display your posts up to a 4 column layout and define whether the ordering is across or down columns. Additionally check the wpautop function to automatically format your posts.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Content</h2>
+<p>Enable or disable the To-top scroller and the Warp branding.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Social Buttons</h2>
+<p> To enable the users to share articles with others, activate the social button option. It inserts small widgets below your articles. These are loaded via JavaScript from <a href="https://dev.twitter.com/docs/tweet-button">Twitter</a>,<a href="http://developers.facebook.com/docs/reference/plugins/follow/"> Facebook</a> or <a href="https://developers.google.com/+/web/share/">Google+</a>.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Widgets/Modules</h2>
+<p>Set the default widget and module styles for the specific positions. </p>
+
+  <p><span class="uk-badge">NOTE</span> This style will be overwritten as soon as you set a second style for a single widget/module in the <a href="index.php/widgets-modules1">widget/module settings</a>.</p>
+  
+<hr class="uk-article-divider">
+
+<h2>Additional Scripts</h2>
+<p>Here you can insert additional scripts like the Google Analytics tracking code below, for example. It will be added before the closing body tag in the theme.</p>
+
+<pre>
+var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXX-X']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</pre>
+
+<p>For further information, take a look at the <a href="https://developers.google.com/analytics/devguides/collection/gajs/">Google Analytics tutorial</a>.</p>

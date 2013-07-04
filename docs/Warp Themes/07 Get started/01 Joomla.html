@@ -1,0 +1,64 @@
+<h1 class="title">Joomla</h1>
+
+<p class="uk-article-lead">This tutorial gives you a brief overview of the general Joomla! and Warp framework setup.</p>
+
+<h2>Installation</h2>
+
+<p>Setting up a Warp theme follows the standard Joomla installation procedure and works like with any other template.</p>
+<ul class="bullet">
+  <li>1. Download Joomla from the <a href="http://www.joomla.org/">Joomla website</a>.</li>
+  <li>2. Setup a new Joomla install.</li>
+  <li>3. Install and activate your theme.</li>
+</ul>
+
+<p>For more information, take a look at the official <a href="http://docs.joomla.org/Main_Page">Joomla documentation</a>.</p>
+
+<hr class="uk-article-divider">
+
+<h3>Setup a demo package</h3>
+
+<p>A demo package is a full Joomla installation, which includes the Master Theme, demo content and the data base responsible for the layout and setup of our demo. This is great, if you don't want to start from scratch or just to have a peek at how everything is put together.</p>
+<p><span class="uk-badge">NOTE</span> On the last installation step don't forget to <em>Install the YOOtheme Sample Data</em> to import the demo content.</p>
+
+<hr class="uk-article-divider">
+
+<h3>Troubleshooting</h3>
+
+<p>If the installation does not work and you get an error message, you might want to try installing the theme manually.</p>
+<ul class="bullet">
+  <li>1. Extract the theme <code>.zip</code> file to a directory on your PC.</li>
+  <li>2. Using FTP, upload the theme directory to the <code>tmp/</code> folder of your Joomla installation on your webserver.</li>
+  <li>3. Go to the extensions installer in the Joomla administration and use the <em>Install from Directory</em> option to set the directory of your uploaded template files.</li>
+  <li>4. Hit the <em>Install</em> button and Joomla will install it from the stated directory.</li>
+</ul>
+
+<p>You can find further guidance on troubleshooting and PHP problems in the <a href="index.php/installation-issues">Installation issues</a> article.</p>
+
+<p><span class="uk-badge">NOTE</span> The Joomla error messages during installation can sometimes be misleading. For example, Joomla claims that it is unable to find the installation package, when it actually wasn't uploaded completely due to the <em>PHP Maximum Upload Size</em> limit.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Setup the menus</h2>
+
+<p>After <a href="http://docs.joomla.org/Adding_a_new_menu">creating your menu</a>, you need to assign it to a <em>menu</em> module published in the <em>menu</em> module position. To do so, just go to <em>Extensions &gt; Module Manager</em>, create a new <em>Menu</em> module and publish it in the <em>menu</em> position of the template.</p>
+
+<hr class="uk-article-divider">
+
+<h3>Module in menu position</h3>
+  
+<p>You can also publish any module in the <em>menu</em> position, for example to add a login form to your main menu.</p>
+
+<hr class="uk-article-divider">
+
+<h3>Menu styles</h3>
+
+<p>There are three different menu styles, the <em>Mega dropdown menu</em> as a main menu, the <em>Accordion menu</em> in sidebars and the <em>Line menu</em> in the toolbar or footer. Warp automatically styles the menu according to its module position.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Setup the logo</h2>
+
+<p>Setting up the logo in Joomla is pretty straightforward. Just create a <em>Custom HTML module</em> in the <em>Logo</em> position. Now you can enter your markup in the <em>Custom output</em> field.</p>
+<p>For example use the following code:</p>
+<pre><code>&lt;img src&#61;"images/logo.png" width&#61;"200" height&#61;"50" alt&#61;"logo" /&gt;</code></pre>
+<p><span class="uk-badge">NOTE</span> Warp 7 also provides the <em>Logo Mini</em> position, where you can display an alternative logo image for smaller viewport sizes.</p>

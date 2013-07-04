@@ -1,0 +1,88 @@
+<h1 class="title">Customization</h1>
+
+<p class="uk-article-lead">Apply your customizations by overriding theme and system files and learn more about file hierarchy in Warp.</p>
+
+<p>To provide as much flexibility as possible, Warp applies a special file cascade. If you include any file like CSS, JS or template PHP files, Warp looks successively in specific folders for the files and the first file found will be loaded. This gives you full flexibility to override any important theme related file.</p>
+
+<p>We will explain the override cascade a bit further. If you just want to know, how to override theme files, jump down to the appropriate examples.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Override cascade</h2>
+
+<p>As an example, this is what the override hierarchy for the <code>layouts/</code> folder would look like.</p>
+
+<h3>1. Custom folder</h3>
+
+<p>The <code>custom/layouts</code> folder of your theme is at the top of the hierarchy and modifications or additions you make here will override all other theme files. Also this folder will be preserved during updates, so it's the safest place to make your modifications.</p>
+
+<h3>2. Theme folder</h3>
+
+<p>The theme's <code>layouts/</code> folder is the place where all the theme specific layout files are being stored.</p>
+
+<h3>3. Systems folder</h3>
+
+<p>The <code>warp/systems/joomla/layouts/</code> or <code>warp/systems/wordpress/layouts/</code> folder provides the individual system implementation needed to integrate with a particular CMS. This layer makes Warp adapt to a certain system to form a consistent API for theme development. </p>
+
+<h3>4. Warp folder</h3>
+
+<p>The <code>warp/layouts/</code> folder contains basic overrides made by the core framework. Each part of the core framework is universal and designed to work on every supported system.</p>
+
+
+<p>The cascades for the <code>js/</code>, <code>css/</code>, <code>less/</code> and <code>layouts/</code> folders are defined in the theme's <code>config.php</code>. If you want to register another folder in the cascade, you can do so here.</p>
+ 
+<pre><code>'paths' => array(
+  'template' => array(__DIR__),
+  'js'       => array(__DIR__.'/js'),
+  'css'      => array(__DIR__.'/css'),
+  'less'     => array(__DIR__.'/less'),
+  'layouts'  => array(__DIR__.'/layouts')
+),</code></pre>
+
+<hr class="uk-article-divider">
+
+<h2>Example of layout overrides</h2>
+
+<p>To customize the general theme layout, you need to override the <code>layouts/theme.php</code>. To do so, copy the file into the theme's <code>custom/layouts/</code> directory and start adding your own PHP code.</p>
+
+<p>You can also override system files. For more information, take a look at <a href="index.php/system-overrides">this tutorial</a>.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Example of CSS overrides</h2>
+
+<p>Let's say you want to add your own custom CSS to the <code>theme.css</code>.</p>
+  
+<ul class="bullet">
+  <li>1. Create a new <code>styles/MY-STYLE/theme.css</code> file inside the <code>custom/css/</code> directory. Make sure you recreate the same directory structure in the <code>custom</code> folder as the one that stores the original files.</li>
+  <li>2. Load the original file through an <code>@import</code> rule.</li>
+  <li>3. Now you can start adding your own CSS to the file.</li>
+</ul>
+  
+<pre><code>@import "../../../../css/styles/MY-STYLE/theme.css";
+
+/* Your custom CSS here */</code></pre>
+
+<p>For instructions on how to create additional CSS files instead of overriding existing ones, take a look at the <a href="index.php/js-css-and-less">JS, CSS and LESS</a> doc.</p>
+
+<hr class="uk-article-divider">
+
+<h2>Example of LESS overrides</h2>
+
+<p>Let's say you want to add your own custom code to the <code>theme.less</code>.</p>
+
+<ul class="bullet">
+  <li>1. Create a new <code>theme.less</code> file inside the <code>custom/less/</code> directory.</li>
+  <li>2. Load the original file through an <code>@import</code> rule.</li>
+  <li>3. Now you can start adding your own code to the file.</li>
+</ul>
+
+<pre><code>@import "../less/theme.less";
+
+// Your custom code here</code></pre>
+
+<hr class="uk-article-divider">
+
+<h2>Example of JavaScript overrides</h2>
+
+<p>To override, say the <code>js/theme.js</code> file, just copy it into the <code>custom/js/</code> directory. Now you can start adding your own custom script.</p>

@@ -1,0 +1,71 @@
+<h1 class="title">Theme layout</h1>
+
+<p class="uk-article-lead">Two core PHP files determine the theme's layout and markup. Learn how widget positions are rendered and their proportions are being calculated.</p>
+
+<h2>theme.php</h2>
+
+<p>The heart of every theme is the <code>theme.php</code>, which provides the entire HTML for the base theme markup. This is different from standard Joomla templates or WordPress themes, where the <code>index.php</code> is the main template file.</p>
+
+<p>This is the skeletal structure of the <code>theme.php</code>. The file needs to import the <code>theme.config.php</code> and render widget positions and retrieve config variables and the system output.</p>
+  
+<pre><code>&lt;?php
+
+// get theme configuration
+include($this['path']->path('layouts:theme.config.php'));
+  
+?&gt;
+&lt;!DOCTYPE HTML&gt;
+&lt;html lang="&lt;?php echo $this['config']->get('language'); ?&gt;" dir="&lt;?php echo $this['config']-&gt;get('direction'); ?&gt;"  data-config='&lt;?php echo $this['config']->get('body_config','{}'); ?&gt;'&gt;
+
+  &lt;head&gt;
+  &lt;?php echo $this['template']-&gt;render('head'); ?&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+
+    // render a widget position
+    &lt;?php echo $this['widgets']->render('widget-position'); ?&gt;
+
+    // retrieve a config variable
+    &lt;?php echo $this['config']->get('variable'); ?&gt;
+
+    // render the system output
+    &lt;?php echo $this['template']->render('content'); ?&gt;
+
+  &lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+<hr class="uk-article-divider">
+
+<h3>Config object</h3>
+  
+<p>Variables from the <code>config.xml</code> are stored in the <code>config</code> object. To access a variable's value, simply use the <em>get</em> method.</p>
+  
+<pre><code>// output the value of the branding variable
+&lt;?php echo $this['config']->get('theme_branding'); ?&gt;
+
+// output the to-top scroller based on the theme setting
+&lt;?php if ($this['config']->get('totop_scroller')) : ?&gt;
+&lt;a class="tm-totop-scroller" data-uk="smooth-scroll" href="#"&gt;&lt;/a&gt;
+&lt;?php endif; &gt;</code></pre>
+  
+<hr class="uk-article-divider">
+  
+<h3>Widget object</h3>
+  
+<p>The widgets of the page are stored in the <code>widget</code> object. To render all widgets in a position, use the <em>render</em> method. You can check, whether any widgets are published in a position, by using the <em>count</em> method.</p>
+  
+<pre><code>&lt;// render all widgets in Top A position
+&lt;?php echo $this['widgets']->render('top-a')); ?&gt;
+
+// apply equal to all widgets in Top A position
+?php if ($this['widgets']->count('top-a')) : ?&gt;
+&lt;?php echo $this['widgets']->render('top-a', array('layout'=>'equal')); ?&gt;
+&lt;?php endif; ?&gt;</code></pre>
+
+<hr class="uk-article-divider">
+
+<h2>theme.config.php</h2>
+
+<p>While the <code>theme.php</code> basically only defines the theme's markup, the logic is outsourced to the <code>theme.config.php</code>. It is responsible for calculations, like the 3 column layout as well as the body classes and social buttons. For more information, take a look at <a href="index.php/js-css-and-less">JS, CSS and LESS</a>.</p>

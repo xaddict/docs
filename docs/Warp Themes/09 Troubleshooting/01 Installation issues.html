@@ -1,0 +1,47 @@
+<h1 class="title">Installation issues</h1>
+
+<p class="uk-article-lead">Learn how to handle PHP issues during the installation process.</p>
+
+
+<p>Most of the time installation problems are due to limited resources, for example on shared hosting servers. Here's an overview of the <a href="http://www.php.net/manual/en/ini.core.php">PHP configuration settings</a> you should check and increase, if needed.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <th>Setting</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>post_max_size</code></th></td>
+      <td>Amount of data in a single form submission using the POST method.</td>
+    </tr>
+    <tr>
+      <td><code>upload_max_filesize</code></td>
+      <td>Size of an individual file uploaded.</td>
+    </tr>
+    <tr>
+      <td><code>max_execution_time</code></td>
+      <td>Time in seconds a script is allowed to run before it is terminated by the parser.</td>
+    <tr>
+      <td><code>memory_limit</code></td>
+      <td>Amount of memory in bytes that a script is allowed to allocate.</td>
+    </tr>
+</table>
+
+<p>You may need to allocate more resources for PHP by modifying the <code>php.ini</code> file directly. If this is not possible, you can try setting the PHP settings through a <code>.htaccess</code> file on your webserver. Though this also depends on your hosting server, if it allows the usage of <code>.htaccess</code> overrides.</p>
+
+<p>To change the PHP configuration through the <code>php.ini</code> file, use the following syntax.</p>
+<pre><code># example of recommended settings
+post_max_size = 8M
+upload_max_filesize = 8M
+max_execution_time = 60
+memory_limit = 128M</code></pre>
+
+<p>To change the <a href="http://www.yootheme.com/themes/documentation/troubleshooting/installation-issues">PHP configuration</a> through a <code>.htaccess</code> file, use the following syntax.</p>
+<pre><code># example of recommended settings
+php_value post_max_size 8M
+php_value upload_max_filesize 8M
+php_value max_execution_time 60
+php_value memory_limit 128M</code></pre>

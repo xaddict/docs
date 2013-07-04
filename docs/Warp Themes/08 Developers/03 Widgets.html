@@ -1,0 +1,81 @@
+<h1 class="title">Widgets/Modules</h1>
+
+<p class="uk-article-lead">Learn how to create new widget positions, layouts and styles.</p>
+
+<h2>Create a new widget position</h2>
+
+<p>Adding a new position for modules or widgets to your theme is fairly straightforward. You have to name a position and define where the position gets rendered within the theme layout.</p>
+
+
+<p><span class="uk-badge">NOTE</span> You can override all files in your custom directory. Just copy whichever file you wish to modify to the <code>custom/</code> directory. This will keep your changes update proof.</p>
+
+<hr class="uk-article-divider">
+
+<h3>Add position and style options</h3>
+
+<p>Add a new position to the <code>templateDetails.xml</code> for Joomla or the <code>theme.xml</code> for WordPress to make your content management system know it exists. The new option will then be displayed in your Warp administration.</p>
+
+<pre><code>&lt;position&gt;top-a&lt;/position&gt;
+&lt;position&gt;MY-POSITION&lt;/position&gt;
+&lt;position&gt;bottom-a&lt;/position&gt;</code></pre>
+
+<h4>Modules/Widgets Settings</h4>
+
+<p>With the <code>settings</code> attribute you can control the options for the widget appearance of your position. You will find these in the <em>Modules</em> or <em>Widgets</em> panel of your Warp administration. Available values are <code>class</code>, <code>style</code>, <code>icon</code>, <code>badge</code> and <code>display</code>. Additionaly, <code>title</code> and <code>assignment</code> are available in WordPress.</p>
+
+<pre><code>&lt;position settings=""&gt;MY-POSITION&lt;/position&gt;</code></pre>
+
+<p><span class="uk-badge">NOTE</span> If no <code>settings</code> attribute is given, your position automatically shows all available options. If you use the <code>settings</code> attribute without adding a value, it won't be displayed in the <em>Modules</em> or <em>Widgets</em> panel at all.</p>
+
+<p>Get more information about <code>settings</code> in the <a href="/themes/Warp7/Website/index.php/widgets-modules1">Widgets/Modules</a> chapter.</p>
+
+<hr class="uk-article-divider">
+
+<h3>Add Settings &amp; Layouts options</h3>
+
+<p>To make the theme options of the <em>Settings</em> and <em>Layouts</em> panels for your position available, you have to add your new position to the <code>config.xml</code>.</p>
+
+<h4>Settings options</h4>  
+  
+<p>By adding a new <code>&lt;row&gt;</code> element to the <em>Settings</em> section of the <code>config.xml</code>, the option to choose a default style for your position in the <em>Settings</em> panel of your administration will be displayed.</p>
+  
+<pre><code>&lt;fields name="Settings"&gt;
+    ...
+    &lt;field type="table" name="panel_default"&gt;
+        &lt;rows label="Position"&gt;
+            &lt;row&gt;MY-POSITION&lt;/row&gt;
+            ...</code></pre>
+  
+<h4>Layouts options</h4>
+  
+<p>By adding a new <code>&lt;row&gt;</code> element to the <em>Layouts</em> section of the <code>config.xml</code>, the options to set a default layout, dividers, the preserve function or width and alignment of your position will be displayed in the <em>Layouts</em> panel.</p>
+
+<pre><code>&lt;fields name="Layouts"&gt;
+    ...
+    &lt;field type="table" name="grid"&gt;
+        &lt;rows label="Position"&gt;
+            &lt;row&gt;MY-POSITION&lt;/row&gt;
+            ...</code></pre>
+
+
+<p>Take a look at <a href="/themes/Warp7/Website/index.php/config-xml">this chapter</a> for more information on the <code>config.xml</code>. To get an overview of all widget/module options in the Warp administration area take a look at the <a href="/themes/Warp7/Website/index.php/settings">Settings</a> and <a href="/themes/Warp7/Website/index.php/admin-layouts">Layouts</a> docs.</p>
+
+
+<hr class="uk-article-divider">
+
+<h3>Render position</h3>
+
+<p>The <code>layouts/theme.php</code> provides the basic markup of the theme. Here you can define where widget positions get rendered and add new ones.</p>
+
+<pre>
+<code>&lt;?php if ($this['widgets']-&gt;count('MY-POSITION')):?&gt;
+    &lt;section class="tm-top-a uk-grid uk-grid-gutter" data-uk="grid-match {target:'> div > .uk-panel'}"&gt;
+        &lt;?php echo $this['widgets']-&gt;render('MY-POSITION', array('layout'=&gt;$this['config']-&gt;get(
+        'grid.MY-POSITION.layout'))); ?&gt;
+    &lt;/section&gt;
+&lt;?php endif;?&gt;</code>
+</pre>
+
+<p><span class="uk-badge">NOTE</span> You only need to add the <code>$this['config']->get('grid.MY-POSITION.layout')</code> syntax, if you have declared an option in the <code>config.xml</code>.</p>
+
+<p>Take a look at <a href="/themes/Warp7/Website/index.php/theme-layout">Theme Layout</a> for a better understanding of the widget render methods.</p>
