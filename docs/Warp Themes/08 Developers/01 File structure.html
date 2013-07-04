@@ -1,12 +1,13 @@
 <h1 class="title">File structure</h1>
 
-<p class="article-lead">Get an overview of how all source files Warp 7 based themes are organized.</p>
+<p class="article-lead">Get an overview of how all source files of Warp 7 based themes are organized.</p>
 
-<pre><code><strong>css/</strong>
+<pre><strong>css/</strong>
   styles/
 <strong>custom/</strong>
 <strong>images/</strong>
 <strong>js/</strong>
+  theme.js
 <strong>layouts/</strong>
   theme.config.php/
   theme.php/
@@ -27,17 +28,17 @@ config.json
 config.php
 config.xml
 favicon.ico
-templateDetails.xml/theme.xml</code></pre>
+templateDetails.xml/theme.xml</pre>
 
-<h3>css/</h3>
+<h3>css/styles/</h3>
 
-<p>Here you can find all compiled CSS files. You don't actually work in this folder. Changes made in one of the LESS files will automatically be compiled into CSS and saved in this folder.</p>
+<p>Here you can find all compiled CSS files. Each style has its own folder. You don't actually work in this folder. Changes made in one of the LESS files will automatically be compiled into CSS and stored in this folder.</p>
 
 <hr>
 
 <h3>custom/</h3>
 
-<p>This is the place, where you can store all your custom markup and additional files.</p>
+<p>This is the place, where you can store all your {doc: customization text: custom markup and additional files}.</p>
 
 <hr>
 
@@ -49,7 +50,7 @@ templateDetails.xml/theme.xml</code></pre>
 
 <h3>js/</h3>
 
-<p>All JavaScript in your theme can be found in this folder.</p>
+<p>All theme specific JavaScript can be found in this folder.</p>
 
 <table class="zebra">
   <thead>
@@ -130,7 +131,7 @@ templateDetails.xml/theme.xml</code></pre>
   <tbody>
     <tr>
       <td><code>bootstrap.less</code></td>
-      <td>Imports all Bootstrap components and related files. For more information, take a look at the <a href="http://twitter.github.io/bootstrap/">Bootstrap website</a>.</td>
+      <td>Joomla! only: Imports all Bootstrap components and related files. For more information, take a look at the <a href="http://twitter.github.io/bootstrap/">Bootstrap website</a>.</td>
     </tr>
     <tr>
       <td><code>customizer.json</code></td>
@@ -176,12 +177,12 @@ templateDetails.xml/theme.xml</code></pre>
       <td>Gives you information on the version number of your Warp theme and all changes that have so far been made.</td>
     </tr>
     <tr>
-      <td><code>config.default</code></td>
+      <td><code>config.default.json</code></td>
       <td>Stores all theme related default backend parameters.</td>
     </tr>
     <tr>
       <td><code>config.json</code></td>
-      <td>Stores all your saved theme related backend parameters. This file will be generated automatically as soon as you save a new setting.</td>
+      <td>Stores all your saved theme related backend parameters. This file will be generated automatically as soon as you save your settings.</td>
     </tr>
     <tr>
       <td><code>config.php</code></td>
@@ -192,7 +193,7 @@ templateDetails.xml/theme.xml</code></pre>
       <td>This file contains the backend parameters of your theme. For more information, take a look at {doc: config text: Config.xml}.</td>
     </tr>
     <tr>
-      <td><code>templateDetails.xml</code> (Joomla)/<br> <code>theme.xml</code> (WordPress)</td>
+      <td><code>templateDetails.xml</code> (Joomla)<br><code>theme.xml</code> (WordPress)</td>
       <td>This file contains general information on your theme, like the name, release date, directories and module settings.</td>
     </tr>
   </tbody>
