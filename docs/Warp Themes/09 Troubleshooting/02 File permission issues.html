@@ -12,12 +12,12 @@
 
 <h3>Using your FTP clients</h3>
 
-<ul class="bullet">
-  <li>1. Open your FTP client or, if you don't have any, download <a href="https://filezilla-project.org/">FileZilla</a> and install it.</li>
-  <li>2. Use your FTP client to login to your server and browse to your webroot directory.</li>
-  <li>3. Right click on the directory on which you want to change the permissions and click <em>File Permissions...</em></li>
-  <li>4. The <em>Change File Attributes</em> dialog lets you check different options or type in a numeric value like <em>755</em>. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit OK.</li>
-</ul>
+<ol>
+  <li>Open your FTP client or, if you don't have any, download <a href="https://filezilla-project.org/">FileZilla</a> and install it.</li>
+  <li>Use your FTP client to login to your server and browse to your webroot directory.</li>
+  <li>Right click on the directory on which you want to change the permissions and click <em>File Permissions...</em></li>
+  <li>The <em>Change File Attributes</em> dialog lets you check different options or type in a numeric value like <em>755</em>. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit OK.</li>
+</ol>
 
 <p><span class="badge badge-danger">IMPORTANT</span> Always avoid <em>777</em> permissions. If your webserver has problems with the CHMOD <em>755</em>, you can also try <em>775</em> and lastly <em>777</em> in this order.</p>
 
@@ -26,18 +26,18 @@
 <h3>Use a Joomla extension to access your webserver</h3>
 
 <p>Using an FTP client may also change file ownership to the FTP user of the files or directories you changed the permissions on. This may cause problems on some webservers. To avoid this, you can use a Joomla component like <em>eXtplorer</em> to update the permission through the Joomla administration.</p>
-  
-<ul class="bullet">
-  <li>1. Download the Joomla component <a href="http://extensions.joomla.org/extensions/core-enhancements/file-management/2630">eXtplorer</a> and install it. It allows you to edit, delete, copy, rename, archive and unpack files and directories directly on your webserver.</li>
-  <li>2. Login to your Joomla administration, go to the eXtplorer component and browse to the directory on which you want to change the permissions.</li>
-  <li>3. Right click on the directory and choose <em>Change Rights</em>.</li>
-  <li>4. Check the options as shown below. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the Save button.</li>
-</ul>
+
+<ol>
+  <li>Download the Joomla component <a href="http://extensions.joomla.org/extensions/core-enhancements/file-management/2630">eXtplorer</a> and install it. It allows you to edit, delete, copy, rename, archive and unpack files and directories directly on your webserver.</li>
+  <li>Login to your Joomla administration, go to the eXtplorer component and browse to the directory on which you want to change the permissions.</li>
+  <li>Right click on the directory and choose <em>Change Rights</em>.</li>
+  <li>Check the options as shown below. Make sure the <em>Recurse into subdirectories</em> option is checked. Then hit the Save button.</li>
+</ol>
 
 <p>Find out more about file permissions in the <a href="http://docs.joomla.org/Security_Checklist/Where_can_you_learn_more_about_file_permissions%3F">Joomla documentation</a>.</p>
-  
+
 <hr>
-  
+
 <h3>WordPress</h3>
 
 <p>Check out the <a href="http://codex.wordpress.org/Changing_File_Permissions">WordPress documentation</a> for more information on file permissions.</p>
