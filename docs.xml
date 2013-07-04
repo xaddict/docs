@@ -16,7 +16,7 @@
     <category alias="developers" name="Developers" folder="08 Developers">
       <doc alias="file-structure" name="File structure" file="01 File structure.html"/>
       <doc alias="theme-layout" name="Theme layout" file="02 Theme layout.html"/>
-      <doc alias="widgets" name="Widgets/Modules" file="03 Widgets.html"/>
+      <doc alias="widgets-2" name="Widgets/Modules" file="03 Widgets.html"/>
       <doc alias="customization" name="Customization" file="04 Customization.html"/>
       <doc alias="assets" name="JS, CSS and LESS" file="05 Assets.html"/>
       <doc alias="config" name="Config.xml" file="06 Config.html"/>
@@ -24,10 +24,10 @@
       <doc alias="languages" name="Languages" file="08 Languages.html"/>
       <doc alias="error-pages" name="Error pages" file="09 Error pages.html"/>
     </category>
-    <category alias="troubleshooting-warp7" name="Troubleshooting" folder="09 Troubleshooting">
-      <doc alias="installation-issues" name="Installation issues" file="01 Installation issues.html"/>
-      <doc alias="file-permission-issues" name="File permission issues" file="02 File permission issues.html"/>
-      <doc alias="javascript-errors" name="JavaScript errors" file="03 JavaScript errors.html"/>
+    <category alias="troubleshooting" name="Troubleshooting" folder="09 Troubleshooting">
+      <doc alias="installation-issues-2" name="Installation issues" file="01 Installation issues.html"/>
+      <doc alias="file-permission-issues-2" name="File permission issues" file="02 File permission issues.html"/>
+      <doc alias="javascript-errors-2" name="JavaScript errors" file="03 JavaScript errors.html"/>
       <doc alias="faq" name="FAQ" file="04 FAQ.html"/>
     </category>
     <separator label="Warp 6" />
