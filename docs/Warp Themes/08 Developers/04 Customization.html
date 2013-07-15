@@ -51,19 +51,21 @@
 
 <h2>Example of how to add custom CSS</h2>
 
-<p>Let's say you want to add your own custom CSS to the <code>theme.css</code>.</p>
+<p>Let's say you want to add your own custom CSS.</p>
 
 <ol>
-  <li>Create a new <code>styles/MY-STYLE/theme.css</code> file inside the <code>custom/</code> directory. Make sure you recreate the same directory structure in the <code>custom</code> folder as the one that stores the original files.</li>
-  <li>Load the original file through an <code>@import</code> rule.</li>
-  <li>Now you can start adding your own CSS to the file.</li>
+  <li>Create a new <code>theme.config.php</code> file inside the <code>custom/layouts</code> directory.</li>
+  <li>Load the original file through PHP by using the <em>require</em> rule.</li>
+  <li>Then add an <em>asset</em> to load your CSS file.</li>
+  <li>Add your own custom CSS file under following directory <code>custom/css/MY-CSS.css</code></li>
 </ol>
 
-<pre><code>@import "../../styles/MY-STYLE/theme.css";
+<pre><code>&lt;?php
 
-/* Your custom CSS here */</code></pre>
+require_once(__DIR__.'/../../layouts/theme.config.php');
 
-<p>For instructions on how to create additional CSS files instead of overriding existing ones, take a look at the {doc: assets text: JS, CSS and LESS} doc.</p>
+// add css
+$this['asset']->addFile('css', 'css:MY-CSS.css'); </code></pre>
 
 <hr>
 
@@ -83,6 +85,18 @@
 
 <hr>
 
-<h2>Example of JavaScript overrides</h2>
+<h2>Example of how to add custom JavaScript</h2>
 
-<p>To override, say the <code>js/theme.js</code> file, just copy it into the <code>custom/js/</code> directory. Now you can start adding your own custom script.</p>
+<ol>
+  <li>Create a new <code>theme.config.php</code> file inside the <code>custom/layouts</code> directory.</li>
+  <li>Load the original file through PHP by using the <em>require</em> rule.</li>
+  <li>Then add an <em>asset</em> to load your JS file.</li>
+  <li>Add your own custom JS file under following directory <code>custom/js/MY-JS.js</code></li>
+</ol>
+
+<pre><code>&lt;?php
+
+require_once(__DIR__.'/../../layouts/theme.config.php');
+
+// add script
+$this['asset']->addFile('js', 'js:MY-JS.js');</code></pre>
