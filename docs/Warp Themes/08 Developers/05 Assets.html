@@ -26,14 +26,20 @@ $this['asset']->addFile('css', 'css:my.css');</code></pre>
 
 <h2>Add a LESS file</h2>
 
-<p>The <code>config.php</code> registers all LESS files for compilation. When hitting <em>Compile LESS</em> in the <em>Settings</em> section of the Warp administration, these files will be compiled into CSS and saved in the theme's <code>css/</code> folder. If you want to add your own LESS file to be compiled into CSS, you need to register it here as well.</p>
+<p>The <code>config.php</code> registers all LESS files for compilation. When hitting <em>Compile LESS</em> in the <em>Settings</em> section of the Warp administration, these files will be compiled into CSS and saved in the theme's <code>styles/MY-STYLE/css/</code> folder. If you want to add your own LESS file to be compiled into CSS, you need to register it here as well.</p>
 
-<pre><code>'less' => array(
-    '/css/theme.css'         => 'less:theme.less',
-    '/css/theme-rtl.css'     => 'less:theme-rtl.less',
-    '/css/bootstrap.css'     => 'less:bootstrap.less',
-    '/css/bootstrap-rtl.css' => 'less:bootstrap-rtl.less'
-)</code></pre>
+<pre><code>'less' =&gt; array(
+
+    'vars' =&gt; array(
+        'less:theme.less'
+    ),
+
+    'files' =&gt; array(
+        '/css/theme.css'     =&gt; 'less:theme.less',
+        '/css/bootstrap.css  =&gt; 'less:bootstrap.less'
+    )
+
+),</code></pre>
 
 <hr>
 

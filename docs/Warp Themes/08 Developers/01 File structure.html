@@ -3,23 +3,23 @@
 <p class="article-lead">Get an overview of how all source files of Warp 7 based themes are organized.</p>
 
 <pre><strong>css/</strong>
-  styles/
+  ie8.css
 <strong>custom/</strong>
 <strong>images/</strong>
 <strong>js/</strong>
-  theme.js
 <strong>layouts/</strong>
-  theme.config.php/
-  theme.php/
-  widget.php/
+  theme.config.php
+  theme.php
+  widget.php
 <strong>less/</strong>
-  styles/
+  bootstrap/
   uikit/
   bootstrap.less
   customizer.json
-  theme-layout.less
-  theme-rtl.less
   theme.less
+  uikit.less
+<strong>styles/</strong>
+  STYLENAME/
 <strong>warp/</strong>
 apple_touch_icon.png
 changelog.php
@@ -28,11 +28,27 @@ config.json
 config.php
 config.xml
 favicon.ico
-templateDetails.xml/theme.xml</pre>
+templateDetails.xml/theme.xml
+warp.php</pre>
 
-<h3>css/styles/</h3>
+<h3>css/</h3>
 
-<p>Here you can find all compiled CSS files. Each style has its own folder. You don't actually work in this folder. Changes made in one of the LESS files will automatically be compiled into CSS and stored in this folder.</p>
+<p>Contains the <code>ie8.css</code> file.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <td>File</td>
+      <td>Description</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ie8.css</code></td>
+      <td>Will fix basic issues for the Microsoft Internet Explorer 8.</td>
+    </tr>
+  </tbody>
+</table>
 
 <hr>
 
@@ -100,7 +116,7 @@ templateDetails.xml/theme.xml</pre>
 
 <h3>less/</h3>
 
-<p>All LESS files of your theme are stored in this folder. Changes to these files will be compiled into CSS and saved in the <code>css/</code> folder.</p>
+<p>All LESS files of your theme are stored in this folder. Changes to these files will be compiled into CSS and saved in the <code>styles/STYLENAME/css/</code> folder.</p>
 
 <table class="zebra">
   <thead>
@@ -111,8 +127,8 @@ templateDetails.xml/theme.xml</pre>
   </thead>
   <tbody>
     <tr>
-      <td><code>styles</code></td>
-      <td>Contains the LESS files of every style. Files saved through the customizer will also be stored here.</td>
+      <td><code>bootstrap</code></td>
+      <td>Contains all Bootstrap related LESS files.</td>
     </tr>
     <tr>
       <td><code>uikit</code></td>
@@ -138,19 +154,17 @@ templateDetails.xml/theme.xml</pre>
       <td>Defines which customizer parameters will be displayed in default or advanced mode. It groups UIkit variables, sets what can be defined through the color picker, direct input or a select box and adds fonts.</td>
     </tr>
     <tr>
-      <td><code>theme-layout.less</code></td>
-      <td>Provides the theme's markup and defines its styles.</td>
-    </tr>
-    <tr>
-      <td><code>theme-rtl.less</code></td>
-      <td>By default, Warp automatically converts the theme into RTL mode. If you wish to add your own CSS, for example to load images, you can do so in this file.</td>
-    </tr>
-    <tr>
       <td><code>theme.less</code></td>
-      <td>Bundles the <code>bootstrap-layer.less</code>, <code>bootstrap-fix.less</code>, <code>uikit/uikit.less</code> and <code>theme-layout.less</code> files, so they will be compiled into one single <code>theme.css</code> file. You can also add your own LESS here.</td>
+      <td>Provides the theme's markup and defines its styles and compiles the <code>uikit/uikit.less</code> file within the <code>theme.css</code> file. You can also add your own LESS here.</td>
     </tr>
   </tbody>
 </table>
+
+<hr>
+
+<h3>styles/</h3>
+
+<p>Here you can find all available style variations with the compiled CSS files. You don't actually work in this folder. Changes made in one of the LESS files will automatically be compiled into CSS and saved in this folder.</p>
 
 <hr>
 
@@ -195,6 +209,10 @@ templateDetails.xml/theme.xml</pre>
     <tr>
       <td><code>templateDetails.xml</code> (Joomla)<br><code>theme.xml</code> (WordPress)</td>
       <td>This file contains general information on your theme, like the name, release date, directories and module settings.</td>
+    </tr>
+    <tr>
+      <td><code>warp.php</code></td>
+      <td>This file loads the Warp Framework.</td>
     </tr>
   </tbody>
 </table>

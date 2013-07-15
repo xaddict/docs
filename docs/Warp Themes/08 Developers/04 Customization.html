@@ -32,11 +32,11 @@
 <p>The cascades for the <code>js/</code>, <code>css/</code>, <code>less/</code> and <code>layouts/</code> folders are defined in the theme's <code>config.php</code>. If you want to register another folder in the cascade, you can do so here.</p>
 
 <pre><code>'paths' => array(
-  'template' => array(__DIR__),
-  'js'       => array(__DIR__.'/js'),
-  'css'      => array(__DIR__.'/css'),
-  'less'     => array(__DIR__.'/less'),
-  'layouts'  => array(__DIR__.'/layouts')
+  'theme'    => array(__DIR__),
+  'js'       => array(__DIR__.'/js', __DIR__.'/custom/js'),
+  'css'      => array(__DIR__.'/css', __DIR__.'/custom/css'),
+  'less'     => array(__DIR__.'/less', __DIR__.'/custom/less'),
+  'layouts'  => array(__DIR__.'/layouts, __DIR__.'/custom/layouts')
 ),</code></pre>
 
 <hr>
@@ -49,17 +49,17 @@
 
 <hr>
 
-<h2>Example of CSS overrides</h2>
+<h2>Example of how to add custom CSS</h2>
 
 <p>Let's say you want to add your own custom CSS to the <code>theme.css</code>.</p>
 
 <ol>
-  <li>Create a new <code>styles/MY-STYLE/theme.css</code> file inside the <code>custom/css/</code> directory. Make sure you recreate the same directory structure in the <code>custom</code> folder as the one that stores the original files.</li>
+  <li>Create a new <code>styles/MY-STYLE/theme.css</code> file inside the <code>custom/</code> directory. Make sure you recreate the same directory structure in the <code>custom</code> folder as the one that stores the original files.</li>
   <li>Load the original file through an <code>@import</code> rule.</li>
   <li>Now you can start adding your own CSS to the file.</li>
 </ol>
 
-<pre><code>@import "../../../../css/styles/MY-STYLE/theme.css";
+<pre><code>@import "../../styles/MY-STYLE/theme.css";
 
 /* Your custom CSS here */</code></pre>
 
@@ -77,7 +77,7 @@
   <li>Now you can start adding your own code to the file.</li>
 </ol>
 
-<pre><code>@import "../less/theme.less";
+<pre><code>@import "../../less/theme.less";
 
 // Your custom code here</code></pre>
 
