@@ -1,0 +1,22 @@
+<h1 class="title">Disable responsive layout</h1>
+
+<p class="article-lead">Learn, how to turn off the viewport meta tag and edit the breakpoints to disable the responsive layout.</p>
+
+<h2>1. Viewport meta tag</h2>
+
+<p>Check the <em>Disable the viewport meta tag</em> checkbox in your <em>Settings -&gt; Responsive</em> menu of the theme settings. This will set the default width of the mobil layout to 980px and the site will look the same like on desktops.</p>
+
+<h2>2. Breakpoints</h2>
+
+<p>The next step is to give the breakpoints minimal and maximal values to prevent responsive behavior of the layout. To do so, open the customizer and set the <code>Mini</code>, <code>Small</code>, <code>Medium</code> and <code>Large</code> breakpoints to <em>0px</em>. The <code>Xlarge</code> breakpoint is to set as high as possible, like <em>9999px</em>. This will make it impossible for the browser to respond to the breakpoints. To learn more about the customizer, check the {doc: customizer text: Customizer} chapter.</p>
+
+<h2>3. Less</h2>
+
+<p>You need to add the following css code to the <code>less/theme.less</code> file.</p>
+
+<pre><code>.uk-container {
+    max-width: none;
+    with: @utility-container-max-width;
+}</code></pre>
+
+<p>Learn in the {doc: customization text: Customization} chapter, how to override files.</p>
