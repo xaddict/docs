@@ -10,7 +10,7 @@
 <h2>Development</h2>
 
 <h3>1. LESS Developer Mode</h3>
-<p>Check the first option and the <em>browser automatically compiles your LESS files</em> via Javascript every time you refresh the page. This provides an appropriate testing environment. It's not recommended to enable developer mode on the live site as the constant process of compiling is highly inefficient.</p>
+<p>Check the first option and the <em>browser automatically compiles your LESS files</em> via JavaScript every time you load a page. This provides an appropriate testing environment. It's not recommended to enable developer mode on the live site as the constant process of compiling is highly inefficient.</p>
 
 <h3>2. Dynamics Styles</h3>
 <p>The second option enables the browser to <em>load styles by URL</em>. This is useful, if you want to test different styles for your website. Disable this option, when your website goes live.</p>
@@ -78,6 +78,7 @@
 <p>Here you can insert additional scripts like the Google Analytics tracking code below, for example. It will be added before the closing body tag in the theme.</p>
 
 <pre>
+  <code>
 var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-XXXXX-X']);
   _gaq.push(['_trackPageview']);
@@ -87,6 +88,7 @@ var _gaq = _gaq || [];
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+  </code>
 </pre>
 
 <p>For further information, take a look at the <a href="https://developers.google.com/analytics/devguides/collection/gajs/">Google Analytics tutorial</a>.</p>
