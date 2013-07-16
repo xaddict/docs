@@ -36,21 +36,21 @@
   'layouts'  => array(__DIR__.'/layouts, __DIR__.'/custom/layouts')
 ),</code></pre>
 
-<h2>Example of layout overrides</h2>
+<h2>Layout overrides</h2>
 
 <p>To customize the general theme layout, you need to override the <code>/layouts/theme.php</code>. To do so, copy the file into the theme's <code>/custom/layouts</code> directory and start adding your own PHP code.</p>
 
 <p>You can also override system files. For more information, take a look at {doc: system-overrides text: this tutorial}.</p>
 
-<h2>Example of how to add custom CSS</h2>
+<h2>Add custom CSS or JavaScript</h2>
 
-<p>Let's say you want to add your own custom CSS.</p>
+<p>The configuration file <code>/layouts/theme.config.php</code> initializes all PHP classes and loads the necessary CSS and JavaScript. If you need to load custom CSS and JavaScript files, this is the place to do it. Enabled compression and Data URI will automatically be applied to all files you add here.</p>
 
 <ol>
   <li>Create a new file <code>/custom/layouts/theme.config.php</code>.</li>
   <li>Load the original file through PHP by using the <em>require</em> function.</li>
-  <li>Then add your CSS file to the asset collection.</li>
-  <li>Put your own custom CSS file in the following directory <code>/custom/css/MY-CSS.css</code></li>
+  <li>Then add your CSS file to the asset collection, so it will automatically be added to the template header.</li>
+  <li>Put your own custom CSS file in the <code>/custom/css/MY-CSS.css</code> directory and JavaScript in the <code>/custom/js/MY-JS.js</code> directory.</li>
 </ol>
 
 <pre><code>&lt;?php
@@ -58,9 +58,12 @@
 require(__DIR__.'/../../layouts/theme.config.php');
 
 // add css
-$this['asset']->addFile('css', 'css:MY-CSS.css'); </code></pre>
+$this['asset']->addFile('css', 'css:MY-CSS.css');
 
-<h2>Example of LESS overrides</h2>
+// add script
+$this['asset']->addFile('js', 'js:MY-JS.js');</code></pre>
+
+<h2>Custom LESS</h2>
 
 <p>Let's say you want to add your own custom code to the <code>theme.less</code>.</p>
 
@@ -74,18 +77,53 @@ $this['asset']->addFile('css', 'css:MY-CSS.css'); </code></pre>
 
 // Your custom code here</code></pre>
 
-<h2>Example of how to add custom JavaScript</h2>
+<h3>Add a LESS file</h3>
 
-<ol>
-  <li>Create a new file <code>/custom/layouts/theme.config.php</code>.</li>
-  <li>Load the original file through PHP using the <em>require</em> function.</li>
-  <li>Then add your JS file to the asset collection.</li>
-  <li>Put your own custom JS file in the following directory <code>/custom/js/MY-JS.js</code></li>
-</ol>
+<p>The <code>config.php</code> registers all LESS files for compilation. When hitting <em>Compile LESS</em> in the <em>Settings</em> section of the theme settings, these files will be compiled into CSS and saved in the theme's <code>/styles/MY-STYLE/css</code> folder. If you want to add your own LESS file to be compiled into CSS, you need to register it here as well.</p>
 
-<pre><code>&lt;?php
+<pre><code>'less' =&gt; array(
 
-require(__DIR__.'/../../layouts/theme.config.php');
+    'vars' =&gt; array(
+        'less:theme.less'
+    ),
 
-// add script
-$this['asset']->addFile('js', 'js:MY-JS.js');</code></pre>
+    'files' =&gt; array(
+        '/css/theme.css'     =&gt; 'less:theme.less',
+        '/css/bootstrap.css  =&gt; 'less:bootstrap.less'
+    )
+
+),</code></pre>
+
+<h2>Modify or add system files</h2>
+
+<p>Check, if your files already exist in the <code>/layouts</code> directory. If it is empty or the required files are missing, copy them from the <code>/warp/systems/joomla/layouts</code> or <code>/warp/systems/wordpress/layouts</code> directory to the <code>/layouts</code> directory and edit them to your needs. If you want to learn more about the system specific output files, visit the <a href="http://docs.joomla.org/Category:Overrides">Joomla</a> and <a href="http://codex.wordpress.org/Template_Hierarchy">WordPress</a> Documentation.</p>
+
+<p>Alternatively, you can override the files in the <code>/custom</code> directory in order to make your changes update proof. Make sure only to copy the files you want to change. The other files will be loaded automatically from the system defaults.</p>
+
+<h3>Custom template files for WordPress</h3>
+
+<p>You can use different layouts for template files, for example pages, by creating files in your theme folder with the name prefix <em>page-</em> followed by the ID or page-slug.</p>
+
+<ul class="bullet">
+  <li><code>page-{id}.php</code></li>
+  <li><code>page-{slug}.php</code></li>
+</ul>
+
+<p>Let's say you want custom content for a page with the <em>ID 80</em>. Create a file in your <code>/custom</code> folder and name it <code>page-80.php</code> with the following content.</p>
+
+<pre>
+<code>&lt;?php get_header(); ?>
+
+Put your content here...
+
+&lt;?php get_footer(); ?></code>
+</pre>
+
+<p><span class="badge">NOTE</span> In the backend you can even assign a custom style to the page, so you'll get a completely different look.</p>
+
+
+<h2>Add a custom font</h2>
+
+<p>Warp gives you access to all fonts available in the <a href="http://www.google.com/fonts/">Google fonts</a> directory. But occasionally you might want to add your own font or one that is not provided by Google.</p>
+
+<p>To do so, just create a folder, for example <code>fonts</code> and add your font files to it. Then add the <code>@font-face</code> rule for your fonts to <code>/less/theme.less</code> and lastly add your font option and the correct path to the list inside <code>/less/customizer.json</code>. And that's it! You can now select your font from within the customizer.</p>
