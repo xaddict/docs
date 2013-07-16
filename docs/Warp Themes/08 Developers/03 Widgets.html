@@ -1,15 +1,10 @@
 <h1 class="title">Widgets/Modules</h1>
 
-<p class="article-lead">Learn how to create new widget positions, layouts and styles.</p>
-
-<h2>Create a new widget position</h2>
+<p class="article-lead">Learn how to create new positions, layouts and styles for WordPress widgets and Joomla modules.</p>
 
 <p>Adding a new position for modules or widgets to your theme is fairly straightforward. You have to name a position and define where the position gets rendered within the {doc: theme-layout text: theme layout}.</p>
 
-
-<p><span class="badge">NOTE</span> You can override all files in your custom directory. Just copy whichever file you wish to modify to the <code>/custom</code> directory. This will keep your changes update proof.</p>
-
-<h3>Add position and style options</h3>
+<h2>Add a new position</h2>
 
 <p>Add a new position to the <code>templateDetails.xml</code> for Joomla or the <code>theme.xml</code> for WordPress to make your content management system know it exists. The new option will then be displayed in your theme settings.</p>
 
@@ -17,23 +12,30 @@
 &lt;position&gt;MY-POSITION&lt;/position&gt;
 &lt;position&gt;bottom-a&lt;/position&gt;</code></pre>
 
-<h4>Modules/Widgets Settings</h4>
+<h3>Add settings</h3>
 
-<p>With the <code>settings</code> attribute you can control the options for the widget appearance of your position. You will find these in the <em>Modules</em> or <em>Widgets</em> panel of your theme settings. Available values are <code>class</code>, <code>style</code>, <code>icon</code>, <code>badge</code> and <code>display</code>. Additionally, <code>title</code> and <code>assignment</code> are available in WordPress.</p>
+<p>With the <code>settings</code> attribute you can control the options for the widget appearance of your position. You will find these in the <em>Modules/Widgets</em> panel of your theme settings. Available values are <code>class</code>, <code>style</code>, <code>icon</code>, <code>badge</code> and <code>display</code>. Additionally, <code>title</code> and <code>assignment</code> are available in WordPress.</p>
 
-<pre><code>&lt;position settings=""&gt;MY-POSITION&lt;/position&gt;</code></pre>
+<pre><code>&lt;!-- all option are available --&gt; 
+&lt;position&gt;MY-POSITION&lt;/position&gt;
+
+&lt;!-- no option are available --&gt; 
+&lt;position settings=""&gt;MY-POSITION&lt;/position&gt;
+
+&lt;!-- only the style and badge options are available --&gt; 
+&lt;position settings="style badge"&gt;MY-POSITION&lt;/position&gt;</code></pre>
 
 <p><span class="badge">NOTE</span> If no <code>settings</code> attribute is given, your position automatically shows all available options. If you use the <code>settings</code> attribute without adding a value, it won't be displayed in the <em>Modules</em> or <em>Widgets</em> panel at all.</p>
 
-<p>Get more information about <code>settings</code> in the {doc: widgets text: Widgets/Modules} chapter.</p>
+<p>Get more information about <code>settings</code> in the {doc: widgets text: Widgets/Modules} chapter of the <em>Get Started</em> section.</p>
 
-<h3>Add Settings &amp; Layouts options</h3>
+<h2>Theme settings for positions</h2>
 
-<p>To make the theme options of the <em>Settings</em> and <em>Layouts</em> panels for your position available, you have to add your new position to the <code>config.xml</code>.</p>
+<p>Edit the <code>config.xml</code> to add further position options in the theme settings to the <em>Settings</em> and <em>Layouts</em> panels.</p>
 
-<h4>Settings options</h4>
+<h3>Set default widget rendering for your position</h3>
 
-<p>By adding a new <code>&lt;row&gt;</code> element to the <em>Settings</em> section of the <code>config.xml</code>, the option to choose a default style for your position in the <em>Settings</em> panel of your theme settings will be displayed.</p>
+<p>By adding a new <code>&lt;row&gt;</code> element to table field <code>panel_default</code> in the <em>Settings</em> section your position will have the option to choose a default style.</p>
 
 <pre><code>&lt;fields name="Settings"&gt;
     ...
@@ -42,9 +44,9 @@
             &lt;row&gt;MY-POSITION&lt;/row&gt;
             ...</code></pre>
 
-<h4>Layouts options</h4>
+<h3>Set default layout rendering for your position</h3>
 
-<p>By adding a new <code>&lt;row&gt;</code> element to the <em>Layouts</em> section of the <code>config.xml</code>, the options to set a default layout, dividers, the preserve function or width and alignment of your position will be displayed in the <em>Layouts</em> panel.</p>
+<p>By adding a new <code>&lt;row&gt;</code> element to table field <code>grid</code> in the <em>Layouts</em> section your position will have options to set a layout, the responsive behavior and a divider.</p>
 
 <pre><code>&lt;fields name="Layouts"&gt;
     ...
@@ -54,16 +56,16 @@
             ...</code></pre>
 
 
-<p>Take a look at {doc: config text: this chapter} for more information on the <code>config.xml</code>. To get an overview of all widget/module options in the theme settings take a look at the {doc: settings text: Settings} and {doc: layouts text: Layouts} docs.</p>
+<p>Take a look at the {doc: config text: Config.xml} chapter for more information about it.</p>
 
 
-<h3>Render position</h3>
+<h2>Render position</h2>
 
 <p>The <code>layouts/theme.php</code> provides the basic markup of the theme. Here you can define where widget positions get rendered and add new ones.</p>
 
 <pre>
 <code>&lt;?php if ($this['widgets']-&gt;count('MY-POSITION')):?&gt;
-    &lt;section class="tm-MY-POSITION uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}"&gt;
+    &lt;section class="uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}"&gt;
         &lt;?php echo $this['widgets']-&gt;render('MY-POSITION', array('layout'=&gt;$this['config']-&gt;get(
         'grid.MY-POSITION.layout'))); ?&gt;
     &lt;/section&gt;
