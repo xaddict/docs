@@ -28,7 +28,6 @@
 
 <p>The <code>warp/layouts/</code> folder contains basic overrides made by the core framework. Each part of the core framework is universal and designed to work on every supported system.</p>
 
-
 <p>The cascades for the <code>js/</code>, <code>css/</code>, <code>less/</code> and <code>layouts/</code> folders are defined in the theme's <code>config.php</code>. If you want to register another folder in the cascade, you can do so here.</p>
 
 <pre><code>'paths' => array(
@@ -55,14 +54,14 @@
 
 <ol>
   <li>Create a new <code>theme.config.php</code> file inside the <code>custom/layouts</code> directory.</li>
-  <li>Load the original file through PHP by using the <em>require</em> rule.</li>
-  <li>Then add an <em>asset</em> to load your CSS file.</li>
-  <li>Add your own custom CSS file under following directory <code>custom/css/MY-CSS.css</code></li>
+  <li>Load the original file through PHP by using the <em>require</em> function.</li>
+  <li>Then add your CSS file to the asset collection.</li>
+  <li>Put your own custom CSS file under following directory <code>custom/css/MY-CSS.css</code></li>  
 </ol>
 
 <pre><code>&lt;?php
 
-require_once(__DIR__.'/../../layouts/theme.config.php');
+require(__DIR__.'/../../layouts/theme.config.php');
 
 // add css
 $this['asset']->addFile('css', 'css:MY-CSS.css'); </code></pre>
@@ -89,14 +88,14 @@ $this['asset']->addFile('css', 'css:MY-CSS.css'); </code></pre>
 
 <ol>
   <li>Create a new <code>theme.config.php</code> file inside the <code>custom/layouts</code> directory.</li>
-  <li>Load the original file through PHP by using the <em>require</em> rule.</li>
-  <li>Then add an <em>asset</em> to load your JS file.</li>
-  <li>Add your own custom JS file under following directory <code>custom/js/MY-JS.js</code></li>
+  <li>Load the original file through PHP using the <em>require</em> function.</li>
+  <li>Then add your JS file to the asset collection.</li>
+  <li>Put your own custom JS file under following directory <code>custom/js/MY-JS.js</code></li>
 </ol>
 
 <pre><code>&lt;?php
 
-require_once(__DIR__.'/../../layouts/theme.config.php');
+require(__DIR__.'/../../layouts/theme.config.php');
 
 // add script
 $this['asset']->addFile('js', 'js:MY-JS.js');</code></pre>
