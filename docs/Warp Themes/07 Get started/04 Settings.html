@@ -3,16 +3,14 @@
 <p class="article-lead">The general theme section allows you to control the behaviour and the overall appearance of your theme.</p>
 
 <h2>Style</h2>
-<p>The style section contains the customizer. Hit the <em>Customizer</em> button to add your own style or to modify an exciting style. After the customizer is loaded, you can easily customize colors, fonts, margins and even more settings of the theme. The customizer saves only the modified variables and automatically compiles them into CSS.</p>
+<p>The style section contains the customizer. Hit the <em>Customizer</em> button to add your own style or to modify an existing style. After the customizer is loaded, you can easily customize colors, fonts, margins and even more settings of the theme. The customizer saves only the modified variables and automatically compiles them into CSS.</p>
 
 <p>For further information, please take a look at our {doc: customizer text: Customizer tutorial}.</p>
-
-<hr>
 
 <h2>Development</h2>
 
 <h3>1. LESS Developer Mode</h3>
-<p>Check the first option and the <em>browser automatically compiles your LESS files</em> via Javascript every time you refresh the page. This provides an appropriate testing environment. It's not recommended to enable developer mode on the live site as the constant process of compiling is highly inefficient.</p>
+<p>Check the first option and the <em>browser automatically compiles your LESS files</em> via JavaScript every time you load a page. This provides an appropriate testing environment. It's not recommended to enable developer mode on the live site as the constant process of compiling is highly inefficient.</p>
 
 <h3>2. Dynamics Styles</h3>
 <p>The second option enables the browser to <em>load styles by URL</em>. This is useful, if you want to test different styles for your website. Disable this option, when your website goes live.</p>
@@ -20,9 +18,7 @@
 <h3>3. Compile LESS to CSS</h3>
 <p>To finish your LESS modifications, hit the <em>Compile LESS</em> button and all your changes will be compiled into the final CSS.</p>
 
-<p><span class="badge badge-danger">IMPORTANT</span> Make sure, you aren't developing in the <code>css/</code> folder within the theme and the <code>styles/YOUR-STYLE/css</code> folder, because this folder will be overridden as soon as you hit the <em>Compile LESS</em> button.</p>
-
-<hr>
+<p><span class="badge badge-danger">IMPORTANT</span> Make sure, you aren't developing in the <code>/css</code> folder within the theme and the <code>/styles/YOUR-STYLE/css</code> folder, because this folder will be overridden as soon as you hit the <em>Compile LESS</em> button.</p>
 
 <h2>Compression</h2>
 <p>To optimize page load time, choose one of the following compression options.</p>
@@ -55,12 +51,8 @@
 </table>
 
 
-<hr>
-
 <h2>Responsive</h2>
 <p>The viewport meta tag controls the layout on mobile browsers. If it's not set, the default width on mobile is 980px and the site will look the same like on desktops.</p>
-
-<hr>
 
 <h2>Specific Joomla &amp; WordPress Setting</h2>
 <p>Warp provides the following specific Joomla and WordPress theme settings:</p>
@@ -71,29 +63,22 @@
 <h3>Post Settings (WordPress)</h3>
 <p>Display your posts up to a 4 column layout and define whether the ordering is across or down columns. Additionally check the <a href="http://codex.wordpress.org/Function_Reference/wpautop">wpautop</a> option to automatically change double line-breaks in your posts into HTML paragraphs.</p>
 
-<hr>
-
 <h2>Content</h2>
 <p>Enable or disable the To-top scroller and the Warp branding.</p>
 
-<hr>
-
 <h2>Social Buttons</h2>
 <p> To enable the users to share articles with others, activate the social button option. It inserts small widgets below your articles. These are loaded via JavaScript from <a href="https://dev.twitter.com/docs/tweet-button">Twitter</a>,<a href="http://developers.facebook.com/docs/reference/plugins/follow/"> Facebook</a> or <a href="https://developers.google.com/+/web/share/">Google+</a>.</p>
-
-<hr>
 
 <h2>Widgets/Modules</h2>
 <p>Set the default widget and module styles for the specific positions. </p>
 
   <p><span class="badge">NOTE</span> This style will be overwritten as soon as you set a second style for a single widget/module in the {doc: widgets text: widget/module settings}.</p>
 
-<hr>
-
 <h2>Additional Scripts</h2>
 <p>Here you can insert additional scripts like the Google Analytics tracking code below, for example. It will be added before the closing body tag in the theme.</p>
 
 <pre>
+  <code>
 var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-XXXXX-X']);
   _gaq.push(['_trackPageview']);
@@ -103,6 +88,7 @@ var _gaq = _gaq || [];
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+  </code>
 </pre>
 
 <p>For further information, take a look at the <a href="https://developers.google.com/analytics/devguides/collection/gajs/">Google Analytics tutorial</a>.</p>

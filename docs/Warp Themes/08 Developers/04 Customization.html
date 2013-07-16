@@ -6,8 +6,6 @@
 
 <p>We will explain the override cascade a bit further. If you just want to know, how to override theme files, jump down to the appropriate examples.</p>
 
-<hr>
-
 <h2>Override cascade</h2>
 
 <p>As an example, this is what the override hierarchy for the <code>layouts/</code> folder would look like.</p>
@@ -38,15 +36,11 @@
   'layouts'  => array(__DIR__.'/layouts, __DIR__.'/custom/layouts')
 ),</code></pre>
 
-<hr>
-
 <h2>Example of layout overrides</h2>
 
 <p>To customize the general theme layout, you need to override the <code>layouts/theme.php</code>. To do so, copy the file into the theme's <code>custom/layouts/</code> directory and start adding your own PHP code.</p>
 
 <p>You can also override system files. For more information, take a look at {doc: system-overrides text: this tutorial}.</p>
-
-<hr>
 
 <h2>Example of how to add custom CSS</h2>
 
@@ -66,8 +60,6 @@ require(__DIR__.'/../../layouts/theme.config.php');
 // add css
 $this['asset']->addFile('css', 'css:MY-CSS.css'); </code></pre>
 
-<hr>
-
 <h2>Example of LESS overrides</h2>
 
 <p>Let's say you want to add your own custom code to the <code>theme.less</code>.</p>
@@ -81,8 +73,6 @@ $this['asset']->addFile('css', 'css:MY-CSS.css'); </code></pre>
 <pre><code>@import "../../less/theme.less";
 
 // Your custom code here</code></pre>
-
-<hr>
 
 <h2>Example of how to add custom JavaScript</h2>
 

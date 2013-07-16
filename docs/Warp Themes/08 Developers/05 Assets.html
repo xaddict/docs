@@ -4,16 +4,12 @@
 
 <p>The configuration file <code>layouts/theme.config.php</code> initializes all PHP classes and loads the necessary CSS and JavaScript. If you need to load custom CSS and JavaScript files, this is the place to do it. Enabled compression and Data URI will automatically be applied to all files you add here. Find out more about overriding theme files with your custom CSS or JavaScript in the {doc: customization text: Customization} doc.</p>
 
-<hr>
-
 <h2>Add a JavaScript file</h2>
 
 <p>If you want to add your own script, simply copy it to the <code>js/</code> directory of the theme and add the following to the <code>theme.config.php</code> configuration file, so the file will automatically be added to the template header.</p>
 
 <pre><code>// add javascripts
 $this['asset']->addFile('js', 'js:my.js');</code></pre>
-
-<hr>
 
 <h2>Add a CSS file</h2>
 
@@ -22,11 +18,9 @@ $this['asset']->addFile('js', 'js:my.js');</code></pre>
 <pre><code>// load css
 $this['asset']->addFile('css', 'css:my.css');</code></pre>
 
-<hr>
-
 <h2>Add a LESS file</h2>
 
-<p>The <code>config.php</code> registers all LESS files for compilation. When hitting <em>Compile LESS</em> in the <em>Settings</em> section of the Warp administration, these files will be compiled into CSS and saved in the theme's <code>styles/STYLENAME/css/</code> folder. If you want to add your own LESS file to be compiled into CSS, you need to register it here as well.</p>
+<p>The <code>config.php</code> registers all LESS files for compilation. When hitting <em>Compile LESS</em> in the <em>Settings</em> section of the theme settings, these files will be compiled into CSS and saved in the theme's <code>styles/STYLENAME/css/</code> folder. If you want to add your own LESS file to be compiled into CSS, you need to register it here as well.</p>
 
 <pre><code>'less' =&gt; array(
 
@@ -40,8 +34,6 @@ $this['asset']->addFile('css', 'css:my.css');</code></pre>
     )
 
 ),</code></pre>
-
-<hr>
 
 <h2>Add a custom font</h2>
 

@@ -36,8 +36,6 @@ include($this['path']->path('layouts:theme.config.php'));
 
 &lt;/html&gt;</code></pre>
 
-<hr>
-
 <h3>Config object</h3>
 
 <p>Variables from the <code>config.xml</code> are stored in the <code>config</code> object. To access a variable's value, simply use the <em>get</em> method.</p>
@@ -50,8 +48,6 @@ include($this['path']->path('layouts:theme.config.php'));
 &lt;a class="tm-totop-scroller" data-uk="smooth-scroll" href="#"&gt;&lt;/a&gt;
 &lt;?php endif; &gt;</code></pre>
 
-<hr>
-
 <h3>Widget object</h3>
 
 <p>The widgets of the page are stored in the <code>widgets</code> object. To render all widgets in a position, use the <em>render</em> method. You can check, whether any widgets are published in a position, by using the <em>count</em> method.</p>
@@ -63,8 +59,6 @@ include($this['path']->path('layouts:theme.config.php'));
 ?php if ($this['widgets']->count('top-a')) : ?&gt;
 &lt;?php echo $this['widgets']->render('top-a', array('layout'=>'equal')); ?&gt;
 &lt;?php endif; ?&gt;</code></pre>
-
-<hr>
 
 <h2>theme.config.php</h2>
 

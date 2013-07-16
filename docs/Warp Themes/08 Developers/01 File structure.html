@@ -2,26 +2,26 @@
 
 <p class="article-lead">Get an overview of how all source files of Warp 7 based themes are organized.</p>
 
-<pre><strong>css/</strong>
+<pre><strong>/css</strong>
   ie8.css
-<strong>custom/</strong>
-<strong>images/</strong>
-<strong>js/</strong>
+<strong>/custom</strong>
+<strong>/images</strong>
+<strong>/js</strong>
   theme.js
-<strong>layouts/</strong>
+<strong>/layouts</strong>
   theme.config.php
   theme.php
   widget.php
-<strong>less/</strong>
-  bootstrap/
-  uikit/
+<strong>/less</strong>
+  /bootstrap
+  /uikit
   bootstrap.less
   customizer.json
   theme.less
   uikit.less
-<strong>styles/</strong>
-  STYLENAME/
-<strong>warp/</strong>
+<strong>/styles</strong>
+  /STYLENAME
+<strong>/warp</strong>
 apple_touch_icon.png
 changelog.php
 config.default.json
@@ -32,7 +32,7 @@ favicon.ico
 templateDetails.xml/theme.xml
 warp.php</pre>
 
-<h3>css/</h3>
+<h3>/css</h3>
 
 <p>Contains the <code>ie8.css</code> file.</p>
 
@@ -51,21 +51,15 @@ warp.php</pre>
   </tbody>
 </table>
 
-<hr>
-
-<h3>custom/</h3>
+<h3>/custom</h3>
 
 <p>This is the place, where you can store all your {doc: customization text: custom markup and additional files}.</p>
 
-<hr>
+<h3>/images</h3>
 
-<h3>images/</h3>
+<p>The <code>/images</code> folder contains all images used in the theme.</p>
 
-<p>The <code>images/</code> folder contains all images used in the theme.</p>
-
-<hr>
-
-<h3>js/</h3>
+<h3>/js</h3>
 
 <p>All theme specific JavaScript can be found in this folder.</p>
 
@@ -84,9 +78,7 @@ warp.php</pre>
   </tbody>
 </table>
 
-<hr>
-
-<h3>layouts/</h3>
+<h3>/layouts</h3>
 
 <p>This folder contains the core files responsible for the theme's layout.</p>
 
@@ -113,30 +105,9 @@ warp.php</pre>
   </tbody>
 </table>
 
-<hr>
+<h3>/less</h3>
 
-<h3>less/</h3>
-
-<p>All LESS files of your theme are stored in this folder. Changes to these files will be compiled into CSS and saved in the <code>styles/STYLENAME/css/</code> folder.</p>
-
-<table class="zebra">
-  <thead>
-    <tr>
-      <td>Folder</td>
-      <td>Description</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>bootstrap</code></td>
-      <td>Contains all Bootstrap related LESS files.</td>
-    </tr>
-    <tr>
-      <td><code>uikit</code></td>
-      <td>Contains all components of UIkit, the frontend framework on which Warp is built.</td>
-    </tr>
-  </tbody>
-</table>
+<p>All LESS files of your theme are stored in this folder. Changes to these files will be compiled into CSS and saved in the <code>/styles/STYLENAME/css</code> folder.</p>
 
 <table class="zebra">
   <thead>
@@ -147,6 +118,14 @@ warp.php</pre>
   </thead>
   <tbody>
     <tr>
+      <td><code>/bootstrap</code></td>
+      <td>Contains all Bootstrap related LESS files.</td>
+    </tr>
+    <tr>
+      <td><code>/uikit</code></td>
+      <td>Contains all components of UIkit, the frontend framework on which Warp is built.</td>
+    </tr>
+    <tr>
       <td><code>bootstrap.less</code></td>
       <td>Joomla! only: Imports all Bootstrap components and related files. For more information, take a look at the <a href="http://twitter.github.io/bootstrap/">Bootstrap website</a>.</td>
     </tr>
@@ -156,24 +135,18 @@ warp.php</pre>
     </tr>
     <tr>
       <td><code>theme.less</code></td>
-      <td>Provides the theme's markup and defines its styles and compiles the <code>uikit/uikit.less</code> file within the <code>theme.css</code> file. You can also add your own LESS here.</td>
+      <td>Provides the theme's markup and defines its styles and compiles the <code>/uikit/uikit.less</code> file within the <code>theme.css</code> file. You can also add your own LESS here.</td>
     </tr>
   </tbody>
 </table>
 
-<hr>
-
-<h3>styles/</h3>
+<h3>/styles</h3>
 
 <p>Here you can find all available style variations with the compiled CSS files. You don't actually work in this folder. Changes made in one of the LESS files will automatically be compiled into CSS and saved in this folder.</p>
 
-<hr>
-
-<h3>warp/</h3>
+<h3>/warp</h3>
 
 <p>This folder contains the actual Warp 7 core framework.</p>
-
-<hr>
 
 <h2>Root files</h2>
 
@@ -215,17 +188,6 @@ warp.php</pre>
       <td><code>warp.php</code></td>
       <td>This file loads the Warp Framework.</td>
     </tr>
-  </tbody>
-</table>
-
-<table class="zebra">
-  <thead>
-    <tr>
-      <td>File</td>
-      <td>Description</td>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><code>favicon.ico</code></td>
       <td>Will be displayed in your browser bar. To change the favicon, simply replace that file.</td>
