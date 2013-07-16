@@ -2,30 +2,44 @@
 
 <p class="article-lead">The config.xml defines the Warp7 theme settings.</p>
 
-<h2>Markup</h2>
+<p>In the theme settings, you can control basic preferences for the theme layouts, widgets and menus. These settings are defined by <code>&lt;fields&gt;</code> and <code>&lt;field&gt;</code> elements. A <code>&lt;field&gt;</code> element is always inside a <code>&lt;fields&gt;</code> element.</p>
 
-<p>In the theme settings, you can control basic preferences for the theme layouts, widgets and menus. These settings are defined by <code>&lt;fields&gt;</code> and <code>&lt;field&gt;</code> elements. The <code>&lt;fields&gt;</code> elements define menu tabs and the <code>&lt;field&gt;</code> elements define the options. A <code>&lt;field&gt;</code> element is always inside a <code>&lt;fields&gt;</code> element. Here you can see the basic markup for options in the <code>config.xml</code>.</p>
+<h2>&lt;fields&gt; elements</h2>
 
-<pre><code>&lt;fields&gt;
-    &lt;field&gt;&lt;/field&gt;
+<p>The <code>&lt;fields&gt;</code> elements define menu tabs.</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;config&gt;
+    &lt;fields name="Settings" icon="uk-icon-cogs"&gt;
+        ...
+    &lt;/fields&gt;
+    &lt;fields name="Layouts" icon="uk-icon-columns"&gt;
+        ...
+    &lt;/fields&gt;
+    &lt;fields name="Modules" icon="uk-icon-th"&gt;
+        ...
+    &lt;/fields&gt;
+    &lt;fields name="Menus" icon="uk-icon-reorder"&gt;
+        ...
+    &lt;/fields&gt;
+    &lt;fields name="Information" icon="uk-icon-info-sign"&gt;
+        ...
+    &lt;/fields&gt;
+&lt;/config&gt;</code></pre>
+
+<h3>Add a new menu item</h3>
+
+<p>The <code>&lt;fields&gt;</code> element will add a new tab to the theme settings. The value of the <code>name</code> attribute will render the tab name.</p>
+
+<pre><code>&lt;fields name="MY-MENUITEM" icon="uk-icon-info-sign"&gt;
     ...
 &lt;/fields&gt;</code></pre>
 
-<h3>Add a new menu item with &lt;fields&gt;</h3>
+<h2>&lt;field&gt; elements</h2>
 
-<p>The <code>&lt;fields&gt;</code> element will add a new tab to the theme settings, for example <em>Information</em>.</p>
+<p><code>&lt;field&gt;</code> elements inside <code>&lt;fields&gt;</code> elements define the options for the menu tabs.</p>
 
-<pre><code>&lt;fields name="Information" icon="uk-icon-info-sign"&gt;
-    ...
-&lt;/fields&gt;</code></pre>
-
-<h3>Add new settings with &lt;field&gt;</h3>
-
-<p>A <code>&lt;field&gt;</code> element will add settings to the theme settings. For example <em>dynamic_style</em>.</p>
-
-<pre><code>&lt;field type="checkbox" name="dynamic_style" value="1" label="Allow styles to be loaded by URL." /&gt;</code></pre>
-
-<h4>Basic XML types</h4>
+<h3>Basic XML types</h3>
 
 <p>You can use basic XML types to create new options for your theme settings. This could be for example a radio button, a check box or an input field.</p>
 
@@ -65,22 +79,50 @@
 
 <p>There are also some Warp7 specific types available: <code>layouts</code>, <code>verify</code>, <code>styles</code>, <code>compile</code> and <code>info</code>.</p>
 
+<h3>Markup example</h3>
+
+<pre><code>// Section field
+&lt;field type="section" name="Development" description="Always uncheck following options for your production website." /&gt;
+
+// Checkbox field
+&lt;field type="checkbox" name="dynamic_style" value="1" label="Allow styles to be loaded by URL." /&gt;
+
+// Select field
+&lt;field type="select" name="compression" default="0"&gt;
+    &lt;option value="0"&gt;None&lt;/option&gt;
+    &lt;option value="1"&gt;Minify&lt;/option&gt;
+    &lt;option value="2"&gt;Minify + Data URIs&lt;/option&gt;
+    &lt;option value="3"&gt;Minify + Data URIs + Gzip&lt;/option&gt;
+&lt;/field&gt;
+
+// Textarea field
+&lt;field type="textarea" name="tracking_code" class="uk-form-width-large" rows="8" /&gt;
+
+// Radiobutton field
+&lt;field type="radio" name="my_option" value="1" label="Description" /&gt;</code></pre>
+
+<h3>Add new settings</h3>
+
+<p>A <code>&lt;field&gt;</code> element will add settings and is always nested in a <code>&lt;fields&gt;</code> element.</p>
+
+<pre><code>&lt;field type="checkbox" name="MY-OPTION" value="1" label="Description" /&gt;</code></pre>
+
 <h2>Add functionality to an option</h2>
 
-<p>To give your new option a functionality, you need to respond to the <code>name</code> attribute of the <code>&lt;field&gt;</code> element with the <code>$this['config']->get('MY-OPTION')</code> syntax. For example the <em>Settings &gt; Responsive</em> setting:</p>
+<p>To give your new option a functionality, you need to respond to the <code>name</code> attribute of the <code>&lt;field&gt;</code> element with the <code>$this['config']->get('MY-OPTION')</code> syntax.</p>
 
-<pre><code>&lt;?php if($this['config']-&gt;get('responsive', true)): ?&gt;
-&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+<pre><code>&lt;?php if($this['config']-&gt;get('MY-OPTION')): ?&gt;
+&lt;p&gt;Hello World&lt;/p&gt;
 &lt;?php endif; ?&gt;;</code></pre>
 
 <p>The config.xml:</p>
 
-<pre><code>&lt;field type="checkbox" name="responsive" value="0" label="Disable the viewport meta tag." /&gt;</code></pre>
+<pre><code>&lt;field type="checkbox" name="MY-OPTION" value="0" label="Description." /&gt;</code></pre>
 
 <h2>config.json</h2>
 
 <p>You can find all your saved settings in the minified <code>config.json</code> file. With every new saving process, the file will be overridden.</p>
 
-<p><span class="badge">NOTE</span> For a better look, use the <a href="http://jsonformatter.curiousconcept.com/">JSON Formatter</a> - this will bring your minified file into an easily readable markup.</p>
+<p><span class="badge">NOTE</span> For a better look, use the <a href="http://jsonformatter.curiousconcept.com/">JSON Formatter</a> - this will bring your minified file into easily readable markup.</p>
 
 <p>Warp themes provide a separate <code>config.default.json</code> file, where the default theme settings are stored. This gives you the opportunity to restore your backend to the default settings and backup your own <code>config.json</code> file, making your settings update proof.</p>
