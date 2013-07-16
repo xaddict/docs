@@ -1,10 +1,10 @@
 <h1 class="title">Config.xml</h1>
 
-<p class="article-lead">The config.xml defines the Warp7 administration settings.</p>
+<p class="article-lead">The config.xml defines the Warp7 theme settings.</p>
 
-<h2>Administration options</h2>
+<h2>Markup</h2>
 
-<p>In the administration options, you can control basic preferences for the theme layouts, widgets and menus. These options are defined by <code>&lt;fields&gt;</code> and <code>&lt;field&gt;</code> elements. The <code>&lt;fields&gt;</code> elements define menu tabs and the <code>&lt;field&gt;</code> elements define the options. A <code>&lt;field&gt;</code> element is always inside a <code>&lt;fields&gt;</code> element. Here you can see the basic markup for options in the <code>config.xml</code>.</p>
+<p>In the theme settings, you can control basic preferences for the theme layouts, widgets and menus. These settings are defined by <code>&lt;fields&gt;</code> and <code>&lt;field&gt;</code> elements. The <code>&lt;fields&gt;</code> elements define menu tabs and the <code>&lt;field&gt;</code> elements define the options. A <code>&lt;field&gt;</code> element is always inside a <code>&lt;fields&gt;</code> element. Here you can see the basic markup for options in the <code>config.xml</code>.</p>
 
 <pre><code>&lt;fields&gt;
     &lt;field&gt;&lt;/field&gt;
@@ -13,7 +13,7 @@
 
 <h3>Add a new menu item with &lt;fields&gt;</h3>
 
-<p>The <code>&lt;fields&gt;</code> element will add a new tab to the Warp7 administration, for example <em>Information</em>.</p>
+<p>The <code>&lt;fields&gt;</code> element will add a new tab to the theme settings, for example <em>Information</em>.</p>
 
 <pre><code>&lt;fields name="Information" icon="uk-icon-info-sign"&gt;
     ...
@@ -21,13 +21,13 @@
 
 <h3>Add new settings with &lt;field&gt;</h3>
 
-<p>A <code>&lt;field&gt;</code> element will add settings to the Warp7 administration. For example <em>dynamic_style</em>.</p>
+<p>A <code>&lt;field&gt;</code> element will add settings to the theme settings. For example <em>dynamic_style</em>.</p>
 
 <pre><code>&lt;field type="checkbox" name="dynamic_style" value="1" label="Allow styles to be loaded by URL." /&gt;</code></pre>
 
 <h4>Basic XML types</h4>
 
-<p>You can use basic XML types to create new settings for your Warp7 backend. This could be for example a radio button, a check box or an input field.</p>
+<p>You can use basic XML types to create new options for your theme settings. This could be for example a radio button, a check box or an input field.</p>
 
 <table class="zebra">
   <thead>
@@ -69,7 +69,7 @@
 
 <p>To give your new option a functionality, you need to respond to the <code>name</code> attribute of the <code>&lt;field&gt;</code> element with the <code>$this['config']->get('MY-OPTION')</code> syntax. For example the <em>Settings &gt; Responsive</em> setting:</p>
 
-<pre><code>&lt;?php if($this['config']-&lt;get('responsive', true)): ?&gt;
+<pre><code>&lt;?php if($this['config']-&gt;get('responsive', true)): ?&gt;
 &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
 &lt;?php endif; ?&gt;;</code></pre>
 
@@ -79,8 +79,8 @@
 
 <h2>config.json</h2>
 
-<p>You can find all your saved backend parameters in the minified <code>config.json</code> file. With every new saving process, the file will be overridden.</p>
+<p>You can find all your saved settings in the minified <code>config.json</code> file. With every new saving process, the file will be overridden.</p>
 
 <p><span class="badge">NOTE</span> For a better look, use the <a href="http://jsonformatter.curiousconcept.com/">JSON Formatter</a> - this will bring your minified file into an easily readable markup.</p>
 
-<p>Warp themes provide a separate <code>config.default.json</code> file, where the default backend settings are stored. This gives you the opportunity to restore your backend to the default settings and backup your own <code>config.json</code> file, making your backend settings update proof.</p>
+<p>Warp themes provide a separate <code>config.default.json</code> file, where the default theme settings are stored. This gives you the opportunity to restore your backend to the default settings and backup your own <code>config.json</code> file, making your settings update proof.</p>
