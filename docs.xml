@@ -3,15 +3,15 @@
   <section alias="warp-themes" name="Warp Themes" folder="Warp Themes">
     <separator label="Warp 7" />
     <category alias="get-started" name="Get Started" folder="07 Get Started">
-      <doc alias="joomla" name="Joomla" file="01 Joomla.html"/>
-      <doc alias="wordpress" name="WordPress" file="02 WordPress.html"/>
-      <doc alias="update" name="Update" file="03 Update.html"/>
-      <doc alias="settings" name="Settings" file="04 Settings.html"/>
-      <doc alias="customizer" name="Customizer" file="05 Customizer.html"/>
-      <doc alias="layouts" name="Layouts" file="06 Layouts.html"/>
-      <doc alias="widgets" name="Widgets/Modules" file="07 Widgets.html"/>
-      <doc alias="menus" name="Menus" file="08 Menus.html"/>
-      <doc alias="information" name="Information" file="09 Information.html"/>
+      <doc alias="joomla" name="Setup a Joomla Template" file="01 Joomla.html"/>
+      <doc alias="wordpress" name="Setup a WordPress Theme" file="02 WordPress.html"/>
+      <doc alias="update" name="How to Update" file="03 Update.html"/>
+      <doc alias="settings" name="Theme Settings" file="04 Settings.html"/>
+      <doc alias="customizer" name="Style Customizer" file="05 Customizer.html"/>
+      <doc alias="layouts" name="Layout Settings" file="06 Layouts.html"/>
+      <doc alias="widgets" name="Widget/Module Settings" file="07 Widgets.html"/>
+      <doc alias="menus" name="Menu Settings" file="08 Menus.html"/>
+      <doc alias="information" name="Theme Information" file="09 Information.html"/>
     </category>
     <category alias="developers" name="Developers" folder="08 Developers">
       <doc alias="file-structure" name="File structure" file="01 File structure.html"/>
@@ -27,7 +27,7 @@
       <doc alias="file-permission-issues-2" name="File permission issues" file="02 File permission issues.html"/>
       <doc alias="javascript-errors-2" name="JavaScript errors" file="03 JavaScript errors.html"/>
       <doc alias="faq" name="FAQ" file="04 FAQ.html"/>
-      <doc alias="disable-responsive" name="Disable responsive layout" file="05 Disable responsive layout.html"/>
+      <doc alias="disable-responsive" name="How to disable responsiveness" file="05 How to disable responsiveness.html"/>
     </category>
     <separator label="Warp 6" />
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
