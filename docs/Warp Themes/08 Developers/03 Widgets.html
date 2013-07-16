@@ -7,7 +7,7 @@
 <p>Adding a new position for modules or widgets to your theme is fairly straightforward. You have to name a position and define where the position gets rendered within the {doc: theme-layout text: theme layout}.</p>
 
 
-<p><span class="badge">NOTE</span> You can override all files in your custom directory. Just copy whichever file you wish to modify to the <code>custom/</code> directory. This will keep your changes update proof.</p>
+<p><span class="badge">NOTE</span> You can override all files in your custom directory. Just copy whichever file you wish to modify to the <code>/custom</code> directory. This will keep your changes update proof.</p>
 
 <h3>Add position and style options</h3>
 
@@ -63,7 +63,7 @@
 
 <pre>
 <code>&lt;?php if ($this['widgets']-&gt;count('MY-POSITION')):?&gt;
-    &lt;section class="tm-MY-POSITION uk-grid uk-grid-gutter" data-uk="grid-match {target:'> div > .uk-panel'}"&gt;
+    &lt;section class="tm-MY-POSITION uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}"&gt;
         &lt;?php echo $this['widgets']-&gt;render('MY-POSITION', array('layout'=&gt;$this['config']-&gt;get(
         'grid.MY-POSITION.layout'))); ?&gt;
     &lt;/section&gt;
