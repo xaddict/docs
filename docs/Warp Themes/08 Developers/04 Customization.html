@@ -8,25 +8,25 @@
 
 <h2>Override cascade</h2>
 
-<p>As an example, this is what the override hierarchy for the <code>layouts/</code> folder would look like.</p>
+<p>As an example, this is what the override hierarchy for the <code>/layouts</code> folder would look like.</p>
 
 <h3>1. Custom folder</h3>
 
-<p>The <code>custom/layouts</code> folder of your theme is at the top of the hierarchy and modifications or additions you make here will override all other theme files. Also this folder will be preserved during updates, so it's the safest place to make your modifications.</p>
+<p>The <code>/custom/layouts</code> folder of your theme is at the top of the hierarchy and modifications or additions you make here will override all other theme files. Also this folder will be preserved during updates, so it's the safest place to make your modifications.</p>
 
 <h3>2. Theme folder</h3>
 
-<p>The theme's <code>layouts/</code> folder is the place where all the theme specific layout files are being stored.</p>
+<p>The theme's <code>/layouts</code> folder is the place where all the theme specific layout files are being stored.</p>
 
 <h3>3. Systems folder</h3>
 
-<p>The <code>warp/systems/joomla/layouts/</code> or <code>warp/systems/wordpress/layouts/</code> folder provides the individual system implementation needed to integrate with a particular CMS. This layer makes Warp adapt to a certain system to form a consistent API for theme development. </p>
+<p>The <code>/warp/systems/joomla/layouts</code> or <code>/warp/systems/wordpress/layouts</code> folder provides the individual system implementation needed to integrate with a particular CMS. This layer makes Warp adapt to a certain system to form a consistent API for theme development. </p>
 
 <h3>4. Warp folder</h3>
 
-<p>The <code>warp/layouts/</code> folder contains basic overrides made by the core framework. Each part of the core framework is universal and designed to work on every supported system.</p>
+<p>The <code>/warp/layouts</code> folder contains basic overrides made by the core framework. Each part of the core framework is universal and designed to work on every supported system.</p>
 
-<p>The cascades for the <code>js/</code>, <code>css/</code>, <code>less/</code> and <code>layouts/</code> folders are defined in the theme's <code>config.php</code>. If you want to register another folder in the cascade, you can do so here.</p>
+<p>The cascades for the <code>/js</code>, <code>/css</code>, <code>/less</code> and <code>/layouts</code> folders are defined in the theme's <code>config.php</code>. If you want to register another folder in the cascade, you can do so here.</p>
 
 <pre><code>'paths' => array(
   'theme'    => array(__DIR__),
@@ -38,7 +38,7 @@
 
 <h2>Example of layout overrides</h2>
 
-<p>To customize the general theme layout, you need to override the <code>layouts/theme.php</code>. To do so, copy the file into the theme's <code>custom/layouts/</code> directory and start adding your own PHP code.</p>
+<p>To customize the general theme layout, you need to override the <code>/layouts/theme.php</code>. To do so, copy the file into the theme's <code>/custom/layouts</code> directory and start adding your own PHP code.</p>
 
 <p>You can also override system files. For more information, take a look at {doc: system-overrides text: this tutorial}.</p>
 
@@ -47,10 +47,10 @@
 <p>Let's say you want to add your own custom CSS.</p>
 
 <ol>
-  <li>Create a new <code>theme.config.php</code> file inside the <code>custom/layouts</code> directory.</li>
+  <li>Create a new file <code>/custom/layouts/theme.config.php</code>.</li>
   <li>Load the original file through PHP by using the <em>require</em> function.</li>
   <li>Then add your CSS file to the asset collection.</li>
-  <li>Put your own custom CSS file under following directory <code>custom/css/MY-CSS.css</code></li>  
+  <li>Put your own custom CSS file in the following directory <code>/custom/css/MY-CSS.css</code></li>
 </ol>
 
 <pre><code>&lt;?php
@@ -65,7 +65,7 @@ $this['asset']->addFile('css', 'css:MY-CSS.css'); </code></pre>
 <p>Let's say you want to add your own custom code to the <code>theme.less</code>.</p>
 
 <ol>
-  <li>Create a new <code>theme.less</code> file inside the <code>custom/less/</code> directory.</li>
+  <li>Create a new file <code>/custom/less/theme.less</code>.</li>
   <li>Load the original file through an <code>@import</code> rule.</li>
   <li>Now you can start adding your own code to the file.</li>
 </ol>
@@ -77,10 +77,10 @@ $this['asset']->addFile('css', 'css:MY-CSS.css'); </code></pre>
 <h2>Example of how to add custom JavaScript</h2>
 
 <ol>
-  <li>Create a new <code>theme.config.php</code> file inside the <code>custom/layouts</code> directory.</li>
+  <li>Create a new file <code>/custom/layouts/theme.config.php</code>.</li>
   <li>Load the original file through PHP using the <em>require</em> function.</li>
   <li>Then add your JS file to the asset collection.</li>
-  <li>Put your own custom JS file under following directory <code>custom/js/MY-JS.js</code></li>
+  <li>Put your own custom JS file in the following directory <code>/custom/js/MY-JS.js</code></li>
 </ol>
 
 <pre><code>&lt;?php
