@@ -67,7 +67,7 @@
       <doc alias="javascript-errors" name="Javascript Errors" file="04 Javascript Errors.html"/>
       <doc alias="validation-errors" name="Validation Errors" file="05 Validation Errors.html"/>
       <doc alias="feature-and-compatibility-overview" name="Feature and Compatibility Overview" file="06 Feature and Compatibility Overview.html"/>
-      <doc alias="upgrading-to-joomla-3" name="Upgrading to Joomla 3" file="07 Upgrading to Joomla 3.html"/>
+      <doc alias="upgrading-to-joomla-3" name="Upgrading to Joomla 3.1" file="07 Upgrading to Joomla 3.html"/>
     </category>
     <separator label="Legacy" />
     <category alias="legacy-warp-55" name="Warp 5.5" folder="02 Legacy - Warp 5.5">
