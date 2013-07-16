@@ -55,11 +55,11 @@ include($this['path']->path('layouts:theme.config.php'));
 <pre><code>&lt;// render all widgets in Top A position
 &lt;?php echo $this['widgets']->render('top-a')); ?&gt;
 
-// apply equal to all widgets in Top A position
-?php if ($this['widgets']->count('top-a')) : ?&gt;
-&lt;?php echo $this['widgets']->render('top-a', array('layout'=>'equal')); ?&gt;
+// apply the parallel layout to all widgets in Top A position
+&lt;?php if ($this['widgets']->count('top-a')) : ?&gt;
+&lt;?php echo $this['widgets']->render('top-a', array('layout'=>'parallel')); ?&gt;
 &lt;?php endif; ?&gt;</code></pre>
 
 <h2>theme.config.php</h2>
 
-<p>While the <code>theme.php</code> basically only defines the theme's markup, the logic is outsourced to the <code>theme.config.php</code>. It is responsible for calculations, like the 3 column layout as well as the body classes and social buttons. For more information, take a look at {doc: assets text: JS, CSS and LESS}.</p>
+<p>While the <code>theme.php</code> basically only defines the theme's markup, the logic is outsourced to the <code>theme.config.php</code>. It is responsible for calculations, like the 3 column layout as well as the body classes and social buttons.</p>
