@@ -5,9 +5,9 @@
     <category alias="get-started" name="Get Started" folder="07 Get Started">
       <doc alias="joomla" name="Setup a Joomla Template" file="01 Joomla.html"/>
       <doc alias="wordpress" name="Setup a WordPress Theme" file="02 WordPress.html"/>
-      <doc alias="update" name="How to Update" file="03 Update.html"/>
+      <doc alias="update" name="How to update" file="03 Update.html"/>
       <doc alias="settings" name="Theme Settings" file="04 Settings.html"/>
-      <doc alias="customizer" name="Style Customizer" file="05 Customizer.html"/>
+      <doc alias="customizer" name="Customizer" file="05 Customizer.html"/>
       <doc alias="layouts" name="Layout Settings" file="06 Layouts.html"/>
       <doc alias="widgets" name="Widget/Module Settings" file="07 Widgets.html"/>
       <doc alias="menus" name="Menu Settings" file="08 Menus.html"/>
@@ -20,7 +20,7 @@
       <doc alias="customization" name="Customization" file="04 Customization.html"/>
       <doc alias="config" name="Config.xml" file="05 Config.html"/>
       <doc alias="languages" name="Languages" file="06 Languages.html"/>
-      <doc alias="error-pages" name="Error pages" file="07 Error pages.html"/>
+      <doc alias="error-pages" name="Error Pages" file="07 Error pages.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="09 Troubleshooting">
       <doc alias="installation-issues-2" name="Installation issues" file="01 Installation issues.html"/>
