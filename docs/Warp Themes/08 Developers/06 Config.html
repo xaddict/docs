@@ -11,8 +11,6 @@
     ...
 &lt;/fields&gt;</code></pre>
 
-<hr>
-
 <h3>Add a new menu item with &lt;fields&gt;</h3>
 
 <p>The <code>&lt;fields&gt;</code> element will add a new tab to the Warp7 administration, for example <em>Information</em>.</p>
@@ -20,8 +18,6 @@
 <pre><code>&lt;fields name="Information" icon="uk-icon-info-sign"&gt;
     ...
 &lt;/fields&gt;</code></pre>
-
-<hr>
 
 <h3>Add new settings with &lt;field&gt;</h3>
 
@@ -69,8 +65,6 @@
 
 <p>There are also some Warp7 specific types available: <code>layouts</code>, <code>verify</code>, <code>styles</code>, <code>compile</code> and <code>info</code>.</p>
 
-<hr>
-
 <h2>Add functionality to an option</h2>
 
 <p>To give your new option a functionality, you need to respond to the <code>name</code> attribute of the <code>&lt;field&gt;</code> element with the <code>$this['config']->get('MY-OPTION')</code> syntax. For example the <em>Settings &gt; Responsive</em> setting:</p>
@@ -82,8 +76,6 @@
 <p>The config.xml:</p>
 
 <pre><code>&lt;field type="checkbox" name="responsive" value="0" label="Disable the viewport meta tag." /&gt;</code></pre>
-
-<hr>
 
 <h2>config.json</h2>
 
