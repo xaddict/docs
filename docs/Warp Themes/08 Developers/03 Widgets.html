@@ -1,6 +1,6 @@
 <h1 class="title">Widgets/Modules</h1>
 
-<p class="article-lead">Learn how to create new widget positions, layouts and styles.</p>
+<p class="article-lead">Learn how to create new positions, layouts and styles for WordPress widgets and Joomla modules.</p>
 
 <p>Adding a new position for modules or widgets to your theme is fairly straightforward. You have to name a position and define where the position gets rendered within the {doc: theme-layout text: theme layout}.</p>
 
@@ -14,9 +14,16 @@
 
 <h3>Add settings</h3>
 
-<p>With the <code>settings</code> attribute you can control the options for the widget appearance of your position. You will find these in the <em>Modules</em> or <em>Widgets</em> panel of your theme settings. Available values are <code>class</code>, <code>style</code>, <code>icon</code>, <code>badge</code> and <code>display</code>. Additionally, <code>title</code> and <code>assignment</code> are available in WordPress.</p>
+<p>With the <code>settings</code> attribute you can control the options for the widget appearance of your position. You will find these in the <em>Modules/Widgets</em> panel of your theme settings. Available values are <code>class</code>, <code>style</code>, <code>icon</code>, <code>badge</code> and <code>display</code>. Additionally, <code>title</code> and <code>assignment</code> are available in WordPress.</p>
 
-<pre><code>&lt;position settings=""&gt;MY-POSITION&lt;/position&gt;</code></pre>
+<pre><code>&lt;!-- all option are available --&gt; 
+&lt;position&gt;MY-POSITION&lt;/position&gt;
+
+&lt;!-- no option are available --&gt; 
+&lt;position settings=""&gt;MY-POSITION&lt;/position&gt;
+
+&lt;!-- only the style and badge options are available --&gt; 
+&lt;position settings="style badge"&gt;MY-POSITION&lt;/position&gt;</code></pre>
 
 <p><span class="badge">NOTE</span> If no <code>settings</code> attribute is given, your position automatically shows all available options. If you use the <code>settings</code> attribute without adding a value, it won't be displayed in the <em>Modules</em> or <em>Widgets</em> panel at all.</p>
 
@@ -24,11 +31,11 @@
 
 <h2>Theme settings for positions</h2>
 
-<p>To make the theme options of the <em>Settings</em> and <em>Layouts</em> panels for your position available, you have to add your new position to the <code>config.xml</code>.</p>
+<p>Edit the <code>config.xml</code> to add further position options in the theme settings to the <em>Settings</em> and <em>Layouts</em> panels.</p>
 
-<h3>Set default widget rendering</h3>
+<h3>Set default widget rendering for your position</h3>
 
-<p>By adding a new <code>&lt;row&gt;</code> element to the <em>Settings</em> section the option to choose a default style for your position in the <em>Settings</em> panel of your administration will be displayed.</p>
+<p>By adding a new <code>&lt;row&gt;</code> element to table field <code>panel_default</code> in the <em>Settings</em> section your position will have the option to choose a default style.</p>
 
 <pre><code>&lt;fields name="Settings"&gt;
     ...
@@ -37,9 +44,9 @@
             &lt;row&gt;MY-POSITION&lt;/row&gt;
             ...</code></pre>
 
-<h3>Set default layout rendering</h3>
+<h3>Set default layout rendering for your position</h3>
 
-<p>By adding a new <code>&lt;row&gt;</code> element to the <em>Layouts</em> section the options to set a default layout, dividers, the preserve function or width and alignment of your position will be displayed in the <em>Layouts</em> panel.</p>
+<p>By adding a new <code>&lt;row&gt;</code> element to table field <code>grid</code> in the <em>Layouts</em> section your position will have options to set a layout, the responsive behavior and a divider.</p>
 
 <pre><code>&lt;fields name="Layouts"&gt;
     ...
@@ -49,7 +56,7 @@
             ...</code></pre>
 
 
-<p>Take a look at {doc: config text: this chapter} for more information on the <code>config.xml</code>. To get an overview of all widget/module options in the theme settings take a look at the {doc: settings text: Settings} and {doc: layouts text: Layouts} docs.</p>
+<p>Take a look at the {doc: config text: Config.xml} chapter for more information about it.</p>
 
 
 <h2>Render position</h2>
@@ -58,7 +65,7 @@
 
 <pre>
 <code>&lt;?php if ($this['widgets']-&gt;count('MY-POSITION')):?&gt;
-    &lt;section class="tm-MY-POSITION uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}"&gt;
+    &lt;section class="uk-grid" data-uk-grid-match="{target:'> div > .uk-panel'}"&gt;
         &lt;?php echo $this['widgets']-&gt;render('MY-POSITION', array('layout'=&gt;$this['config']-&gt;get(
         'grid.MY-POSITION.layout'))); ?&gt;
     &lt;/section&gt;
