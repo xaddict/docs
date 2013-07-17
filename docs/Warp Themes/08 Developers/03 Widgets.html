@@ -27,7 +27,7 @@
 
 <p><span class="badge">NOTE</span> If no <code>settings</code> attribute is given, your position automatically shows all available options. If you use the <code>settings</code> attribute without adding a value, it won't be displayed in the <em>Modules</em> or <em>Widgets</em> panel at all.</p>
 
-<p>Get more information about <code>settings</code> in the {doc: widgets text: Widgets/Modules} chapter of the <em>Get Started</em> section.</p>
+<p>Get more information about <code>settings</code> in the {doc: widgets text: Widget/Module Settings} chapter.</p>
 
 <h2>Theme settings for positions</h2>
 
@@ -35,7 +35,7 @@
 
 <h3>Set default widget rendering for your position</h3>
 
-<p>By adding a new <code>&lt;row&gt;</code> element to table field <code>panel_default</code> in the <em>Settings</em> section your position will have the option to choose a default style.</p>
+<p>By adding a new <code>&lt;row&gt;</code> element to the table field <code>panel_default</code> in the <em>Settings</em> section your position will have the option to choose a default style.</p>
 
 <pre><code>&lt;fields name="Settings"&gt;
     ...
@@ -46,7 +46,7 @@
 
 <h3>Set default layout rendering for your position</h3>
 
-<p>By adding a new <code>&lt;row&gt;</code> element to table field <code>grid</code> in the <em>Layouts</em> section your position will have options to set a layout, the responsive behavior and a divider.</p>
+<p>By adding a new <code>&lt;row&gt;</code> element to the table field <code>grid</code> in the <em>Layouts</em> section your position will have options to set a layout, the responsive behavior and a divider.</p>
 
 <pre><code>&lt;fields name="Layouts"&gt;
     ...
@@ -61,7 +61,7 @@
 
 <h2>Render position</h2>
 
-<p>The <code>layouts/theme.php</code> provides the basic markup of the theme. Here you can define where widget positions get rendered and add new ones.</p>
+<p>The <code>/layouts/theme.php</code> provides the basic markup of the theme. Here you can define where widget positions get rendered and add new ones.</p>
 
 <pre>
 <code>&lt;?php if ($this['widgets']-&gt;count('MY-POSITION')):?&gt;
