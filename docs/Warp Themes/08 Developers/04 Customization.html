@@ -1,6 +1,6 @@
 <h1 class="title">Customization</h1>
 
-<p class="article-lead">Learn how to add your own customizations and more about file hierarchy in Warp.</p>
+<p class="article-lead">Find out how to add your own customizations and learn more about file hierarchy in Warp.</p>
 
 <p>To provide as much flexibility as possible, Warp applies a special file cascade. If you include any file like CSS, JS or template PHP files, Warp looks successively in specific folders for the files and the first file found will be loaded. This gives you full flexibility to override any important theme related file.</p>
 
@@ -63,12 +63,12 @@ $this['asset']->addFile('css', 'css:MY-CSS.css');
 // add script
 $this['asset']->addFile('js', 'js:MY-JS.js');</code></pre>
 
-<h2>Custom LESS</h2>
+<h2>Add custom LESS</h2>
 
-<p>Let's say you want to add your own custom code to the <code>theme.less</code>. Best way is to override the original file.</p>
+<p>Let's say you want to add your own custom code to the <code>theme.less</code>. The best way is to override the original file.</p>
 
 <ol>
-  <li>Create a new file <code>/custom/less/theme.less</code> which override the original file.</li>
+  <li>Create a new file <code>/custom/less/theme.less</code> to override the original file.</li>
   <li>Load the original file through an <code>@import</code> rule.</li>
   <li>Now you can start adding your own code to the file.</li>
 </ol>
@@ -77,7 +77,7 @@ $this['asset']->addFile('js', 'js:MY-JS.js');</code></pre>
 
 // Your custom code here</code></pre>
 
-<p><span class="badge">NOTE</span> You can also override the <code>customizer.json</code> if you need to.</p>
+<p><span class="badge">NOTE</span> You can also override the <code>customizer.json</code>, if you need to.</p>
 
 <h3>Add a LESS file</h3>
 
@@ -101,9 +101,9 @@ $this['asset']->addFile('js', 'js:MY-JS.js');</code></pre>
 <p>Warp gives you access to all fonts available in the <a href="http://www.google.com/fonts/">Google fonts</a> directory. But occasionally you might want to add your own font or one that is not provided by Google.</p>
 
 <ol>
-  <li>Create a new folder <code>custom/fonts</code> and add your font files to it</li>
-  <li>Create a new <code>custom/less/theme.less</code> file like described above and add the <code>@font-face</code> rules for your fonts.</li>
-  <li>Create a new <code>custom/less/customizer.json</code> file and add your font option and the correct path to the list.</li>
+  <li>Create a new folder <code>/custom/fonts</code> and add your font files to it.</li>
+  <li>Create a new <code>/custom/less/theme.less</code> file like described above and add the <code>@font-face</code> rule for your font.</li>
+  <li>Create a new <code>/custom/less/customizer.json</code> file and add your font option and the correct path to the list.</li>
 </ol>
 
 <p>And that's it! You can now select your font from within the customizer.</p>
