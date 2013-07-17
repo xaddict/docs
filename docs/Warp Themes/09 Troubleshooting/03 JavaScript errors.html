@@ -6,9 +6,9 @@
 
 <h2>How to detect errors?</h2>
 
-<p>If your website does not work as you expect when you click something or an animation stopped working, this could be due to a script error. In this case the script-execution will be stopped by the browser.</p>
+<p>If your website does not work as you expect when you click something or an animation stopped working, this could be due to a script error. In this case the script execution will be stopped by the browser.</p>
 
-<p>The following developer tools show you script-errors including information about what went wrong, the file and line number and the line of source code that caused the error.</p>
+<p>The following developer tools show you script-errors including information about what went wrong, the file and line number and the source code that caused the error.</p>
 
 <table class="zebra">
   <thead>
@@ -19,12 +19,12 @@
   </thead>
   <tbody>
     <tr>
-      <td class="uk-width-25"><em>Browser Debug Console</em></td>
+      <td><em>Browser Debug Console</em></td>
       <td>One way is using the browser's debug console on the page where the error occurs. It will help you to identify the scripts and their related files on your webserver.</td>
     </tr>
     <tr>
       <td><em>Firebug and other browser WDT</em></td>
-      <td><a href="">Firebug for Firefox</a> allows you to inspect and non-destructively edit HTML and also includes a powerful JavaScript debugger. Other browsers like Chrome, Safari or Opera already have similar built-in tools.</td>
+      <td><a href="https://getfirebug.com/">Firebug for Firefox</a> allows you to inspect and non-destructively edit HTML and also includes a powerful JavaScript debugger. Other browsers like Chrome, Safari or Opera already have similar built-in tools.</td>
     </tr>
   </tbody>
 </table>
@@ -36,7 +36,7 @@
 <ol>
   <li>Once you have identified the extension, try to <em>disable</em> it to make sure your page works without any errors again.</li>
   <li>If the error is gone, you've found the extension causing the conflict.</li>
-  <li>Now you can look for the <em>extensions configuration option</em> and see if it lets you enable/disable loading a JavaScript library like jQuery to resolve the errors.</li>
+  <li>Now you can look for the <em>extensions configuration option</em> and see, if it lets you enable/disable loading a JavaScript library like jQuery to resolve the errors.</li>
 </ol>
 
 <h2>Prevent loading jQuery multiple times in Joomla 2.5?</h2>
@@ -50,4 +50,4 @@ if (!JFactory::getApplication()->get('jquery')) {
     ...
 }</code></pre>
 
-<p>You can also get in touch with the 3rd party extension developer and kindly ask them to implement this.</p>
+<p><span class="badge">NOTE</span> You can also get in touch with the 3rd party extension developer and kindly ask them to implement this.</p>

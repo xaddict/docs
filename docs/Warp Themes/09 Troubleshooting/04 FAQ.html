@@ -4,35 +4,35 @@
 
 <p>If you are having trouble or issues with your theme, this can have numerous causes. First of all, our built-in system check in the theme settings will automatically detect and inform you of common issues.</p>
 
-<h3>Why can't I save the theme configuration?</h3>
+<h2>Why can't I save the theme configuration?</h2>
 
 <p>This might be due to file permission issues. Please take a look at {doc: file-permission-issues-2 text: this tutorial} for more information.</p>
 
-<h3>How come can't I save the theme configuration after renaming the theme?</h3>
+<h2>How come can't I save the theme configuration after renaming the theme?</h2>
 
 <p>When renaming the theme directory <code>/THEME-NAME</code>, you also need to adjust the path set in the theme's <code>templateDetails.xml</code> to make sure the <code>addpath</code> attribute matches your theme's directory.</p>
 
 <pre><code>&lt;fields name="params" addfieldpath="/templates/THEME-NAME/..."&gt;</code></pre>
 
-<h3>Why is the theme settings unstyled?</h3>
+<h2>Why are the theme settings unstyled?</h2>
 
-<p>This is caused by JavaScript conflicts in the adminstration area. Most likely another jQuery library is being loaded by a 3rd party extension or plugin. Please read the documentation on {doc: javascript-errors-2 text: JavaScript errors} to resolve the issue.</p>
+<p>This is caused by JavaScript conflicts in the adminstration area. Most likely another jQuery library is being loaded by a 2rd party extension or plugin. Please read the documentation on {doc: javascript-errors-2 text: JavaScript errors} to resolve the issue.</p>
 
-<h3>The JavaScript effects stopped working. What happened?</h3>
+<h2>The JavaScript effects stopped working. What happened?</h2>
 
 <p>If you are having trouble with JavaScript effects &#150; for example, if the Accordion Menu stops working &#150; this might be due to a jQuery conflict. Please read the tutorial on {doc: javascript-errors-2 text: JavaScript errors} for further information.</p>
 
-<h3>Why is my site unstyled?</h3>
+<h2>Why is my site unstyled?</h2>
 
 <p>If no CSS is being loaded, this is probably due to file permission issues in the theme directory. Please take a look at {doc: file-permission-issues-2 text: this tutorial} to work out the problem.
 
-<h3>My site is only showing a blank page. Should I panic?</h3>
+<h2>My site is only showing a blank page. Should I panic?</h2>
 
 <p>No reason to panic. This is most likely due to a PHP error being thrown. You need to enable the <a href="http://www.php.net/manual/en/errorfunc.configuration.php#ini.display-errors">display_errors</a> parameter in your <code>php.ini</code>. That way error messages will be displayed on your site, so that you can detect the problem.</p>
 <p>Another way to check for PHP errors is to have a look at your PHP error log. Your host should have configured PHP to write that information to a log rather than output them on screen.</p>
-<p>Please check this <a href="http://coding.smashingmagazine.com/2011/11/30/a-guide-to-php-error-messages-for-designers/">guide to PHP error messages</a> for webdesigners for a more thorough view on the subject.</p>
+<p>Please check this <a href="http://coding.smashingmagazine.com/2011/11/20/a-guide-to-php-error-messages-for-designers/">guide to PHP error messages</a> for webdesigners for a more thorough view on the subject.</p>
 
-<h3>Why do I keep getting validation errors?</h3>
+<h2>Why do I keep getting validation errors?</h2>
 
 <p>A validator, like the <a href="http://validator.w3.org/">W3C Validation service</a>, may show you that your newly installed theme is not 100% valid as per its specifications, because it does not recognise widely adopted modern markup as yet or has issues detecting them. Let us take a look at an example of what is commonly flagged as "Invalid" markup.</p>
 

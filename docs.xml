@@ -12,6 +12,8 @@
       <doc alias="widgets" name="Widget/Module Settings" file="07 Widgets.html"/>
       <doc alias="menus" name="Menu Settings" file="08 Menus.html"/>
       <doc alias="information" name="Theme Information" file="09 Information.html"/>
+      <doc alias="feature-and-compatibility-overview" name="Feature and Compatibility Overview" file="10 Feature and Compatibility Overview.html"/>
+
     </category>
     <category alias="developers" name="Developers" folder="08 Developers">
       <doc alias="file-structure" name="File structure" file="01 File structure.html"/>
@@ -26,8 +28,8 @@
       <doc alias="installation-issues-2" name="Installation issues" file="01 Installation issues.html"/>
       <doc alias="file-permission-issues-2" name="File permission issues" file="02 File permission issues.html"/>
       <doc alias="javascript-errors-2" name="JavaScript errors" file="03 JavaScript errors.html"/>
-      <doc alias="faq" name="FAQ" file="04 FAQ.html"/>
       <doc alias="disable-responsive" name="How to disable responsiveness" file="05 How to disable responsiveness.html"/>
+      <doc alias="faq" name="FAQ" file="04 FAQ.html"/>
     </category>
     <separator label="Warp 6" />
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
@@ -65,7 +67,6 @@
       <doc alias="file-permission-issues" name="File Permission Issues" file="03 File Permission Issues.html"/>
       <doc alias="javascript-errors" name="Javascript Errors" file="04 Javascript Errors.html"/>
       <doc alias="validation-errors" name="Validation Errors" file="05 Validation Errors.html"/>
-      <doc alias="feature-and-compatibility-overview" name="Feature and Compatibility Overview" file="06 Feature and Compatibility Overview.html"/>
       <doc alias="upgrading-to-joomla-3" name="Upgrading to Joomla 3.1" file="07 Upgrading to Joomla 3.html"/>
     </category>
     <separator label="Legacy" />
