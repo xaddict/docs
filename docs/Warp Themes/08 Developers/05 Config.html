@@ -110,11 +110,11 @@
 
 <h3>Add new options</h3>
 
-<p>To create a new option, add a <code>field</code> element to the setting, i.e. inside the <code>fields</code> element, to which you want to add your option. You can also copy an existing one and modify it to your needs.</p>
+<p>To create a new option, add a <code>&lt;field&gt;</code> element to the setting, i.e. inside the <code>&lt;fields&gt;</code> element, to which you want to add your option. You can also copy an existing one and modify it to your needs.</p>
 
 <h2>config.json</h2>
 
-<p>The config.xml defines which theme settings are available. If someone saves the theme settings, they are saved in the minified <code>config.json</code> file. With every new saving process, the file will be overridden.</p>
+<p>The <code>config.xml</code> defines which theme settings are available. If someone saves the theme settings, they are saved in the minified <code>config.json</code> file. With every new saving process, the file will be overridden.</p>
 
 <p>Warp themes provide a separate <code>config.default.json</code> file, where the default theme settings are stored. This gives you the opportunity to restore your backend to the default settings and backup your own <code>config.json</code> file, making your settings update proof.</p>
 
@@ -122,4 +122,4 @@
 
 <h2>Config object</h2>
 
-<p>Variables from the config.xml are stored in the config object. To access a variable's value, simply use the get method. Learn more about it in the {doc: theme-layout text: theme layout} chapter.</p>
+<p>Variables from the <code>config.xml</code> are stored in the config object. To access a variable's value, simply use the get method. Learn more about it in the {doc: theme-layout text: theme layout} chapter.</p>
