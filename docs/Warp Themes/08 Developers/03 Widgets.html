@@ -75,3 +75,15 @@
 <p><span class="badge">NOTE</span> You only need to add the <code>$this['config']->get('grid.MY-POSITION.layout')</code> syntax, if you have declared an option in the <code>config.xml</code>.</p>
 
 <p>Take a look at {doc: theme-layout text: Theme Layout} for a better understanding of the widget render methods.</p>
+
+<h3>Advanced way to add CSS classes</h3>
+
+<p>If your position is declared as a new <code>&lt;row&gt;</code> in the table field <code>grid</code> of the <code>config.xml</code>, we provide a easy way to add the CSS classes. Just add the <code>&lt;?php echo $grid_classes['MY-POSITION']; ?&gt;</code> to your <code>class</code> attribute. This will give your position the options to set a layout, the responsive behavior and a divider. </p>
+
+<pre>
+<code>&lt;?php if ($this['widgets']-&gt;count('MY-POSITION')) : ?&gt;
+    &lt;section class="&lt;?php echo $grid_classes['MY-POSITION']; ?&gt;" data-uk-grid-match="{target:'&gt; div &gt; .uk-panel'}"
+    data-uk-grid-margin&gt;&lt;?php echo $this['widgets']-&gt;render('MY-POSITION', array('layout'=&gt;
+    $this['config']-&gt;get('grid.MY-POSITION.layout'))); ?&gt;&lt;/section&gt;
+&lt;?php endif; ?&gt;</code>
+</pre>
