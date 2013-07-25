@@ -150,6 +150,7 @@
       <doc alias="how-to-use-the-csv-importer" name="How to use the CSV Importer" file="05 How to use the CSV Importer.html"/>
       <doc alias="use-the-shortcode-plugin" name="Use the Shortcode Plugin" file="06 Use the Shortcode Plugin.html"/>
       <doc alias="how-to-use-the-syntaxhighlighter" name="How to use the Syntaxhighlighter" file="07 How to use the Syntaxhighlighter.html"/>
+	  <doc alias="using-a-uikit-theme" name="Using a UIkit theme" file="08 Using a UIkit theme.html"/>
     </category>
     <category alias="developers" name="Developers" folder="04 Developers">
       <doc alias="create-a-new-app" name="Create a new App" file="01 Create a new App.html"/>
