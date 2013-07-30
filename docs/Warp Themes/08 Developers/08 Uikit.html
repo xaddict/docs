@@ -1,6 +1,6 @@
 <h1 class="title">UIkit</h1>
 
-<p class="article-lead">UIkit is YOOtheme's in-house frontend framework on which all Warp 7 themes are built on. Learn all about UIkit on <a href="http://www.getuikit.com">getuikit.com</a>.</p>
+<p class="article-lead">UIkit is YOOtheme's in-house frontend framework on which all Warp 7 themes are built. Learn all about UIkit on <a href="http://www.getuikit.com">getuikit.com</a>.</p>
 
 <h2>UIkit in Warp</h2>
 
@@ -17,7 +17,7 @@
       <td>Loads the UIkit theme <code>uikit.less</code> via the <code>@import</code> rule and contains the theme style.</td>
     </tr>
     <tr>
-      <td><code>/less/uikit/</code></td>
+      <td><code>/less/uikit</code></td>
       <td>Contains the UIkit theme files. </td>
     </tr>
     <tr>
@@ -25,7 +25,7 @@
       <td>Loads the UIkit core <code>uikit.less</code>  and all UIkit theme files via the <code>@import</code> rule.</td>
     </tr>
     <tr>
-      <td><code>/warp/vendor/uikit/</code></td>
+      <td><code>/warp/vendor/uikit</code></td>
       <td>Contains the UIkit core files.</td>
     </tr>
     <tr>
@@ -35,7 +35,7 @@
   </tbody>
 </table>
 
-<p>Style variations of UIkit are saved in <code>/styles/STYLENAME/style.less</code> files. These files will be overridden by every saving process of the customizer in the theme settings.</p>
+<p>Style variations of UIkit are saved in <code>/styles/STYLE-NAME/style.less</code> files. These files will be overridden by every saving process of the customizer in the theme settings.</p>
 
 <h2>Add your own UIkit theme</h2>
 
@@ -43,7 +43,7 @@
 
 <ol>
   <li>Create a new <code>/custom/less/theme.less</code> which will override the original file.</li>
-  <li>Create a new <code>/custom/less/uikit/</code> directory and add your own custom UIkit theme.</li>
+  <li>Create a new <code>/custom/less/uikit</code> directory and add your own custom UIkit theme.</li>
   <li>Use the <code>@import</code> rule to load the <code>/custom/less/uikit/uikit.less</code> file in the <code>/custom/less/theme.less</code>.
   <br>
   <pre><code>@import "uikit/uikit.less";
@@ -70,7 +70,7 @@
 <p>If you're using Joomla 3.x, you need to override the <code>/less/bootstrap.less</code> file to insert your style into Bootstrap. Warp offers a Bootstrap layer which converts the Joomla integrated Bootstrap styles into the UIkit theme styles.</p>
 
 <ol>
-  <li>Copy the <code>/less/bootrap.less</code> and paste it in your <code>/custom/less/</code> directory.</li>
+  <li>Copy the <code>/less/bootrap.less</code> and paste it in your <code>/custom/less</code> directory.</li>
 
   <li>Change the <code>@import</code> paths for the Joomla Bootstrap files, UIkit core and Bootstrap layer.
   <br>
