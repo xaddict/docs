@@ -15,15 +15,23 @@
       <td>Contains all CSS files of the theme.</td>
     </tr>
     <tr>
+      <td><code>/css/bootstrap.css</code></td>
+      <td>Contains all Bootstrap related CSS.</td>
+    </tr>
+    <tr>
+      <td><code>/css/custom.css</code></td>
+      <td>Use this file to easily add custom CSS. Though the recommended approach is to create a new style in order to make changes update proof.</td>
+    </tr>
+    <tr>
       <td><code>/css/ie8.css</code></td>
-      <td>Will fix basic issues for the Microsoft Internet Explorer 8.</td>
+      <td>Fixes basic issues for Microsoft Internet Explorer 8.</td>
+    </tr>
+    <tr>
+      <td><code>/css/theme.css</code></td>
+      <td>Contains the theme's default CSS. This file is compiled from the <code>theme.less</code> file.</td>
     </tr>
     <tr>
       <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-      <td><code>/custom</code></td>
-      <td>This is the place, where you can store all your {doc: customization text: custom markup and additional files}.</td>
     </tr>
     <tr>
       <td><code>/images</code></td>
@@ -76,7 +84,7 @@
     </tr>
     <tr>
       <td><code>/less/theme.less</code></td>
-      <td>Defines the theme style and imports the UIkit theme. This file will be compiled into CSS and saved in the <code>/styles/STYLE-NAME/css</code> folder, if you hit <em>Compile LESS</em> in the theme settings.</td>
+      <td>Defines the theme style and imports the UIkit theme. This file will be compiled into CSS and saved in the <code>/styles/STYLE-NAME/css</code> folder, everytime you hit <em>Compile LESS</em> in the theme settings.</td>
     </tr>
     <tr>
       <td><code>/less/customizer.json</code></td>
@@ -84,14 +92,14 @@
     </tr>
     <tr>
       <td><code>/less/bootstrap.less</code></td>
-      <td>Imports all Bootstrap related files. This file will be compiled into CSS and saved in the <code>/styles/STYLE-NAME/css</code> folder, if you hit <em>Compile LESS</em> in the theme settings (Joomla 3 only).</td>
+      <td>Imports all Bootstrap related files. This file will be compiled into CSS and saved in the <code>/styles/STYLE-NAME/css</code> folder, everytime you hit <em>Compile LESS</em> in the theme settings (Joomla 3 only).</td>
     </tr>
     <tr>
       <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
       <td><code>/styles</code></td>
-      <td>Here you can find all available style variations. You don't actually work in this folder. All these files are generated and compiled through the customizer.</td>
+      <td>Here you can find the available style variations and store all your {doc: customization text: custom markup and additional files} for each style.</td>
     </tr>
     <tr>
       <td><code>/styles/STYLE-NAME/style.less</code></td>
@@ -99,7 +107,7 @@
     </tr>
     <tr>
       <td><code>/styles/STYLE-NAME/css</code></td>
-      <td>Contains all compiled CSS files of your style, i.e. a <code>theme.css</code> file and for Joomla 3 only an additional <code>bootstrap.css</code> file.</td>
+      <td>Contains all compiled CSS files of your style, i.e. a <code>theme.css</code> file and for Joomla 3 only an additional <code>bootstrap.css</code> file. All these files are generated and compiled through the customizer.</td>
     </tr>
     <tr>
       <td colspan="2">&nbsp;</td>
