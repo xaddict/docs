@@ -43,19 +43,25 @@
 
 <h2>Add your own UIkit theme</h2>
 
-<p>You can create your own UIkit theme by using the custom directory.</p>
+<p>You can create your own UIkit theme by using the styles directory.</p>
 
 <ol>
-  <li>Create a new <code>/custom/less/theme.less</code> which will override the original file.</li>
-  <li>Create a new <code>/custom/less/uikit</code> directory and add your own custom UIkit theme.</li>
-  <li>Use the <code>@import</code> rule to load the <code>/custom/less/uikit/uikit.less</code> file in the <code>/custom/less/theme.less</code>.
+  <li>Create a new <code>/styles/STYLE-NAME/less/theme.less</code> which will override the original file.</li>
+  <li>Create a new <code>/styles/STYLE-NAME/less/uikit</code> directory and add your own styles/STYLE-NAME UIkit theme.</li>
+  <li>
+  Open the theme's <code>config.php</code> and register your own file instead of the <code>theme.less</code>:
+<pre><code>'files' => array(
+'/css/FILE-NAME.css' =&gt; 'less:FILE-NAME.less',
+'/css/bootstrap.css' =&gt; 'less:bootstrap.less'</code></pre>
+</li>
+  <li>Use the <code>@import</code> rule to load the <code>/styles/STYLE-NAME/less/uikit/uikit.less</code> file in the <code>/styles/STYLE-NAME/less/theme.less</code>.
   <br>
   <pre><code>@import "uikit/uikit.less";
 
 // Your custom code here</code></pre>
   </li>
 
-  <li>Use the <code>@import</code> rule to load the core <code>uikit.less</code> file in the <code>/custom/less/uikit/uikit.less</code>.
+  <li>Use the <code>@import</code> rule to load the core <code>uikit.less</code> file in the <code>/styles/STYLE-NAME/less/uikit/uikit.less</code>.
   <br>
   <pre><code>// Default
 @import "../../../warp/vendor/uikit/uikit.less";
