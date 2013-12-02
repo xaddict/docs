@@ -43,57 +43,23 @@
 
 <h2>Add your own UIkit theme</h2>
 
-<p>You can create your own UIkit theme by using the styles directory.</p>
+<p>Do the following steps to add your own UIkit theme.</p>
 
 <ol>
-  <li>Create a new <code>/styles/STYLE-NAME/less/theme.less</code> which will override the original file.</li>
-  <li>Create a new <code>/styles/STYLE-NAME/less/uikit</code> directory and add your own styles/STYLE-NAME UIkit theme.</li>
-  <li>
-  Open the theme's <code>config.php</code> and register your own file instead of the <code>theme.less</code>:
-<pre><code>'files' => array(
-'/css/FILE-NAME.css' =&gt; 'less:FILE-NAME.less',
-'/css/bootstrap.css' =&gt; 'less:bootstrap.less'</code></pre>
-</li>
-  <li>Use the <code>@import</code> rule to load the <code>/styles/STYLE-NAME/less/uikit/uikit.less</code> file in the <code>/styles/STYLE-NAME/less/theme.less</code>.
-  <br>
-  <pre><code>@import "uikit/uikit.less";
-
-// Your custom code here</code></pre>
-  </li>
-
-  <li>Use the <code>@import</code> rule to load the core <code>uikit.less</code> file in the <code>/styles/STYLE-NAME/less/uikit/uikit.less</code>.
-  <br>
-  <pre><code>// Default
-@import "../../../warp/vendor/uikit/uikit.less";
-
-// Theme
-@...</code></pre>
-  </li>
-
-  <li>If needed, create a new <code>/custom/less/customizer.json</code> and add your custom variables.</li>
+  <li>Copy the <code>/less</code> folder and rename it to <code>/less-custom</code>.</li>
+  <li>Open the theme's <code>config.php</code> and register the new folder instead of the <code>/less</code> folder:
+<pre><code>'path' => array(
+    'theme'   => array(__DIR__),
+    'js'      => array(__DIR__.'/js'),
+    'css'     => array(__DIR__.'/css'),
+    'less'    => array(__DIR__.'/less-custom'), // Here
+    'layouts' => array(__DIR__.'/layouts')
+),</code></pre></li>
+  <li>Replace the files in <code>/less-custom/uikit</code> with your new UIkit theme.</li>
+  <li>Make sure the core UIkit files are loaded with the correct path in <code>/less/uikit-new/uikit.less</code>.
+<pre><code>@import "../../warp/vendor/uikit/uikit.less";</code></pre></li>
+  <li>You can customize all files in <code>/less-custom</code> like the <code>/less-custom/theme.less</code> file or the <code>/less-custom/customizer.json</code> to add your custom variables.</li>
+  <li>Note: You have changed the core LESS folder. All styles which are generated through the customizer will compile its CSS using the new <code>/less-custom</code> folder.</li>
 </ol>
 
 <p><span class="badge">NOTE</span> Learn more about customization and overrides in the {doc: customization text: Customization} chapter.</p>
-
-<h3>UIkit and Bootstrap in Joomla 3</h3>
-
-<p>If you're using Joomla 3.x, you need to override the <code>/less/bootstrap.less</code> file to insert your style into Bootstrap. Warp offers a Bootstrap layer which converts the Joomla integrated Bootstrap styles into the UIkit theme styles.</p>
-
-<ol>
-  <li>Copy the <code>/less/bootrap.less</code> and paste it in your <code>/custom/less</code> directory.</li>
-
-  <li>Change the <code>@import</code> paths for the Joomla Bootstrap files, UIkit core and Bootstrap layer.
-  <br>
-<pre><code>// Load Bootstrap Default
-@import "../../../../media/jui/less/reset.less";
-...
-
-// Load UIkit Core
-@import "../../warp/vendor/uikit/less/variables.less";
-
-// Load Bootstrap Layer
-@import "../../bootstrap/bootstrap-layer.less";
-...  </code></pre>
-  </li>
-  
-</ol>

@@ -26,7 +26,7 @@
 
 <p>The <code>/warp/layouts</code> folder contains basic overrides made by the core framework. Each part of the core framework is universal and designed to work on every supported system.</p>
 
-<p>The cascades for the <code>/js</code>, <code>/css</code>, <code>/less</code> and <code>/layouts</code> folders are defined in the theme's <code>config.php</code>. If you want to register another folder in the cascade, you can do so here.</p>
+<p>The cascades for the <code>/js</code>, <code>/css</code> and <code>/layouts</code> folders are defined in the theme's <code>config.php</code>. If you want to register another folder in the cascade, you can do so here.</p>
 
 <pre><code>'paths' => array(
   'theme'    => array(__DIR__),
@@ -69,18 +69,20 @@ $this['asset']->addFile('js', 'js:MY-JS.js');</code></pre>
 <p>Let's say you want to add your own custom code to the <code>theme.less</code>.</p>
 
 <ol>
-  <li>Create a new file <code>/styles/FILE-NAME.less</code>.</li>
-  <li>
-    Open the theme's <code>config.php</code> and register your own file instead of the <code>theme.less</code>:
-<pre><code>'files' => array(
-  '/css/FILE-NAME.css' =&gt; 'less:FILE-NAME.less',
-  '/css/bootstrap.css' =&gt; 'less:bootstrap.less'</code></pre>
-  </li>
-  <li>Load the original <code>/styles/theme.less</code> file through an <code>@import</code> rule.</li>
-  <li>Now you can start adding your own code to the file.</li>
+  <li>Copy the <code>/less</code> folder and rename it to <code>/less-custom</code>.</li>
+  <li>Open the theme's <code>config.php</code> and register the new folder instead of the <code>/less</code> folder:
+<pre><code>'path' => array(
+    'theme'   => array(__DIR__),
+    'js'      => array(__DIR__.'/js'),
+    'css'     => array(__DIR__.'/css'),
+    'less'    => array(__DIR__.'/less-custom'), // Here
+    'layouts' => array(__DIR__.'/layouts')
+),</code></pre></li>
+  <li>Now you can start editing the <code>/less-custom/theme.less</code>. You can also edit all other files like adding a new UIkit theme and more.</li>
+  <li>Note: You have changed the core LESS folder. All styles which are generated through the customizer will compile its CSS using the new <code>/less-custom</code> folder.</li>
 </ol>
 
-<pre><code>@import "../../less/theme.less";
+<pre><code>@import "theme.less";
 
 // Your custom code here</code></pre>
 

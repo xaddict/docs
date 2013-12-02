@@ -15,12 +15,8 @@
       <td>Contains all CSS files of the theme.</td>
     </tr>
     <tr>
-      <td><code>/css/bootstrap.css</code></td>
-      <td>Contains all Bootstrap related CSS.</td>
-    </tr>
-    <tr>
       <td><code>/css/custom.css</code></td>
-      <td>Use this file to easily add custom CSS. Though the recommended approach is to create a new style in order to make changes update proof.</td>
+      <td>Use this file to easily add custom CSS. Though the recommended approach is to create a {doc: customization text: new style} in order to make changes update proof.</td>
     </tr>
     <tr>
       <td><code>/css/ie8.css</code></td>
@@ -28,7 +24,7 @@
     </tr>
     <tr>
       <td><code>/css/theme.css</code></td>
-      <td>Contains the theme's default CSS. This file is compiled from the <code>theme.less</code> file.</td>
+      <td>Contains the theme's default CSS. This file is compiled from the <code>less/theme.less</code> file.</td>
     </tr>
     <tr>
       <td colspan="2">&nbsp;</td>
@@ -84,7 +80,7 @@
     </tr>
     <tr>
       <td><code>/less/theme.less</code></td>
-      <td>Defines the theme style and imports the UIkit theme. This file will be compiled into CSS and saved in the <code>/styles/STYLE-NAME/css</code> folder, everytime you hit <em>Compile LESS</em> in the theme settings.</td>
+      <td>Defines the theme style and imports the UIkit theme. This file will be compiled into CSS <code>/css</code> including all styles <code>/styles/STYLE-NAME/css</code> everytime you hit <em>Compile LESS</em> in the theme settings.</td>
     </tr>
     <tr>
       <td><code>/less/customizer.json</code></td>
@@ -92,18 +88,18 @@
     </tr>
     <tr>
       <td><code>/less/bootstrap.less</code></td>
-      <td>Imports all Bootstrap related files. This file will be compiled into CSS and saved in the <code>/styles/STYLE-NAME/css</code> folder, everytime you hit <em>Compile LESS</em> in the theme settings (Joomla 3 only).</td>
+      <td>Imports all Bootstrap related files (Joomla 3 only). Just like the <code>/less/theme.less</code> file it will be compiled into CSS, everytime you hit <em>Compile LESS</em> in the theme settings.</td>
     </tr>
     <tr>
       <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
       <td><code>/styles</code></td>
-      <td>Here you can find the available style variations and store all your {doc: customization text: custom markup and additional files} for each style.</td>
+      <td>Here you find the available style variations and you can add your own {doc: customization text: custom style}.</td>
     </tr>
     <tr>
       <td><code>/styles/STYLE-NAME/style.less</code></td>
-      <td>Custom set of LESS variables generated through the customizer.</td>
+      <td>Custom set of LESS variables generated through the customizer. Everytime you hit <em>Compile LESS</em> in the theme settings these variables will be used to compile the CSS file in <code>/styles/STYLE-NAME/css</code>. If this file is not present no CSS file will be compiled which is great if you want to use completely your own custom CSS.</td>
     </tr>
     <tr>
       <td><code>/styles/STYLE-NAME/css</code></td>
