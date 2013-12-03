@@ -26,15 +26,7 @@
 
 <p>The <code>/warp/layouts</code> folder contains basic overrides made by the core framework. Each part of the core framework is universal and designed to work on every supported system.</p>
 
-<p>The cascades for the <code>/js</code>, <code>/css</code> and <code>/layouts</code> folders are defined in the theme's <code>config.php</code>. If you want to register another folder in the cascade, you can do so here.</p>
-
-<pre><code>'paths' => array(
-  'theme'    => array(__DIR__),
-  'js'       => array(__DIR__.'/js', __DIR__.'/custom/js'),
-  'css'      => array(__DIR__.'/css', __DIR__.'/custom/css'),
-  'less'     => array(__DIR__.'/less', __DIR__.'/custom/less'),
-  'layouts'  => array(__DIR__.'/layouts, __DIR__.'/custom/layouts')
-),</code></pre>
+<p>The cascades for the <code>/js</code>, <code>/css</code> and <code>/layouts</code> folders are defined in the theme's <code>config.php</code>. If you want to register another folder in the cascade, you can do it here.</p>
 
 <h2>Layout overrides</h2>
 
@@ -63,59 +55,6 @@ require(__DIR__.'/../../layouts/theme.config.php');
 
 // add script
 $this['asset']->addFile('js', 'js:MY-JS.js');</code></pre>
-
-<h2>Add custom LESS</h2>
-
-<p>Let's say you want to add your own custom code to the <code>theme.less</code>.</p>
-
-<ol>
-  <li>Copy the <code>/less</code> folder and rename it to <code>/less-custom</code>.</li>
-  <li>Open the theme's <code>config.php</code> and register the new folder instead of the <code>/less</code> folder:
-<pre><code>'path' => array(
-    'theme'   => array(__DIR__),
-    'js'      => array(__DIR__.'/js'),
-    'css'     => array(__DIR__.'/css'),
-    'less'    => array(__DIR__.'/less-custom'), // Here
-    'layouts' => array(__DIR__.'/layouts')
-),</code></pre></li>
-  <li>Now you can start editing the <code>/less-custom/theme.less</code>. You can also edit all other files like adding a new UIkit theme and more.</li>
-  <li>Note: You have changed the core LESS folder. All styles which are generated through the customizer will compile its CSS using the new <code>/less-custom</code> folder.</li>
-</ol>
-
-<pre><code>@import "theme.less";
-
-// Your custom code here</code></pre>
-
-<p><span class="badge">NOTE</span> You can also override the <code>customizer.json</code>, if you need to.</p>
-
-<h3>Add a LESS file</h3>
-
-<p>The <code>config.php</code> registers all LESS files for compilation. When hitting <em>Compile LESS</em> in the theme settings, these files will be compiled into CSS and saved in the theme's <code>/styles/MY-STYLE/css</code> folder. If you want to add your own LESS file to be compiled into CSS, you need to register it here as well.</p>
-
-<pre><code>'less' =&gt; array(
-
-    'vars' =&gt; array(
-        'less:theme.less'
-    ),
-
-    'files' =&gt; array(
-        '/css/theme.css'     =&gt; 'less:theme.less',
-        '/css/bootstrap.css  =&gt; 'less:bootstrap.less'
-    )
-
-),</code></pre>
-
-<h2>Add a custom font</h2>
-
-<p>Warp gives you access to all fonts available in the <a href="http://www.google.com/fonts/">Google fonts</a> directory. But occasionally you might want to add your own font or one that is not provided by Google.</p>
-
-<ol>
-  <li>Create a new folder <code>/styles/STYLE-NAME/fonts</code> and add your font files to it.</li>
-  <li>Create a new <code>/styles/STYLE-NAME/less/theme.less</code> file like described above and add the <code>@font-face</code> rule for your font.</li>
-  <li>Create a new <code>/styles/STYLE-NAME/less/customizer.json</code> file and add your font option and the correct path to the list.</li>
-</ol>
-
-<p>And that's it! You can now select your font from within the customizer.</p>
 
 <h2>Custom template files for WordPress</h2>
 

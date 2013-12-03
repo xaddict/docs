@@ -1,0 +1,155 @@
+<h1 class="title">UIkit & LESS Customization</h1>
+
+<p class="article-lead">UIkit is YOOtheme's in-house frontend framework, on which all Warp 7 themes are built. For more information, take a look at the <a href="http://www.getuikit.com">UIkit website</a>.</p>
+
+<h2>UIkit documentation</h2>
+
+<p>UIkit has its own documentation, which you can also find on the <a href="http://www.getuikit.com">UIkit website</a>. You might want to take a particular look at the docs on <a href="http://www.getuikit.com/docs/documentation_variables.html">Variables</a>, <a href="http://www.getuikit.com/docs/documentation_create-a-theme.html">Best theming practices</a> and the <a href="http://www.getuikit.com/docs/documentation_customizer-json.html">customizer.json</a> when starting out with Warp themes and UIkit.</p>
+
+<h2>UIkit in Warp</h2>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <th>Folder/File</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>/less/theme.less</code></td>
+      <td>Loads the UIkit theme <code>uikit.less</code> via the <code>@import</code> rule and contains the theme style.</td>
+    </tr>
+    <tr>
+      <td><code>/less/uikit</code></td>
+      <td>Contains the UIkit theme files. </td>
+    </tr>
+    <tr>
+      <td><code>/less/uikit/uikit.less</code></td>
+      <td>Loads the UIkit core <code>uikit.less</code>  and all UIkit theme files via the <code>@import</code> rule.</td>
+    </tr>
+    <tr>
+      <td><code>/warp/vendor/uikit</code></td>
+      <td>Contains the UIkit core files.</td>
+    </tr>
+    <tr>
+      <td><code>/warp/vendor/uikit/uikit.less</code></td>
+      <td>Loads all UIkit core files via the <code>@import</code> rule.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Style variations of UIkit are saved in <code>/styles/STYLE-NAME/style.less</code> files. These files will be overridden by every saving process of the customizer in the theme settings.</p>
+
+<h2>Add your own UIkit theme</h2>
+
+<p>Do the following steps to add your own UIkit theme.</p>
+
+<ol>
+  <li>Copy the <code>/less</code> folder and rename it to <code>/less-custom</code>.</li>
+  <li>Open the theme's <code>config.php</code> and register the new folder instead of the <code>/less</code> folder:
+<pre><code>'path' => array(
+    'theme'   => array(__DIR__),
+    'js'      => array(__DIR__.'/js'),
+    'css'     => array(__DIR__.'/css'),
+    'less'    => array(__DIR__.'/less-custom'), // Here
+    'layouts' => array(__DIR__.'/layouts')
+),</code></pre></li>
+  <li>Replace the files in <code>/less-custom/uikit</code> with your new UIkit theme.</li>
+  <li>Make sure the core UIkit files are loaded with the correct path in <code>/less-custom/uikit/uikit.less</code>.
+<pre><code>@import "../../warp/vendor/uikit/uikit.less";</code></pre></li>
+  <li>You can customize all files in <code>/less-custom</code> like the <code>/less-custom/theme.less</code> file or the <code>/less-custom/customizer.json</code> to add your custom variables.</li>
+  <li>Note: You have changed the core LESS folder. All styles which are generated through the customizer will compile its CSS using the new <code>/less-custom</code> folder.</li>
+</ol>
+
+<p><span class="badge">NOTE</span> Learn more about customization and overrides in the {doc: customization text: Customization} chapter.</p>
+
+<h2>Add custom LESS</h2>
+
+<p>Let's say you want to add your own custom code to the <code>theme.less</code>.</p>
+
+<ol>
+  <li>Copy the <code>/less</code> folder and rename it to <code>/less-custom</code>.</li>
+  <li>Open the theme's <code>config.php</code> and register the new folder instead of the <code>/less</code> folder:
+<pre><code>'path' => array(
+    'theme'   => array(__DIR__),
+    'js'      => array(__DIR__.'/js'),
+    'css'     => array(__DIR__.'/css'),
+    'less'    => array(__DIR__.'/less-custom'), // Here
+    'layouts' => array(__DIR__.'/layouts')
+),</code></pre></li>
+  <li>To stay update proof import the old <code>/less/theme.less</code> in your new <code>/less-custom/theme.less</code> by replacing the whole content with the following import rule.
+<pre><code>@import "../less/theme.less";</code></pre>
+  Now you can start adding your custom code within the <code>/less-custom/theme.less</code>.</li>
+  <li>Note: You have changed the core LESS folder. All styles which are generated through the customizer will compile its CSS using the new <code>/less-custom</code> folder.</li>
+</ol>
+
+<h2>Add a custom font</h2>
+
+<p>Warp gives you access to all fonts available in the <a href="http://www.google.com/fonts/">Google fonts</a> directory. But occasionally you might want to add your own font or one that is not provided by Google.</p>
+
+<ol>
+  <li>Follow the tutorial <b>Add custom LESS</b> above.</li>
+  <li>Add the <code>@font-face</code> rule for your font into your <code>/less-custom/theme.less</code>.</li>
+  <li>Open <code>/less-custom/customizer.json</code> file and add your font option and the correct path to the list.</li>
+</ol>
+
+<p>And that's it! You can now use your font within the theme.</p>
+
+<h2>Customizer and images</h2>
+
+<p>If you would like to add the option of picking images, like different backgrounds, to the Customizer, you can do so by following this tutorial. Let's say, you want to add two different background styles, <b>red</b> and <b>blue</b>.</p>
+
+<ol>
+  <li>Firstly, create an <code>/images</code> inside your style <code>/styles/STYLE-NAME</code> directory and put your background images there. The style name will serve as variables to call the correct body style.</li>
+
+  <li>Create a new <code>theme.less</code> by following the tutorial <b>Add custom LESS</b> above.</li>
+
+  <li>Create a new variable for the body style and add it to the <code>/less-custom/theme.less</code> file.
+
+<pre><code>@theme_global-body-style:    '';</code></pre></li>
+
+<li>Now we'll create mixins for each background case. In our example we have a mixin for the red case and one for the blue case.
+
+<pre></code>.body-style() when (@theme_global-body-style = red) {
+
+  body { background: url(../styles/STYLE-NAME/images/red/my-image.jpg) 0 0 repeat; }
+
+}
+
+.body-style() when (@theme_global-body-style = blue) {
+
+  body { background: url(../styles/STYLE-NAME/images/blue/my-image.jpg) 0 0 repeat; }
+
+}</code></pre></li>
+
+  <li>Afterwards, we need to call the mixin, which generates the actual CSS output.
+
+<pre><code>.body-style();</code></pre></li>
+
+  <li>Now, we'll create a select box for our body style <code>@theme_global-body-style</code>. Just add the following code in the <code>/less-custom/customizer.json</code>.
+
+
+<pre><code>{
+    "type": "select",
+    "vars": [
+        "@theme_global-body-style"
+    ],
+    "options": [
+        {"name": "Default", "value": ""},
+        {"name": "Red", "value": "red"},
+        {"name": "Blue", "value": "blue"}
+    ]
+},</code></pre></li>
+
+  <li>Lastly, define, in which group your newly created variable should appear. In our example we added to the <em>General</em> variables.
+
+<pre><code>    "groups": [
+        {
+            "label": "General",
+            "vars": [
+                "@theme_global-body-style",
+                "@global-background",
+                "@global-border",</code></pre></li>
+
+</ol>
