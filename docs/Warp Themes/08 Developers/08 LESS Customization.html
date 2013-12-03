@@ -1,12 +1,8 @@
-<h1 class="title">UIkit &amp; LESS Customization</h1>
+<h1 class="title">LESS Customization</h1>
 
-<p class="article-lead">UIkit is YOOtheme's in-house frontend framework, on which all Warp 7 themes are built. For more information, take a look at the <a href="http://www.getuikit.com">UIkit website</a>.</p>
+<p class="article-lead">Find out how to make LESS customizations.</p>
 
-<h2>UIkit documentation</h2>
-
-<p>UIkit has its own documentation, which you can also find on the <a href="http://www.getuikit.com">UIkit website</a>. You might want to take a particular look at the docs on <a href="http://www.getuikit.com/docs/documentation_variables.html">Variables</a>, <a href="http://www.getuikit.com/docs/documentation_create-a-theme.html">Best theming practices</a> and the <a href="http://www.getuikit.com/docs/documentation_customizer-json.html">customizer.json</a> when starting out with Warp themes and UIkit.</p>
-
-<h2>UIkit in Warp</h2>
+<h2>File structure</h2>
 
 <table class="zebra">
   <thead>
@@ -16,9 +12,27 @@
     </tr>
   </thead>
   <tbody>
+  <tr>
+      <td><code>/less</code></td>
+      <td>All LESS files of your theme are stored in this folder.</td>
+    </tr>    <tr>
+      <td><code>/less/bootstrap</code></td>
+      <td>Contains all Bootstrap related LESS files (Joomla 3 only).</td>
+    </tr>
     <tr>
       <td><code>/less/theme.less</code></td>
-      <td>Loads the UIkit theme <code>uikit.less</code> via the <code>@import</code> rule and contains the theme style.</td>
+      <td>Defines the theme style and imports the UIkit theme. This file will be compiled into CSS and saved in the <code>/css</code> folder everytime you hit <em>Compile LESS</em> in the theme settings. At the same time, all styles will be saved in the <code>/styles/STYLE-NAME/css</code> folder.</td>
+    </tr>
+    <tr>
+      <td><code>/less/customizer.json</code></td>
+      <td>Defines which customizer parameters will be displayed in default or advanced mode. It groups UIkit variables, sets what can be defined through the color picker, direct input or a select box and adds fonts.</td>
+    </tr>
+    <tr>
+      <td><code>/less/bootstrap.less</code></td>
+      <td>Imports all Bootstrap related files (Joomla 3 only). Just like the <code>/less/theme.less</code> file it will be compiled into CSS, everytime you hit <em>Compile LESS</em> in the theme settings.</td>
+    </tr>
+    <tr>
+      <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
       <td><code>/less/uikit</code></td>
@@ -74,7 +88,15 @@
   <li>Note: You have changed the core LESS folder. All styles which are generated through the customizer will compile its CSS using the new <code>/less-custom</code> folder.</li>
 </ol>
 
-<h2>Add your own UIkit theme</h2>
+<h2>Customize the UIkit theme</h2>
+
+<p>UIkit is YOOtheme's in-house frontend framework, on which all Warp 7 themes are built. For more information, take a look at the <a href="http://www.getuikit.com">UIkit website</a>.</p>
+
+<h3>UIkit documentation</h3>
+
+<p>UIkit has its own documentation, which you can also find on the <a href="http://www.getuikit.com">UIkit website</a>. You might want to take a particular look at the docs on <a href="http://www.getuikit.com/docs/documentation_variables.html">Variables</a>, <a href="http://www.getuikit.com/docs/documentation_create-a-theme.html">Best theming practices</a> and the <a href="http://www.getuikit.com/docs/documentation_customizer-json.html">customizer.json</a> when starting out with Warp themes and UIkit.</p>
+
+<h3>Add your own UIkit theme</h3>
 
 <p>Do the following steps to add your own UIkit theme.</p>
 

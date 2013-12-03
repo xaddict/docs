@@ -21,8 +21,7 @@
       <doc alias="config" name="Config.xml" file="05 Config.html"/>
       <doc alias="languages" name="Languages" file="06 Languages.html"/>
       <doc alias="error-pages" name="Error Pages" file="07 Error pages.html"/>
-      <doc alias="uikit" name="UIkit" file="08 Uikit.html"/>
-      <doc alias="images" name="Customizer and images" file="09 Customizer and images.html"/>
+      <doc alias="less-customization" name="LESS Customization" file="08 LESS Customization.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="09 Troubleshooting">
       <doc alias="installation-issues-2" name="Installation issues" file="01 Installation issues.html"/>
