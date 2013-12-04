@@ -74,7 +74,7 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
   <li>Now you can customize all files in <code>/less-custom</code> like the whole <code>/less-custom/uikit</code> folder, the <code>/less-custom/theme.less</code> file or the <code>/less-custom/customizer.json</code> to add your custom variables.</li>
 </ol>
 
-<h2>Add a custom font</h2>
+<h2>Select a custom font in the customizer</h2>
 
 <p>Warp gives you access to all fonts available in the <a href="http://www.google.com/fonts/">Google fonts</a> directory. But occasionally you might want to add your own font or one that is not provided by Google.</p>
 
@@ -84,21 +84,27 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
 
 <ol>
   <li>Open <code>/less-custom/customizer.json</code> file and add your font option and the correct path to the list
-<pre></code>
-"Custom Fonts": [
+<pre></code>"Custom Fonts": [
     {"name": "Oswald", "value": "'Oswald'", "url":"https://fonts.googleapis.com/css?family=Oswald"}
 ],
 "System Fonts": [ ... ]</code></pre>
   </li>
 </ol>
 
-<h3>Add own font face</h3>
+<h3>Add own font</h3>
 
 <ol>
-  <li>Add the <code>@font-face</code> rule for your font to your <code>/less-custom/theme.less</code>.</li>
+  <li>Firstly, create an <code>/fonts</code> folder inside the theme <code>/theme/fonts</code> directory and put your font files there.</li>
+  <li>Add the <code>@font-face</code> rule for your font to your <code>/less-custom/theme.less</code> and link to your font files:
+<pre></code>@font-face {
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald-webfont.eot');
+  ....
+}</code></pre>
+
+</li>
   <li>Open <code>/less-custom/customizer.json</code> file and add your font option like this:
-<pre></code>
-"Custom Fonts": [
+<pre></code>"Custom Fonts": [
     {"name": "Oswald", "value": "\"Oswald\", Helvetica, Arial, sans-serif"}
 ],
 "System Fonts": [ ... ]</code></pre>
