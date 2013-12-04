@@ -56,7 +56,7 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
 </ol>
 
 
-<h2>Add your own UIkit theme</h2>
+<h2>Customize UIkit</h2>
 
 <p>UIkit has its own documentation, which you can find on the <a href="http://www.getuikit.com">UIkit website</a>. You might want to take a particular look at the docs on <a href="http://www.getuikit.com/docs/documentation_variables.html">Variables</a>, <a href="http://www.getuikit.com/docs/documentation_create-a-theme.html">Best theming practices</a> and the <a href="http://www.getuikit.com/docs/documentation_customizer-json.html">customizer.json</a> when starting out with Warp themes and UIkit.</p>
 
@@ -64,11 +64,14 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
 
 <ol>
   <li>Follow the tutorial <b>Add your own custom LESS folder</b> above.</li>
-  <li>Add the files of your new UIkit theme in <code>/less-custom/uikit</code>.</li>
-  <li>Make sure the core UIkit files are loaded with the correct path in <code>/less-custom/uikit/uikit.less</code>.
-<pre><code>@import "../../warp/vendor/uikit/uikit.less";</code></pre></li>
-  <li>Copy the <code>/less/theme.less</code> file to <code>/less-custom/theme.less</code> file.</li>
-  <li>You can also edit the <code>/less-custom/customizer.json</code> file to add your custom variables.</li>
+  <li>Copy following files to your <code>/less-custom/</code> folder:
+    <ol>
+      <li><code>/less/uikit</code></li>
+      <li><code>/less/bootstrap.less</code></li>
+      <li><code>/less/theme.less</code></li>
+    </ol>
+  </li>
+  <li>Now you can customize all files in <code>/less-custom</code> like the whole <code>/less-custom/uikit</code> folder, the <code>/less-custom/theme.less</code> file or the <code>/less-custom/customizer.json</code> to add your custom variables.</li>
 </ol>
 
 <h2>Add a custom font</h2>
@@ -100,13 +103,13 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
 
 <pre></code>.body-style() when (@theme_global-body-style = red) {
 
-  body { background: url(../styles/STYLE-NAME/images/red/my-image.jpg) 0 0 repeat; }
+  body { background: url(../styles/STYLE-NAME/images/my-red.jpg) 0 0 repeat; }
 
 }
 
 .body-style() when (@theme_global-body-style = blue) {
 
-  body { background: url(../styles/STYLE-NAME/images/blue/my-image.jpg) 0 0 repeat; }
+  body { background: url(../styles/STYLE-NAME/images/my-blue.jpg) 0 0 repeat; }
 
 }</code></pre></li>
 
