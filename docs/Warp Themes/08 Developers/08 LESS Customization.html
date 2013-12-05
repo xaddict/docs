@@ -46,7 +46,7 @@
     'css'     => array(__DIR__.'/css'),
     'less'    => array(__DIR__.'/less-custom'), // Here
     'layouts' => array(__DIR__.'/layouts')
-),</code></pre><span class="badge">NOTE</span> This will change the core LESS folder. All styles which are generated through the customizer will compile their CSS using the new <code>/less-custom</code> folder.</li>
+),</code></pre>Note: This will change the core LESS folder. All styles which are generated through the customizer will compile their CSS using the new <code>/less-custom</code> folder.</li>
 <li>Import the old <code>/less/theme.less</code> in your new <code>/less-custom/theme.less</code> by replacing the whole content with the following import rule.
 <pre><code>@import "../less/theme.less";</code></pre>
 Joomla 3 only: In order to make customizations update proof, import the old <code>/less/bootstrap.less</code> in your new <code>/less-custom/bootstrap.less</code> by replacing the whole content with the following import rule.
@@ -82,9 +82,9 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
 
 <ol>
   <li>Follow the tutorial <b>Add your own custom LESS folder</b> above.</li>
-  <li>Open <code>/less-custom/customizer.json</code> file and add your font option and the correct path to the list
+  <li>Open the <code>/less-custom/customizer.json</code> file and add your font option and the correct path to the list.
 <pre></code>"Custom Fonts": [
-    {"name": "FONT-FAMILY", "value": "'FONT-FAMILY'", "url":"https://fonts.googleapis.com/css?family=FONT-FAMILY"}
+    {"name": "FONT-FAMILY", "value": "'FONT-FAMILY'", "url":""}
 ],
 "System Fonts": [ ... ]</code></pre>
   </li>
@@ -94,7 +94,7 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
 
 <ol>
   <li>Firstly, follow the tutorial <b>Add your own custom LESS folder</b> above.</li>
-  <li>Create an <code>/fonts</code> folder inside the theme <code>/theme</code> directory and put your font files there.</li>
+  <li>Create a <code>/fonts</code> folder inside the theme directory and put your font files there.</li>
   <li>Add the <code>@font-face</code> rule for your font to your <code>/less-custom/theme.less</code> and link to your font files:
 <pre></code>@font-face {
   font-family: 'FONT-FAMILY';
