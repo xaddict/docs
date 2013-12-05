@@ -36,35 +36,12 @@
 
 <h2>Add your own CSS</h2>
 
-<p>There are several ways of adding your own custom CSS to a Warp theme.<br>
-Note: Please keep in mind that your style will only be shown in the Customizer, if there is a <code>style.less</code> file in the style's folder.</p>
+<p>There are several ways of adding your own custom CSS to a Warp theme. You can use the Customizer to change most aspects of the theme without having to write any CSS. Keep in mind that your style will only be shown in the Customizer, if there is a <code>style.less</code> file inside the style's folder. When you save changes in the Customizer, the <code>style.less</code> file will be compiled into the <code>/css/theme.css</code> file and override any customizations you may have done in that file.</p>
+<p>You can use the Customizer and also add your own CSS by creating a <code>custom.css</code> file inside the <code>/css</code> folder. That way your CSS won't be overridden when you save changes in the Customizer.</p>
 
-<table class="zebra">
-  <thead>
-    <tr>
-      <th>Folder/File</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td><code>styles/STYLE-NAME/css/theme.css<br>
-              styles/STYLE-NAME/style.less</code></td>
-      <td>This is the default file structure. When you save changes in the Customizer, the <code>style.less</code> file will be compiled into the <code>theme.css</code> file and override any customizations you may have done in that file.</td>
-    </tr>
-    <tr>
-      <td><code>styles/STYLE-NAME/css/theme.css<br>
-                styles/STYLE-NAME/css/custom.css<br>
-                styles/STYLE-NAME/style.less
-      </code></td>
-      <td>You can use the Customizer and also add your own CSS by creating a <code>custom.css</code> file. That way your CSS won't be overridden when you save changes in the Customizer.</td>
-    </tr>
-    <tr>
-      <td><code>styles/STYLE-NAME/css/theme.css</td>
-      <td>If you are not planning to use the Customizer at all, just duplicate an existing style or create your own one. You can then delete the <code>style.less</code> file of your new style and write customizations directly in the the <code>theme.css</code> file.</td>
-    </tr>
-  </tbody>
-</table>
+<h3>Remove the Customizer and LESS</h3>
+
+<p>If you are not planning to use the Customizer at all, just duplicate an existing style or create your own one. You can then delete the <code>style.less</code> file of your new style and write customizations directly in the the <code>theme.css</code> file.</p>
 
 <h2>Add custom JavaScript</h2>
 
