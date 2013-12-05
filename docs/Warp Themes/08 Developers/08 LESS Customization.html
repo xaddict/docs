@@ -46,7 +46,7 @@
     'css'     => array(__DIR__.'/css'),
     'less'    => array(__DIR__.'/less-custom'), // Here
     'layouts' => array(__DIR__.'/layouts')
-),</code></pre><span class="badge">NOTE</span> This will change the core LESS folder. All styles which are generated through the customizer will compile their CSS using the new <code>/less-custom</code> folder.</li>
+),</code></pre>Note: This will change the core LESS folder. All styles which are generated through the customizer will compile their CSS using the new <code>/less-custom</code> folder.</li>
 <li>Import the old <code>/less/theme.less</code> in your new <code>/less-custom/theme.less</code> by replacing the whole content with the following import rule.
 <pre><code>@import "../less/theme.less";</code></pre>
 Joomla 3 only: In order to make customizations update proof, import the old <code>/less/bootstrap.less</code> in your new <code>/less-custom/bootstrap.less</code> by replacing the whole content with the following import rule.
@@ -57,6 +57,8 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
 
 
 <h2>Customize UIkit</h2>
+
+<p>UIkit has its own documentation, which you can find on the <a href="http://www.getuikit.com">UIkit website</a>. You might want to take a particular look at the docs on <a href="http://www.getuikit.com/docs/documentation_variables.html">Variables</a>, <a href="http://www.getuikit.com/docs/documentation_create-a-theme.html">Best theming practices</a> and the <a href="http://www.getuikit.com/docs/documentation_customizer-json.html">customizer.json</a> when starting out with Warp themes and UIkit.</p>
 
 <p>Do the following steps to add your own UIkit theme.</p>
 
@@ -72,17 +74,44 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
   <li>Now you can customize all files in <code>/less-custom</code> like the whole <code>/less-custom/uikit</code> folder, the <code>/less-custom/theme.less</code> file or the <code>/less-custom/customizer.json</code> to add your custom variables.</li>
 </ol>
 
-<p><span class="badge">NOTE</span> UIkit has its own documentation, which you can find on the <a href="http://www.getuikit.com">UIkit website</a>. You might want to take a particular look at the docs on <a href="http://www.getuikit.com/docs/documentation_variables.html">Variables</a>, <a href="http://www.getuikit.com/docs/documentation_create-a-theme.html">Best theming practices</a> and the <a href="http://www.getuikit.com/docs/documentation_customizer-json.html">customizer.json</a> when starting out with Warp themes and UIkit.</p>
-
-<h2>Add a custom font</h2>
+<h2>Select a custom font in the customizer</h2>
 
 <p>Warp gives you access to all fonts available in the <a href="http://www.google.com/fonts/">Google fonts</a> directory. But occasionally you might want to add your own font or one that is not provided by Google.</p>
 
+<h3>Add a font from a link</h3>
+
 <ol>
   <li>Follow the tutorial <b>Add your own custom LESS folder</b> above.</li>
-  <li>Add the <code>@font-face</code> rule for your font to your <code>/less-custom/theme.less</code>.</li>
-  <li>Open <code>/less-custom/customizer.json</code> file and add your font option and the correct path to the list.</li>
+  <li>Open the <code>/less-custom/customizer.json</code> file and add your font option and the correct path to the list.
+<pre></code>"Custom Fonts": [
+    {"name": "FONT-FAMILY", "value": "'FONT-FAMILY'", "url":""}
+],
+"System Fonts": [ ... ]</code></pre>
+  </li>
 </ol>
+
+<h3>Add your own font</h3>
+
+<ol>
+  <li>Firstly, follow the tutorial <b>Add your own custom LESS folder</b> above.</li>
+  <li>Create a <code>/fonts</code> folder inside the theme directory and put your font files there.</li>
+  <li>Add the <code>@font-face</code> rule for your font to your <code>/less-custom/theme.less</code> and link to your font files:
+<pre></code>@font-face {
+  font-family: 'FONT-FAMILY';
+  src: url('../fonts/FONT-FAMILY-webfont.eot');
+  ....
+}</code></pre>
+
+</li>
+  <li>Open <code>/less-custom/customizer.json</code> file and add your font option like this:
+<pre></code>"Custom Fonts": [
+    {"name": "FONT-FAMILY", "value": "\"FONT-FAMILY\", Helvetica, Arial, sans-serif"}
+],
+"System Fonts": [ ... ]</code></pre>
+  </li>
+</ol>
+
+
 
 <p>And that's it! You can now use your font within the theme.</p>
 
@@ -91,7 +120,7 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
 <p>If you would like to add the option of picking images, like different backgrounds, to the Customizer, you can do so by following this tutorial. Let's say, you want to add two different background styles, <b>red</b> and <b>blue</b>.</p>
 
 <ol>
-  <li>Firstly, create an <code>/images</code> folder inside your style <code>/styles/STYLE-NAME</code> directory and put your background images there. The style name will serve as the variable to call the correct body style.</li>
+  <li>Firstly, create an <code>/images</code> folder inside your style <code>/styles/STYLE-NAME</code> directory and put your background images there.</li>
 
   <li>Create a new <code>theme.less</code> by following the tutorial <b>Add your own custom LESS folder</b> above.</li>
 
