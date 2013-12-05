@@ -74,37 +74,6 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
   <li>Now you can customize all files in <code>/less-custom</code> like the whole <code>/less-custom/uikit</code> folder, the <code>/less-custom/theme.less</code> file or the <code>/less-custom/customizer.json</code> to add your custom variables.</li>
 </ol>
 
-<h2>Add your own CSS</h2>
-
-<p>There are several ways of adding your own custom CSS to a Warp theme. Please keep in mind that your style will only be shown in the Customizer, if there is a <code>style.less</code> file in the style's folder.</p>
-
-<table class="zebra">
-  <thead>
-    <tr>
-      <th>Folder/File</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td><code>styles/STYLE-NAME/css/theme.css<br>
-              styles/STYLE-NAME/style.less</code></td>
-      <td>When you save changes in the Customizer, the <code>style.less</code> file will be compiled into CSS the <code>theme.css</code> file and override any customizations you may have done in that file.</td>
-    </tr>
-    <tr>
-      <td><code>styles/STYLE-NAME/css/theme.css<br>
-                styles/STYLE-NAME/css/custom.css<br>
-                styles/STYLE-NAME/style.less
-      </code></td>
-      <td>You can use the Customizer and also add your own CSS by creating a <code>custom.css</code> file. That way your CSS won't be overridden when you save changes in the Customizer.</td>
-    </tr>
-    <tr>
-      <td><code>styles/STYLE-NAME/css/theme.css</td>
-      <td>If you are not planning to use the Customizer at all, just duplicate an existing style or create your own one. You can then delete the <code>style.less</code> file of your new style and write customizations directly in the the <code>theme.css</code> file.</td>
-    </tr>
-  </tbody>
-</table>
-
 <h2>Select a custom font in the customizer</h2>
 
 <p>Warp gives you access to all fonts available in the <a href="http://www.google.com/fonts/">Google fonts</a> directory. But occasionally you might want to add your own font or one that is not provided by Google.</p>

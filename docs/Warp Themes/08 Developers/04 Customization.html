@@ -34,9 +34,37 @@
 
 <p>This way you can also override system files. For example, just take the Joomla article layout <code>/warp/systems/joomla/layouts/com_content/article/default.php</code> and copy it to your style folder <code>/styles/STYLE-NAME/layouts/com_content/article/default.php</code> and modify it. Now your modified article layout file will be used instead of the default system layout. The same applies for WordPress files.</p>
 
-<h2>CSS overrides</h2>
+<h2>Add your own CSS</h2>
 
-<p>To override the <code>theme.css</code>, just create your own <code>theme.css</code> file in the <code>styles/STYLE-NAME/css</code> directory. The theme will automatically load this file instead of the original one.</p>
+<p>There are several ways of adding your own custom CSS to a Warp theme.<br>
+Note: Please keep in mind that your style will only be shown in the Customizer, if there is a <code>style.less</code> file in the style's folder.</p>
+
+<table class="zebra">
+  <thead>
+    <tr>
+      <th>Folder/File</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><code>styles/STYLE-NAME/css/theme.css<br>
+              styles/STYLE-NAME/style.less</code></td>
+      <td>This is the default file structure. When you save changes in the Customizer, the <code>style.less</code> file will be compiled into CSS the <code>theme.css</code> file and override any customizations you may have done in that file.</td>
+    </tr>
+    <tr>
+      <td><code>styles/STYLE-NAME/css/theme.css<br>
+                styles/STYLE-NAME/css/custom.css<br>
+                styles/STYLE-NAME/style.less
+      </code></td>
+      <td>You can use the Customizer and also add your own CSS by creating a <code>custom.css</code> file. That way your CSS won't be overridden when you save changes in the Customizer.</td>
+    </tr>
+    <tr>
+      <td><code>styles/STYLE-NAME/css/theme.css</td>
+      <td>If you are not planning to use the Customizer at all, just duplicate an existing style or create your own one. You can then delete the <code>style.less</code> file of your new style and write customizations directly in the the <code>theme.css</code> file.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h2>Add custom JavaScript</h2>
 
