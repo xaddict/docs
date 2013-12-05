@@ -109,11 +109,10 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
 
 <p>Warp gives you access to all fonts available in the <a href="http://www.google.com/fonts/">Google fonts</a> directory. But occasionally you might want to add your own font or one that is not provided by Google.</p>
 
-<p>There are two ways to import a new font. <br> For both ways you need first to follow the tutorial <b>Add your own custom LESS folder</b> above.</li></p>
-
 <h3>Add a font from a link</h3>
 
 <ol>
+  <li>Follow the tutorial <b>Add your own custom LESS folder</b> above.</li>
   <li>Open <code>/less-custom/customizer.json</code> file and add your font option and the correct path to the list
 <pre></code>"Custom Fonts": [
     {"name": "FONT-FAMILY", "value": "'FONT-FAMILY'", "url":"https://fonts.googleapis.com/css?family=FONT-FAMILY"}
@@ -125,7 +124,8 @@ Joomla 3 only: In order to make customizations update proof, import the old <cod
 <h3>Add your own font</h3>
 
 <ol>
-  <li>Firstly, create an <code>/fonts</code> folder inside the theme <code>/theme</code> directory and put your font files there.</li>
+  <li>Firstly, follow the tutorial <b>Add your own custom LESS folder</b> above.</li>
+  <li>Create an <code>/fonts</code> folder inside the theme <code>/theme</code> directory and put your font files there.</li>
   <li>Add the <code>@font-face</code> rule for your font to your <code>/less-custom/theme.less</code> and link to your font files:
 <pre></code>@font-face {
   font-family: 'FONT-FAMILY';
