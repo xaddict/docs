@@ -16,13 +16,14 @@
 
 <h2>Update Theme</h2>
 
-<p>The file verification in the theme settings shows all modified and missing files in your theme to help you detect which files you have customized before you start updating. To update your theme, do the follow these steps.</p>
+<p>The file verification in the theme settings shows all modified and missing files in your theme to help you detect which files you have customized before you start updating. Changes in Warp's administration area will generate the <code>config.json</code>, which is not shown in the file verification. So be sure to have a backup of that file. To update your theme, do the follow these steps.</p>
 
 <ol>
   <li>First of all, make a backup of all your customized theme files, so you can recover modifications at any time.</li>
   <li>Download the latest theme version and extract the package to your Desktop.</li>
   <li>Copy all files to <code>/templates/THEME-NAME</code> for Joomla or <code>/wp-content/themes/THEME-NAME</code> for WordPress and replace all files.</li>
   <li>Recover your modifications by merging your customized files with the new ones.</li>
+  <li>Open Warp's administration area and hit <em>Compile LESS</em>.</li>
 </ol>
 
 <p><span class="badge badge-danger">IMPORTANT</span> We strongly recommend to create a new style for all modifications and make a backup before updating. That way all your changes will be kept when updating your original theme files by replacing them. Learn more {doc: customization text: here}.</p>
