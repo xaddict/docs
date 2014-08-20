@@ -1,8 +1,8 @@
 <h1 class="title">Create a new layout with positions</h1>
 
 <p>This tutorial will walk you through the process of creating a new item layout for a template in the ZOO.</p>
-	
-	
+
+
 <h2>Getting started</h2>
 
 <p>The item layouts are located in <em>/media/zoo/applications/APPLICATION/templates/TEMPLATE/renderer/item/</em>.</p>
@@ -42,21 +42,21 @@
 &lt;/layout&gt;
 </code></pre>
 
-<p>We can add a name and a description for the layout here.</p> 
+<p>We can add a name and a description for the layout here.</p>
 
-<h3>RelatedItems Element Layout</h3> 
+<h3>RelatedItems Element Layout</h3>
 
-<p>If we want the layout to be a layout for the RelatedItems element, we will add the attribute <code>type="related"</code> to the layout tag.</p> 
+<p>If we want the layout to be a layout for the RelatedItems element, we will add the attribute <code>type="related"</code> to the layout tag.</p>
 
 <pre><code>&lt;layout name=&quot;demo&quot; type=&quot;related&quot;&gt;
 	&lt;name&gt;Demo&lt;/name&gt;
 	&lt;description&gt;This is my demo RelatedItems layout.&lt;/description&gt;
 &lt;/layout&gt;
-</code></pre> 
+</code></pre>
 
 <h3>GoogleMaps Element Layout</h3>
 
-<p>If we want the layout to be a layout for the GoogleMaps element, we will add the attribute <code>type="googlemaps"</code> to the layout tag.</p> 
+<p>If we want the layout to be a layout for the GoogleMaps element, we will add the attribute <code>type="googlemaps"</code> to the layout tag.</p>
 
 <pre><code>&lt;layout name=&quot;demo&quot; type=&quot;googlemaps&quot;&gt;
 	&lt;name&gt;Demo&lt;/name&gt;
@@ -64,15 +64,25 @@
 &lt;/layout&gt;
 </code></pre>
 
-<h3>Submissions Layout</h3> 
+<h3>Submissions Layout</h3>
 
-<p>If we want the layout to be a layout for item submissions, we will add the attribute <code>type="submission"</code> to the layout tag.</p> 
+<p>If we want the layout to be a layout for item submissions, we will add the attribute <code>type="submission"</code> to the layout tag.</p>
 
 <pre><code>&lt;layout name=&quot;demo&quot; type=&quot;submission&quot;&gt;
 	&lt;name&gt;Demo&lt;/name&gt;
 	&lt;description&gt;This is my demo submission layout.&lt;/description&gt;
 &lt;/layout&gt;
-</code></pre> 
+</code></pre>
+
+<h3>Edit Layout</h3>
+
+<p>If we want the layout to be a layout for frontend editing, we will add the attribute <code>type="edit"</code> to the layout tag.</p>
+
+<pre><code>&lt;layout name=&quot;demo&quot; type=&quot;edit&quot;&gt;
+	&lt;name&gt;Demo&lt;/name&gt;
+	&lt;description&gt;This is my demo edit layout.&lt;/description&gt;
+&lt;/layout&gt;
+</code></pre>
 
 <h2>Conclusion</h2>
 
