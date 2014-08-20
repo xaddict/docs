@@ -150,7 +150,8 @@
       <doc alias="how-to-use-the-csv-importer" name="How to use the CSV Importer" file="05 How to use the CSV Importer.html"/>
       <doc alias="use-the-shortcode-plugin" name="Use the Shortcode Plugin" file="06 Use the Shortcode Plugin.html"/>
       <doc alias="how-to-use-the-syntaxhighlighter" name="How to use the Syntaxhighlighter" file="07 How to use the Syntaxhighlighter.html"/>
-	  <doc alias="using-a-uikit-theme" name="Using a UIkit theme" file="08 Using a UIkit theme.html"/>
+      <doc alias="using-a-uikit-theme" name="Using a UIkit theme" file="08 Using a UIkit theme.html"/>
+      <doc alias="using-frontend-editing" name="Using frontend editing" file="09 Using frontend editing.html"/>
     </category>
     <category alias="developers" name="Developers" folder="04 Developers">
       <doc alias="create-a-new-app" name="Create a new App" file="01 Create a new App.html"/>
@@ -167,6 +168,7 @@
       <doc alias="create-a-new-zoo-module-theme" name="Create a new ZOO Module Theme" file="12 Create a new ZOO Module Theme.html"/>
       <doc alias="accessing-element-data" name="Accessing Element Data" file="13 Accessing Element Data.html"/>
       <doc alias="using-zoo-events" name="Using ZOO Events" file="14 Using ZOO Events.html"/>
+      <doc alias="make-apps-ready-for-zoo32" name="Make Apps ready for ZOO 3.2" file="15 Make Apps ready for ZOO 3.2.html"/>
     </category>
     <category alias="elements" name="Elements" folder="05 Elements">
       <doc alias="addthis" name="Addthis" file="Addthis.html"/>
