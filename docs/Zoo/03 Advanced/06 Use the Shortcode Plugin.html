@@ -6,15 +6,14 @@
 
 <p>Fist of all you need to enable the Shortcode plugin from Joomlas plugin menu.</p>
 
-<p>With the Shortcode plugin you can create a reference to an item or a category. Use either id or alias to reference it.</p>
-
-<p>You can also include a link text by adding a text parameter. If you don't provide the text parameter, item/category name is used.</p>
+<p>With the Shortcode plugin you can create a reference to an item, a category or App frontpage. Use either id or alias to reference it. You can include a link text by adding a text parameter, if you don't provide the text parameter, item/category name is used. You can also set the output to url or link, being default link if omited.</p>
 
 <p>Here is the syntax to use:</p>
 
 <ul class="bullet">
 	<li>{zooitem: ID_OR_ALIAS text: MYTEXT }</li>
 	<li>{zoocategory: ID_OR_ALIAS text: MYTEXT }</li>
+	<li>{zoofrontpage: APP_ID text: MYTEXT output: url}</li>
 </ul>
 
 <div class="box-info">This is a content plugin used on ZOO Textarea elements. Please enable the <em>Load Plugins</em> option in your {doc: textarea text: Textarea element}.</div>
