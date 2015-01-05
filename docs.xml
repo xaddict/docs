@@ -93,7 +93,11 @@
     </category>
   </section>
   <section alias="widgetkit" name="Widgetkit" folder="Widgetkit">
-    <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
+    <separator label="Widgetkit 2" />
+    <category alias="getting-started" name="Getting Started" folder="01 Getting Started"></category>
+    <category alias="customizing" name="Customizing" folder="02 Customizing"></category>
+    <category alias="troubleshooting" name="Troubleshooting" folder="03 Troubleshooting"></category>
+    <category alias="wk1-getting-started" name="Getting Started" folder="04 Getting Started">
       <doc alias="install-widgetkit" name="Install Widgetkit" file="01 Install Widgetkit.html"/>
       <doc alias="install-demo-package" name="Install Demo Package" file="02 Install Demo Package.html"/>
       <doc alias="widgetkit-manager" name="Widgetkit Manager" file="03 Widgetkit Manager.html"/>
@@ -102,11 +106,12 @@
       <doc alias="how-to-update-2" name="How to Update" file="06 How to Update.html"/>
       <doc alias="where-is-the-changelog-2" name="Where is the Changelog" file="07 Where is the Changelog.html"/>
     </category>
-    <category alias="customizing" name="Customizing" folder="02 Customizing">
+    <separator label="Widgetkit 1" />
+    <category alias="wk1-customizing" name="Customizing" folder="05 Customizing">
       <doc alias="how-to-customize-widgets" name="How to Customize Widgets" file="01 How to Customize Widgets.html"/>
       <doc alias="create-a-new-widget-style" name="Create a new Widget Style" file="02 Create a new Widget Style.html"/>
     </category>
-    <category alias="troubleshooting" name="Troubleshooting" folder="03 Troubleshooting">
+    <category alias="wk1-troubleshooting" name="Troubleshooting" folder="06 Troubleshooting">
       <doc alias="how-to-solve-widgetkit-issues" name="How To Solve Widgetkit Issues" file="01 How To Solve Widgetkit Issues.html"/>
       <doc alias="file-permission-issues-2" name="File Permission Issues" file="02 File Permission Issues.html"/>
       <doc alias="javascript-errors-2" name="Javascript Errors" file="03 Javascript Errors.html"/>
