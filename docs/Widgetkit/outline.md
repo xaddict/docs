@@ -11,7 +11,7 @@
         - Custom Fields (i.e. social buttons)
     - button
     - shortcodes
-03 Content Manager (?)
+03 Content Manager: Franzi
     - custom
     - Joomla / Wordpress
     - ZOO
