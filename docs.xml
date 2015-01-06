@@ -97,7 +97,8 @@
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
       <doc alias="install-widgetkit-2" name="Install Widgetkit" file="01 Install Widgetkit.html"/>
       <doc alias="creating-widgets" name="Creating Widgets" file="02 Creating Widgets.html"/>
-      <doc alias="shortcodes" name="Shortcodes" file="03 Shortcodes.html"/>
+      <doc alias="content-manager" name="Content Manager" file="03 Content Manager.html"/>
+      <doc alias="shortcodes" name="Shortcodes" file="04 Shortcodes.html"/>
       <doc alias="widget-types" name="Widget Types" file="05 Widget Types.html"/>
       <doc alias="how-to-update-4" name="How to Update" file="06 How to Update.html"/>
     </category>

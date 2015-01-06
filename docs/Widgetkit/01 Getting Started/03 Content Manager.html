@@ -1,37 +1,54 @@
 <h1>Content Manager</h1>
 
-<p>In Widgetkit 2 content and widgets are decoupled, so that you can create them independently, widgets directly from the WordPress or Joomla editor and the content through the content manager.</p>
+<p>
+    In Widgetkit 2 content and widgets are decoupled, so that you can create them independently, widgets directly from the WordPress or Joomla editor and the content through the content manager.
+</p>
 
-<p>When opening Widgetkit you'll see a <em>New Content</em> button with a select form that allows you to choose between creating custom content and loading content from Wordpress, Joomla, ZOO, K2 and Woocommerce.</p>
+<p>When opening Widgetkit you'll see a <em>New Content</em> button with a select form that allows you to choose between creating custom content and loading content from WordPress, Joomla, ZOO, K2 or Woocommerce.</p>
 
 <h2>Custom Content</h2>
 
-<p>When creating content for your widget, hit <em>Add Item</em> to add single content items. Alternatively you hit <em>Add Media</em> to select multiple items at once through the media library or manager of your CMS. Once you have selected an image, a preview will be visible below the media field. You can also type in the path directly. The WordPress media manager only allows you to access the upload folder. This is where being able to type your own the path comes in handy, so you can use a different folder structure.</p>
+<p>
+    When creating content for your widget, hit <em>Add Item</em> to add single content items. Alternatively you can use <em>Add Media</em> to select multiple items at once through the media library or manager of your CMS. Once you have selected an image, a preview will be visible below the media field. You can also type in the path directly. The WordPress media manager only allows you to access the upload folder. This is where being able to type your own path comes in handy, so you can use a different folder structure.
+</p>
 
-<p>In the Content field you can add text or Markup to be displayed as a caption or any other kind of content, depending on the widget renderer. You can also add a link to each content item. When configurating the widget, you will determine, how to display the link. For example, it can be a button or an image overlay.</p>
+<p>
+    In the Content field you can add text or Markup to be displayed as a caption or any other kind of content, depending on the widget renderer. You can also add a link to each content item. When configurating the widget, you will determine, how to display the link. For example, it can be a button or an image overlay.
+</p>
 
 <h3>Video</h3>
 
-<p>You can use videos as media items inside Widgetkit, no matter, if you want to embed YouTube or Vimeo videos or upload your own media. Additionally, you can add a poster image, which will be displayed on mobile devices.</p>
+<p>
+    You can use videos as media items inside Widgetkit, no matter, if you want to embed YouTube or Vimeo videos or upload your own media. Additionally, you can add a poster image, which will be displayed on mobile devices.
+</p>
 
 <h4>Youtube and Vimeo</h4>
 
-<p>To embed a video in Widgetkit, just copy the video path from your video site into the media field. It is important that you use the path from the browser's address bar and not the embed code you will get when using the Share button. Otherwise the JavaScript from Widgetkit will not work correctly.</p>
+<p>
+    To embed a video in Widgetkit, just copy the video path from your video site into the media field. It is important that you use the path from the browser's address bar and not the embed code you will get when using the Share button. Otherwise it will not be displayed correctly within Widgetkit.
+</p>
 
-<p>Additionally you can use some parameter to further control the video, for example to enable autoplay and loop. In YouTube you can also start the embedded video at a specific timestamp. Widgetkit will add its own API. These examples show the paths you would ideally use to implement a video from YouTube or Vimeo.</p>
+<p>
+    Additionally you can use some parameters to further control the video, for example to enable autoplay and loop. In YouTube you can also start the embedded video at a specific timestamp. Widgetkit will add its own API. These examples show the paths you would ideally use to implement a video from YouTube or Vimeo.
+</p>
 
 <pre><code>&lt;!--This YouTube Video will start 100 seconds into the film, loop automatically, without controls or tone --&gt;
 http://www.youtube.com/watch?v=my-video-id&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;showinfo=0&amp;playlist=my-video-id&amp;start=100
 
 &lt;!-- This Vimeo video will start and loop automatically, without controls or tone --&gt;
-http://vimeo.com/17808185?title=0&amp;byline=0&amp;autoplay=1&amp;loop=1&amp;setVolume=0</code></pre>
+http://vimeo.com/my-video-id?title=0&amp;byline=0&amp;autoplay=1&amp;loop=1&amp;setVolume=0</code></pre>
 
 <h4>Upload videos</h4>
-<p>Of course you can also upload your own video files through the media manager of your CMS. In Joomla make sure that you enable uploading of video files in the Global Configuration.</p>
+
+<p>
+    Of course you can also upload your own video files through the media manager of your CMS. In Joomla make sure that you enable uploading of video files in the Global Configuration.
+</p>
 
 <h3>Manage fields</h3>
 
-<p>Widgetkit allows you to add fields to the content manager. Just hit <em>Manage fields</em>, pick one of the field types from the select form and hit <em>Close</em>. The table below will give you an overview of the different field types.</p>
+<p>
+    Widgetkit allows you to add fields to the content manager. Just hit <em>Manage fields</em>, pick one of the field types from the select form and hit <em>Close</em>. The table below will give you an overview of the different field types.
+</p>
 
 <table class="zebra">
     <thead>
@@ -47,7 +64,7 @@ http://vimeo.com/17808185?title=0&amp;byline=0&amp;autoplay=1&amp;loop=1&amp;set
                 Facebook<br>
                 Google Plus<br>
             </td>
-            <td>Using these fields will create social buttons. Note that these will displayed in a media overlay, if <em>Media Overlay</em> is set to <em>Social Buttons</em> in the Content options of the widget manager.</td>
+            <td>Using these fields will create social buttons. Note that these will be displayed in a media overlay, if <em>Media Overlay</em> is set to <em>Social Buttons</em> in the Content options of the widget manager.</td>
         </tr>
         <tr>
             <td>Location</td>
@@ -63,7 +80,7 @@ http://vimeo.com/17808185?title=0&amp;byline=0&amp;autoplay=1&amp;loop=1&amp;set
         </tr>
         <tr>
             <td>Custom</td>
-            <td>Here you can add custom fields. You can choose between Text, Textarea, Text, Boolean, Media and Location. This is useful, if you want to create a custom widget.</td>
+            <td>Here you can add custom fields. Choose between Text, Textarea, Text, Boolean, Media and Location. This is useful, if you want to create a custom widget.</td>
         </tr>
     </tbody>
 </table>
