@@ -1,0 +1,35 @@
+<h1>Creating Widgets</h1>
+
+<p>In this tutorial you'll get an insight of the general structure of Widgetkit and learn how to create widgets.</p>
+
+<h2>Content and Widgets</h2>
+
+<p>In Widgetkit 2 content and widgets are decoupled. This means that you can create content independently from the widgets in a separate Content Manager. You are able to display custom content, i.e. images, videos or text, but you can also load content from Wordpress, Joomla, ZOO, K2 and Woocommerce with Widgetkit. Media can be uploaded via drag and drop, through a media manager or by directly typing in the path.</p>
+
+<h2>Widget types</h2>
+
+<p>Currently, Widgetkit includes a Slideshow, Switcher, Map, Grid and Grid stack widget. Some themes also provide their own custom widgets.</p>
+
+<h2>Insert Widgets</h2>
+
+<p>There are two ways to display a Widgetkit widget on your website. You can either use a shortcode or publish a dedicated WordPress widget or Joomla module displaying any Widgetkit widget.</p>
+
+<h3>Shortcodes</h3>
+
+<p>Shortcodes are a very popular concept from Wordpress which allows you to easily publish dynamic content without any programming knowledge. Basically you insert a shortcode in a WordPress post or Joomla article and it will be rendered as a widget, for example a slideshow which loads dynamic content from your CMS.</p>
+
+<p>In the WordPress or Joomla editor you will find a Widgetkit button, which opens Widgetkit in a lightbox. There you pick the widget type you want to display. Once you did that, you will be confronted with different options which are specific to the widget you are displaying, like animations, links and custom classes. Before going into that, you will want to assign your content to the widget first. You can either choose your content from the select form above or create a new content set.</p>
+
+<p>Once you're finished creating a widget, a shortcode will be inserted into your editor, which includes the ID of the content which you want to display and a widget renderer. In this example, we render the content with the ID 1 with the Slideshow widget using the default options.</p>
+
+<pre><code>[widgetkit id="1" widget="slideshow"]</code></pre>
+
+<p>A more andvanced shortcode with custom options would look like this.</p>
+
+<pre><code>[widgetkit id="1" widget="slideshow" animation="swipe" autoplay=1]</code></pre>
+
+<p>In this example the Slideshow uses the Swipe animation and autoplay is enabled.</p>
+
+<h3>WordPress widget or Joomla module</h3>
+
+<p>Widgetkit provides a WordPress Widget or Joomla module. Just go to <em>Appearance » Widgets</em> and drag and drop the Widgetkit widget to any theme position. In Joomla create a new Module in the <em>Module Manager</em> and select <em>Widgetkit</em> as the Module Type. The editor will then display a <em>Select Widget</em> which opens the Widgetkit dialog.</p>
