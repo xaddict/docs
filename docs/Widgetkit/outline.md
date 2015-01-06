@@ -1,44 +1,44 @@
 ## Getting Started
 
-Install Widgetkit
+01 Install Widgetkit: Flo
     - download a theme demo package
     - install stand alone
     - coming soon: install Widgetkit Demo Package
-Creating Widgets
+02 Creating Widgets: Franzi
     - Basics
-        - Content Provider
+        - Content
         - Widget Types
         - Custom Fields (i.e. social buttons)
     - button
     - shortcodes
-Content Manager (?)
+03 Content Manager (?)
     - custom
     - Joomla / Wordpress
     - ZOO
-Shortcode
+04 Shortcode: Flo
     - General shortcode structure
     - Advanced: look at widget types
-Widget types (overview + (shortcode attributes?) + which custom fields needed)
+05 Widget types (overview + (shortcode attributes?) + which custom fields needed): Flo
     - Grid
     - Grid Stack
     - Map
     - Slideshow
     - Switcher
-How to update
+06 How to update: Flo
     - 1 Click Update
     - Manual Update
 
 ## Customizing
 
-Create a custom content provider: Miljan
-Create a custom Widget type: Miljan
+01 Create a custom content provider: Miljan
+02 Create a custom Widget type: Miljan
 
 ## Troubleshooting
 
-How to Migrate from Widgetkit 1
+01 How to Migrate from Widgetkit: 1: Flo
     - Sorry, no update possible
     - Sorry, no parallel running of 1&2 possible
     - Recommended: Wk 1 is running smoothly? Keep it. Starting a new site? Use Wk 2
     - Or: Dump website, prepare new widgets locally, replace live site
-Deprecated features
+02 Deprecated features: Flo
     - ZOO: Miljan
