@@ -1,0 +1,32 @@
+<h1 class="title">Shortcodes</h1>
+
+<p>Wherever you want to render a widget, you can use the <code>[widgetkit ...]</code> shortcode that will be replaced by the actual widget in the final browser output. To render a widget, you always have to combine a content item with a widget type that defines the way the content is rendered.</p>
+
+<p>A shortcode has to contain at least the two parameters <code>id</code> and <code>widget</code></p>
+
+<pre><code>[widgetkit id="42" widget="slideshow"]</code></pre>
+
+<table class="zebra">
+    <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>id</td>
+            <td>The unique id of the content you want to render.</td>
+        </tr>
+        <tr>
+            <td>widget</td>
+            <td>The widget type to render: <code>grid</code>, <code>grid-stack</code>, <code>map</code>, <code>slideshow</code> and <code>switcher</code> - or other types added by your theme or yourself.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>There is a number of other properties you can use in shortcodes. These depend on the actual widget type you have set as the value of the <code>widget</code> parameter. The easiest way to set these parameters is to use the <em>Widgetkit</em> available next to your content window. You can visually configure your widget. When confirming the configuration, the shortcode will be updated automatically to something more complex, i.e.:</p>
+
+<pre><code>[widgetkit id="23" widget="grid-stack" divider=1 media_border="circle" animation_media="fade" animation_content="slide"]</code></pre>
+
+<p>For further details have a look at the documentation and examples of the different {doc:widget-types text:widget types}</p>.
