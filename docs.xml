@@ -96,6 +96,7 @@
     <separator label="Widgetkit 2" />
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
       <doc alias="install-widgetkit-2" name="Install Widgetkit" file="01 Install Widgetkit.html"/>
+      <doc alias="creating-widgets" name="Creating Widgets" file="02 Creating Widgets.html"/>
       <doc alias="how-to-update-4" name="How to Update" file="01 How to Update.html"/>
     </category>
     <category alias="customizing" name="Customizing" folder="02 Customizing"></category>
