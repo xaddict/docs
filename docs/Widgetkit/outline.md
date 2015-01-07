@@ -4,6 +4,10 @@
     - download a theme demo package
     - install stand alone
     - coming soon: install Widgetkit Demo Package
+
+Screenshots:
+    - Installation WordPress/Joomla
+
 02 Creating Widgets: Franzi
     - Basics
         - Content
@@ -11,10 +15,19 @@
         - Custom Fields (i.e. social buttons)
     - button
     - shortcodes
+
+Screenshots:
+    - Widget Types
+    - Insert Widgets: animiertes Gif für Shortcodes
+
 03 Content Manager: Franzi
     - custom
     - Joomla / Wordpress
     - ZOO
+
+Screenshots:
+    - siehe Blogpost
+
 04 Shortcode: Flo
     - General shortcode structure
     - Advanced: look at widget types
@@ -30,8 +43,9 @@
 
 ## Customizing
 
-01 Create a custom content provider: Miljan
-02 Create a custom Widget type: Miljan
+01 Create a content provider: Miljan
+02 Create a Widget renderer: Miljan
+03 Manage Fields: Miljan
 
 ## Troubleshooting
 

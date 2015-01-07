@@ -97,13 +97,13 @@
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
       <doc alias="install-widgetkit-2" name="Install Widgetkit" file="01 Install Widgetkit.html"/>
       <doc alias="creating-widgets" name="Creating Widgets" file="02 Creating Widgets.html"/>
-      <doc alias="content-manager" name="Content Manager" file="03 Content Manager.html"/>
-      <doc alias="shortcodes" name="Shortcodes" file="04 Shortcodes.html"/>
-      <doc alias="widget-types" name="Widget Types" file="05 Widget Types.html"/>
+      <doc alias="widget-renderers" name="Widget Renderers" file="03 Widget Renderers.html"/>
+      <doc alias="content-manager" name="Content Manager" file="04 Content Manager.html"/>
+      <doc alias="shortcodes" name="Shortcodes" file="05 Shortcodes.html"/>
       <doc alias="how-to-update-4" name="How to Update" file="06 How to Update.html"/>
     </category>
     <category alias="customizing" name="Customizing" folder="02 Customizing">
-      <doc alias="custom-content" name="Create a Custom Content Provider" file="01 Create a Custom Content Provider.html"/>
+      <doc alias="custom-content" name="Create a Content Provider" file="01 Create a Custom Content Provider.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="03 Troubleshooting">
       <doc alias="how-to-migrate" name="How to Migrate from Widgetkit 1" file="01 How to Migrate from Widgetkit 1.html"/>
