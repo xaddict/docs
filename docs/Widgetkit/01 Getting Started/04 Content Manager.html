@@ -29,14 +29,14 @@
 </p>
 
 <p>
-    Additionally you can use some parameters to further control the video, for example to enable autoplay and loop. In YouTube you can also start the embedded video at a specific timestamp. Widgetkit will add its own API. These examples show the paths you would ideally use to implement a video from YouTube or Vimeo.
+    Add parameters to further control the video, for example to enable autoplay and loop. Embedded YouTube videos can also be started at a specific timestamp. Widgetkit will add its own API. These examples show the paths you would ideally use to implement a video from YouTube or Vimeo.
 </p>
 
-<pre><code>&lt;!--This YouTube Video will start 100 seconds into the film, loop automatically, without controls or tone --&gt;
-http://www.youtube.com/watch?v=my-video-id&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;showinfo=0&amp;playlist=my-video-id&amp;start=100
+This YouTube Video will start 100 seconds into the film, loop automatically, without controls or tone:
+<pre><code>http://www.youtube.com/watch?v=my-video-id&amp;autoplay=1&amp;loop=1&amp;controls=0&amp;showinfo=0&amp;playlist=my-video-id&amp;start=100</code></pre>
 
-&lt;!-- This Vimeo video will start and loop automatically, without controls or tone --&gt;
-http://vimeo.com/my-video-id?title=0&amp;byline=0&amp;autoplay=1&amp;loop=1&amp;setVolume=0</code></pre>
+This Vimeo video will start and loop automatically, without controls or tone:
+<pre><code>http://vimeo.com/my-video-id?title=0&amp;byline=0&amp;autoplay=1&amp;loop=1&amp;setVolume=0</code></pre>
 
 <h4>Upload videos</h4>
 
@@ -47,40 +47,38 @@ http://vimeo.com/my-video-id?title=0&amp;byline=0&amp;autoplay=1&amp;loop=1&amp;
 <h3>Manage fields</h3>
 
 <p>
-    Widgetkit allows you to add fields to the content manager. Just hit <em>Manage fields</em>, pick one of the field types from the select form and hit <em>Close</em>. The table below will give you an overview of the different field types.
+    Widgetkit allows you to add fields to the Content Manager. Just hit <em>Manage fields</em>, pick one of the field types from the select form and hit <em>Close</em>. For more information, take a look at the {doc:manage-fields text:Manage fields} doc.
+</p>
+
+<h2>Dynamic Content</h2>
+
+<p>
+    Widgetkit supports loading content from WordPress, Joomla, ZOO, K2 or Woocommerce. When hitting <em>New Content</em> Widgetkit will automatically show you the available content types. In the Content Manager then gives you a number of options.
 </p>
 
 <table class="zebra">
     <thead>
         <tr>
-          <th>Field Type</th>
+          <th>Section</th>
           <th>Description</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>
-                Email<br>
-                Facebook<br>
-                Google Plus<br>
-            </td>
-            <td>Using these fields will create social buttons. Note that these will be displayed in a media overlay, if <em>Media Overlay</em> is set to <em>Social Buttons</em> in the Content options of the widget manager.</td>
+            <td>Content</td>
+            <td>Determine how much of your content will be displayed in the widget.</td>
         </tr>
         <tr>
-            <td>Location</td>
-            <td>With this field you can add a map to your widget content.</td>
+            <td>Category</td>
+            <td>Select the categories you would like to be displayed, default is all.</td>
         </tr>
         <tr>
-            <td>Tags</td>
-            <td>With this field you can add a tags to your widget content.</td>
+            <td>Limit</td>
+            <td>Determine how many content items are going to be displayed.</td>
         </tr>
         <tr>
-            <td>Twitter</td>
-            <td>With this field you can add a twitter account to your widget content.</td>
-        </tr>
-        <tr>
-            <td>Custom</td>
-            <td>Here you can add custom fields. Choose between Text, Textarea, Text, Boolean, Media and Location. This is useful, if you want to create a custom widget.</td>
+            <td>Order</td>
+            <td>Determine the order in which content items will be displayed.</td>
         </tr>
     </tbody>
 </table>

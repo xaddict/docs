@@ -1,11 +1,7 @@
-<h1 class="title">Widget Types</h1>
+<h1 class="title">Widget Renderersdd</h1>
 
 <p>
-    A widget type determines how content is rendered. Widgetkit provides a set of types and you can also add your custom types. Each widget type accepts a set of configuration parameters. These can be set using the visual interface provided by Widgetkit or manually by changing the shortcode.
-</p>
-
-<p>
-    This article lists the types provided by Widgetkit and gives an overview of their configuration options. Some widget types have optional features like the display of buttons to social networks. These might require custom fields set in the content that is being rendered. These supported custom fields are noted for each widget type.
+    A widget renderer determines how your widget will be displayed in the frontend, for example as a Slideshow or a Grid. You can also add custom renderers. Each renderer accepts a set of configuration parameters. These can be set using the visual interface provided by Widgetkit or by changing the shortcode.
 </p>
 
 <h2>Grid</h2>
@@ -33,16 +29,18 @@
         </tr>
         <tr>
             <td>General</td>
-            <td>Configure how the whole widget is rendered. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
 
-<p>Example: Default grid widget. Content items will have 100% each and will therefore be stacked.</p>
+<h3>Example Shortcode</h3>
+
+<p>Default grid widget. Content items will have 100% each and will therefore be stacked.</p>
 
 <pre><code>[widgetkit id="23" widget="grid"]</code></pre>
 
-<p>Example: A grid widget that displays 4 columns on large screens, automatically collapses to 2 columns on tablets and such and displays a single column on all devices smaller than that. To understand this mobile first approach, have a look at the <a href="http://getuikit.com/docs/grid.html#responsive-width">UIkit responsive grid</a> that is used here.</p>
+<p>A grid widget that displays 4 columns on large screens, automatically collapses to 2 columns on tablets and such and displays a single column on all devices smaller than that. To understand this mobile first approach, have a look at the <a href="http://getuikit.com/docs/grid.html#responsive-width">UIkit responsive grid</a> that is used here.</p>
 
 <pre><code>[widgetkit id="23" widget="grid" columns="1" columns_small="2" columns_large="4"]</code></pre>
 
@@ -71,23 +69,25 @@
         </tr>
         <tr>
             <td>General</td>
-            <td>Configure how the whole widget is rendered. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
 
-<p>Example: Default grid stack widget.</p>
+<h3>Example Shortcode</h3>
+
+<p>Default grid stack widget.</p>
 
 <pre><code>[widgetkit id="23" widget="grid-stack"]</code></pre>
 
-<p>Example: A grid stack widget with dividers between the items, the media elements cropped to circles and animations that are shown when the item scrolls into view.</p>
+<p>A grid stack widget with dividers between the items, the media elements cropped to circles and animations that are shown when the item scrolls into view.</p>
 
 <pre><code>[widgetkit id="23" widget="grid-stack" divider=1 media_border="circle" animation_media="fade" animation_content="slide"]</code></pre>
 
 <h2>Map</h2>
 
 <p>
-    A map widget displays a Google map on your website. Make sure to add a custom field <em>Location</em> to your content element and select a location you want to display in the map. The other field of your content will be displayed when you click on the location marker. You can add several pins and popup boxes by adding more several items to your content element.
+    A map widget displays a Google map on your website. Make sure to add a custom field <em>Location</em> to your content element and select a location you want to display in the map. The other field of your content will be displayed when you click on the location marker. You can add several pins and popup boxes by adding more items to your content element. For more information, read the {doc:manage-fields text:Manage fields} doc.
 </p>
 
 <table class="zebra">
@@ -113,16 +113,18 @@
         </tr>
         <tr>
             <td>General</td>
-            <td>Configure how the whole widget is rendered. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
 
-<p>Example: A simple map widget. Make sure content (#23 in the example) has a custom field added for the location.</p>
+<h3>Example Shortcode</h3>
+
+<p>A simple map widget. Make sure content (#23 in the example) has a custom field added for the location.</p>
 
 <pre><code>[widgetkit id="23" widget="map"]</code></pre>
 
-<p>Example: A map showing the satellite image view and without any controlling UI elements.</p>
+<p>A map showing the satellite image view and without any controlling UI elements.</p>
 
 <pre><code>[widgetkit id="23" widget="map" maptypeid="SATELLITE" disabledefaultui=1]</code></pre>
 
@@ -150,16 +152,18 @@
         </tr>
         <tr>
             <td>General</td>
-            <td>Configure how the whole widget is rendered. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
 
-<p>Example: The default slideshow.</p>
+<h3>Example Shortcode</h3>
+
+<p>The default slideshow.</p>
 
 <pre><code>[widgetkit id="23" widget="slideshow"]</code></pre>
 
-<p>Example: A slideshow with captions enabled and animations for slides and captions.</p>
+<p>A slideshow with captions enabled and animations for slides and captions.</p>
 
 <pre><code>[widgetkit id="32" widget="slideshow" animation="swipe" caption=1 caption_animation="fade"]</code></pre>
 
@@ -186,20 +190,22 @@
             Note: When setting <em>Media overlay</em> to <em>Social Buttons</em>, you can add custom fields for social network links to the selected content element.</td>
         <tr>
             <td>General</td>
-            <td>Configure how the whole widget is rendered. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
 
-<p>Example: The default switcher.</p>
+<h3>Example Shortcode</h3>
+
+<p>The default switcher.</p>
 
 <pre><code>[widgetkit id="23" widget="switcher"]</code></pre>
 
-<p>Example: A switcher with a tabbed navigation below the content.</p>
+<p>A switcher with a tabbed navigation below the content.</p>
 
 <pre><code>[widgetkit id="23" widget="switcher" nav="tabs" position="bottom"]</code></pre>
 
-<p>Example: A switcher with buttons for navigation displayed on the left.</p>
+<p>A switcher with buttons for navigation displayed on the left.</p>
 
 <pre><code>[widgetkit id="23" widget="switcher" nav="nav" position="left"]</code></pre>
 
