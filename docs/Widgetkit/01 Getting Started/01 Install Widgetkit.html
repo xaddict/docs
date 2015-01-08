@@ -1,70 +1,62 @@
 <h1 class="title">Install Widgetkit</h1>
 
-<p>To install Widgetkit, you can either setup a theme demo package that includes Widgetkit 2 &ndash; currently, these are themes starting from January 2015 &ndash; or you can manually install Widgetkit in your CMS.</p>
+<p>In this tutorial we'll show you, how to install Widgetkit in Joomla &amp; WordPress.</p>
 
 <h2>Requirements</h2>
 
 <ul class="bullet">
-    <li>PHP 5.3+</li>
-    <li>PHP GD extension</li>
+	<li>PHP 5.2.4+</li>
+	<li>PHP GD extension (enabled in PHP 5.0+)</li>
+	<li>PHP <a href="http://php.net/manual/en/book.json.php">JSON</a> support</li>
 </ul>
 
-<p>If any of these requirements are missing, you might need to contact your webhost and ask them to install or enable the needed extensions.</p>
+<p>If any of these requirements are missing you might need to contact your webhost and ask them to install or enable the needed extensions.</p>
 
-<h2>Install in WordPress</h2>
-
-<div class="clearfix">
-    <img class="align-right margin-t-10" src="../../../assets/images/widgetkit/install_widgetkit_wordpress.png" alt="Install a plugin in WordPress" width="627" height="246" />
-
-    <p>To install Widgetkit, use the plugin manager in the WordPress administration. Go to <em>Plugins » Add New</em> and click on the tab <em>Upload</em>.</p>
-
-    <p>Click on <em>Choose...</em>, select the downloaded Widgetkit zip archive and click <em>Install Now</em>.</p>
-
-    <p>After the activation in the plugin manager you will see a Widgetkit menu item in the administration menu on the left. Just click it to get started!</p>
-</div>
-
-<h2>Install in Joomla</h2>
+<h2>Joomla</h2>
 
 <div class="clearfix">
+	
+	<img class="align-right margin-t-10" src="../../../assets/images/widgetkit/install_widgetkit_joomla.png" alt="Install a Joomla extension" width="390" height="224" />
+	
+	<p>To install Widgetkit use the extensions installer in the Joomla administration. Go to <em>Extensions » Extension Manager</em>.</p>
 
-    <img class="align-right margin-t-10" src="../../../assets/images/widgetkit/install_widgetkit_joomla.png" alt="Install a Joomla extension" width="390" height="224" />
+	<p>Click on <em>Browse...</em>, select the downloaded Widgetkit archive and click in <em>Upload &amp; Install</em></p>
 
-    <p>To install Widgetkit, use the extensions installer in the Joomla administration. Go to <em>Extensions » Extension Manager</em>.</p>
+	<p>That's it. You're done! To start simply go to <em>Components » Widgetkit</em>.</p>
+	
+</div>
 
-    <p>Click <em>Browse...</em>, select the downloaded Widgetkit archive and hit <em>Upload &amp; Install</em></p>
+<p>When the installation does not work this way you may try to install the Widgetkit this way:</p>
 
-    <p>That's it. You're done! To start, simply go to <em>Components » Widgetkit</em>.</p>
+<div class="box-info">
+	<ol>
+		<li>Download the latest {route: download-widgetkit text: Widgetkit} version and unpack all Widgetkit files to a directory on your pc.</li>
+		<li>Using FTP, upload this directory to the <em>/tmp</em> directory of your Joomla installation on your server.</li>
+		<li>Go to the extensions installer in the Joomla administration, use the &quot;Install from Directory&quot; option to set the directory of your uploaded Widgetkit files.</li>
+		<li>Click on the Install button and Joomla will install it from the given directory.</li>
+	</ol>
+</div>
+
+<h2>WordPress</h2>
+
+<div class="clearfix">
+	<img class="align-right margin-t-10" src="../../../assets/images/widgetkit/install_widgetkit_wordpress.png" alt="Install a plugin in WordPress" width="627" height="246" />
+
+	<p>To install Widgetkit use the plugin manager in the WordPress administration. Go to <em>Plugins » Add New</em> and click on the tab <em>Upload</em>.</p> 
+	
+	<p>Click on <em>Choose...</em>, select the downloaded Widgetkit zip archive and click <em>Install Now</em>.</p>
+	
+	<p>After the activation in the plugin manager you will see a Widgetkit menu item in the administration menu on the left. Just click it to get started!</p>
 
 </div>
 
-<h2>Install theme with demo content</h2>
-
-<ol>
-    <li>Download the <em>demo package</em> of a current theme (starting with themes from January 2015).</li>
-    <li>Follow the instructions for installing a demo package for {doc:wordpress text:WordPress} or {doc:joomla text:Joomla}.</li>
-    <li>You will have a WordPress/Joomla instance running with an installed version Widgetkit 2 and some demo content.</li>
-</ol>
-
-<h2>Troubleshooting</h2>
-
-<p>If the installation does not work this way in WordPress, you may want to try to install the Widgetkit this way:</p>
+<p>When the installation does not work this way you may try to install the Widgetkit this way:</p>
 
 <div class="box-info">
-    <ol>
-        <li>Download the latest Widgetkit version and unpack all files to a local directory called <em>widgetkit</em>.</li>
-        <li>Using FTP, upload this directory to the <em>/wp-content/plugins</em> directory of your WordPress installation on your server.</li>
-        <li>Go to <em>Plugins » Installed Plugins</em> in the WordPress administration and Widgetkit will appear in the overview of all available plugins.</li>
-        <li>Click on <em>Activate</em> to activate the newly installed Widgetkit plugin.</li>
-    </ol>
-</div>
-
-<p>If the installation does not work this way in Joomla, you may want to try to install the Widgetkit this way:</p>
-
-<div class="box-info">
-    <ol>
-        <li>Download the latest Widgetkit version and unpack all files to a local directory.</li>
-        <li>Using FTP, upload this directory to the <em>/tmp</em> directory of your Joomla installation on your server.</li>
-        <li>Go to the extensions installer in the Joomla administration, use the &quot;Install from Directory&quot; option to set the directory of your uploaded Widgetkit files.</li>
-        <li>Click on the Install button and Joomla will install it from the given directory.</li>
-    </ol>
+	<ol>
+		<li>Download the latest {route: download-widgetkit text: Widgetkit} version and unpack all Widgetkit files to a directory called <em>widgetkit</em> on your pc.</li>
+		<li>Using FTP, upload this directory to the <em>/wp-content/plugins</em> directory of your WordPress installation on your server.</li>
+		<li>Go to <em>Plugins » Installed Plugins</em> in the WordPress administration and Widgetkit will appear in the overview of all available plugins.</li>
+		<li>Click on <em>Activate</em> to activate the newly installed Widgetkit plugin.</li>
+	</ol>
 </div>

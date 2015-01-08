@@ -24,9 +24,9 @@
       <doc alias="less-customization" name="LESS Customization" file="08 LESS Customization.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="09 Troubleshooting">
-      <doc alias="installation-issues-2" name="Installation issues" file="01 Installation issues.html"/>
-      <doc alias="file-permission-issues-2" name="File permission issues" file="02 File permission issues.html"/>
-      <doc alias="javascript-errors-2" name="JavaScript errors" file="03 JavaScript errors.html"/>
+      <doc alias="installation-issues-3" name="Installation issues" file="01 Installation issues.html"/>
+      <doc alias="file-permission-issues-4" name="File permission issues" file="02 File permission issues.html"/>
+      <doc alias="javascript-errors-4" name="JavaScript errors" file="03 JavaScript errors.html"/>
       <doc alias="disable-responsive" name="Disable the responsive layout" file="04 Disable the responsive layout.html"/>
       <doc alias="feature-and-compatibility-overview" name="Feature and Compatibility Overview" file="05 Feature and Compatibility Overview.html"/>
      <doc alias="faq" name="FAQ" file="06 FAQ.html"/>
@@ -65,7 +65,7 @@
       <doc alias="how-to-solve-theme-issues" name="How To Solve Theme Issues" file="01 How To Solve Theme Issues.html"/>
       <doc alias="installation-issues" name="Installation Issues" file="02 Installation Issues.html"/>
       <doc alias="file-permission-issues" name="File Permission Issues" file="03 File Permission Issues.html"/>
-      <doc alias="javascript-errors" name="Javascript Errors" file="04 Javascript Errors.html"/>
+      <doc alias="javascript-errors" name="JavaScript Errors" file="04 Javascript Errors.html"/>
       <doc alias="validation-errors" name="Validation Errors" file="05 Validation Errors.html"/>
       <doc alias="upgrading-to-joomla-3" name="Upgrading to Joomla 3.1" file="07 Upgrading to Joomla 3.html"/>
     </category>
@@ -94,22 +94,25 @@
   </section>
   <section alias="widgetkit" name="Widgetkit" folder="Widgetkit">
     <separator label="Widgetkit 2" />
-    <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
+    <category alias="wk2-getting-started" name="Getting Started" folder="04 Getting Started">
       <doc alias="install-widgetkit-2" name="Install Widgetkit" file="01 Install Widgetkit.html"/>
       <doc alias="creating-widgets" name="Creating Widgets" file="02 Creating Widgets.html"/>
       <doc alias="widget-renderers" name="Widget Renderers" file="03 Widget Renderers.html"/>
       <doc alias="content-manager" name="Content Manager" file="04 Content Manager.html"/>
       <doc alias="shortcodes" name="Shortcodes" file="05 Shortcodes.html"/>
       <doc alias="how-to-update-4" name="How to Update" file="06 How to Update.html"/>
+      <doc alias="where-is-the-changelog-4" name="Where is the Changelog" file="07 Where is the Changelog.html"/>
     </category>
-    <category alias="customizing" name="Customizing" folder="02 Customizing">
+    <category alias="wk2-customizing" name="Customizing" folder="05 Customizing">
       <doc alias="custom-content" name="Create a Content Provider" file="01 Create a Custom Content Provider.html"/>
     </category>
-    <category alias="troubleshooting" name="Troubleshooting" folder="03 Troubleshooting">
+    <category alias="wk2-troubleshooting" name="Troubleshooting" folder="06 Troubleshooting">
       <doc alias="how-to-migrate" name="How to Migrate from Widgetkit 1" file="01 How to Migrate from Widgetkit 1.html"/>
+      <doc alias="file-permission-issues-5" name="File Permission Issues" file="02 File Permission Issues.html"/>
+      <doc alias="javascript-errors-5" name="JavaScript Errors" file="03 Javascript Errors.html"/>
     </category>
     <separator label="Widgetkit 1" />
-    <category alias="wk1-getting-started" name="Getting Started" folder="04 Getting Started">
+    <category alias="wk1-getting-started" name="Getting Started" folder="01 Getting Started">
       <doc alias="install-widgetkit" name="Install Widgetkit" file="01 Install Widgetkit.html"/>
       <doc alias="install-demo-package" name="Install Demo Package" file="02 Install Demo Package.html"/>
       <doc alias="widgetkit-manager" name="Widgetkit Manager" file="03 Widgetkit Manager.html"/>
@@ -118,14 +121,14 @@
       <doc alias="how-to-update-2" name="How to Update" file="06 How to Update.html"/>
       <doc alias="where-is-the-changelog-2" name="Where is the Changelog" file="07 Where is the Changelog.html"/>
     </category>
-    <category alias="wk1-customizing" name="Customizing" folder="05 Customizing">
+    <category alias="wk1-customizing" name="Customizing" folder="02 Customizing">
       <doc alias="how-to-customize-widgets" name="How to Customize Widgets" file="01 How to Customize Widgets.html"/>
       <doc alias="create-a-new-widget-style" name="Create a new Widget Style" file="02 Create a new Widget Style.html"/>
     </category>
-    <category alias="wk1-troubleshooting" name="Troubleshooting" folder="06 Troubleshooting">
+    <category alias="wk1-troubleshooting" name="Troubleshooting" folder="03 Troubleshooting">
       <doc alias="how-to-solve-widgetkit-issues" name="How To Solve Widgetkit Issues" file="01 How To Solve Widgetkit Issues.html"/>
       <doc alias="file-permission-issues-2" name="File Permission Issues" file="02 File Permission Issues.html"/>
-      <doc alias="javascript-errors-2" name="Javascript Errors" file="03 Javascript Errors.html"/>
+      <doc alias="javascript-errors-2" name="JavaScript Errors" file="03 Javascript Errors.html"/>
     </category>
   </section>
   <section alias="zoo" name="Zoo" folder="Zoo">
@@ -156,7 +159,7 @@
       <doc alias="how-to-solve-zoo-issues" name="How To Solve Zoo Issues" file="01 How To Solve Zoo Issues.html"/>
       <doc alias="installation-issues-2" name="Installation Issues" file="02 Installation Issues.html"/>
       <doc alias="file-permission-issues-3" name="File Permission Issues" file="03 File Permission Issues.html"/>
-      <doc alias="javascript-errors-3" name="Javascript Errors" file="04 Javascript Errors.html"/>
+      <doc alias="javascript-errors-3" name="JavaScript Errors" file="04 Javascript Errors.html"/>
     </category>
     <category alias="advanced" name="Advanced" folder="03 Advanced">
       <doc alias="extend-pre-build-types" name="Extend Pre-build Types" file="01 Extend Pre-build Types.html"/>
