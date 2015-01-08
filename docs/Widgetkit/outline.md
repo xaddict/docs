@@ -44,7 +44,7 @@ Screenshots:
 ## Customizing
 
 01 Create a content provider: Miljan
-02 Create a Widget renderer: Miljan
+02 Create a Widget plugin: Miljan
 03 Manage Fields: Miljan
 
 ## Troubleshooting
