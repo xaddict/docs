@@ -9,12 +9,18 @@
 <h2>Custom Content</h2>
 
 <p>
-    When creating content for your widget, hit <em>Add Item</em> to add single content items. Alternatively you can use <em>Add Media</em> to select multiple items at once through the media library or manager of your CMS. Once you have selected an image, a preview will be visible below the media field. You can also type in the path directly. The WordPress media manager only allows you to access the upload folder. This is where being able to type your own path comes in handy, so you can use a different folder structure.
+    When creating content for your widget, hit <em>Add Item</em> to add single content items. Alternatively you can use <em>Add Media</em> to select multiple items at once through the media library or manager of your CMS. Once you have selected an image or video, a preview will be visible below the media field. You can also type in the path directly. The WordPress media manager only allows you to access the upload folder. This is where being able to type your own path comes in handy, so you can use a different folder structure.
 </p>
 
 <p>
-    In the Content field you can add text or Markup to be displayed as a caption or any other kind of content, depending on the widget renderer. You can also add a link to each content item. When configurating the widget, you will determine, how to display the link. For example, it can be a button or an image overlay.
+    In the Content field you can add text or Markup as a description to your media. You can also add a link to each content item. When configurating the widget in the {doc:widget-renderers text:Widget Manager}, you will determine, how to display the link. For example, it can be a button or an image overlay.
 </p>
+
+<h3>Images and Scrset</h3>
+
+<p>Widgetkit supports the <code>srcset</code> attribute, which allows you to use a number of differently sized versions of the same image. These will be loaded automatically based on the pixel density of the user's display. So if someone visits your site from a device with a retina display, their browser will choose the large source image instead of the smaller one, which would probably be all pixelated.</p>
+
+<p>All you need to do is upload a second version of your image, which is TWICE AS BIG and append 2x to the file name.</p>
 
 <h3>Video</h3>
 
