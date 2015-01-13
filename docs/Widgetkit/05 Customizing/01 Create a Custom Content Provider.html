@@ -1,18 +1,81 @@
 <h1 class="title">Create a Custom Content Provider</h1>
 
 <p>
-    Widgetkit is very modular and extendable by design. You can easily add your own content providers or widget plugin. Both, content provider and widget plugin, are plugins. You can find them in the plugin folder of Widgetkit:
-</p>
-
-<p>For Joomla<br><code>administrator/components/com_widgetkit/plugins/</code></p>
-<p>For WordPress<br><code>wp-content/plugins/widgetkit/plugins/</code></p>
-
-<p>
-    To create a new content provider or widget plugin, just put it in the corresponding folder and it will be loaded automatically. If you are using a Warp 7 theme you can also put them in the theme folder.
+    Widgetkit is very modular and extendable by design, you can easily add your own content provider plugin. You can find the inbuild ones in the Widgetkit plugin folder, <code>administrator/components/com_widgetkit/plugins/content</code> for Joomla! and <code>wp-content/plugins/widgetkit/plugins/content</code> for WordPress.
 </p>
 
 <p>
-    For example<br>
-    <code>THEME-NAME/widgetkit/content/PROVIDER-NAME</code><br>
-    <code>THEME-NAME/widgetkit/widgets/WIDGET-NAME</code>
+    To create a new content provider we recommend you to copy one of the inbuilds ones and customise it to your needs, but instead of storing it into the Widgetkit folder create your own Joomla! or WordPress plugin and place it there. In order for Widgetkit to know about this new folder it would be required to delcare the new path, as follows.
+
+    <span class="badge">NOTE</span> if using a Warp 7 theme you can alternatively put your custom plugins in the theme folder, <code>THEME-NAME/widgetkit/content/PROVIDER-NAME</code> and avoid the following extra steps.
 </p>
+
+<pre><code>
+&lt;?php
+
+    $app['plugins']->addPath(__DIR__.'/plugin/plugin.php');
+    $app['locator']->addPath('plugins/content/YOUR-WK-PLUGIN-FOLDER-NAME', __DIR__.'/plugin');
+
+</code></pre>
+
+<p>
+    In order to use the WK App we must load it first, which is done differently on each framework.
+</p>
+
+<p>
+    The final code for the WordPress plugin would look like this.
+</p>
+
+<pre><code>
+&lt;?php
+
+    /*
+        Plugin Name: PLUGIN-NAME
+    */
+
+    add_action('plugins_loaded', function() {
+
+        // load WK
+        $app = $GLOBALS['widgetkit'];
+        
+        // register plugin path
+        $app['plugins']->addPath(__DIR__.'/plugin/plugin.php');
+        $app['locator']->addPath('plugins/content/PLUGIN-NAME', __DIR__.'/plugin');
+    });
+</code></pre>
+
+<p>
+    The final code for the Joomla! plugin would look like this.
+</p>
+
+<pre><code>
+&lt;?php
+
+class plgSystemPLUGIN-NAME extends JPlugin
+{
+    protected $app;
+
+    public function onAfterInitialise()
+    {
+        // load WK
+        if (!$this->app = $app = (@include JPATH_ADMINISTRATOR.'/components/com_widgetkit/widgetkit-app.php')) {
+            return;
+        }
+
+        $app['plugins']->addPath(__DIR__.'/plugin/plugin.php');
+        $app['locator']->addPath('plugins/content/PLUGIN-NAME', __DIR__.'/plugin');
+    }
+
+</code></pre>
+
+<p>
+    In both scenarios the file structure would be as follows being the plugin subfolder the custom Widgetkit Content Provide plugin.
+</p>
+    
+<pre><code>
++-- plugin/
+|      assets/
+|      views/
+|      plugin.php
++-- plugin_name.php
+</code></pre>
