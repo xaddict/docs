@@ -1,140 +1,82 @@
 <h1 class="title">Create a Custom Widget Plugin</h1>
 
-<p>Custom widget plugins are stored in <code>THEME_NAME/widgetkit/plugins/widgets/</code>. To create your own widget plugin, you can copy an existing one on start changing the containing files are start from scratch following this simple tutorial.</p>
+<p>
+    Widgetkit is very modular and extendable by design, you can easily add your own Widget plugin. To do so you could copy an existing one and start adapting it to your needs or create a new one from scratch following this simple tutorial. You can find the inbuild plugins into the <code>/administrator/components/com_widgetkit/plugins/widgets</code> folder in Joomla and <code>/wp-content/plugins/widgetkit/plugins/widgets</code> in WordPress.
+
+    <span class="badge">NOTE</span> For guidance about where to store your customisations, please checkout the {doc: where-to-store-your-customisations text:this} doc.
+</p>
 
 <h2>File structure</h2>
 
 <pre><code>
+|-- plugin.php          // main plugin content
+|-- widget.svg          // plugin icon in SVG format
 +-- views/
-|      edit.php
-|      widget.php
-+-- plugin.php
-+-- widget.svg
+|      edit.php         // edit form layout
+|      widget.php       // widget form layout
 </code></pre>
 
 <h2>plugin.php</h2>
 
-The <code>plugin.php</code> contains a PHP array to configure your widget plugin.
-Several keys are available to pass configuration options to Widgetkit
-and to listen to events triggered by Widgekit.
+<p>
+    The <code>plugin.php</code> file contains a PHP array to set your plugin by passing the configurations and event functions to Widgetkit.
+</p>
 
 <pre><code>
 &lt;?php
 
-return array(
+array(
 
+    // main Class the plugin is extending
     'main' => 'YOOtheme\\Widgetkit\\Widget\\Widget',
 
+    // plugin configuration
     'config' => function($app) {
+
         return array(
-            'name'  => 'example',
-            'label' => 'Example Widget Plugin',
-            'icon'  => $app['url']->to('plugins/widgets/example/widget.svg'),
-            'view'  => 'plugins/widgets/example/views/widget.php',
+
+            // plugin raw name
+            'name'  => 'PLUGIN-NAME',
+
+            // plugin label which will be displayed to the user
+            'label' => 'PLUGIN-LABEL',
+
+            // url to the icon that will be used in the widget plugin overview
+            'icon'  => $app['url']->to('plugins/widgets/PLUGIN-NAME/widget.svg'),
+
+            // path to the view file that will be used when rendering the widget
+            'view'  => 'plugins/widgets/PLUGIN-NAME/views/widget.php',
+
+            // supported widget fields
+            // a list of fields the widget requires from a selected content element. Example: The map requires a 'location' field to be present.
             'item'  => array('title', 'content'),
-            'settings' => array(
-                'size'   => 'h3',
-                'class'  => ''
+
+            // default settings to be used for every widget instance
+            'settings'  => array(
+                'key' => 'value
             )
         );
     },
 
+    // an array of Widgetkit events you can hook into
     'events' => array(
-        'init.site' => function($event, $app) {},
+
+        // triggered when Widgetkit is initialized in the back end
         'init.admin' => function($event, $app) {
-            $app['angular']->addTemplate('example.edit', 'plugins/widgets/example/views/edit.php', true);
-        }
+
+            // registers the edit view
+            $app['angular']->addTemplate('PLUGIN-NAME.edit', 'plugins/widgets/PLUGIN-NAME/views/edit.php', true);
+        },
+
+        // triggered when Widgetkit is initialized in the front end
+        'init.site' => function($event, $app) {},
+
+        // triggered when Widgetkit is initialized 
+        'init' => function($event, $app) {}
     )
 
 );
 </code></pre>
-
-<table>
-    <thead>
-        <tr>
-            <td>Key</td>
-            <td>Value</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>main</code></td>
-            <td>Point to the namespace of the class to be used for Widget initaliziation. Unless you want to customize every little detail, you will be fine by using the default class <code>YOOtheme\\Widgetkit\\Widget\\Widget</code></td>
-        </tr>
-        <tr>
-            <td><code>config</code></td>
-            <td>A PHP array for configuration of the widget plugin and default settings. You can assign a plain PHP array or use a callback function that returns an array on evaluation.</td>
-        </tr>
-        <tr>
-            <td><code>events</code></td>
-            <td>An array of Widgetkit events you can hook into.</td>
-        </tr>
-    </tbody>
-</table>
-
-The possible keys for the <code>config</code> and <code>events</code> array are explained below:
-
-<h3>Configuration passed as <code>config</code> array</h3>
-
-<table>
-    <thead>
-        <tr>
-            <td>Key</td>
-            <td>Value</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>name</code></td>
-            <td>Unique name of the widget</td>
-        </tr>
-        <tr>
-            <td><code>label</code></td>
-            <td>More verbose name of the widget, used as a label</td>
-        </tr>
-        <tr>
-            <td><code>icon</code></td>
-            <td>Path to an icon that will be used in the widget plugin overview</td>
-        </tr>
-        <tr>
-            <td><code>view</code></td>
-            <td>Path to view file that will be used when rendering the widget</td>
-        </tr>
-        <tr>
-            <td><code>item</code></td>
-            <td>A list of fields this widget type requires from a selected content element. Example: The map requires a <code>location</code> field to be present.</td>
-        </tr>
-        <tr>
-            <td><code>settings</code></td>
-            <td>Default settings to be used for every widget instance</td>
-        </tr>
-    </tbody>
-</table>
-
-<h3>Available Widgetkit events</h3>
-
-<table>
-    <thead>
-        <tr>
-            <td>Event name</td>
-            <td>Explanation</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>init</code></td>
-            <td>Event is triggered when Widgetkit is initialized</td>
-        </tr>
-        <tr>
-            <td><code>init.site</code></td>
-            <td>Event is triggered when Widgetkit is initialized in the front end</td>
-        </tr>
-        <tr>
-            <td><code>init.admin</code></td>
-            <td>Event is triggered when Widgetkit is initialized in the back end</td>
-        </tr>
-    </tbody>
-</table>
 
 <h2>edit.php</h2>
 

@@ -1,23 +1,140 @@
 <h1 class="title">Create a Custom Content Provider</h1>
 
 <p>
-    Widgetkit is very modular and extendable by design, you can easily add your own content provider plugin. You can find the inbuild ones in the Widgetkit plugin folder, <code>administrator/components/com_widgetkit/plugins/content</code> for Joomla and <code>wp-content/plugins/widgetkit/plugins/content</code> for WordPress.
+    Widgetkit is very modular and extendable by design, you can easily add your own content provider plugin. To do so you could copy an existing one and start adapting it to your needs or create a new one from scratch following this simple tutorial. You can find the inbuild plugins into the <code>/administrator/components/com_widgetkit/plugins/content</code> folder in Joomla and <code>/wp-content/plugins/widgetkit/plugins/content</code> in WordPress.
+
+    <span class="badge">NOTE</span> For guidance about where to store your customisations, please checkout the {doc: where-to-store-your-customisations text:this} doc.
 </p>
 
-<p>
-    To create a new content provider we recommend you to copy one of the inbuilds ones and customise it to your needs, but in order to make it update-proof store it outside Widgetkit. For information about where to store it, please checkout the {doc: where-to-store-your-customisations text:Where to Store Your Customisations} doc.
-</p>
-
-<h2>Plugin Structure</h2>
-
-<p>
-    A typical content plugin would have the following file structure
-</p>
+<h2>File structure</h2>
     
 <pre><code>
-+-- assets/             // The assets folder
-|      controller.js    // AngularJS controller
-+-- views/              // The views folder
-|      edit.php         // AngularJS view layout
-|-- plugin.php          // The main plugin file
+|-- plugin.php          // main plugin content
+|-- content.svg         // plugin icon in SVG format
++-- views/
+|      edit.php         // edit form layout
+</code></pre>
+
+<h2>plugin.php</h2>
+
+<p>
+    The <code>plugin.php</code> file contains a PHP array to set your plugin by passing the configurations and event functions to Widgetkit.
+</p>
+
+<pre><code>
+&lt;?php
+
+array(
+
+    // plugin name
+    'name' => 'content/PLUGIN-NAME',
+
+    // main Class the plugin is extending
+    'main' => 'YOOtheme\\Widgetkit\\Content\\Type',
+
+    // plugin configuration
+    'config' => function($app) {
+
+        return array(
+
+            // plugin raw name
+            'name'  => 'PLUGIN-NAME',
+
+            // plugin label which will be displayed to the user
+            'label' => 'PLUGIN-LABEL',
+
+            // url to the plugin icon
+            'icon'  => $app['url']->to('plugins/content/PLUGIN-NAME/content.svg'),
+
+            // supported widget fields
+            'item'  => array('title', 'content', 'link', 'media'),
+
+            // default configuration data
+            'data'  => array(
+                'key' => 'value
+            )
+        );
+    },
+
+    // function that will retrieve and return the widget items
+    'items' => function ($items, $content, $app) {
+
+        // retrieve the data and maps it to the widget item
+        foreach ($source as $value) {
+
+            $data = array();
+            $data['title'] = 'TITLE'
+            $data['content'] = 'CONTENT'
+            $data['link'] = 'LINK'
+            $data['media'] = 'MEDIA'
+
+            // add new item to the widget array of items
+            $items->add($data);
+        }
+
+    },
+
+    // an array of Widgetkit events you can hook into
+    'events' => array(
+
+        // triggered when Widgetkit is initialized in the back end
+        'init.admin' => function ($event, $app) {
+
+            // registers the edit view
+            $app['angular']->addTemplate('PLUGIN-NAME.edit', 'plugins/content/PLUGIN-NAME/views/edit.php');
+        },
+
+        // triggered when Widgetkit is initialized in the front end
+        'init.site' => function($event, $app) {},
+
+        // triggered when Widgetkit is initialized 
+        'init' => function($event, $app) {}
+    )
+
+);
+
+</code></pre>
+
+<h2>edit.php</h2>
+
+<p>
+    The <code>edit.php</code> file contains the form layout that will be displayed in the Widgetkit admin area when setting up the content provider. It rely on UIkit for its styling and on AngularJS for the logic.
+</p>
+
+<pre><code>
+
+<!-- wrapp the content with uk-form style -->
+<div class="uk-form uk-form-stacked">
+
+    <!-- wrapp each field -->
+    <div class="uk-form-row">
+
+        <!-- set the field label -->
+        <label class="uk-form-label" for="wk-FIELD-NAME">FIELD-LABEL</label>
+
+        <!-- set the field inputs -->
+        <div class="uk-form-controls">
+            <input id="wk-FIELD-NAME" class="uk-form-width-large" type="text" value="" ng-model="content.data['FIELD-NAME']">
+        </div>
+
+    </div>
+
+    <!-- other examples -->
+    <div class="uk-form-row">
+        <div class="uk-form-controls">
+            <label><input type="checkbox" ng-model="content.data['FIELD-NAME']" ng-true-value="1" ng-false-value="0"> FIELD-LABEL</label>
+        </div>
+    </div>
+
+    <div class="uk-form-row">
+        <label class="uk-form-label" for="wk-FIELD-NAME">FIELD-LABEL</label>
+         <div class="uk-form-controls">
+            <select id="wk-FIELD-NAME" class="uk-form-width-large" ng-model="content.data['FIELD-NAME']">
+                <option value="">VALUE</option>
+            </select>
+        </div>
+    </div>
+
+</div>
+
 </code></pre>

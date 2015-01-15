@@ -76,7 +76,7 @@ add_action('plugins_loaded', function() {
     // load Widgetkit App
     $app = $GLOBALS['widgetkit'];
     
-     // register all plugins
+    // register all plugins
     $app['plugins']->addPath(__DIR__.'/plugins/*/*/plugin.php');
 
     // register each CONTENT provider plugin path
