@@ -1,13 +1,13 @@
 <h1 class="title">Create a Custom Content Provider</h1>
 
 <p>
-    Widgetkit is very modular and extendable by design, you can easily add your own content provider plugin. To do so you could copy an existing one and start adapting it to your needs or create a new one from scratch following this simple tutorial. You can find the inbuild plugins into the <code>/administrator/components/com_widgetkit/plugins/content</code> folder in Joomla and <code>/wp-content/plugins/widgetkit/plugins/content</code> in WordPress.
+    Widgetkit is very modular and extendable by design, you can easily add your own content provider plugin. To do so, you could copy an existing one and start adapting it to your needs or create a new one from scratch following this simple tutorial. You can find the inbuilt plugins in the <code>/wp-content/plugins/widgetkit/plugins/content</code> in WordPress and <code>/administrator/components/com_widgetkit/plugins/content</code> folder in Joomla.
 
-    <span class="badge">NOTE</span> For guidance about where to store your customisations, please checkout the {doc: where-to-store-your-customisations text:this} doc.
+    <span class="badge">NOTE</span> For guidance about where to store your customisations, please check out {doc: where-to-store-your-customisations text:this} doc.
 </p>
 
 <h2>File structure</h2>
-    
+
 <pre><code>
 |-- plugin.php          // main plugin content
 |-- content.svg         // plugin icon in SVG format
@@ -87,7 +87,7 @@ array(
         // triggered when Widgetkit is initialized in the front end
         'init.site' => function($event, $app) {},
 
-        // triggered when Widgetkit is initialized 
+        // triggered when Widgetkit is initialized
         'init' => function($event, $app) {}
     )
 
@@ -98,7 +98,7 @@ array(
 <h2>edit.php</h2>
 
 <p>
-    The <code>edit.php</code> file contains the form layout that will be displayed in the Widgetkit admin area when setting up the content provider. It rely on UIkit for its styling and on AngularJS for the logic.
+    The <code>edit.php</code> file contains the form layout that will be displayed in the Widgetkit admin area when setting up the content provider. It relies on UIkit for its styling and on AngularJS for the logic.
 </p>
 
 <pre><code>

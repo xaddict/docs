@@ -1,9 +1,9 @@
 <h1 class="title">Create a Custom Widget Plugin</h1>
 
 <p>
-    Widgetkit is very modular and extendable by design, you can easily add your own Widget plugin. To do so you could copy an existing one and start adapting it to your needs or create a new one from scratch following this simple tutorial. You can find the inbuild plugins into the <code>/administrator/components/com_widgetkit/plugins/widgets</code> folder in Joomla and <code>/wp-content/plugins/widgetkit/plugins/widgets</code> in WordPress.
+    Widgetkit is very modular and extendable by design, you can easily add your own widget plugin. To do so, you could copy an existing one and start adapting it to your needs or create a new one from scratch following this simple tutorial. You can find the inbuilt plugins in the <code>/wp-content/plugins/widgetkit/plugins/widgets</code> in WordPress and <code>/administrator/components/com_widgetkit/plugins/widgets</code> folder in Joomla.
 
-    <span class="badge">NOTE</span> For guidance about where to store your customisations, please checkout the {doc: where-to-store-your-customisations text:this} doc.
+    <span class="badge">NOTE</span> For guidance about where to store your customisations, please check out {doc: where-to-store-your-customisations text:this} doc.
 </p>
 
 <h2>File structure</h2>
@@ -71,7 +71,7 @@ array(
         // triggered when Widgetkit is initialized in the front end
         'init.site' => function($event, $app) {},
 
-        // triggered when Widgetkit is initialized 
+        // triggered when Widgetkit is initialized
         'init' => function($event, $app) {}
     )
 
