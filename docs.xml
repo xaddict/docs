@@ -113,7 +113,7 @@
       <doc alias="how-to-migrate" name="How to Migrate from Widgetkit 1" file="01 How to Migrate from Widgetkit 1.html"/>
       <doc alias="file-permission-issues-5" name="File Permission Issues" file="02 File Permission Issues.html"/>
       <doc alias="javascript-errors-5" name="JavaScript Errors" file="03 Javascript Errors.html"/>
-      <doc alias="shortcode-issues" name="JavaScript Errors" file="04 Shortcode is not Rendered as a Widget.html"/>
+      <doc alias="compatibility" name="Compatibility" file="04 Compatibility.html"/>
     </category>
     <separator label="Widgetkit 1" />
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
