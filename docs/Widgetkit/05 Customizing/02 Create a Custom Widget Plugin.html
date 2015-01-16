@@ -137,5 +137,32 @@ array(
 <h2>views/widget.php</h2>
 
 <p>
-    This is the layout that will be used when rendering the widget in the frontend, is where all your configurations are retrieved, analyzed and converted into the HTML your browser expects. There is so much you can learn by just looking into the inbuild Widgets, but as a quick reference:
+    This is the layout that will be used when rendering the widget in the front end, is where all the rendering content and render settings are analyzed and converted into the HTML your browser expects.
+</p>
+
+<p>
+    There is so much you can learn by just looking into the inbuild Widgets files, but as a quick reference those are the available variables.
+</p>
+
+<table class="zebra">
+    <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><em>$settings</em></td>
+            <td>Array of the rendering settings</td>
+        </tr>
+        <tr>
+            <td><em>$items</em></td>
+            <td>An array of the Widget Items being rendered provided by the Content Provider</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    <span class="badge">NOTE</span> When iterating over the $items you can access the custom fields by its key, which you would have speficied while setting the content provider. Eg: $item['customkey'].
 </p>
