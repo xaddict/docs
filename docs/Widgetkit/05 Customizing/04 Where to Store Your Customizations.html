@@ -8,14 +8,19 @@
 <h2>Theme folder</h2>
 
 <p>
-    If using Warp7, you can place the customizations into the <code>THEME-NAME/widgetkit/content/PROVIDER-NAME</code> folder. Simple as that, Widgetkit will check that folder for any Content Provider or Widget plugin.
+    When using Warp7, you can place the customizations into a subfolder of <code>THEME-NAME/widgetkit/</code>. Widgetkit will automatically check that folder for any content providers or widget plugins.
 </p>
+
+<ul>
+    <li>Place your custom content provider in <code>THEME-NAME/widgetkit/content/PROVIDER-NAME/</code></li>
+    <li>Place your custom widget plugin in <code>THEME-NAME/widgetkit/widgets/WIDGETPLUGIN-NAME/</code></li>
+</ul>
 
 
 <h2>Standalone Plugin</h2>
 
 <p>
-    Placing the customizations in your own standalone plugin will keep your customizations safe regardless of the Widgetkit or Theme changes. Your standalone plugin should load the Widgetkit App and register your custom Widgetkit plugins during the booting.
+    Placing the customizations in your own standalone plugin will keep your customizations safe regardless of the Widgetkit or Theme changes. Your standalone plugin should load the Widgetkit App and register your custom Widgetkit plugins during the booting process.
 </p>
 
 <h3>WordPress</h3>
@@ -56,7 +61,7 @@ add_action('plugins_loaded', function() {
 
     $app = Application::getInstance();
 
-    // register plugin path
+    // Register plugin path
     $app['plugins']->addPath(__DIR__.'/plugin/plugin.php');
     $app['locator']->addPath('plugins/content/wkcustom', __DIR__.'/plugin');
 });
@@ -66,7 +71,7 @@ add_action('plugins_loaded', function() {
 <h3>Joomla</h3>
 
 <p>
-    In Joomla your custom plugin requires two files, the main php file and the main xml file, both to be stored in the <code>/plugins/system/JOOMLA-PLUGIN-NAME</code> folder. For the purpose for this tutorial will be placing the custom Widgetkit plugins into the <code>/plugins/system/JOOMLA-PLUGIN-NAME/plugins</code> folder, but can be changed to whatever you prefer. All together the files structure would look like this.
+    In Joomla your custom plugin requires two files, the main PHP file and the main XML file, both to be stored in the <code>/plugins/system/JOOMLA-PLUGIN-NAME</code> folder. For the purpose of this tutorial we'll be placing the custom Widgetkit plugins into the <code>/plugins/system/JOOMLA-PLUGIN-NAME/plugins</code> folder, but that can be changed to whatever you prefer. All together the files structure would look like this:
 </p>
 
 <pre><code>
@@ -80,7 +85,8 @@ add_action('plugins_loaded', function() {
 </code></pre>
 
 <p>
-    In our custom plugin we need to hook our code into the 'onAfterInitialise' Joomla event, in order to do so we are relying on the System Plugin. Let's see how the code should look like.
+    In our custom plugin we need to hook our code into the <code>onAfterInitialise</code> Joomla event.
+    In order to do so we are relying on the System Plugin. Let's see how the code should look like.
     <br />
     <span class="badge">NOTE</span> In Joomla the plugin must be installed through the admin installer before being recognized. Make sure to do so after having completed the main structure.
 </p>
@@ -92,18 +98,18 @@ class plgSystemPLUGIN-NAME extends JPlugin
 {
     public function onAfterInitialise()
     {
-        // load Widgetkit App
+        // Load Widgetkit App
         if (!$app = @include JPATH_ADMINISTRATOR.'/components/com_widgetkit/widgetkit-app.php') {
             return;
         }
 
-        // register all plugins
+        // Register all plugins
         $app['plugins']->addPath(__DIR__.'/plugins/*/*/plugin.php');
 
-        // register each CONTENT provider plugin path
+        // Register each CONTENT provider plugin path
         $app['locator']->addPath('plugins/content/PLUGIN-NAME', __DIR__.'/plugins/content/PLUGIN-NAME');
 
-        // register each WIDGET plugin path
+        // Register each WIDGET plugin path
         $app['locator']->addPath('plugins/widgets/PLUGIN-NAME', __DIR__.'/plugins/widgets/PLUGIN-NAME');
     }
 }
@@ -111,11 +117,10 @@ class plgSystemPLUGIN-NAME extends JPlugin
 </code></pre>
 
 <p>
-    The PLUGIN-NAME.xml manifest file is necessary to be declared as well, there are many more possible options for which we invite you to check the Joomla documentation, but for the purpose of this tutorial the following version will suffice.
+    The PLUGIN-NAME.xml manifest file is necessary to be declared as well. There are many options available for which we invite you to check the Joomla documentation. For the purpose of this tutorial the following version will suffice.
 </p>
 
 <pre><code>
-
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;extension type="plugin" version="3.1" group="system" method="upgrade"&gt;
     &lt;name&gt;System - PLUGIN-NAME&lt;/name&gt;
@@ -126,5 +131,4 @@ class plgSystemPLUGIN-NAME extends JPlugin
         &lt;folder&gt;plugins&lt;/folder&gt;
     &lt;/files&gt;
 &lt;/extension&gt;
-
 </code></pre>
