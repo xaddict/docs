@@ -46,19 +46,19 @@
     Plugin Name: PLUGIN-NAME
 */
 
+use YOOtheme\Widgetkit\Application;
+
 add_action('plugins_loaded', function() {
 
-    // load Widgetkit App
-    $app = $GLOBALS['widgetkit'];
+    if (!class_exists('YOOtheme\Widgetkit\Application')) {
+        return;
+    }
 
-    // register all plugins
-    $app['plugins']->addPath(__DIR__.'/plugins/*/*/plugin.php');
+    $app = Application::getInstance();
 
-    // register each CONTENT provider plugin path
-    $app['locator']->addPath('plugins/content/PLUGIN-NAME', __DIR__.'/plugins/content/PLUGIN-NAME');
-
-    // register each WIDGET plugin path
-    $app['locator']->addPath('plugins/widgets/PLUGIN-NAME', __DIR__.'/plugins/widgets/PLUGIN-NAME');
+    // register plugin path
+    $app['plugins']->addPath(__DIR__.'/plugin/plugin.php');
+    $app['locator']->addPath('plugins/content/wkcustom', __DIR__.'/plugin');
 });
 </code></pre>
 
