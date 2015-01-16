@@ -1,9 +1,18 @@
 <h1 class="title">Create a Custom Widget Plugin</h1>
 
-<p>
-    Widgetkit is very modular and extendable by design, you can easily add your own widget plugin. To do so, you could copy an existing one and start adapting it to your needs or create a new one from scratch following this simple tutorial. You can find the inbuilt plugins in the <code>/wp-content/plugins/widgetkit/plugins/widgets</code> in WordPress and <code>/administrator/components/com_widgetkit/plugins/widgets</code> folder in Joomla.
 
-    <span class="badge">NOTE</span> For guidance about where to store your customizations, please check out {doc: where-to-store-your-customizations text:this} doc.
+<p>
+    Widgetkit is modular and extendable by design: Widget content and widget representation are separate from each other.
+</p>
+
+<p>
+    In this article you will learn how to create your own widget plugin. A widget plugin is used by Widgetkit to determine how a given content element is rendered. This allows a content element to be reused and to be rendered in different ways each time.
+</p>
+<p>
+    In order to create your own widget plugin you can copy an existing one and start adapting it to your needs. Alternativeley, you can create a new one from scratch following the steps explained here. In both scenarios you shoud rely on the existing plugins as reference. They are located in the <code>/wp-content/plugins/widgetkit/plugins/widgets</code> folder in WordPress and <code>/administrator/components/com_widgetkit/plugins/widgets</code> folder in Joomla.
+</p>
+<p>
+    <span class="badge">NOTE</span> Please make sure to {doc: where-to-store-your-customizations text:store your customizations} in a way so that they don't get lost during a Widgetkit update.
 </p>
 
 <h2>File structure</h2>
@@ -19,15 +28,15 @@
 <h2>plugin.php</h2>
 
 <p>
-    The <code>plugin.php</code> file contains a PHP array to set your plugin by passing the configurations and event functions to Widgetkit.
+    The <code>plugin.php</code> file contains a PHP array to set your plugin by passing the configurations and event functions to Widgetkit. Don't forget the <code>return</code> statement, as this file is supposed to return a valid configuration array.
 </p>
 
 <pre><code>
 &lt;?php
 
-array(
+return array(
 
-    // main Class the plugin is extending
+    // main class the plugin is extending
     'main' => 'YOOtheme\\Widgetkit\\Widget\\Widget',
 
     // plugin configuration
@@ -35,43 +44,44 @@ array(
 
         return array(
 
-            // plugin raw name
+            // Plugin raw name
             'name'  => 'PLUGIN-NAME',
 
-            // plugin label which will be displayed to the user
+            // Plugin label which will be displayed to the user
             'label' => 'PLUGIN-LABEL',
 
-            // url to the icon that will be used in the widget plugin overview
+            // Url to the icon that will be used in the widget plugin overview
             'icon'  => $app['url']->to('plugins/widgets/PLUGIN-NAME/widget.svg'),
 
-            // path to the view file that will be used when rendering the widget
+            // Path to the view file that will be used when rendering the widget
             'view'  => 'plugins/widgets/PLUGIN-NAME/views/widget.php',
 
-            // supported widget fields
-            // a list of fields the widget requires from a selected content element. Example: The map requires a 'location' field to be present.
+            // Supported widget fields
+            // A list of fields the widget requires from a selected content element.
+            // Example: The map requires a 'location' field to be present.
             'item'  => array('title', 'content'),
 
-            // default settings to be used for every widget instance
+            // Default settings to be used for every widget instance
             'settings'  => array(
                 'key' => 'value
             )
         );
     },
 
-    // an array of Widgetkit events you can hook into
+    // An array of Widgetkit events you can hook into
     'events' => array(
 
-        // triggered when Widgetkit is initialized in the back end
+        // Triggered when Widgetkit is initialized in the back end
         'init.admin' => function($event, $app) {
 
-            // registers the edit view
+            // Registers the edit view
             $app['angular']->addTemplate('PLUGIN-NAME.edit', 'plugins/widgets/PLUGIN-NAME/views/edit.php', true);
         },
 
-        // triggered when Widgetkit is initialized in the front end
+        // Triggered when Widgetkit is initialized in the front end
         'init.site' => function($event, $app) {},
 
-        // triggered when Widgetkit is initialized
+        // Triggered when Widgetkit is initialized
         'init' => function($event, $app) {}
     )
 
@@ -81,12 +91,12 @@ array(
 <h2>views/edit.php</h2>
 
 <p>
-    The <code>view/edit.php</code> file contains the form layout that will be displayed when setting up the Widget rendering options. It relies on UIkit for its styling and on AngularJS for the logic for which you can check each respective documentation for further information.
+    The <code>view/edit.php</code> file contains the form layout that will be displayed when setting up the Widget rendering options. It relies on <a href="http://getuikit.com/">UIkit</a> for its styling and on <a href="https://angularjs.org/">AngularJS</a> for the logic. Check the respective documentation for further information.
 </p>
 
 <pre><code>
 
-&lt;!-- wrapp the content with uk-form and uk-grid styles --&gt;
+&lt;!-- wrap the content with uk-form and uk-grid styles --&gt;
 &lt;div class="uk-grid uk-grid-divider uk-form uk-form-horizontal" data-uk-grid-margin&gt;
 
     &lt;!-- set the left column --&gt;
@@ -137,11 +147,11 @@ array(
 <h2>views/widget.php</h2>
 
 <p>
-    This is the layout that will be used when rendering the widget in the front end, is where all the rendering content and render settings are analyzed and converted into the HTML your browser expects.
+    This file will be used to render the widget in the front end. Content and render settings are combined and converted into HTML for your browser.
 </p>
 
 <p>
-    There is so much you can learn by just looking into the inbuild Widgets files, but as a quick reference those are the available variables.
+    The best way to understand the possibilities is by just looking into the built-in Widgets. To get you started, here is a quick reference of available variables inside the <code>widget.php</code>.
 </p>
 
 <table class="zebra">
@@ -158,11 +168,11 @@ array(
         </tr>
         <tr>
             <td><em>$items</em></td>
-            <td>An array of the Widget Items being rendered provided by the Content Provider</td>
+            <td>Array of the content items to be rendered. These are provided by the content provider</td>
         </tr>
     </tbody>
 </table>
 
 <p>
-    <span class="badge">NOTE</span> When iterating over the $items you can access the custom fields by its key, which you would have speficied while setting the content provider. Eg: $item['customkey'].
+    <span class="badge">NOTE</span> When iterating over the <code>$items</code> you can access the custom fields by their keys. The available keys are specified in the <code>item</code> configuration of the content provider, e.g.: <code>$item['customkey']</code>.
 </p>
