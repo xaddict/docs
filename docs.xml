@@ -105,11 +105,15 @@
     </category>
     <category alias="customizing" name="Customizing" folder="05 Customizing">
       <doc alias="custom-content" name="Create a Content Provider" file="01 Create a Custom Content Provider.html"/>
+      <doc alias="custom-widget-plugin" name="Create a Custom Widget Plugin" file="02 Create a Custom Widget Plugin.html"/>
+      <doc alias="custom-fields" name="Custom Fields" file="03 Custom Fields.html"/>
+      <doc alias="where-to-store-your-customizations" name="Where to Store Your Customizations" file="04 Where to Store Your Customizations.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="06 Troubleshooting">
       <doc alias="how-to-migrate" name="How to Migrate from Widgetkit 1" file="01 How to Migrate from Widgetkit 1.html"/>
       <doc alias="file-permission-issues-5" name="File Permission Issues" file="02 File Permission Issues.html"/>
       <doc alias="javascript-errors-5" name="JavaScript Errors" file="03 Javascript Errors.html"/>
+      <doc alias="shortcode-issues" name="JavaScript Errors" file="04 Shortcode is not Rendered as a Widget.html"/>
     </category>
     <separator label="Widgetkit 1" />
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
