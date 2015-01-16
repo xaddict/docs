@@ -1,19 +1,19 @@
-<h1 class="title">Where to Store Your Customisations</h1>
+<h1 class="title">Where to Store Your Customizations</h1>
 
 <p>
-    Placing your WK customisations into the Widgetkit folder is a bad practice for many reasons, instead checkout the following alternatives.
+    Placing your Widgetkit customizations into the Widgetkit folder is a bad practice for many reasons, instead check out the following alternatives.
 </p>
 
 <h2>Theme folder</h2>
 
 <p>
-    If using Warp7, you can place the customisations into the <code>THEME-NAME/widgetkit/content/PROVIDER-NAME</code> folder. Simple as that, Widgetkit will check that folder for any Content Provider or Widget plugin.
+    If using Warp7, you can place the customizations into the <code>THEME-NAME/widgetkit/content/PROVIDER-NAME</code> folder. Simple as that, Widgetkit will check that folder for any Content Provider or Widget plugin.
 </p>
 
 <h2>Standalone Joomla Plugin</h2>
 
 <p>
-    Placing the customisations in your own standalone plugin is the best way to extend Widgetkit without compromising those when updating. Your standalone plugin should load the Widgetkit App and register your custom plugins during the Widgetkit booting. In fact is very easy, let's see how would look the main plugin file code.
+    Placing the customizations in your own standalone plugin is the best way to extend Widgetkit without compromising those when updating. Your standalone plugin should load the Widgetkit App and register your custom plugins during the Widgetkit booting. In fact it is very easy. Let's see what the main plugin file code would look like.
 </p>
 
 <pre><code>
@@ -42,9 +42,9 @@ class plgSystemPLUGIN-NAME extends JPlugin
 </code></pre>
 
 <p>
-    The plugin folder structure should looke like this and the whole content must be placed into <code>/plugins/system/JOOMLA-PLUGIN-NAME</code> folder.
+    The plugin folder structure should look like this and the whole content must be placed into the <code>/plugins/system/JOOMLA-PLUGIN-NAME</code> folder.
 </p>
-    
+
 <pre><code>
 +-- plugins/                            // Your custom Widgetkit plugins folder
 +----- content/                         // Content provider plugins folder
@@ -58,7 +58,7 @@ class plgSystemPLUGIN-NAME extends JPlugin
 <h2>Standalone WordPress Plugin</h2>
 
 <p>
-    As in Joomla, we can create our own WordPress plugin and provide a nice, update-proof customisation. The main plugin file code would look like this.
+    Like in Joomla, we can create our own WordPress plugin and provide a nice, update-proof customization. The main plugin file code would look like this.
 </p>
 
 <pre><code>
@@ -72,7 +72,7 @@ add_action('plugins_loaded', function() {
 
     // load Widgetkit App
     $app = $GLOBALS['widgetkit'];
-    
+
     // register all plugins
     $app['plugins']->addPath(__DIR__.'/plugins/*/*/plugin.php');
 
@@ -85,9 +85,9 @@ add_action('plugins_loaded', function() {
 </code></pre>
 
 <p>
-    The plugin folder structure should looke like this and the whole content must be placed into <code>/wp-content/plugins/WP-PLUGIN-NAME</code> folder.
+    The plugin folder structure should look like this and the whole content must be placed into the <code>/wp-content/plugins/WP-PLUGIN-NAME</code> folder.
 </p>
-    
+
 <pre><code>
 +-- plugins/                            // Your custom Widgetkit plugins folder
 +----- content/                         // Content provider plugins folder
