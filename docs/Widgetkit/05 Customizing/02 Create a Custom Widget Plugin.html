@@ -78,10 +78,64 @@ array(
 );
 </code></pre>
 
-<h2>edit.php</h2>
+<h2>views/edit.php</h2>
 
-TODO
+<p>
+    The <code>view/edit.php</code> file contains the form layout that will be displayed when setting up the Widget rendering options. It relies on UIkit for its styling and on AngularJS for the logic for which you can check each respective documentation for further information.
+</p>
 
-<h2>widget.php</h2>
+<pre><code>
 
-TODO
+&lt;!-- wrapp the content with uk-form and uk-grid styles --&gt;
+&lt;div class="uk-grid uk-grid-divider uk-form uk-form-horizontal" data-uk-grid-margin&gt;
+
+    &lt;!-- set the left column --&gt;
+    &lt;div class="uk-width-medium-1-4"&gt;
+
+        &lt;!-- set the wk specific style --&gt;
+        &lt;div class="wk-panel-marginless"&gt;
+
+            &lt;!-- set the navigation connecting it to the uk-switcher --&gt;
+            &lt;ul class="uk-nav uk-nav-side" data-uk-switcher="{connect:'#nav-content'}"&gt;
+                &lt;li&gt;&lt;a href=""&gt;General&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;/li&gt;
+                &lt;!-- keep adding them as you need --&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;!-- set the right column --&gt;
+    &lt;div class="uk-width-medium-3-4"&gt;
+
+        &lt;!-- set the uk-switcher content --&gt;
+        &lt;ul id="nav-content" class="uk-switcher"&gt;
+
+            &lt;!-- general switcher section content --&gt;
+            &lt;li&gt;
+                &lt;div class="uk-form-row"&gt;
+                    &lt;label class="uk-form-FIELD-NAME" for="wk-columns"&gt;FIELD-LABEL&lt;/label&gt;
+                    &lt;div class="uk-form-controls"&gt;
+                        &lt;select id="wk-FIELD-NAME" class="uk-form-width-medium" ng-model="widget.data['FIELD-NAME']"&gt;
+                            &lt;option value="1"&gt;1&lt;/option&gt;
+                            &lt;option value="2"&gt;2&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/li&gt;
+
+            &lt;li&gt;&lt;/li&gt;
+            &lt;!-- keep adding one for each section you have set --&gt;
+
+        &lt;/ul&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+
+<h2>views/widget.php</h2>
+
+<p>
+    This is the layout that will be used when rendering the widget in the frontend, is where all your configurations are retrieved, analyzed and converted into the HTML your browser expects. There is so much you can learn by just looking into the inbuild Widgets, but as a quick reference:
+</p>
