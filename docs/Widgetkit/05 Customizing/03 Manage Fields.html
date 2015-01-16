@@ -1,0 +1,122 @@
+<h1>Custom Fields</h1>
+
+<p>
+    A simple, yet powerful Widgetkit 2 feature are the Predefined and Custom Fields which allow Widgetkit to be used as simple CCK (Content Construction Kit).
+</p>
+
+<h2>Managing Fields</h2>
+
+<p>When creating <em>New Content</em>, the bottom of the dialog will show the <em>Manage Fields</em> button. Click the button to switch the view to the fields editing mode. Notice that you can reorder the fields by dragging and dropping them while in editing mode.</p>
+
+<img src="../../../assets/images/widgetkit/content_manager_custom_fields.gif" alt="Add a custom field to your content item" width="751" height="242" />
+
+<h2>Social Media Fields</h2>
+
+<table class="zebra">
+    <thead>
+        <tr>
+          <th>Field</th>
+          <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><em>Email</em></td>
+            <td>Displays an Email button.</td>
+        </tr>
+        <tr>
+            <td><em>Facebook</em></td>
+            <td>Displays a Facebook button.</td>
+        </tr>
+        <tr>
+            <td><em>Google Plus</em></td>
+            <td>Displays a Google+ button.</td>
+        </tr>
+        <tr>
+            <td><em>Twitter</em></td>
+            <td>Displays a Twitter button.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    Currently these fields are used by the Grid, Grid-Stack, Map and Switcher Widget Plugins.
+    <br />
+    <span class="badge">NOTE</span> Social Media buttons will be displayed in the media overlay if set as <em>Social Buttons</em>.
+</p>
+
+<h2>Other Fields</h2>
+
+<table class="zebra">
+    <thead>
+        <tr>
+          <th>Field</th>
+          <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><em>Tags</em></td>
+            <td>Currently this field is not used by any Widget Plugin.</td>
+        </tr>
+        <tr>
+            <td><em>Location</em></td>
+            <td>Allows to pick a location from a Google Map. Currently used by the Map Widget Plugin.</td>
+        </tr>
+        <tr>
+            <td><em>Custom</em></td>
+            <td>This field is meant to be used with your own custom Widget Plugins. See below to understand this type.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Custom Field types</h2>
+
+<p>
+    In addition to the predefined types explained above, you can add any number of custom fields. When just using using Widgetkit with the default widget types, you will not need to add custom fields as they won't be rendered anyway. However, when creating your own {doc: custom-widget-plugin text:custom widget plugin}, custom fields can come in handy, as they allow you to create any type of content element.
+</p>
+
+<p>
+    When adding a custom field, you need to select a type for that field. This type will determine what kind of input element will be shown in the editor and what kind of data you can then extract when rendering the widget.
+</p>
+
+<h2>Other Fields</h2>
+
+<table class="zebra">
+    <thead>
+        <tr>
+          <th>Custom field type</th>
+          <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><em>Text</em></td>
+            <td>A single line of text.</td>
+        </tr>
+        <tr>
+            <td><em>Textarea</em></td>
+            <td>A larger amount of text, potentially multiline.</td>
+        </tr>
+        <tr>
+            <td><em>Tags</em></td>
+            <td>Allows to add one or multiple tags to the content element.</td>
+        </tr>
+        <tr>
+            <td><em>Boolean</em></td>
+            <td>A checkbox which acts as a simple <code>true / false</code> toggle.</td>
+        </tr>
+        <tr>
+            <td><em>Media</em></td>
+            <td>Will display coontrols to pick a media element from the library.</td>
+        </tr>
+        <tr>
+            <td><em>Location</em></td>
+            <td>Will display a map to pick a location.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    To render custom fields in a custom widget plugin, you will use the same approach as rendering the predefined field types. Make sure to give your custom field a unique name that can be used when rendering the content element in a {doc: custom-widget-plugin text:custom widget plugin}.
+</p>
