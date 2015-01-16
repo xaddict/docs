@@ -1,18 +1,16 @@
 <h1 class="title">Create a Custom Content Provider</h1>
 
 <p>
-    Widgetkit is modular and extendable by design: Widget content and widget representation are separate from each other.
+    Widgetkit is modular and extendable by design: Widget content and widget presentation are separate from each other.
 </p>
 <p>
     In this article you will learn how to create your own content provider plugin. A content provider plugin is used by Widgetkit to retrieve the data which will be rendered by the Widgets. This feature allows different content types and makes Joomla, ZOO or K2 integration possible.
 </p>
-
 <p>
     In order to create your own content provider you can copy an existing one and start adapting it to your needs. Alternatively, you can create a new one from scratch following the steps explained here. In both scenarios you shoud rely on the existing plugins as reference, which you can find in the <code>/wp-content/plugins/widgetkit/plugins/content</code> folder in WordPress and <code>/administrator/components/com_widgetkit/plugins/content</code> folder in Joomla.
 </p>
-
 <p>
-    <span class="badge">NOTE</span> For guidance about where to store your customizations, please check out {doc: where-to-store-your-customizations text:this} doc.
+    <span class="badge">NOTE</span> Please make sure to {doc: where-to-store-your-customizations text:store your customizations} in a way so that they don't get lost during a Widgetkit update.
 </p>
 
 
@@ -21,7 +19,6 @@
 <p>
     Let's start by creating the file structure for our plugin. We need the main file, an icon and the view to render the content editor layout.
 </p>
-
 <pre><code>
 |-- plugin.php          // main plugin content
 |-- content.svg         // plugin icon in SVG format
@@ -34,46 +31,45 @@
 <p>
     The <code>plugin.php</code> file contains a PHP array to set your plugin by passing the configurations and event functions to Widgetkit. Whatever logic you need it must be passed throught this array. Checkout the comments to get information about what does each one of it. Don't forget the <code>return</code> statement, as this file is supposed to return a valid configuration array.
 </p>
-
 <pre><code>
 &lt;?php
 
 return array(
 
-    // plugin name
+    // Plugin name
     'name' => 'content/PLUGIN-NAME',
 
-    // main Class the plugin is extending
+    // Main class the plugin is extending
     'main' => 'YOOtheme\\Widgetkit\\Content\\Type',
 
-    // plugin configuration
+    // Plugin configuration
     'config' => function($app) {
 
         return array(
 
-            // plugin raw name
+            // Plugin raw name
             'name'  => 'PLUGIN-NAME',
 
-            // plugin label which will be displayed to the user
+            // Plugin label which will be displayed to the user
             'label' => 'PLUGIN-LABEL',
 
-            // url to the plugin icon
+            // Url to the plugin icon
             'icon'  => $app['url']->to('plugins/content/PLUGIN-NAME/content.svg'),
 
-            // supported widget fields
+            // Supported widget fields
             'item'  => array('title', 'content', 'link', 'media'),
 
-            // default configuration data
+            // Default configuration data
             'data'  => array(
                 'key' => 'value'
             )
         );
     },
 
-    // function that will retrieve and return the widget items
+    // Function that will retrieve and return the widget items
     'items' => function ($items, $content, $app) {
 
-        // retrieve the data and maps it to the widget item
+        // Retrieve the data and maps it to the widget item
         foreach ($source as $value) {
 
             $data = array();
@@ -82,26 +78,26 @@ return array(
             $data['link'] = 'LINK'
             $data['media'] = 'MEDIA'
 
-            // add new item to the widget array of items
+            // Add new item to the widget array of items
             $items->add($data);
         }
 
     },
 
-    // an array of Widgetkit events you can hook into
+    // An array of Widgetkit events you want to listen to
     'events' => array(
 
-        // triggered when Widgetkit is initialized in the back end
+        // Triggered when Widgetkit is initialized in the back end
         'init.admin' => function ($event, $app) {
 
             // registers the edit view
             $app['angular']->addTemplate('PLUGIN-NAME.edit', 'plugins/content/PLUGIN-NAME/views/edit.php');
         },
 
-        // triggered when Widgetkit is initialized in the front end
+        // Triggered when Widgetkit is initialized in the front end
         'init.site' => function($event, $app) {},
 
-        // triggered when Widgetkit is initialized
+        // Triggered when Widgetkit is initialized
         'init' => function($event, $app) {}
     )
 

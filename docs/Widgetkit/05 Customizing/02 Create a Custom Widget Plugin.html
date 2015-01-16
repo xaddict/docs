@@ -1,10 +1,8 @@
 <h1 class="title">Create a Custom Widget Plugin</h1>
 
-
 <p>
-    Widgetkit is modular and extendable by design: Widget content and widget representation are separate from each other.
+    Widgetkit is modular and extendable by design: Widget content and widget rendering are separate from each other.
 </p>
-
 <p>
     In this article you will learn how to create your own widget plugin. A widget plugin is used by Widgetkit to determine how a given content element is rendered. This allows a content element to be reused and to be rendered in different ways each time.
 </p>
@@ -36,10 +34,10 @@
 
 return array(
 
-    // main class the plugin is extending
+    // Main class the plugin is extending
     'main' => 'YOOtheme\\Widgetkit\\Widget\\Widget',
 
-    // plugin configuration
+    // Plugin configuration
     'config' => function($app) {
 
         return array(
@@ -63,12 +61,12 @@ return array(
 
             // Default settings to be used for every widget instance
             'settings'  => array(
-                'key' => 'value
+                'key' => 'value'
             )
         );
     },
 
-    // An array of Widgetkit events you can hook into
+    // An array of Widgetkit events you want to listen to
     'events' => array(
 
         // Triggered when Widgetkit is initialized in the back end
@@ -147,11 +145,10 @@ return array(
 <h2>views/widget.php</h2>
 
 <p>
-    This file will be used to render the widget in the front end. Content and render settings are combined and converted into HTML for your browser.
+    This file is used to render the widget in the front end. Content and render settings are combined and converted into HTML for your browser.
 </p>
-
 <p>
-    The best way to understand the possibilities is by just looking into the built-in Widgets. To get you started, here is a quick reference of available variables inside the <code>widget.php</code>.
+    The best way to understand the rendering possibilities is by looking at the code of the built-in Widgets. To get you started, here is a quick reference of available variables inside <code>views/widget.php</code>.
 </p>
 
 <table class="zebra">
