@@ -1,12 +1,21 @@
 <h1 class="title">Create a Custom Content Provider</h1>
 
 <p>
-    Widgetkit is very modular and extendable by design, you can easily add your own content provider plugin. To do so, you could copy an existing one and start adapting it to your needs or create a new one from scratch following this simple tutorial. You can find the inbuilt plugins in the <code>/wp-content/plugins/widgetkit/plugins/content</code> in WordPress and <code>/administrator/components/com_widgetkit/plugins/content</code> folder in Joomla.
+    Widgetkit is very modular and extendable by design and in this tutorial will be showing you how to create your own Content Provider plugin. A content provider plugin is used by Widgetkit to retrieve the data which will be rendered by the Widgets. Joomla, ZOO or K2 integrations are possible thanks to this nice feature.
+</p>
+
+<p>
+    In order to create your own content provide you could copy an existing one and start adapting it to your needs or create a new one from scratch following the tutorial. In both scenarios you shoud rely on the existing plugins as reference, which you can find in the <code>/wp-content/plugins/widgetkit/plugins/content</code> folder in WordPress and <code>/administrator/components/com_widgetkit/plugins/content</code> folder in Joomla.
 
     <span class="badge">NOTE</span> For guidance about where to store your customizations, please check out {doc: where-to-store-your-customizations text:this} doc.
 </p>
 
+
 <h2>File structure</h2>
+
+<p>
+    Let's start by creating the files structure for our plugin where we only need the main file, an icon and the views layouts.
+</p>
 
 <pre><code>
 |-- plugin.php          // main plugin content
@@ -18,7 +27,7 @@
 <h2>plugin.php</h2>
 
 <p>
-    The <code>plugin.php</code> file contains a PHP array to set your plugin by passing the configurations and event functions to Widgetkit.
+    The <code>plugin.php</code> file contains a PHP array to set your plugin by passing the configurations and event functions to Widgetkit. Whatever logic you need it must be passed throught this array. Checkout the comments to get information about what does each one of it.
 </p>
 
 <pre><code>
@@ -95,10 +104,10 @@ array(
 
 </code></pre>
 
-<h2>edit.php</h2>
+<h2>views/edit.php</h2>
 
 <p>
-    The <code>edit.php</code> file contains the form layout that will be displayed in the Widgetkit admin area when setting up the content provider. It relies on UIkit for its styling and on AngularJS for the logic.
+    The <code>views/edit.php</code> file contains the form layout that will be displayed in the Widgetkit admin area when setting up the content provider. It relies on UIkit for its styling and on AngularJS for the logic for which you can check each respective documentation for further information.
 </p>
 
 <pre><code>
