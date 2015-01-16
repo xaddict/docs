@@ -1,12 +1,17 @@
 <h1 class="title">Create a Custom Content Provider</h1>
 
 <p>
-    Widgetkit is very modular and extendable by design and in this tutorial will be showing you how to create your own Content Provider plugin. A content provider plugin is used by Widgetkit to retrieve the data which will be rendered by the Widgets. Joomla, ZOO or K2 integrations are possible thanks to this nice feature.
+    Widgetkit is modular and extendable by design: Widget content and widget representation are separate from each other.
+</p>
+<p>
+    In this article you will learn how to create your own content provider plugin. A content provider plugin is used by Widgetkit to retrieve the data which will be rendered by the Widgets. This feature allows different content types and makes Joomla, ZOO or K2 integration possible.
 </p>
 
 <p>
-    In order to create your own content provide you could copy an existing one and start adapting it to your needs or create a new one from scratch following the tutorial. In both scenarios you shoud rely on the existing plugins as reference, which you can find in the <code>/wp-content/plugins/widgetkit/plugins/content</code> folder in WordPress and <code>/administrator/components/com_widgetkit/plugins/content</code> folder in Joomla.
+    In order to create your own content provider you can copy an existing one and start adapting it to your needs. Alternatively, you can create a new one from scratch following the steps explained here. In both scenarios you shoud rely on the existing plugins as reference, which you can find in the <code>/wp-content/plugins/widgetkit/plugins/content</code> folder in WordPress and <code>/administrator/components/com_widgetkit/plugins/content</code> folder in Joomla.
+</p>
 
+<p>
     <span class="badge">NOTE</span> For guidance about where to store your customizations, please check out {doc: where-to-store-your-customizations text:this} doc.
 </p>
 
@@ -14,7 +19,7 @@
 <h2>File structure</h2>
 
 <p>
-    Let's start by creating the files structure for our plugin where we only need the main file, an icon and the views layouts.
+    Let's start by creating the file structure for our plugin. We need the main file, an icon and the view to render the content editor layout.
 </p>
 
 <pre><code>
@@ -27,13 +32,13 @@
 <h2>plugin.php</h2>
 
 <p>
-    The <code>plugin.php</code> file contains a PHP array to set your plugin by passing the configurations and event functions to Widgetkit. Whatever logic you need it must be passed throught this array. Checkout the comments to get information about what does each one of it.
+    The <code>plugin.php</code> file contains a PHP array to set your plugin by passing the configurations and event functions to Widgetkit. Whatever logic you need it must be passed throught this array. Checkout the comments to get information about what does each one of it. Don't forget the <code>return</code> statement, as this file is supposed to return a valid configuration array.
 </p>
 
 <pre><code>
 &lt;?php
 
-array(
+return array(
 
     // plugin name
     'name' => 'content/PLUGIN-NAME',
@@ -60,7 +65,7 @@ array(
 
             // default configuration data
             'data'  => array(
-                'key' => 'value
+                'key' => 'value'
             )
         );
     },
@@ -107,15 +112,15 @@ array(
 <h2>views/edit.php</h2>
 
 <p>
-    The <code>views/edit.php</code> file contains the form layout that will be displayed in the Widgetkit admin area when setting up the content provider. It relies on UIkit for its styling and on AngularJS for the logic for which you can check each respective documentation for further information.
+    The <code>views/edit.php</code> file contains the form layout that will be displayed in the Widgetkit admin area when setting up the content provider. It relies on <a href="http://getuikit.com/">UIkit</a> for its styling and on <a href="https://angularjs.org/">AngularJS</a> for the logic for which you can check each respective documentation for further information.
 </p>
 
 <pre><code>
 
-&lt;!-- wrapp the content with uk-form style --&gt;
+&lt;!-- wrap the content with uk-form style --&gt;
 &lt;div class="uk-form uk-form-stacked"&gt;
 
-    &lt;!-- wrapp each field --&gt;
+    &lt;!-- wrap each field --&gt;
     &lt;div class="uk-form-row"&gt;
 
         &lt;!-- set the field label --&gt;
