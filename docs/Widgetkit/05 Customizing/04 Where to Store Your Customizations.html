@@ -40,7 +40,9 @@
 
 <p>
     In our custom plugin we need to execute our code after the Widgetkit main plugin has been executed, in order to do so we are relying on the 'plugins_loaded' action. Let's see how the code should look like.
-    <br />
+
+</p>
+<p>
     <span class="badge">NOTE</span> In WordPress the main file only require the plugin name to be set into the Header comment, but there are plenty of other usefull information to set there, as the version or author. Make sure to checkout the WordPress documentation about it.
 </p>
 
@@ -87,7 +89,8 @@ add_action('plugins_loaded', function() {
 <p>
     In our custom plugin we need to hook our code into the <code>onAfterInitialise</code> Joomla event.
     In order to do so we are relying on the System Plugin. Let's see how the code should look like.
-    <br />
+</p>
+<p>
     <span class="badge">NOTE</span> In Joomla the plugin must be installed through the admin installer before being recognized. Make sure to do so after having completed the main structure.
 </p>
 
