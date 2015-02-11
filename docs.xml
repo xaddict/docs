@@ -102,7 +102,6 @@
       <doc alias="shortcodes" name="Shortcodes" file="05 Shortcodes.html"/>
       <doc alias="how-to-update-4" name="How to Update" file="06 How to Update.html"/>
       <doc alias="where-is-the-changelog-4" name="Where is the Changelog" file="07 Where is the Changelog.html"/>
-      <doc alias="zoo-integration" name="ZOO integration" file="05 ZOO Integration.html"/>
     </category>
     <category alias="customizing" name="Customizing" folder="05 Customizing">
       <doc alias="custom-content" name="Create a Content Provider" file="01 Create a Custom Content Provider.html"/>
@@ -115,6 +114,7 @@
       <doc alias="file-permission-issues-5" name="File Permission Issues" file="02 File Permission Issues.html"/>
       <doc alias="javascript-errors-5" name="JavaScript Errors" file="03 Javascript Errors.html"/>
       <doc alias="compatibility" name="Compatibility" file="04 Compatibility.html"/>
+      <doc alias="zoo-integration" name="ZOO Integration" file="05 ZOO Integration.html"/>
     </category>
     <separator label="Widgetkit 1" />
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
