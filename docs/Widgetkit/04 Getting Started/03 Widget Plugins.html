@@ -23,9 +23,13 @@
             <td>Configure the behavior of the gallery grid, the number of columns for different screen sizes (for responsive behaviour) and add animations to the gallery items.</td>
         </tr>
         <tr>
+            <td>Media</td>
+            <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.</td>
+        </tr>
+        <tr>
             <td>Content</td>
-            <td>Determine how content and media of all items are rendered. In the <em>Media</em> section you can configure different Overlay appearances.<br>
-            <span class="badge">NOTE</span> The link to display the <em>Read more button</em> can be added in the {doc:content-manager text:Content Manager} when creating the content.</td>
+            <td>Determine, if and how the content of all items is rendered.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>Lightbox</td>
@@ -33,7 +37,7 @@
         </tr>
         <tr>
             <td>General</td>
-            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
@@ -44,9 +48,9 @@
 
 <pre><code>[widgetkit id="23" widget="gallery"]</code></pre>
 
-<p>A gallery widget that displays 4 columns on large screens automatically collapses to 2 columns on tablets and such and displays a single column on all devices smaller than that. To understand this mobile first approach, have a look at the <a href="http://getuikit.com/docs/grid.html#responsive-width">UIkit responsive grid</a> that is used here. The overlay is centered and title, content as well as the read more and lightbox links, which are displayed as small buttons, are located inside the overlay.</p>
+<p>A gallery widget that displays 4 columns on large screens automatically collapses to 2 columns on tablets and such and displays a single column on all devices smaller than that. To understand this mobile first approach, have a look at the <a href="http://getuikit.com/docs/grid.html#responsive-width">UIkit responsive grid</a> that is used here. The overlay is centered and title, content as well as the lightbox link, which are displayed as small icon, are located inside the overlay.</p>
 
-<pre><code>[widgetkit id="23" widget="gallery" columns_medium="2" columns_large="4" overlay="center" buttons="icon-small"]</code></pre>
+<pre><code>[widgetkit id="2" widget="gallery" columns_medium="2" columns_large="4" overlay="center" lightbox_link=1 lightbox_style="icon-small"]</code></pre>
 
 <h2>Grid</h2>
 
@@ -64,17 +68,21 @@
     <tbody>
         <tr>
             <td>Layout</td>
-            <td>Configure the behavior of the grid, number of columns for different screen sizes (for responsive behaviour) and set the panel appearance. The gutter property determines the spacing between columns and rows. <br>
-            <span class="badge">NOTE</span> To link the entire panel, you can add a link in the {doc:content-manager text:Content Manager}.</td>
+            <td>Configure the behavior of the grid, number of columns for different screen sizes (for responsive behaviour) and set the panel appearance. The gutter property determines the spacing between columns and rows. To link the entire panel, you can add a link in the {doc:content-manager text:Content Manager}.</td>
+        </tr>
+        <tr>
+            <td>Media</td>
+            <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td></td>
         </tr>
         <tr>
             <td>Content</td>
-            <td>Configure how content items and their optionally attached media are rendered. <br>
-            <span class="badge">NOTE</span> The link to display the <em>Read more button</em> as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <td>Determine, if and how the content of all items is rendered.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>General</td>
-            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
@@ -108,13 +116,18 @@
             <td>Configure the appearance of the grid, for example the relation of content and media. The grid gutter determines the spacing between items in the grid. You can individually set animations for the media and content columns.</td>
         </tr>
         <tr>
+            <td>Media</td>
+            <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+        </tr>
+        <tr>
             <td>Content</td>
-            <td>Configure how content items and their attached media are rendered.<br>
-            <span class="badge">NOTE</span> The link to display the <em>Read more button</em> as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <td>Determine, if and how the content of all items is rendered.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>General</td>
-            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
@@ -145,20 +158,25 @@
     <tbody>
         <tr>
             <td>Map</td>
-            <td>Configure the appearance and behaviour of the map.</td>
+            <td>Configure the appearance and behaviour of the map and enable the Popup that will display media and content of each item.</td>
         </tr>
         <tr>
             <td>Style</td>
             <td>Configure the styling of the map, for example invert the colours or set custom colours.</td>
         </tr>
         <tr>
-            <td>Popup</td>
-            <td>Configure the popup that is shown at the location marker. The Popup can be enabled under <em>Controls</em> in the <em>Map</em> tab. <br>
-            <span class="badge">NOTE</span> The link to display the <em>Read more button</em> as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <td>Media</td>
+            <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>Determine, if and how the content of all items is rendered.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>General</td>
-            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
@@ -192,12 +210,17 @@
             <td>Configure the appearance and behaviour of the slideshow. Settings for the navigation and animations can be found here as well as the option to enable a fullscreen slideshow.</td>
         </tr>
         <tr>
-            <td>Content</td>
+            <td>Media</td>
             <td>Here you you can set the image proportions and enable an overlay. The overlay content is taken from the title and content fields in your content item.</td>
         </tr>
         <tr>
+            <td>Content</td>
+            <td>Determine, if and how the content of all items is rendered.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+        </tr>
+        <tr>
             <td>General</td>
-            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
@@ -230,12 +253,19 @@
             <td>Layout</td>
             <td>Configure the appearance and behavior of the switcher. The navigation can be of different visual appearance and can be positioned at any side of the content.</td>
         </tr>
+        <tr>
+            <td>Media</td>
+            <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+        </tr>
+        <tr>
             <td>Content</td>
-            <td>Configure how content items and their optionally attached media are rendered.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> to be displayed in the overlay can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content. </td>
+            <td>Determine, if and how the content of all items is rendered.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+        </tr>
         <tr>
             <td>General</td>
-            <td>Display or hide specific parts of your content. You can also set a custom HTML class that will be added to the widget element in the rendered output.</td>
+            <td>Set a custom HTML class that will be added to the widget element in the rendered output.</td>
         </tr>
     </tbody>
 </table>
