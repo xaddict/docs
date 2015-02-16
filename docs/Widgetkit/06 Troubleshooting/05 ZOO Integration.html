@@ -1,0 +1,40 @@
+<h1 class="title">ZOO Integration</h1>
+
+<p>Widgetkit allows you to use content types right from ZOO. In order for Widgetkit to know which elements of your ZOO types should be used, you have to set up a custom mapping. This gives you full control of how your content is presented.</p>
+
+<h2>How to use ZOO content in Widgetkit 2</h2>
+
+<p>Like with any other widget content, we first navigate to an article or module in Joomla and click on the <em>Widgetkit</em> button in the editor. Select any Widget type you like. Once you are presented with the selection of content, you can create a new content item with content coming from ZOO.</p>
+
+<img src="../../../assets/images/widgetkit/widgetkit_button.png" alt="Drag and drop to create the mapping" width="244" height="157" />
+
+<p>Select ZOO when clicking the <em>New</em> button.</p>
+
+<img src="../../../assets/images/widgetkit/zoo_select_type.png" alt="Drag and drop to create the mapping" width="194" height="196" />
+
+<p>Select your desired App and the type of content you want to display. In our example we are choosing the Business directory App from the demo content and the <em>Company</em> type.</p>
+
+<img src="../../../assets/images/widgetkit/zoo_content.png" alt="Drag and drop to create the mapping" width="850" height="299" />
+
+<p>Select all options as you desire and confirm with a click on the <em>Save</em> button. Close the content editor to go back to the Widget configuration. Hit <em>Save</em> and close the Widgetkit interface.</p>
+
+<p>Save your article or module and navigate to the frontend to view your widget. Right now, you will not be seeing any output or just a broken view. To change this we have to map ZOO elemets to the content fields that Widgetkit understands.</p>
+
+<h2>Map ZOO content elements to Widgetkit 2</h2>
+
+<p>Any type in ZOO can have arbitrary elements with basically unlimited combinations. Widgetkit on the other hand uses content providers with a limited set of fields that are used for rendering. That is why we have to assign a mapping from ZOO elements to the content fields Widgetkit knows about.</p>
+
+<p>Navigate to the ZOO App manager and click on the Configuration icon (a cog button at the very right of your available Apps).</p>
+
+<p>We select the App from our earlier example (Business directory). You will see the available types of that app. On the right you see a column for <em>Extension Layouts</em>. Click on the Widgetkit 2 mapping for the type you want to configure (<em>Company</em> in our example).</p>
+
+<p>The presented interface shows two columns. On the left you see the available positions in Widgetkit's content. Those represent the content fields and will be empty by default. On the right you see all available ZOO elements. You can now simply drag-and-drop any elements you want to assign from the right to the left.</p>
+
+<img src="../../../assets/images/widgetkit/drag_mapping.gif" alt="Drag and drop to create the mapping" width="795" height="514" />
+
+<p>Basically you can chose any mapping you like. A possible selection can be seen in the following screenshot.</p>
+
+<img src="../../../assets/images/widgetkit/zoo_mapping.png" alt="Example mapping" width="919" height="339" />
+
+<p><span class="badge">NOTE</span> Elements in the fields <em>Title</em> and <em>Content</em> will be used for immediate rendering. Elements in the other fields are used to hold certain data but will not affect the rendering immediately. The media field for example will hold an image. However, any options you assign here (like width etc.) will not affect the rendering. All rendering options need to be configured in the Widgetkit interface.</p>
+

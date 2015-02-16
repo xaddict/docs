@@ -31,17 +31,52 @@
 
 <p>You can find further guidance on troubleshooting and PHP problems in the {doc: installation-issues-3 text: Installation issues} article.
 
+<h2>Assigning widget positions</h2>
+
+<p>When you have existing content in your Wordpress installation, activating your theme will most likely make your site look a little weird. The reason for that are Widgets that are assigned to default positions that don't fit with the theme. We can improve that by assigning them to better positions available in our theme.</p>
+
+<p>
+Navigate to <em>Appearance &raquo; Widgets</em>. As a first step, you might want to drag most widgets to the <em>Disabled Widgets</em> position.
+In our example, those widgets are located in the <em>Search</em> position.
+We'll remove all widgets here except for the actual Search widget.
+</p>
+
+<img src="../../../assets/images/warp/disable_widgets.gif" alt="Drag and drop to disable widgets" width="700" height="415" />
+
+<p>
+    Check your site, it should look less cluttered now. From this state on you can now assign widgets to the several available positions in your theme. For an overview of all widget positions in your theme, check the <em>Features &raquo; Layouts</em> page of the theme in <a href="http://yootheme.com/demo/">our online demo installations</a>.
+</p>
+
 <h2>Setup the menus</h2>
 
-<p>First of all, you need to create a new menu and add your menu items. For detailed instructions, see the <a href="http://codex.wordpress.org/WordPress_Menu_User_Guide">WordPress documentation</a>. Select your menu in the box <em>Theme Locations</em> on the left and hit <em>Save</em> to assign it as the main navigation of your site.</p>
+<p>
+    To tell your theme what should be rendered as your main navigation, we need to setup a menu in Wordpress and assign it as our main navigation.
+</p>
 
-<h3>Widget in menu position</h3>
+<p>First of all, you need to create a new menu and add your menu items. For detailed instructions, see the <a href="http://codex.wordpress.org/WordPress_Menu_User_Guide">WordPress documentation</a>. In this example we add all existing pages by default and remove one that we do not want.</p>
 
-<p>You can also publish any widget in the <em>menu</em> position. The widget name is used as menu item and the widget content appears in the dropdown.</p>
+<img src="../../../assets/images/warp/create_menu.gif" alt="Create a menu" width="400" height="487" />
 
-<h3>Menu styles</h3>
+<p> Now we just need to select the freshly created menu to be used as the main navigation on our site. Hit the <em>Manage locations</em> tab on the top and select the menu from the dropdown.</p>
 
-<p>There are three different menu styles, the <em>Mega dropdown menu</em> as a main menu, the <em>Accordion menu</em> in sidebars and the <em>Line menu</em> in the toolbar or footer. Warp automatically styles the menu according the position it is published in.</p>
+<img src="../../../assets/images/warp/assign_menu.gif" alt="Assign menu to be used in the theme" width="450" height="212" />
+
+
+<h3>Menu on small devices</h3>
+
+<p>The default menu will be hidden on small devices. You can and should use the <em>offcanvas</em> position to have a mobile friendly version of your menu. The offcanvas element can be toggled from a menu icon. You can also publish other widgets in this position, but a menu is the most likey thing you'll want in any case.</p>
+
+<img src="../../../assets/images/warp/offcanvas_menu.gif" alt="Use a custom menu to be displayed as an offcanvas menu" width="1000" height="546" />
+
+<h3>Menus in any position and menu styles</h3>
+
+<p>
+    You can create any number of menus you like and publish them as a <em>Custom Menu</em> widget in the <em>Widget</em> area of the Wordpress backend. You can assign that widget to any position you like.
+</p>
+
+<p>
+    There are three different menu styles, the <em>Mega dropdown menu</em> as a main menu, the <em>Accordion menu</em> in sidebars and the <em>Line menu</em> in the toolbar or footer. Warp automatically styles the menu according the position it is published in.
+</p>
 
 <h2>Setup the logo</h2>
 
@@ -54,3 +89,5 @@
 <p>Warp 7 also provides the <code>logo-small</code> position, where you can display an alternative logo image for smaller viewport sizes.</p>
 
 <p><span class="badge">NOTE</span> If the logo image is not visible on all pages, just add a leading slash before the image path, e.g.: <code>/wp-content/uploads/logo.png</code>.</p>
+
+<img src="../../../assets/images/warp/add_logo.gif" alt="Add a logo to your theme" width="800" height="522" />

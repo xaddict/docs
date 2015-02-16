@@ -114,6 +114,7 @@
       <doc alias="file-permission-issues-5" name="File Permission Issues" file="02 File Permission Issues.html"/>
       <doc alias="javascript-errors-5" name="JavaScript Errors" file="03 Javascript Errors.html"/>
       <doc alias="compatibility" name="Compatibility" file="04 Compatibility.html"/>
+      <doc alias="zoo-integration" name="ZOO Integration" file="05 ZOO Integration.html"/>
     </category>
     <separator label="Widgetkit 1" />
     <category alias="getting-started" name="Getting Started" folder="01 Getting Started">
