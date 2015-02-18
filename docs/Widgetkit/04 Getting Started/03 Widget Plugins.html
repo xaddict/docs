@@ -4,6 +4,51 @@
     A widget plugin determines how your widget will be displayed in the frontend, for example as a Slideshow or a Grid. You can also add custom widget plugins. Each plugin accepts a set of configuration parameters. These can be set using the visual interface provided by Widgetkit or by changing the shortcode directly.
 </p>
 
+<h2>Accordion</h2>
+
+<p>
+    The Accordion widget display content inside a list of items that can be expanded and collapsed by clicking each of their headers.
+</p>
+
+<table class="zebra">
+    <thead>
+        <tr>
+          <th>Section</th>
+          <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Accordion</td>
+            <td>Determine whether or not multiple items can be opened at the same time.</td>
+        </tr>
+        <tr>
+            <td>Media</td>
+            <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>Determine, if and how the content of all items is rendered.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+        </tr>
+        <tr>
+            <td>General</td>
+            <td>Set a custom HTML class that will be added to the widget element in the rendered output.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Example Shortcode</h3>
+
+<p>This is a default Accordion widget. An open item will collapse automatically when another one expands.</p>
+
+<pre><code>[widgetkit id="23" widget="accordion"]</code></pre>
+
+<p>An accordion widget that allows multiple opened items and links the media overlay to the URL you have set in the {doc:content-manager text:Content Manager}.</p>
+
+<pre><code>[widgetkit id="23" widget="accordion" collapse=0 media_overlay="link"]</code></pre>
+
 <h2>Gallery</h2>
 
 <p>
@@ -50,7 +95,7 @@
 
 <p>A gallery widget that displays 4 columns on large screens automatically collapses to 2 columns on tablets and such and displays a single column on all devices smaller than that. To understand this mobile first approach, have a look at the <a href="http://getuikit.com/docs/grid.html#responsive-width">UIkit responsive grid</a> that is used here. The overlay is centered and title, content as well as the lightbox link, which are displayed as small icon, are located inside the overlay.</p>
 
-<pre><code>[widgetkit id="2" widget="gallery" columns_medium="2" columns_large="4" overlay="center" lightbox_link=1 lightbox_style="icon-small"]</code></pre>
+<pre><code>[widgetkit id="23" widget="gallery" columns_medium="2" columns_large="4" overlay="center" lightbox_link=1 lightbox_style="icon-small"]</code></pre>
 
 <h2>Grid</h2>
 
@@ -73,7 +118,55 @@
         <tr>
             <td>Media</td>
             <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td></td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>Determine, if and how the content of all items is rendered.<br>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+        </tr>
+        <tr>
+            <td>General</td>
+            <td>Set a custom HTML class that will be added to the widget element in the rendered output.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Example Shortcode</h3>
+
+<p>Default grid widget. Content items will have 100% each and will therefore be stacked.</p>
+
+<pre><code>[widgetkit id="23" widget="grid"]</code></pre>
+
+<p>A dynamic grid widget that displays 4 columns on large screens automatically collapses to 2 columns on tablets and such and displays a single column on all devices smaller than that. To understand this mobile first approach, have a look at the <a href="http://getuikit.com/docs/grid.html#responsive-width">UIkit responsive grid</a> that is used here.</p>
+
+<pre><code>[widgetkit id="23" widget="grid" grid="dynamic" columns_medium="2" columns_large="4"]</code></pre>
+
+<h2>Grid Slider</h2>
+
+<p>
+    A Grid Slider widget allows you to display multiple Slideshows within one grid. Mind that when creating content for this widget, you need to add another media field for every slide your slideshow is going to have. Each slide will be displayed with the same content and title field within one item.
+</p>
+
+<table class="zebra">
+    <thead>
+        <tr>
+          <th>Section</th>
+          <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Layout</td>
+            <td>Configure the behavior of the grid, number of columns for different screen sizes (for responsive behaviour) and set the panel appearance. The gutter property determines the spacing between columns and rows. To link the entire panel, you can add a link in the {doc:content-manager text:Content Manager}.</td>
+        </tr>
+        <tr>
+            <td>Media</td>
+            <td>Configure the dimensions, alignment and general behavior of the media items.</td>
+        </tr>
+        <tr>
+            <td>Slideshow</td>
+            <td>Configure the appearance and behaviour of the slideshow. Settings for the navigation and animations can be found here as well.</td>
         </tr>
         <tr>
             <td>Content</td>
