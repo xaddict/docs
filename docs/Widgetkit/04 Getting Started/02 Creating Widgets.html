@@ -6,13 +6,13 @@
 
 <ol>
     <li>Inside the editor of your CMS hit the <em>Widgetkit</em> button. This will open Widgetkit in a lightbox.</li>
-    <li>Pick the widget you want to be rendered. Currently, Widgetkit includes a Slideshow, Switcher, Map, Grid and Grid stack widget. Some themes also provide their own custom widgets. For more information, take a look at the {doc:widget-plugins text:Widget Plugins} doc.</li>
+    <li>Pick the widget you want to be rendered. Widgetkit comes with a set of different ones. Some themes also provide their own custom widgets. For more information, take a look at the {doc:widget-plugins text:Widget Plugins} doc.</li>
     <li>Assign your content to the widget plugin. You can either choose your content from the select form above or create a new content set through the {doc:content-manager text:Content Manager}.</li>
     <li>If necessary, you can change the configurations of the widget plugin, like animations and display options or add a custom class to your widget.</li>
     <li>Hit <em>Insert</em> and a shortcode will be added to the article or module, representing your newly created widget.</li>
 </ol>
 
-<img src="../../../assets/images/widgetkit/creating_widgets.gif" alt="Creating a widget" width="940" height="540" />
+<img src="../../../assets/images/widgetkit/creating_widgets.gif" alt="Creating a widget" width="600" height="617" />
 
 <h3>WordPress widget or Joomla module</h3>
 
@@ -38,10 +38,27 @@
 
 <pre><code>[widgetkit id="1" widget="slideshow"]</code></pre>
 
-<p>A more andvanced shortcode with custom options would look like this.</p>
+<p>A more advanced shortcode with custom options would look like this.</p>
 
 <pre><code>[widgetkit id="1" widget="slideshow" animation="swipe" autoplay=1]</code></pre>
 
 <p>
     In this example the Slideshow uses the Swipe animation and autoplay is enabled. If you want to edit your widget afterwards, you need to click inside the shortcode before hitting the Widgetkit button. Otherwise you can only create a new widget.  For more information, take a look at the {doc:shortcodes text:Shortcodes} doc.
 </p>
+
+<h3>Editing shortcodes using the Widgetkit interface</h3>
+
+<p>
+    All settings for the widget rendering are set in the shortcode. But don't worry, you do not have to know and type all possible options for the different widget types. Just as you can use the Widgetkit interface to set up a new widget, you can edit an existing widget in just the same way.
+</p>
+
+<ol>
+    <li>Place your cursor inside the shortcode you want to edit.</li>
+    <li>Click the <em>Widgetkit</em> button which will open the Widgetkit interface.</li>
+    <li>Change the configuration of the widget plugin.</li>
+    <li>Hit <em>Insert</em> to leave the editor and apply the new settings. The shortcode will update automatically.</li>
+    <li>Make sure to also save the article, module or text snippet in your CMS (WordPress or Joomla).</li>
+</ol>
+
+<img src="../../../assets/images/widgetkit/editing_widgets.gif" alt="Editing a widget" width="600" height="528" />
+
