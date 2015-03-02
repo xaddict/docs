@@ -108,6 +108,7 @@
       <doc alias="custom-widget-plugin" name="Create a Custom Widget Plugin" file="02 Create a Custom Widget Plugin.html"/>
       <doc alias="manage-fields" name="Manage Fields" file="03 Manage Fields.html"/>
       <doc alias="where-to-store-your-customizations" name="Where to Store Your Customizations" file="04 Where to Store Your Customizations.html"/>
+      <doc alias="field-mapping" name="Field Mapping for Content Providers" file="05 Field Mapping for Content Providers.html"/>
     </category>
     <category alias="troubleshooting" name="Troubleshooting" folder="06 Troubleshooting">
       <doc alias="how-to-migrate" name="How to Migrate from Widgetkit 1" file="01 How to Migrate from Widgetkit 1.html"/>
