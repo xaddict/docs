@@ -2,6 +2,8 @@
 
 <p>Wherever you want to render a widget, you can use the <code>[widgetkit ...]</code> shortcode that will be replaced by the actual widget in the final browser output. To render a widget, you always have to combine a content item with a widget type that defines the way the content is rendered.</p>
 
+<div class="box-warning"><strong>Joomla Only:</strong> For Widgtekit shortcodes to work in a Custom HTML module, make sure to set <em>Prepare Content</em> to <strong><em>Yes</em></strong>. Otherwise the shortcode will not be rendered into a widget but shown literally.</div>
+
 <p>A shortcode has to contain at least the two parameters <code>id</code> and <code>widget</code></p>
 
 <pre><code>[widgetkit id="42" widget="slideshow"]</code></pre>
