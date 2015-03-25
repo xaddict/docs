@@ -1,7 +1,7 @@
 <h1 class="title">Widget Plugins</h1>
 
 <p>
-    A widget plugin determines how your widget will be displayed in the frontend, for example as a Slideshow or a Grid. You can also add custom widget plugins. Each plugin accepts a set of configuration parameters. These can be set using the visual interface provided by Widgetkit or by changing the shortcode directly.
+    A widget plugin determines how your widget will be displayed in the frontend, for example as a Slideshow or a Grid. You can also add custom widget plugins. Each plugin accepts a set of configuration parameters. These can be set in the <em>Settings</em> panel of the Widget Manager.
 </p>
 
 <h2>Accordion</h2>
@@ -25,12 +25,12 @@
         <tr>
             <td>Media</td>
             <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>Content</td>
             <td>Determine, if and how the content of all items is rendered.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>General</td>
@@ -38,16 +38,6 @@
         </tr>
     </tbody>
 </table>
-
-<h3>Example Shortcode</h3>
-
-<p>This is a default Accordion widget. An open item will collapse automatically when another one expands.</p>
-
-<pre><code>[widgetkit id="23" widget="accordion"]</code></pre>
-
-<p>An accordion widget that allows multiple opened items and links the media overlay to the URL you have set in the {doc:content-manager text:Content Manager}.</p>
-
-<pre><code>[widgetkit id="23" widget="accordion" collapse=0 media_overlay="link"]</code></pre>
 
 <h2>Gallery</h2>
 
@@ -74,7 +64,7 @@
         <tr>
             <td>Content</td>
             <td>Determine, if and how the content of all items is rendered.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>Lightbox</td>
@@ -86,16 +76,6 @@
         </tr>
     </tbody>
 </table>
-
-<h3>Example Shortcode</h3>
-
-<p>Default gallery widget. Content items will have 100% each and will therefore be stacked. The content is displayed in an image caption and the overlay content is an icon.</p>
-
-<pre><code>[widgetkit id="23" widget="gallery"]</code></pre>
-
-<p>A gallery widget that displays 4 columns on large screens automatically collapses to 2 columns on tablets and such and displays a single column on all devices smaller than that. To understand this mobile first approach, have a look at the <a href="http://getuikit.com/docs/grid.html#responsive-width">UIkit responsive grid</a> that is used here. The overlay is centered and title, content as well as the lightbox link, which are displayed as small icon, are located inside the overlay.</p>
-
-<pre><code>[widgetkit id="23" widget="gallery" columns_medium="2" columns_large="4" overlay="center" lightbox_link=1 lightbox_style="icon-small"]</code></pre>
 
 <h2>Grid</h2>
 
@@ -113,17 +93,17 @@
     <tbody>
         <tr>
             <td>Layout</td>
-            <td>Configure the behavior of the grid, number of columns for different screen sizes (for responsive behaviour) and set the panel appearance. The gutter property determines the spacing between columns and rows. To link the entire panel, you can add a link in the {doc:content-manager text:Content Manager}.</td>
+            <td>Configure the behavior of the grid, number of columns for different screen sizes (for responsive behaviour) and set the panel appearance. The gutter property determines the spacing between columns and rows. To link the entire panel, you can add a link in the {doc:widget-content text:Widget Content}.</td>
         </tr>
         <tr>
             <td>Media</td>
             <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>Content</td>
             <td>Determine, if and how the content of all items is rendered.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>General</td>
@@ -131,16 +111,6 @@
         </tr>
     </tbody>
 </table>
-
-<h3>Example Shortcode</h3>
-
-<p>Default grid widget. Content items will have 100% each and will therefore be stacked.</p>
-
-<pre><code>[widgetkit id="23" widget="grid"]</code></pre>
-
-<p>A dynamic grid widget that displays 4 columns on large screens automatically collapses to 2 columns on tablets and such and displays a single column on all devices smaller than that. To understand this mobile first approach, have a look at the <a href="http://getuikit.com/docs/grid.html#responsive-width">UIkit responsive grid</a> that is used here.</p>
-
-<pre><code>[widgetkit id="23" widget="grid" grid="dynamic" columns_medium="2" columns_large="4"]</code></pre>
 
 <h2>Grid Slider</h2>
 
@@ -158,7 +128,7 @@
     <tbody>
         <tr>
             <td>Layout</td>
-            <td>Configure the behavior of the grid, number of columns for different screen sizes (for responsive behaviour) and set the panel appearance. The gutter property determines the spacing between columns and rows. To link the entire panel, you can add a link in the {doc:content-manager text:Content Manager}.</td>
+            <td>Configure the behavior of the grid, number of columns for different screen sizes (for responsive behaviour) and set the panel appearance. The gutter property determines the spacing between columns and rows. To link the entire panel, you can add a link in the {doc:widget-content text:Widget Content}.</td>
         </tr>
         <tr>
             <td>Media</td>
@@ -171,7 +141,7 @@
         <tr>
             <td>Content</td>
             <td>Determine, if and how the content of all items is rendered.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>General</td>
@@ -179,16 +149,6 @@
         </tr>
     </tbody>
 </table>
-
-<h3>Example Shortcode</h3>
-
-<p>Default grid slider widget. Content items will have 100% each and will therefore be stacked.</p>
-
-<pre><code>[widgetkit id="23" widget="grid-slider"]</code></pre>
-
-<p>A dynamic grid slider widget that displays 4 columns on large screens automatically collapses to 2 columns on tablets and such and displays a single column on all devices smaller than that. The slideshow will be aligned left of the content and will have a thumbnail navigation.</p>
-
-<pre><code>[widgetkit id="23" widget="grid-slider" grid="dynamic" columns_medium="2" columns_large="4" media_align="left" nav="thumbnails"]</code></pre>
 
 <h2>Grid Stack</h2>
 
@@ -211,12 +171,12 @@
         <tr>
             <td>Media</td>
             <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>Content</td>
             <td>Determine, if and how the content of all items is rendered.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>General</td>
@@ -225,20 +185,10 @@
     </tbody>
 </table>
 
-<h3>Example Shortcode</h3>
-
-<p>Default grid stack widget.</p>
-
-<pre><code>[widgetkit id="23" widget="grid-stack"]</code></pre>
-
-<p>A grid stack widget with dividers between the items, the media elements cropped to circles and are animated to slide in when the item scrolls into view.</p>
-
-<pre><code>[widgetkit id="23" widget="grid-stack" divider=1 animation_media="slide" animation_content="slide" media_border="circle"]</code></pre>
-
 <h2>Map</h2>
 
 <p>
-    A map widget displays a Google map on your website. Make sure to add a custom field <em>Location</em> to your content element and select a location you want to display in the map. The other fields of your content will be displayed when you click on the location marker (provided the Popup is enabled). You can add several pins and popup boxes by adding more items to your content element. For more information, read the {doc:manage-fields text:Manage fields} doc.
+    A map widget displays a Google map on your website. Make sure to add a custom field <em>Location</em> to your content element and select a location you want to display in the map. The other fields of your content will be displayed when you click on the location marker (provided the Popup is enabled). You can add several pins and popup boxes by adding more items to your content element. For more information, read the {doc:custom-fields text:Manage fields} doc.
 </p>
 
 <table class="zebra">
@@ -260,12 +210,12 @@
         <tr>
             <td>Media</td>
             <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>Content</td>
             <td>Determine, if and how the content of all items is rendered.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>General</td>
@@ -273,16 +223,6 @@
         </tr>
     </tbody>
 </table>
-
-<h3>Example Shortcode</h3>
-
-<p>A simple map widget. Make sure the content (#23 in the example) has a custom field added for the location.</p>
-
-<pre><code>[widgetkit id="23" widget="map"]</code></pre>
-
-<p>A map showing the satellite image view and without any controlling UI elements.</p>
-
-<pre><code>[widgetkit id="23" widget="map" maptypeid="SATELLITE" disabledefaultui=1]</code></pre>
 
 <h2>Slideshow</h2>
 
@@ -309,7 +249,7 @@
         <tr>
             <td>Content</td>
             <td>Determine, if and how the content of all items is rendered.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>General</td>
@@ -317,16 +257,6 @@
         </tr>
     </tbody>
 </table>
-
-<h3>Example Shortcode</h3>
-
-<p>The default slideshow.</p>
-
-<pre><code>[widgetkit id="23" widget="slideshow"]</code></pre>
-
-<p>A slideshow with captions enabled and animations for slides and a centered overlay.</p>
-
-<pre><code>[widgetkit id="23" widget="slideshow" animation="swipe" overlay=1 overlay_position="center"]</code></pre>
 
 <h2>Switcher</h2>
 
@@ -349,12 +279,12 @@
         <tr>
             <td>Media</td>
             <td>Determine, if and how media and overlay of all items are rendered. You can apply different animations to the overlay and the images.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>Content</td>
             <td>Determine, if and how the content of all items is rendered.<br>
-            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:content-manager text:Content Manager} and through {doc:manage-fields text:Custom fields} when creating the content.</td>
+            <span class="badge">NOTE</span> The link as well as the <em>Social Buttons</em> can be added in the {doc:widget-content text:Widget Content} and through {doc:custom-fields text:Custom fields} when creating the content.</td>
         </tr>
         <tr>
             <td>General</td>
@@ -362,17 +292,3 @@
         </tr>
     </tbody>
 </table>
-
-<h3>Example Shortcode</h3>
-
-<p>The default switcher.</p>
-
-<pre><code>[widgetkit id="23" widget="switcher"]</code></pre>
-
-<p>A switcher with a tabbed navigation below the content.</p>
-
-<pre><code>[widgetkit id="23" widget="switcher" nav="tabs" position="bottom"]</code></pre>
-
-<p>A switcher with thumbnails for a navigation, which is centered.</p>
-
-<pre><code>[widgetkit id="23" widget="switcher" nav="thumbnails" alignment="center"]</code></pre>

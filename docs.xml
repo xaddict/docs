@@ -98,15 +98,14 @@
       <doc alias="install-widgetkit-2" name="Install Widgetkit" file="01 Install Widgetkit.html"/>
       <doc alias="creating-widgets" name="Creating Widgets" file="02 Creating Widgets.html"/>
       <doc alias="widget-plugins" name="Widget Plugins" file="03 Widget Plugins.html"/>
-      <doc alias="content-manager" name="Content Manager" file="04 Content Manager.html"/>
-      <doc alias="shortcodes" name="Shortcodes" file="05 Shortcodes.html"/>
-      <doc alias="how-to-update-4" name="How to Update" file="06 How to Update.html"/>
-      <doc alias="where-is-the-changelog-4" name="Where is the Changelog" file="07 Where is the Changelog.html"/>
+      <doc alias="widget-content" name="Widget Content" file="04 Widget Content.html"/>
+      <doc alias="how-to-update-4" name="How to Update" file="05 How to Update.html"/>
+      <doc alias="where-is-the-changelog-4" name="Where is the Changelog" file="06 Where is the Changelog.html"/>
     </category>
     <category alias="customizing" name="Customizing" folder="05 Customizing">
       <doc alias="custom-content" name="Create a Content Provider" file="01 Create a Custom Content Provider.html"/>
       <doc alias="custom-widget-plugin" name="Create a Custom Widget Plugin" file="02 Create a Custom Widget Plugin.html"/>
-      <doc alias="manage-fields" name="Manage Fields" file="03 Manage Fields.html"/>
+      <doc alias="custom-fields" name="Custom Fields" file="03 Custom Fields.html"/>
       <doc alias="where-to-store-your-customizations" name="Where to Store Your Customizations" file="04 Where to Store Your Customizations.html"/>
       <doc alias="field-mapping" name="Field Mapping for Content Providers" file="05 Field Mapping for Content Providers.html"/>
     </category>
